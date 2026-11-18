@@ -1,0 +1,58 @@
+{
+  "manifest_version": 3,
+  "name": "SahayAI Scholarship Assistant",
+  "version": "1.0.0",
+  "description": "Secure autofill assistant for Indian government scholarship applications using verified documents and citizen profile data.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "SahayAI Scholarship Assistant"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://scholarships.gov.in/*",
+    "http://127.0.0.1:8000/*",
+    "http://localhost:8000/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://scholarships.gov.in/*"
+      ],
+      "js": [
+        "supported-portals.js",
+        "content.js"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "http://127.0.0.1:8000/*",
+        "http://localhost:8000/*"
+      ],
+      "js": [
+        "bridge-content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ]
+}
+

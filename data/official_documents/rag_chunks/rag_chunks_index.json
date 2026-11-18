@@ -1,0 +1,118 @@
+{
+  "total_documents": 13,
+  "total_pages": 126,
+  "total_chunks": 301,
+  "chunks_per_scheme": {
+    "SCHEME_EDU_001_PM_USP_CSSS": 36,
+    "SCHEME_EDU_002_AICTE_PRAGATI": 42,
+    "SCHEME_EDU_003_AICTE_SAKSHAM": 88,
+    "SCHEME_EDU_004_AICTE_SWANATH": 44,
+    "SCHEME_EDU_005_TOP_CLASS_SC": 91
+  },
+  "documents_processed": [
+    {
+      "document_id": "DOC_EDU_001_CSSS_GUIDELINES_2024",
+      "scheme_id": "SCHEME_EDU_001_PM_USP_CSSS",
+      "document_name": "Guidelines for the Central Sector Scheme of Scholarship for College and University Students (PM-USP CSSS)",
+      "page_count": 4,
+      "chunk_count": 11,
+      "chunks_file": "data/official_documents/rag_chunks/PM_USP/DOC_EDU_001_CSSS_GUIDELINES_2024_chunks.json"
+    },
+    {
+      "document_id": "DOC_EDU_001_CSSS_FAQS_2024",
+      "scheme_id": "SCHEME_EDU_001_PM_USP_CSSS",
+      "document_name": "Frequently Asked Questions (FAQs) - PM-USP Central Sector Scheme of Scholarship (CSSS)",
+      "page_count": 8,
+      "chunk_count": 25,
+      "chunks_file": "data/official_documents/rag_chunks/PM_USP/DOC_EDU_001_CSSS_FAQS_2024_chunks.json"
+    },
+    {
+      "document_id": "DOC_EDU_002_PRAGATI_DEGREE_GUIDELINES_2020",
+      "scheme_id": "SCHEME_EDU_002_AICTE_PRAGATI",
+      "document_name": "Guidelines for AICTE - Pragati Scholarship Scheme for Girl Students (Degree)",
+      "page_count": 5,
+      "chunk_count": 12,
+      "chunks_file": "data/official_documents/rag_chunks/PRAGATI/DOC_EDU_002_PRAGATI_DEGREE_GUIDELINES_2020_chunks.json"
+    },
+    {
+      "document_id": "DOC_EDU_002_PRAGATI_DIPLOMA_GUIDELINES_2020",
+      "scheme_id": "SCHEME_EDU_002_AICTE_PRAGATI",
+      "document_name": "Guidelines for AICTE - Pragati Scholarship Scheme for Girl Students (Diploma)",
+      "page_count": 5,
+      "chunk_count": 12,
+      "chunks_file": "data/official_documents/rag_chunks/PRAGATI/DOC_EDU_002_PRAGATI_DIPLOMA_GUIDELINES_2020_chunks.json"
+    },
+    {
+      "document_id": "DOC_EDU_002_PRAGATI_FAQS_2020",
+      "scheme_id": "SCHEME_EDU_002_AICTE_PRAGATI",
+      "document_name": "Frequently Asked Questions (FAQs) - AICTE Pragati Scholarship Scheme",
+      "page_count": 8,
+      "chunk_count": 18,
+      "chunks_file": "data/official_documents/rag_chunks/PRAGATI/DOC_EDU_002_PRAGATI_FAQS_2020_chunks.json"
+    },
+    {
+      "document_id": "DOC_EDU_003_SAKSHAM_DEGREE_GUIDELINES_2020",
+      "scheme_id": "SCHEME_EDU_003_AICTE_SAKSHAM",
+      "document_name": "Guidelines for AICTE - Saksham Scholarship Scheme for Specially-Abled Students (Degree)",
+      "page_count": 4,
+      "chunk_count": 7,
+      "chunks_file": "data/official_documents/rag_chunks/SAKSHAM/DOC_EDU_003_SAKSHAM_DEGREE_GUIDELINES_2020_chunks.json"
+    },
+    {
+      "document_id": "DOC_EDU_003_SAKSHAM_DIPLOMA_GUIDELINES_2020",
+      "scheme_id": "SCHEME_EDU_003_AICTE_SAKSHAM",
+      "document_name": "Guidelines for AICTE - Saksham Scholarship Scheme for Specially-Abled Students (Diploma)",
+      "page_count": 16,
+      "chunk_count": 66,
+      "chunks_file": "data/official_documents/rag_chunks/SAKSHAM/DOC_EDU_003_SAKSHAM_DIPLOMA_GUIDELINES_2020_chunks.json"
+    },
+    {
+      "document_id": "DOC_EDU_003_SAKSHAM_FAQS_2020",
+      "scheme_id": "SCHEME_EDU_003_AICTE_SAKSHAM",
+      "document_name": "Frequently Asked Questions (FAQs) - AICTE Saksham Scholarship Scheme",
+      "page_count": 7,
+      "chunk_count": 15,
+      "chunks_file": "data/official_documents/rag_chunks/SAKSHAM/DOC_EDU_003_SAKSHAM_FAQS_2020_chunks.json"
+    },
+    {
+      "document_id": "DOC_EDU_004_SWANATH_REVISED_GUIDELINES_2025",
+      "scheme_id": "SCHEME_EDU_004_AICTE_SWANATH",
+      "document_name": "AICTE - Swanath Scholarship Scheme for Students (May 2025 Revised Guidelines)",
+      "page_count": 8,
+      "chunk_count": 15,
+      "chunks_file": "data/official_documents/rag_chunks/SWANATH/DOC_EDU_004_SWANATH_REVISED_GUIDELINES_2025_chunks.json"
+    },
+    {
+      "document_id": "DOC_EDU_004_SWANATH_DEGREE_DIPLOMA_GUIDELINES_2021",
+      "scheme_id": "SCHEME_EDU_004_AICTE_SWANATH",
+      "document_name": "Guidelines for AICTE - Swanath Scholarship Scheme for Students (Degree / Diploma - Initial Framework)",
+      "page_count": 6,
+      "chunk_count": 14,
+      "chunks_file": "data/official_documents/rag_chunks/SWANATH/DOC_EDU_004_SWANATH_DEGREE_DIPLOMA_GUIDELINES_2021_chunks.json"
+    },
+    {
+      "document_id": "DOC_EDU_004_SWANATH_FAQS_2022",
+      "scheme_id": "SCHEME_EDU_004_AICTE_SWANATH",
+      "document_name": "Frequently Asked Questions (FAQs) - AICTE Swanath Scholarship Scheme",
+      "page_count": 7,
+      "chunk_count": 15,
+      "chunks_file": "data/official_documents/rag_chunks/SWANATH/DOC_EDU_004_SWANATH_FAQS_2022_chunks.json"
+    },
+    {
+      "document_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26",
+      "scheme_id": "SCHEME_EDU_005_TOP_CLASS_SC",
+      "document_name": "Scheme Guidelines of Top Class Scholarship for SC Students (Applicable from 2025-26)",
+      "page_count": 44,
+      "chunk_count": 84,
+      "chunks_file": "data/official_documents/rag_chunks/TOP_CLASS_SC/DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26_chunks.json"
+    },
+    {
+      "document_id": "DOC_EDU_005_TOP_CLASS_SC_FAQS_2022",
+      "scheme_id": "SCHEME_EDU_005_TOP_CLASS_SC",
+      "document_name": "Frequently Asked Questions (FAQs) - Top Class Education Scheme for SC Students",
+      "page_count": 4,
+      "chunk_count": 7,
+      "chunks_file": "data/official_documents/rag_chunks/TOP_CLASS_SC/DOC_EDU_005_TOP_CLASS_SC_FAQS_2022_chunks.json"
+    }
+  ]
+}

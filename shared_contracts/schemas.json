@@ -1,0 +1,395 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SahayAI Shared Contract Schemas",
+  "definitions": {
+    "StructuredRule": {
+      "type": "object",
+      "required": ["criterion", "operator", "required_value", "explanation", "source_reference"],
+      "properties": {
+        "criterion": { "type": "string" },
+        "operator": { "type": "string" },
+        "required_value": {},
+        "unit": { "type": ["string", "null"] },
+        "explanation": { "type": "string" },
+        "source_reference": { "type": "string" },
+        "effective_date": { "type": ["string", "null"] },
+        "effective_academic_year": { "type": ["string", "null"] },
+        "verification_status": {
+          "type": ["string", "null"],
+          "enum": ["verified", "partial", "pending_review", "uncertain", null]
+        },
+        "rule_type": {
+          "type": ["string", "null"],
+          "enum": ["FRESH", "RENEWAL", "GENERAL", "CONDITIONAL", "BOTH", null]
+        },
+        "logical_group": {
+          "type": ["string", "null"],
+          "enum": ["ALL_OF", "ANY_OF", "ONE_OF", null]
+        }
+      }
+    },
+    "RequiredDocumentItem": {
+      "type": "object",
+      "required": ["document_name"],
+      "properties": {
+        "document_name": { "type": "string" },
+        "requirement_type": {
+          "type": "string",
+          "enum": ["MANDATORY", "CONDITIONAL", "OPTIONAL", "NOT_SPECIFIED"]
+        },
+        "mandatory_or_optional": {
+          "type": "string",
+          "enum": ["MANDATORY", "OPTIONAL", "CONDITIONAL", "NOT_SPECIFIED"]
+        },
+        "applicable_condition": { "type": ["string", "null"] },
+        "issuing_authority": { "type": ["string", "null"] },
+        "source_reference": { "type": ["string", "null"] }
+      }
+    },
+    "OfficialSource": {
+      "type": "object",
+      "required": ["source_title", "source_url"],
+      "properties": {
+        "source_title": { "type": "string" },
+        "source_url": { "type": "string" },
+        "source_type": { "type": "string" },
+        "issuing_authority": { "type": ["string", "null"] },
+        "publication_date": { "type": ["string", "null"] },
+        "applicable_academic_year": { "type": ["string", "null"] },
+        "section_or_clause": { "type": ["string", "null"] },
+        "date_checked": { "type": ["string", "null"] },
+        "claims_supported": {
+          "type": ["array", "string", "null"]
+        },
+        "source_publication_date": { "type": ["string", "null"] },
+        "last_checked_date": { "type": ["string", "null"] }
+      }
+    },
+    "Scheme": {
+      "type": "object",
+      "required": [
+        "scheme_id",
+        "scheme_name",
+        "department",
+        "description",
+        "eligibility",
+        "benefits",
+        "required_documents",
+        "application_url"
+      ],
+      "properties": {
+        "scheme_id": {
+          "type": "string",
+          "description": "Unique identifier for the scheme"
+        },
+        "scheme_name": {
+          "type": "string",
+          "description": "Official title of the welfare scheme"
+        },
+        "official_name": {
+          "type": ["string", "null"],
+          "description": "Official canonical title of the scheme"
+        },
+        "current_official_name": {
+          "type": ["string", "null"],
+          "description": "Current official or renamed title of the scheme"
+        },
+        "category": {
+          "type": ["string", "null"],
+          "description": "Scheme category (e.g. EDUCATION, EMPLOYMENT_AND_BUSINESS, SOCIAL_WELFARE, AGRICULTURE)"
+        },
+        "sector": {
+          "type": ["string", "null"],
+          "description": "Specific focus sector (e.g. Agriculture, MSME, Urban Livelihoods, Social Security, Energy)"
+        },
+        "government_level": {
+          "type": ["string", "null"],
+          "enum": ["Central", "State", null],
+          "description": "Level of government administering the scheme"
+        },
+        "state_applicability": {
+          "type": ["array", "null"],
+          "items": { "type": "string" },
+          "description": "List of applicable states or ['ALL']"
+        },
+        "responsible_ministry": {
+          "type": ["string", "null"],
+          "description": "Nodal Union or State Ministry"
+        },
+        "ministry": {
+          "type": ["string", "null"],
+          "description": "Nodal Union or State Ministry alias"
+        },
+        "responsible_department": {
+          "type": ["string", "null"],
+          "description": "Specific administrative department"
+        },
+        "implementing_agency": {
+          "type": ["string", "null"],
+          "description": "Agency responsible for executing the scheme"
+        },
+        "department": {
+          "type": "string",
+          "description": "Government ministry or department administering the scheme"
+        },
+        "scheme_description": {
+          "type": ["string", "null"],
+          "description": "Detailed explanation of purpose and scope"
+        },
+        "description": {
+          "type": "string",
+          "description": "Summary of scheme purpose and scope"
+        },
+        "target_beneficiaries": {
+          "description": "Primary intended citizen group or demographics"
+        },
+        "scheme_status": {
+          "type": ["string", "null"],
+          "description": "Status such as ACTIVE, RENAMED, MERGED, DISCONTINUED, PENDING_GUIDELINES"
+        },
+        "launch_year": {
+          "type": ["integer", "null"],
+          "description": "Year of official inception"
+        },
+        "source_portal": {
+          "type": ["string", "null"],
+          "description": "Source portal domain or URL where scheme was collected"
+        },
+        "eligibility": {
+          "type": "object",
+          "required": [
+            "min_age",
+            "max_age",
+            "gender",
+            "max_annual_income",
+            "occupation",
+            "states"
+          ],
+          "properties": {
+            "min_age": { "type": ["integer", "null"] },
+            "max_age": { "type": ["integer", "null"] },
+            "gender": { "type": "string", "enum": ["ALL", "MALE", "FEMALE", "TRANSGENDER"] },
+            "max_annual_income": { "type": ["number", "null"] },
+            "occupation": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "landholding": { "type": ["boolean", "null"] },
+            "states": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "minimum_age": { "type": ["integer", "null"] },
+            "maximum_age": { "type": ["integer", "null"] },
+            "gender_requirement": { "type": ["string", "null"] },
+            "state_residency_requirement": {
+              "type": ["array", "null"],
+              "items": { "type": "string" }
+            },
+            "category_requirement": {
+              "type": ["array", "null"],
+              "items": { "type": "string" }
+            },
+            "annual_family_income_limit": { "type": ["number", "null"] },
+            "income_definition": { "type": ["string", "null"] },
+            "education_requirement": { "type": ["string", "null"] },
+            "minimum_marks_requirement": {},
+            "course_requirement": {},
+            "institution_requirement": {},
+            "disability_requirement": {},
+            "occupation_requirement": {
+              "type": ["array", "null"],
+              "items": { "type": "string" }
+            },
+            "land_ownership_requirement": {},
+            "family_status_requirement": { "type": ["string", "null"] },
+            "other_eligibility_conditions": {
+              "type": ["array", "null"],
+              "items": { "type": "string" }
+            },
+            "exclusions": {
+              "type": ["array", "null"],
+              "items": { "type": "string" }
+            },
+            "renewal_conditions": {},
+            "structured_rules": {
+              "type": ["array", "null"],
+              "items": { "$ref": "#/definitions/StructuredRule" }
+            }
+          }
+        },
+        "benefits": {
+          "type": "object",
+          "required": ["type"],
+          "properties": {
+            "type": { "type": "string" },
+            "amount_annual": { "type": ["number", "null"] },
+            "disbursement_frequency": { "type": ["string", "null"] },
+            "benefit_type": { "type": ["string", "null"] },
+            "financial_assistance_amount": { "type": ["number", "null"] },
+            "amount_unit": { "type": ["string", "null"] },
+            "payment_frequency": { "type": ["string", "null"] },
+            "duration": { "type": ["string", "null"] },
+            "maximum_benefit": {},
+            "non_financial_benefits": {
+              "type": ["array", "null"],
+              "items": { "type": "string" }
+            },
+            "number_of_installments": {},
+            "beneficiary_contribution": {}
+          }
+        },
+        "required_documents": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              { "type": "string" },
+              { "$ref": "#/definitions/RequiredDocumentItem" }
+            ]
+          }
+        },
+        "application_method": {
+          "type": ["string", "null"],
+          "enum": ["Online", "Offline", "Both", null]
+        },
+        "application_status": {
+          "type": ["string", "null"],
+          "enum": ["OPEN", "CLOSED", "NOT_YET_OPEN", "NOT_ANNOUNCED", "YEAR_ROUND", "QUOTA_DEPENDENT", "NEEDS_LIVE_VERIFICATION", "UNKNOWN", null],
+          "default": "NOT_ANNOUNCED"
+        },
+        "application_availability_status": {
+          "type": ["string", "null"],
+          "enum": ["OPEN", "CLOSED", "YEAR_ROUND", "UPCOMING", "QUOTA_DEPENDENT", "NOT_ANNOUNCED", "NEEDS_LIVE_VERIFICATION", null]
+        },
+        "current_application_cycle": { "type": ["string", "null"] },
+        "official_application_url": { "type": ["string", "null"] },
+        "official_guidelines_url": { "type": ["string", "null"] },
+        "official_information_url": { "type": ["string", "null"] },
+        "application_steps": {
+          "type": ["array", "null"],
+          "items": { "type": "string" }
+        },
+        "application_start_date": { "type": ["string", "null"] },
+        "application_deadline": { "type": ["string", "null"] },
+        "last_application_deadline": { "type": ["string", "null"] },
+        "student_submission_deadline": { "type": ["string", "null"] },
+        "institute_verification_deadline": { "type": ["string", "null"] },
+        "nodal_verification_deadline": { "type": ["string", "null"] },
+        "next_expected_cycle": { "type": ["string", "null"] },
+        "application_status_last_checked": { "type": ["string", "null"] },
+        "application_status_evidence": { "type": ["string", "null"] },
+        "current_guideline_version": {},
+        "historical_guideline_info": { "type": ["array", "null"] },
+        "renewal_deadline": { "type": ["string", "null"] },
+        "application_fee": {},
+        "selection_process": { "type": ["string", "null"] },
+        "grievance_contact": { "type": ["string", "null"] },
+        "helpline_number": { "type": ["string", "null"] },
+        "application_tracking_information": { "type": ["string", "null"] },
+        "application_url": {
+          "type": "string"
+        },
+        "operational_status": {
+          "type": "string",
+          "enum": ["ACTIVE", "INACTIVE", "DISCONTINUED", "RENAMED", "UNKNOWN"],
+          "default": "ACTIVE"
+        },
+        "scheme_operational_status": {
+          "type": ["string", "null"],
+          "enum": ["ACTIVE", "INACTIVE", "DISCONTINUED", "RENAMED", "UNKNOWN", null]
+        },
+        "eligibility_verification_status": {
+          "type": ["string", "null"],
+          "description": "Verification status of eligibility rules (e.g. ELIGIBLE, NOT_ELIGIBLE, NEEDS_INFORMATION, UNKNOWN, CONFLICT, REVIEW_REQUIRED, PENDING_REVIEW)"
+        },
+        "source_evidence_audit": {
+          "type": ["array", "null"]
+        },
+        "official_sources": {
+          "type": ["array", "null"],
+          "items": { "$ref": "#/definitions/OfficialSource" }
+        },
+        "source_urls": {
+          "type": ["array", "null"],
+          "items": { "type": "string" },
+          "description": "List of official source URLs"
+        },
+        "last_checked_date": { "type": ["string", "null"] },
+        "last_verified_at": { "type": ["string", "null"] },
+        "verification_status": {
+          "type": ["string", "null"],
+          "enum": ["verified", "partial", "pending_review", "inactive", "uncertain", null],
+          "default": "pending_review"
+        },
+        "verification_notes": { "type": ["string", "null"] },
+        "conflicting_information": {},
+        "human_review_required": { "type": ["boolean", "null"] },
+        "human_review": {
+          "type": ["object", "null"],
+          "properties": {
+            "reviewer_id": { "type": "string" },
+            "decision": { "type": "string", "enum": ["APPROVED", "REJECTED", "PENDING_REVIEW"] },
+            "review_notes": { "type": "string" },
+            "reviewed_at": { "type": "string", "format": "date-time" }
+          }
+        },
+        "is_verified": {
+          "type": "boolean",
+          "default": false
+        },
+        "verified_at": {
+          "type": ["string", "null"],
+          "format": "date-time"
+        },
+        "verification_source": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "UserProfile": {
+      "type": "object",
+      "required": ["profile_id"],
+      "properties": {
+        "profile_id": { "type": "string" },
+        "full_name": { "type": ["string", "null"] },
+        "date_of_birth": { "type": ["string", "null"] },
+        "age": { "type": ["integer", "null"] },
+        "gender": { "type": ["string", "null"] },
+        "state": { "type": ["string", "null"] },
+        "district": { "type": ["string", "null"] },
+        "annual_income": { "type": ["number", "null"] },
+        "occupation": { "type": ["string", "null"] },
+        "caste_category": { "type": ["string", "null"] },
+        "is_bpl": { "type": "boolean", "default": false },
+        "user_confirmed": { "type": "boolean", "default": false },
+        "metadata": { "type": "object" },
+        "created_at": { "type": "string", "format": "date-time" },
+        "updated_at": { "type": "string", "format": "date-time" }
+      }
+    },
+    "FieldExtractionItem": {
+      "type": "object",
+      "required": ["value", "confidence", "evidence"],
+      "properties": {
+        "value": {},
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "evidence": { "type": "string" }
+      }
+    },
+    "DocumentExtractionResult": {
+      "type": "object",
+      "required": ["document_type", "fields", "confidence_score"],
+      "properties": {
+        "document_type": { "type": "string" },
+        "fields": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/FieldExtractionItem"
+          }
+        },
+        "confidence_score": { "type": "number", "minimum": 0, "maximum": 1 },
+        "summary": { "type": "string" }
+      }
+    }
+  }
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citizen Registration | SahayAI</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">Sahay<span>AI</span></div>
+        <div class="nav-buttons">
+            <div class="global-lang-picker">
+                <label for="globalLangSelect" class="sr-only" data-i18n="nav.selectLanguage">Language</label>
+                <select id="globalLangSelect" class="global-lang-select" aria-label="Select Language">
+                    <option value="en">English</option>
+                    <option value="te">తెలుగు</option>
+                    <option value="hi">हिन्दी</option>
+                </select>
+            </div>
+            <button type="button" id="navGuestBtn" class="login-btn" style="background: transparent; cursor: pointer;" data-i18n="nav.guestBtn">Continue as Guest</button>
+            <a href="index.html" class="login-btn" data-i18n="nav.home">Home</a>
+            <a href="login.html" class="signup-btn" data-i18n="nav.login">Login</a>
+        </div>
+    </header>
+
+    <main class="auth-section">
+        <div class="auth-card">
+            <h1 data-i18n="signup.title">Create Citizen Account</h1>
+            <p data-i18n="signup.subtitle">Join SahayAI to discover government schemes and scholarships matching your profile.</p>
+
+            <form id="signupForm" novalidate>
+                <div class="form-group">
+                    <label for="email" data-i18n="signup.emailLabel">Email Address</label>
+                    <input type="email" id="email" placeholder="e.g. citizen@example.com" data-i18n-placeholder="signup.emailPlaceholder" autocomplete="email">
+                </div>
+
+                <div class="or-text" data-i18n="signup.or">OR</div>
+
+                <div class="form-group">
+                    <label for="phone" data-i18n="signup.phoneLabel">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="e.g. 9876543210" data-i18n-placeholder="signup.phonePlaceholder" autocomplete="tel">
+                    <span class="field-hint" data-i18n="signup.phoneHint">Enter either email or 10-digit mobile number</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" data-i18n="signup.passwordLabel">Password</label>
+                    <div class="password-input-wrapper">
+                        <input type="password" id="password" placeholder="At least 8 characters" data-i18n-placeholder="signup.passwordPlaceholder" required minlength="8" autocomplete="new-password">
+                        <button type="button" class="toggle-password-btn" data-target="password" aria-label="Toggle password visibility" data-i18n="login.showPassword">Show</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword" data-i18n="signup.confirmPasswordLabel">Confirm Password</label>
+                    <div class="password-input-wrapper">
+                        <input type="password" id="confirmPassword" placeholder="Re-enter your password" data-i18n-placeholder="signup.confirmPasswordPlaceholder" required minlength="8" autocomplete="new-password">
+                        <button type="button" class="toggle-password-btn" data-target="confirmPassword" aria-label="Toggle confirm password visibility" data-i18n="login.showPassword">Show</button>
+                    </div>
+                </div>
+
+                <button type="submit" id="submitBtn" data-i18n="signup.submitBtn">Create Account & Continue</button>
+            </form>
+
+            <div id="alertBox" class="alert-box" role="alert" aria-live="polite"></div>
+
+            <p class="auth-link">
+                <span data-i18n="signup.alreadyRegisteredPrompt">Already registered with SahayAI?</span>
+                <a href="login.html" data-i18n="signup.signInLink">Sign In</a>
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <p data-i18n="footer.copyright">© 2026 SahayAI. AI-Powered Citizen Assistance & Government Schemes Discovery.</p>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/signup.js"></script>
+</body>
+</html>

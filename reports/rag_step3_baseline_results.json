@@ -1,0 +1,1888 @@
+{
+  "summary": {
+    "evaluation_timestamp": "2026-11-06T13:09:30Z",
+    "embedding_model": "intfloat/multilingual-e5-small",
+    "vector_store_chunks_count": 301,
+    "total_queries_evaluated": 21,
+    "metrics_overall": {
+      "top1_scheme_accuracy": 0.4286,
+      "relevant_hit_at_5": 0.3333,
+      "mean_reciprocal_rank_mrr": 0.1778,
+      "average_roster_contamination_at_5": 0.0476
+    },
+    "metrics_by_language": {
+      "English": {
+        "queries_count": 7,
+        "top1_scheme_accuracy": 0.7143,
+        "relevant_hit_at_5": 0.4286,
+        "mean_reciprocal_rank_mrr": 0.3571,
+        "average_roster_contamination_at_5": 0.0,
+        "average_top1_similarity_score": 0.8759
+      },
+      "Hindi": {
+        "queries_count": 7,
+        "top1_scheme_accuracy": 0.2857,
+        "relevant_hit_at_5": 0.2857,
+        "mean_reciprocal_rank_mrr": 0.119,
+        "average_roster_contamination_at_5": 0.1143,
+        "average_top1_similarity_score": 0.8324
+      },
+      "Telugu": {
+        "queries_count": 7,
+        "top1_scheme_accuracy": 0.2857,
+        "relevant_hit_at_5": 0.2857,
+        "mean_reciprocal_rank_mrr": 0.0571,
+        "average_roster_contamination_at_5": 0.0286,
+        "average_top1_similarity_score": 0.8407
+      }
+    },
+    "data_quality_chunk_census": {
+      "total_chunks": 301,
+      "classification_counts": {
+        "Policy": {
+          "count": 77,
+          "percentage": 25.58
+        },
+        "FAQ": {
+          "count": 80,
+          "percentage": 26.58
+        },
+        "Beneficiary roster": {
+          "count": 66,
+          "percentage": 21.93
+        },
+        "Institution list": {
+          "count": 63,
+          "percentage": 20.93
+        },
+        "Eligibility": {
+          "count": 15,
+          "percentage": 4.98
+        }
+      }
+    }
+  },
+  "queries": [
+    {
+      "query_id": "BENCH_EN_01",
+      "question": "What is the minimum disability percentage required for AICTE Saksham scholarship?",
+      "language": "English",
+      "expected_scheme_id": "SCHEME_EDU_003_AICTE_SAKSHAM",
+      "relevant_chunk_ids": [
+        "DOC_EDU_003_SAKSHAM_DEGREE_GUIDELINES_2020_p002_c01",
+        "DOC_EDU_003_SAKSHAM_FAQS_2020_p001_c01"
+      ],
+      "category": "Disability criteria",
+      "is_explicit_scheme": true,
+      "expected_behavior": "Return Saksham guideline chunks mentioning 40% benchmark disability requirement.",
+      "evaluation": {
+        "top1_scheme_match": true,
+        "relevant_hit_at_5": true,
+        "first_relevant_rank": 1,
+        "reciprocal_rank": 1.0,
+        "roster_contamination_at_5": 0.0,
+        "latency_seconds": 0.092,
+        "top1_similarity_score": 0.8901,
+        "top1_scheme_retrieved": "SCHEME_EDU_003_AICTE_SAKSHAM",
+        "top1_chunk_retrieved": "DOC_EDU_003_SAKSHAM_DEGREE_GUIDELINES_2020_p002_c01"
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "chunk_id": "DOC_EDU_003_SAKSHAM_DEGREE_GUIDELINES_2020_p002_c01",
+          "scheme_id": "SCHEME_EDU_003_AICTE_SAKSHAM",
+          "similarity_score": 0.8901,
+          "category": "Eligibility",
+          "is_relevant_policy": true,
+          "document_id": "DOC_EDU_003_SAKSHAM_DEGREE_GUIDELINES_2020",
+          "page_number": 2,
+          "citation_reference": "[Guidelines for AICTE - Saksham Scholarship Scheme for Specially-Abled Students (Degree), Page 2] (All India Council for Technical Education (AICTE), AY 2020-21 onwards (operational through AY 2026-27)) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2012_G.pdf",
+          "text_excerpt": "GUIDELINES FOR AICTE - SAKSHAM SCHOLARSHIP SCHEME FOR SPECIALLY- ABLED STUDENT (DEGREE) 1.0 OBJECTIVE OF THE SCHEME: Saksham is a MHRD Scheme being implemented by AICTE aimed at providing encouragement and support to spe..."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "DOC_EDU_003_SAKSHAM_FAQS_2020_p002_c02",
+          "scheme_id": "SCHEME_EDU_003_AICTE_SAKSHAM",
+          "similarity_score": 0.8642,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_003_SAKSHAM_FAQS_2020",
+          "page_number": 2,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - AICTE Saksham Scholarship Scheme, Page 2] (All India Council for Technical Education (AICTE), AY 2020-21 onwards) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2012_F.pdf",
+          "text_excerpt": "renewal through National Scholarship Portal (NSP) by submitting Promotion Certificate duly certified by the Head of Institution in the online portal.  Q.9 Is there any reservation for SC/ST/OBC Students? What is percenta..."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "DOC_EDU_003_SAKSHAM_DEGREE_GUIDELINES_2020_p001_c01",
+          "scheme_id": "SCHEME_EDU_003_AICTE_SAKSHAM",
+          "similarity_score": 0.8626,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_003_SAKSHAM_DEGREE_GUIDELINES_2020",
+          "page_number": 1,
+          "citation_reference": "[Guidelines for AICTE - Saksham Scholarship Scheme for Specially-Abled Students (Degree), Page 1] (All India Council for Technical Education (AICTE), AY 2020-21 onwards (operational through AY 2026-27)) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2012_G.pdf",
+          "text_excerpt": "July 2020       GUIDELINES FOR  AICTE - SAKSHAM SCHOLARSHIP  SCHEME FOR SPECIALLY-ABLED  STUDENT (DEGREE)      2020-21"
+        },
+        {
+          "rank": 4,
+          "chunk_id": "DOC_EDU_003_SAKSHAM_FAQS_2020_p001_c03",
+          "scheme_id": "SCHEME_EDU_003_AICTE_SAKSHAM",
+          "similarity_score": 0.8568,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_003_SAKSHAM_FAQS_2020",
+          "page_number": 1,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - AICTE Saksham Scholarship Scheme, Page 1] (All India Council for Technical Education (AICTE), AY 2020-21 onwards) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2012_F.pdf",
+          "text_excerpt": "/ AICTE Sponsored scholarships. 6. The candidate should NOT be recipient of any of the Central Govt./ State Govt. / AICTE Sponsored scholarships.  Note: Students who are satisfying conditions at S. No. 1, 2, 3, 4, 5 & 6 ..."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "DOC_EDU_004_SWANATH_REVISED_GUIDELINES_2025_p002_c02",
+          "scheme_id": "SCHEME_EDU_004_AICTE_SWANATH",
+          "similarity_score": 0.8556,
+          "category": "Eligibility",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_004_SWANATH_REVISED_GUIDELINES_2025",
+          "page_number": 2,
+          "citation_reference": "[AICTE - Swanath Scholarship Scheme for Students (May 2025 Revised Guidelines), Page 2] (All India Council for Technical Education (AICTE), AY 2025-26 and AY 2026-27) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_3038_G.pdf",
+          "text_excerpt": "is suffering from critical life threatening disease (Like Cancer etc.)/ Died or severely disabled (above 80%) in accident (as per RPwD Act 2016) AND  2) Family income from all sources should not be more than Rs. 8 lakh p..."
+        }
+      ]
+    },
+    {
+      "query_id": "BENCH_EN_02",
+      "question": "What is the annual family income ceiling to be eligible for PM-USP CSSS college scholarship?",
+      "language": "English",
+      "expected_scheme_id": "SCHEME_EDU_001_PM_USP_CSSS",
+      "relevant_chunk_ids": [
+        "DOC_EDU_001_CSSS_GUIDELINES_2024_p002_c01",
+        "DOC_EDU_001_CSSS_FAQS_2024_p001_c02"
+      ],
+      "category": "Family income",
+      "is_explicit_scheme": true,
+      "expected_behavior": "Return CSSS chunks citing Rs. 4.5 lakh annual parental income ceiling.",
+      "evaluation": {
+        "top1_scheme_match": true,
+        "relevant_hit_at_5": false,
+        "first_relevant_rank": null,
+        "reciprocal_rank": 0.0,
+        "roster_contamination_at_5": 0.0,
+        "latency_seconds": 0.064,
+        "top1_similarity_score": 0.8618,
+        "top1_scheme_retrieved": "SCHEME_EDU_001_PM_USP_CSSS",
+        "top1_chunk_retrieved": "DOC_EDU_001_CSSS_GUIDELINES_2024_p001_c01"
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "chunk_id": "DOC_EDU_001_CSSS_GUIDELINES_2024_p001_c01",
+          "scheme_id": "SCHEME_EDU_001_PM_USP_CSSS",
+          "similarity_score": 0.8618,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_001_CSSS_GUIDELINES_2024",
+          "page_number": 1,
+          "citation_reference": "[Guidelines for the Central Sector Scheme of Scholarship for College and University Students (PM-USP CSSS), Page 1] (Department of Higher Education, Ministry of Education, Government of India, AY 2022-23 to AY 2026-27 (15th Finance Commission Cycle)) Source: https://scholarships.gov.in/public/schemeGuidelines/CSSS_GUIDLINES_07022024_updated.pdf",
+          "text_excerpt": "PRADHAN MANTRI UCHCHATAR SHIKSHA PROTSAHAN (PM-USP) YOJANA GUIDELINES FOR THE COMPONENT SCHEME -CENTRAL SECTOR SCHEME OF SCHOLARSHIP FOR COLLEGE AND UNIVERSITY STUDENTS (PM-USP CSSS) (Applicable for academic year 2022-23..."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "DOC_EDU_001_CSSS_FAQS_2024_p001_c01",
+          "scheme_id": "SCHEME_EDU_001_PM_USP_CSSS",
+          "similarity_score": 0.8604,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_001_CSSS_FAQS_2024",
+          "page_number": 1,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - PM-USP Central Sector Scheme of Scholarship (CSSS), Page 1] (Department of Higher Education, Ministry of Education, Government of India, AY 2023-24 / AY 2024-25 / AY 2025-26) Source: https://scholarships.gov.in/public/schemeGuidelines/FAQ_DOHE_CSSS.pdf",
+          "text_excerpt": "Government of India Ministry of Education Department of Higher Education (Scholarship Division) PRADHAN MANTRI UCHCHATAR SHIKSHA PROTSAHAN (PM-USP) CENTRAL SECTOR SCHEME OF SCHOLARSHIP FOR COLLEGE AND UNIVERSITY STUDENTS..."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26_p001_c03",
+          "scheme_id": "SCHEME_EDU_005_TOP_CLASS_SC",
+          "similarity_score": 0.8547,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26",
+          "page_number": 1,
+          "citation_reference": "[Scheme Guidelines of Top Class Scholarship for SC Students (Applicable from 2025-26), Page 1] (Department of Social Justice and Empowerment, Ministry of Social Justice and Empowerment, AY 2025-26 and AY 2026-27) Source: https://scholarships.gov.in/public/schemeGuidelines/Top_Class_Education_Scheme_2018.pdf",
+          "text_excerpt": "preference should be given to the student with the lower family income. The remaining students from SC category admitted in the institution shall be  eligible for the Post-Matric Scholarship (PMS) administered by this Mi..."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "DOC_EDU_001_CSSS_FAQS_2024_p003_c02",
+          "scheme_id": "SCHEME_EDU_001_PM_USP_CSSS",
+          "similarity_score": 0.8528,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_001_CSSS_FAQS_2024",
+          "page_number": 3,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - PM-USP Central Sector Scheme of Scholarship (CSSS), Page 3] (Department of Higher Education, Ministry of Education, Government of India, AY 2023-24 / AY 2024-25 / AY 2025-26) Source: https://scholarships.gov.in/public/schemeGuidelines/FAQ_DOHE_CSSS.pdf",
+          "text_excerpt": "regular graduation course are eligible to apply for fresh scholarship. This list is given by the respective state education boards. Those who are not  covered in this list will not be able to avail the benefits of PM -US..."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26_p001_c02",
+          "scheme_id": "SCHEME_EDU_005_TOP_CLASS_SC",
+          "similarity_score": 0.8429,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26",
+          "page_number": 1,
+          "citation_reference": "[Scheme Guidelines of Top Class Scholarship for SC Students (Applicable from 2025-26), Page 1] (Department of Social Justice and Empowerment, Ministry of Social Justice and Empowerment, AY 2025-26 and AY 2026-27) Source: https://scholarships.gov.in/public/schemeGuidelines/Top_Class_Education_Scheme_2018.pdf",
+          "text_excerpt": "according to the general selection criteria prescribed by the concerned institution, will be eligible for scholarship under the Scheme to the extent  of the number of scholarships (slots) allocated to the institution for..."
+        }
+      ]
+    },
+    {
+      "query_id": "BENCH_EN_03",
+      "question": "Who is eligible to apply for AICTE Pragati scholarship for girls?",
+      "language": "English",
+      "expected_scheme_id": "SCHEME_EDU_002_AICTE_PRAGATI",
+      "relevant_chunk_ids": [
+        "DOC_EDU_002_PRAGATI_DEGREE_GUIDELINES_2020_p002_c01",
+        "DOC_EDU_002_PRAGATI_DEGREE_GUIDELINES_2020_p002_c02",
+        "DOC_EDU_002_PRAGATI_DIPLOMA_GUIDELINES_2020_p002_c01",
+        "DOC_EDU_002_PRAGATI_FAQS_2020_p001_c01"
+      ],
+      "category": "Eligibility",
+      "is_explicit_scheme": true,
+      "expected_behavior": "Return Pragati chunks citing max 2 girls per family, technical degree/diploma admission.",
+      "evaluation": {
+        "top1_scheme_match": true,
+        "relevant_hit_at_5": true,
+        "first_relevant_rank": 1,
+        "reciprocal_rank": 1.0,
+        "roster_contamination_at_5": 0.0,
+        "latency_seconds": 0.061,
+        "top1_similarity_score": 0.9003,
+        "top1_scheme_retrieved": "SCHEME_EDU_002_AICTE_PRAGATI",
+        "top1_chunk_retrieved": "DOC_EDU_002_PRAGATI_DIPLOMA_GUIDELINES_2020_p002_c01"
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "chunk_id": "DOC_EDU_002_PRAGATI_DIPLOMA_GUIDELINES_2020_p002_c01",
+          "scheme_id": "SCHEME_EDU_002_AICTE_PRAGATI",
+          "similarity_score": 0.9003,
+          "category": "Eligibility",
+          "is_relevant_policy": true,
+          "document_id": "DOC_EDU_002_PRAGATI_DIPLOMA_GUIDELINES_2020",
+          "page_number": 2,
+          "citation_reference": "[Guidelines for AICTE - Pragati Scholarship Scheme for Girl Students (Diploma), Page 2] (All India Council for Technical Education (AICTE), Ministry of Education, AY 2020-21 onwards (operational through AY 2026-27)) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2011_G.pdf",
+          "text_excerpt": "GUIDELINES FOR AICTE - PRAGATI SCHOLARSHIP SCHEME FOR GIRL STUDENTS (DIPLOMA) 1.0 OBJECTIVE OF THE SCHEME: Scheme being implemented by AICTE aimed at providing assistance for advancement of Girls pursuing technical e duc..."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "DOC_EDU_002_PRAGATI_DEGREE_GUIDELINES_2020_p002_c01",
+          "scheme_id": "SCHEME_EDU_002_AICTE_PRAGATI",
+          "similarity_score": 0.8999,
+          "category": "Eligibility",
+          "is_relevant_policy": true,
+          "document_id": "DOC_EDU_002_PRAGATI_DEGREE_GUIDELINES_2020",
+          "page_number": 2,
+          "citation_reference": "[Guidelines for AICTE - Pragati Scholarship Scheme for Girl Students (Degree), Page 2] (All India Council for Technical Education (AICTE), Ministry of Education, AY 2020-21 onwards (operational through AY 2026-27)) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2010_G.pdf",
+          "text_excerpt": "GUIDELINES FOR AICTE - PRAGATI SCHOLARSHIP SCHEME FOR GIRL STUDENTS (DEGREE) 1.0 OBJECTIVE OF THE SCHEME: Scheme being implemented by AICTE aim ed at providing assistance for advancement of Girls pursuing technical e duc..."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "DOC_EDU_002_PRAGATI_DIPLOMA_GUIDELINES_2020_p002_c02",
+          "scheme_id": "SCHEME_EDU_002_AICTE_PRAGATI",
+          "similarity_score": 0.8931,
+          "category": "Eligibility",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_002_PRAGATI_DIPLOMA_GUIDELINES_2020",
+          "page_number": 2,
+          "citation_reference": "[Guidelines for AICTE - Pragati Scholarship Scheme for Girl Students (Diploma), Page 2] (All India Council for Technical Education (AICTE), Ministry of Education, AY 2020-21 onwards (operational through AY 2026-27)) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2011_G.pdf",
+          "text_excerpt": "year. 2) Maximum two girls child per family are eligible. 3) Family income from all sources should not be more than Rs. 8 lakh per annum during  the current financial year. A valid income certificate issued by State/ UT ..."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "DOC_EDU_002_PRAGATI_FAQS_2020_p001_c03",
+          "scheme_id": "SCHEME_EDU_002_AICTE_PRAGATI",
+          "similarity_score": 0.8857,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_002_PRAGATI_FAQS_2020",
+          "page_number": 1,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - AICTE Pragati Scholarship Scheme, Page 1] (All India Council for Technical Education (AICTE), AY 2020-21 onwards) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2010_F.pdf",
+          "text_excerpt": "/ AICTE Sponsored scholarships. 7. The candidate should NOT be recipient of any of the Central Govt./ State Govt. / AICTE Sponsored scholarships.  Note: Students who are satisfying conditions at S. No. 1, 2, 3, 4, 5, 6 &..."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "DOC_EDU_002_PRAGATI_DEGREE_GUIDELINES_2020_p002_c02",
+          "scheme_id": "SCHEME_EDU_002_AICTE_PRAGATI",
+          "similarity_score": 0.8842,
+          "category": "Eligibility",
+          "is_relevant_policy": true,
+          "document_id": "DOC_EDU_002_PRAGATI_DEGREE_GUIDELINES_2020",
+          "page_number": 2,
+          "citation_reference": "[Guidelines for AICTE - Pragati Scholarship Scheme for Girl Students (Degree), Page 2] (All India Council for Technical Education (AICTE), Ministry of Education, AY 2020-21 onwards (operational through AY 2026-27)) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2010_G.pdf",
+          "text_excerpt": "year. 2) Maximum two girl child per family are eligible. 3) Family income from all sources should not be more than Rs. 8 lakh per annum during  the current financial year. A valid income certificate issued by State/ UT G..."
+        }
+      ]
+    },
+    {
+      "query_id": "BENCH_EN_04",
+      "question": "What documents must be uploaded when applying for AICTE Swanath scholarship?",
+      "language": "English",
+      "expected_scheme_id": "SCHEME_EDU_004_AICTE_SWANATH",
+      "relevant_chunk_ids": [
+        "DOC_EDU_004_SWANATH_REVISED_GUIDELINES_2025_p004_c02",
+        "DOC_EDU_004_SWANATH_DEGREE_DIPLOMA_GUIDELINES_2021_p003_c01",
+        "DOC_EDU_004_SWANATH_FAQS_2022_p002_c02"
+      ],
+      "category": "Required documents",
+      "is_explicit_scheme": true,
+      "expected_behavior": "Return Swanath documentation list: death certificate/martyr certificate, income certificate.",
+      "evaluation": {
+        "top1_scheme_match": true,
+        "relevant_hit_at_5": false,
+        "first_relevant_rank": null,
+        "reciprocal_rank": 0.0,
+        "roster_contamination_at_5": 0.0,
+        "latency_seconds": 0.06,
+        "top1_similarity_score": 0.8668,
+        "top1_scheme_retrieved": "SCHEME_EDU_004_AICTE_SWANATH",
+        "top1_chunk_retrieved": "DOC_EDU_004_SWANATH_FAQS_2022_p006_c01"
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "chunk_id": "DOC_EDU_004_SWANATH_FAQS_2022_p006_c01",
+          "scheme_id": "SCHEME_EDU_004_AICTE_SWANATH",
+          "similarity_score": 0.8668,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_004_SWANATH_FAQS_2022",
+          "page_number": 6,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - AICTE Swanath Scholarship Scheme, Page 6] (All India Council for Technical Education (AICTE), AY 2022-23 to AY 2026-27) Source: https://www.aicte.gov.in/sites/default/files/stdc/FAQs-Swanath%20Scheme.pdf",
+          "text_excerpt": "(preferably on letter head)  Appendix-II      SWANATH Scholarship  Study / Bonafide Certificate  (To be issued by Director / Principal / Head of the Institution)  (Please strike off whichever is not applicable)    It is ..."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "DOC_EDU_004_SWANATH_DEGREE_DIPLOMA_GUIDELINES_2021_p002_c01",
+          "scheme_id": "SCHEME_EDU_004_AICTE_SWANATH",
+          "similarity_score": 0.8637,
+          "category": "Eligibility",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_004_SWANATH_DEGREE_DIPLOMA_GUIDELINES_2021",
+          "page_number": 2,
+          "citation_reference": "[Guidelines for AICTE - Swanath Scholarship Scheme for Students (Degree / Diploma - Initial Framework), Page 2] (All India Council for Technical Education (AICTE), AY 2021-22 to AY 2024-25) Source: https://www.aicte.gov.in/sites/default/files/stdc/AICTE-SWANATH-%20SCHEME-DEGREE-DIPLOMA.pdf",
+          "text_excerpt": "GUIDELINES FOR AICTE - SWANATH SCHOLARSHIP SCHEME FOR STUDENTS 1.0 OBJECTIVE OF THE SCHEME: The Scheme is being implemented by AICTE to provide encouragement and support to orphans, wards of parents died due to Covid-19,..."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "DOC_EDU_004_SWANATH_FAQS_2022_p002_c03",
+          "scheme_id": "SCHEME_EDU_004_AICTE_SWANATH",
+          "similarity_score": 0.8636,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_004_SWANATH_FAQS_2022",
+          "page_number": 2,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - AICTE Swanath Scholarship Scheme, Page 2] (All India Council for Technical Education (AICTE), AY 2022-23 to AY 2026-27) Source: https://www.aicte.gov.in/sites/default/files/stdc/FAQs-Swanath%20Scheme.pdf",
+          "text_excerpt": "No. for SWANATH Scholarship Queries? Ans: YES. You can avail helpline services on consultant2stdc@aicte-india.org & 011-29581118 for any queries.  Q.15 Whom to contact in case of any difficulties in accessing the Portal ..."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "DOC_EDU_004_SWANATH_FAQS_2022_p001_c03",
+          "scheme_id": "SCHEME_EDU_004_AICTE_SWANATH",
+          "similarity_score": 0.8616,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_004_SWANATH_FAQS_2022",
+          "page_number": 1,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - AICTE Swanath Scholarship Scheme, Page 1] (All India Council for Technical Education (AICTE), AY 2022-23 to AY 2026-27) Source: https://www.aicte.gov.in/sites/default/files/stdc/FAQs-Swanath%20Scheme.pdf",
+          "text_excerpt": "reduced to 2/1 year respectively. Q.5 I am Degree/Diploma student and recipient of one of the merit scholarships of Centre / State Government. Am I  eligible to apply for SWANATH Scholarship? Ans: NO. Students who are al..."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "DOC_EDU_003_SAKSHAM_DEGREE_GUIDELINES_2020_p003_c02",
+          "scheme_id": "SCHEME_EDU_003_AICTE_SAKSHAM",
+          "similarity_score": 0.8609,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_003_SAKSHAM_DEGREE_GUIDELINES_2020",
+          "page_number": 3,
+          "citation_reference": "[Guidelines for AICTE - Saksham Scholarship Scheme for Specially-Abled Students (Degree), Page 3] (All India Council for Technical Education (AICTE), AY 2020-21 onwards (operational through AY 2026-27)) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2012_G.pdf",
+          "text_excerpt": "gap period between the year of passing the qualifying examination and the session of admission in degree course should not be more than two years.  2) Applications will be invited once in a year through National e -Schol..."
+        }
+      ]
+    },
+    {
+      "query_id": "BENCH_EN_05",
+      "question": "What financial assistance and allowances are provided under Top Class Education Scheme for SC Students?",
+      "language": "English",
+      "expected_scheme_id": "SCHEME_EDU_005_TOP_CLASS_SC",
+      "relevant_chunk_ids": [
+        "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26_p003_c01",
+        "DOC_EDU_005_TOP_CLASS_SC_FAQS_2022_p001_c02"
+      ],
+      "category": "Scheme benefits",
+      "is_explicit_scheme": true,
+      "expected_behavior": "Return Top Class SC provisions: full tuition fee, academic allowance of Rs. 86,000 1st year.",
+      "evaluation": {
+        "top1_scheme_match": true,
+        "relevant_hit_at_5": true,
+        "first_relevant_rank": 2,
+        "reciprocal_rank": 0.5,
+        "roster_contamination_at_5": 0.0,
+        "latency_seconds": 0.061,
+        "top1_similarity_score": 0.8808,
+        "top1_scheme_retrieved": "SCHEME_EDU_005_TOP_CLASS_SC",
+        "top1_chunk_retrieved": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26_p001_c01"
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "chunk_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26_p001_c01",
+          "scheme_id": "SCHEME_EDU_005_TOP_CLASS_SC",
+          "similarity_score": 0.8808,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26",
+          "page_number": 1,
+          "citation_reference": "[Scheme Guidelines of Top Class Scholarship for SC Students (Applicable from 2025-26), Page 1] (Department of Social Justice and Empowerment, Ministry of Social Justice and Empowerment, AY 2025-26 and AY 2026-27) Source: https://scholarships.gov.in/public/schemeGuidelines/Top_Class_Education_Scheme_2018.pdf",
+          "text_excerpt": "Scheme Guidelines of Scheme of Top Class Scholarship for SC Students Applicable from 2025-26 1 Objectives and Coverages a. The Scheme aims at recognizing and promoting quality education amongst students belonging to SCs,..."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26_p003_c01",
+          "scheme_id": "SCHEME_EDU_005_TOP_CLASS_SC",
+          "similarity_score": 0.8679,
+          "category": "Policy",
+          "is_relevant_policy": true,
+          "document_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26",
+          "page_number": 3,
+          "citation_reference": "[Scheme Guidelines of Top Class Scholarship for SC Students (Applicable from 2025-26), Page 3] (Department of Social Justice and Empowerment, Ministry of Social Justice and Empowerment, AY 2025-26 and AY 2026-27) Source: https://scholarships.gov.in/public/schemeGuidelines/Top_Class_Education_Scheme_2018.pdf",
+          "text_excerpt": "under the scheme and their slots shall be re-distributed among other deserving notified institutes under the scheme. 4 Funding Pattern & Mode of Payment a. The SC students, who secure admission in the notified institutio..."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "DOC_EDU_005_TOP_CLASS_SC_FAQS_2022_p001_c01",
+          "scheme_id": "SCHEME_EDU_005_TOP_CLASS_SC",
+          "similarity_score": 0.867,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_005_TOP_CLASS_SC_FAQS_2022",
+          "page_number": 1,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - Top Class Education Scheme for SC Students, Page 1] (Department of Social Justice and Empowerment, Ministry of Social Justice and Empowerment, AY 2022-23 to AY 2026-27) Source: https://scholarships.gov.in/public/schemeGuidelines/Top_Class_Education_Scheme_2018_FAQ.pdf",
+          "text_excerpt": "Frequently Asked Questions (FAQs) Top Class Education Scheme for SC Students 1. What is the objective of the Scheme? Answer: The Scheme aims to promote quality education among Scheduled Caste (SC) students by providing f..."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26_p003_c02",
+          "scheme_id": "SCHEME_EDU_005_TOP_CLASS_SC",
+          "similarity_score": 0.8569,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26",
+          "page_number": 3,
+          "citation_reference": "[Scheme Guidelines of Top Class Scholarship for SC Students (Applicable from 2025-26), Page 3] (Department of Social Justice and Empowerment, Ministry of Social Justice and Empowerment, AY 2025-26 and AY 2026-27) Source: https://scholarships.gov.in/public/schemeGuidelines/Top_Class_Education_Scheme_2018.pdf",
+          "text_excerpt": "after securing admission by the student and starting the classes. d. The payment of tuition fee, other non -refundable charges and academic allowance  will be made directly to the students by the Central Government throu..."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26_p004_c01",
+          "scheme_id": "SCHEME_EDU_005_TOP_CLASS_SC",
+          "similarity_score": 0.8557,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26",
+          "page_number": 4,
+          "citation_reference": "[Scheme Guidelines of Top Class Scholarship for SC Students (Applicable from 2025-26), Page 4] (Department of Social Justice and Empowerment, Ministry of Social Justice and Empowerment, AY 2025-26 and AY 2026-27) Source: https://scholarships.gov.in/public/schemeGuidelines/Top_Class_Education_Scheme_2018.pdf",
+          "text_excerpt": "mean that the institution has promoted the student to the next class and the student has taken admission therein. e. A lump sum payment of Rs.86000 and Rs.41000 shall be paid to the students beneficiary of first year and..."
+        }
+      ]
+    },
+    {
+      "query_id": "BENCH_EN_06",
+      "question": "I lost both my parents during Covid-19 and got admitted to an engineering college. How do I apply for technical degree scholarship?",
+      "language": "English",
+      "expected_scheme_id": "SCHEME_EDU_004_AICTE_SWANATH",
+      "relevant_chunk_ids": [
+        "DOC_EDU_004_SWANATH_REVISED_GUIDELINES_2025_p002_c01",
+        "DOC_EDU_004_SWANATH_REVISED_GUIDELINES_2025_p003_c02",
+        "DOC_EDU_004_SWANATH_FAQS_2022_p001_c01"
+      ],
+      "category": "Application procedures",
+      "is_explicit_scheme": false,
+      "expected_behavior": "Identify Swanath scholarship for Covid orphans and describe online NSP process.",
+      "evaluation": {
+        "top1_scheme_match": false,
+        "relevant_hit_at_5": false,
+        "first_relevant_rank": null,
+        "reciprocal_rank": 0.0,
+        "roster_contamination_at_5": 0.0,
+        "latency_seconds": 0.064,
+        "top1_similarity_score": 0.8742,
+        "top1_scheme_retrieved": "SCHEME_EDU_003_AICTE_SAKSHAM",
+        "top1_chunk_retrieved": "DOC_EDU_003_SAKSHAM_DEGREE_GUIDELINES_2020_p003_c01"
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "chunk_id": "DOC_EDU_003_SAKSHAM_DEGREE_GUIDELINES_2020_p003_c01",
+          "scheme_id": "SCHEME_EDU_003_AICTE_SAKSHAM",
+          "similarity_score": 0.8742,
+          "category": "Eligibility",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_003_SAKSHAM_DEGREE_GUIDELINES_2020",
+          "page_number": 3,
+          "citation_reference": "[Guidelines for AICTE - Saksham Scholarship Scheme for Specially-Abled Students (Degree), Page 3] (All India Council for Technical Education (AICTE), AY 2020-21 onwards (operational through AY 2026-27)) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2012_G.pdf",
+          "text_excerpt": "6.0 PROCEDURE FOR APPLYING: 1) The candidate fulfilling the eligibility conditions is required to apply online on National Scholarship Portal (NSP) after initiation of application process and notice to be published on AI..."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "DOC_EDU_004_SWANATH_FAQS_2022_p002_c04",
+          "scheme_id": "SCHEME_EDU_004_AICTE_SWANATH",
+          "similarity_score": 0.8691,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_004_SWANATH_FAQS_2022",
+          "page_number": 2,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - AICTE Swanath Scholarship Scheme, Page 2] (All India Council for Technical Education (AICTE), AY 2022-23 to AY 2026-27) Source: https://www.aicte.gov.in/sites/default/files/stdc/FAQs-Swanath%20Scheme.pdf",
+          "text_excerpt": "Followings may be the reasons * Student is admitted in Non -Technical courses or Course is not approved by AICTE in the current academic year.  * University / Institute is not approved by the AICTE in the current academi..."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "DOC_EDU_001_CSSS_GUIDELINES_2024_p002_c01",
+          "scheme_id": "SCHEME_EDU_001_PM_USP_CSSS",
+          "similarity_score": 0.8664,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_001_CSSS_GUIDELINES_2024",
+          "page_number": 2,
+          "citation_reference": "[Guidelines for the Central Sector Scheme of Scholarship for College and University Students (PM-USP CSSS), Page 2] (Department of Higher Education, Ministry of Education, Government of India, AY 2022-23 to AY 2026-27 (15th Finance Commission Cycle)) Source: https://scholarships.gov.in/public/schemeGuidelines/CSSS_GUIDLINES_07022024_updated.pdf",
+          "text_excerpt": "ii. Pursuing regular degree courses and not correspondence or distance mode or pursuing Diploma courses; iii. Pursuing courses at colleges/institutions recognized by All India Council for Technical Education and respecti..."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "DOC_EDU_003_SAKSHAM_DEGREE_GUIDELINES_2020_p003_c02",
+          "scheme_id": "SCHEME_EDU_003_AICTE_SAKSHAM",
+          "similarity_score": 0.8645,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_003_SAKSHAM_DEGREE_GUIDELINES_2020",
+          "page_number": 3,
+          "citation_reference": "[Guidelines for AICTE - Saksham Scholarship Scheme for Specially-Abled Students (Degree), Page 3] (All India Council for Technical Education (AICTE), AY 2020-21 onwards (operational through AY 2026-27)) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2012_G.pdf",
+          "text_excerpt": "gap period between the year of passing the qualifying examination and the session of admission in degree course should not be more than two years.  2) Applications will be invited once in a year through National e -Schol..."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "DOC_EDU_003_SAKSHAM_DEGREE_GUIDELINES_2020_p001_c01",
+          "scheme_id": "SCHEME_EDU_003_AICTE_SAKSHAM",
+          "similarity_score": 0.8635,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_003_SAKSHAM_DEGREE_GUIDELINES_2020",
+          "page_number": 1,
+          "citation_reference": "[Guidelines for AICTE - Saksham Scholarship Scheme for Specially-Abled Students (Degree), Page 1] (All India Council for Technical Education (AICTE), AY 2020-21 onwards (operational through AY 2026-27)) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2012_G.pdf",
+          "text_excerpt": "July 2020       GUIDELINES FOR  AICTE - SAKSHAM SCHOLARSHIP  SCHEME FOR SPECIALLY-ABLED  STUDENT (DEGREE)      2020-21"
+        }
+      ]
+    },
+    {
+      "query_id": "BENCH_EN_07",
+      "question": "Can a student with physical handicap studying diploma engineering get government scholarship support?",
+      "language": "English",
+      "expected_scheme_id": "SCHEME_EDU_003_AICTE_SAKSHAM",
+      "relevant_chunk_ids": [
+        "DOC_EDU_003_SAKSHAM_DEGREE_GUIDELINES_2020_p002_c01",
+        "DOC_EDU_003_SAKSHAM_FAQS_2020_p001_c01",
+        "DOC_EDU_003_SAKSHAM_FAQS_2020_p001_c02"
+      ],
+      "category": "Eligibility",
+      "is_explicit_scheme": false,
+      "expected_behavior": "Identify Saksham technical scholarship for specially-abled students.",
+      "evaluation": {
+        "top1_scheme_match": false,
+        "relevant_hit_at_5": false,
+        "first_relevant_rank": null,
+        "reciprocal_rank": 0.0,
+        "roster_contamination_at_5": 0.0,
+        "latency_seconds": 0.052,
+        "top1_similarity_score": 0.8572,
+        "top1_scheme_retrieved": "SCHEME_EDU_004_AICTE_SWANATH",
+        "top1_chunk_retrieved": "DOC_EDU_004_SWANATH_FAQS_2022_p001_c03"
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "chunk_id": "DOC_EDU_004_SWANATH_FAQS_2022_p001_c03",
+          "scheme_id": "SCHEME_EDU_004_AICTE_SWANATH",
+          "similarity_score": 0.8572,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_004_SWANATH_FAQS_2022",
+          "page_number": 1,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - AICTE Swanath Scholarship Scheme, Page 1] (All India Council for Technical Education (AICTE), AY 2022-23 to AY 2026-27) Source: https://www.aicte.gov.in/sites/default/files/stdc/FAQs-Swanath%20Scheme.pdf",
+          "text_excerpt": "reduced to 2/1 year respectively. Q.5 I am Degree/Diploma student and recipient of one of the merit scholarships of Centre / State Government. Am I  eligible to apply for SWANATH Scholarship? Ans: NO. Students who are al..."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "DOC_EDU_003_SAKSHAM_FAQS_2020_p002_c01",
+          "scheme_id": "SCHEME_EDU_003_AICTE_SAKSHAM",
+          "similarity_score": 0.852,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_003_SAKSHAM_FAQS_2020",
+          "page_number": 2,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - AICTE Saksham Scholarship Scheme, Page 2] (All India Council for Technical Education (AICTE), AY 2020-21 onwards) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2012_F.pdf",
+          "text_excerpt": "Ans: No, Students who are already in receipt of any of the scholarships (Central Govt. / State Govt. / AICTE Sponsored), are not eligible to apply for SAKSHAM Scholarship. Q.6 I am first year B.E student along with benef..."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "DOC_EDU_002_PRAGATI_FAQS_2020_p002_c01",
+          "scheme_id": "SCHEME_EDU_002_AICTE_PRAGATI",
+          "similarity_score": 0.8509,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_002_PRAGATI_FAQS_2020",
+          "page_number": 2,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - AICTE Pragati Scholarship Scheme, Page 2] (All India Council for Technical Education (AICTE), AY 2020-21 onwards) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2010_F.pdf",
+          "text_excerpt": "Ans: No, Students who are already in receipt of any of the scholarships (Central Govt. / State Govt. / AICTE Sponsored), are not eligible to apply for PRAGATI Scholarship. Q.6 I am first year B.E student along with benef..."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "DOC_EDU_004_SWANATH_REVISED_GUIDELINES_2025_p003_c01",
+          "scheme_id": "SCHEME_EDU_004_AICTE_SWANATH",
+          "similarity_score": 0.8494,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_004_SWANATH_REVISED_GUIDELINES_2025",
+          "page_number": 3,
+          "citation_reference": "[AICTE - Swanath Scholarship Scheme for Students (May 2025 Revised Guidelines), Page 3] (All India Council for Technical Education (AICTE), AY 2025-26 and AY 2026-27) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_3038_G.pdf",
+          "text_excerpt": "currently studying in the 2nd /3rd year at diploma level the duration of the scholarship will be reduced to 2/1 year  respectively."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "DOC_EDU_004_SWANATH_FAQS_2022_p001_c02",
+          "scheme_id": "SCHEME_EDU_004_AICTE_SWANATH",
+          "similarity_score": 0.8489,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_004_SWANATH_FAQS_2022",
+          "page_number": 1,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - AICTE Swanath Scholarship Scheme, Page 1] (All India Council for Technical Education (AICTE), AY 2022-23 to AY 2026-27) Source: https://www.aicte.gov.in/sites/default/files/stdc/FAQs-Swanath%20Scheme.pdf",
+          "text_excerpt": "Govt. / AICTE Sponsored scholarships Note: Students who are satisfying conditions at S. No. 1, 2, 3 & 4 above are only eligible for this scholarship.  Q.2 How Can I apply for this scholarship? Ans: The candidate fulfilli..."
+        }
+      ]
+    },
+    {
+      "query_id": "BENCH_HI_01",
+      "question": "सक्षम छात्रवृत्ति के लिए न्यूनतम दिव्यांगता प्रतिशत क्या होना चाहिए?",
+      "language": "Hindi",
+      "expected_scheme_id": "SCHEME_EDU_003_AICTE_SAKSHAM",
+      "relevant_chunk_ids": [
+        "DOC_EDU_003_SAKSHAM_DEGREE_GUIDELINES_2020_p002_c01",
+        "DOC_EDU_003_SAKSHAM_FAQS_2020_p001_c01"
+      ],
+      "category": "Disability criteria",
+      "is_explicit_scheme": true,
+      "expected_behavior": "Return Saksham chunks establishing minimum 40% benchmark disability requirement.",
+      "evaluation": {
+        "top1_scheme_match": false,
+        "relevant_hit_at_5": false,
+        "first_relevant_rank": null,
+        "reciprocal_rank": 0.0,
+        "roster_contamination_at_5": 0.2,
+        "latency_seconds": 0.055,
+        "top1_similarity_score": 0.8311,
+        "top1_scheme_retrieved": "SCHEME_EDU_001_PM_USP_CSSS",
+        "top1_chunk_retrieved": "DOC_EDU_001_CSSS_GUIDELINES_2024_p002_c03"
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "chunk_id": "DOC_EDU_001_CSSS_GUIDELINES_2024_p002_c03",
+          "scheme_id": "SCHEME_EDU_001_PM_USP_CSSS",
+          "similarity_score": 0.8311,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_001_CSSS_GUIDELINES_2024",
+          "page_number": 2,
+          "citation_reference": "[Guidelines for the Central Sector Scheme of Scholarship for College and University Students (PM-USP CSSS), Page 2] (Department of Higher Education, Ministry of Education, Government of India, AY 2022-23 to AY 2026-27 (15th Finance Commission Cycle)) Source: https://scholarships.gov.in/public/schemeGuidelines/CSSS_GUIDLINES_07022024_updated.pdf",
+          "text_excerpt": "sections /minorities etc. are eligible to get benefit of reservation on the basis of merit, subject to Central Reservation Policy [i.e. 15% seats are  earmarked for SCs, 7.5% for STs and 27 % for OBCs and 5% horizontal r..."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "DOC_EDU_002_PRAGATI_DIPLOMA_GUIDELINES_2020_p004_c02",
+          "scheme_id": "SCHEME_EDU_002_AICTE_PRAGATI",
+          "similarity_score": 0.8259,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_002_PRAGATI_DIPLOMA_GUIDELINES_2020",
+          "page_number": 4,
+          "citation_reference": "[Guidelines for AICTE - Pragati Scholarship Scheme for Girl Students (Diploma), Page 4] (All India Council for Technical Education (AICTE), Ministry of Education, AY 2020-21 onwards (operational through AY 2026-27)) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2011_G.pdf",
+          "text_excerpt": "is in reserved category and also qualified in general category merit list of scholarship, then she will be counted under the General Category.  4) Incomplete applications will be summarily rejected. Only verified online ..."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "DOC_EDU_002_PRAGATI_DEGREE_GUIDELINES_2020_p004_c02",
+          "scheme_id": "SCHEME_EDU_002_AICTE_PRAGATI",
+          "similarity_score": 0.8226,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_002_PRAGATI_DEGREE_GUIDELINES_2020",
+          "page_number": 4,
+          "citation_reference": "[Guidelines for AICTE - Pragati Scholarship Scheme for Girl Students (Degree), Page 4] (All India Council for Technical Education (AICTE), Ministry of Education, AY 2020-21 onwards (operational through AY 2026-27)) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2010_G.pdf",
+          "text_excerpt": "is subject to the condition that the student does not receive any financial assistance in shape of scholarship/any emoluments, salary, stipend etc.  from any other source during her course of study in the Institute. In c..."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "DOC_EDU_004_SWANATH_REVISED_GUIDELINES_2025_p007_c02",
+          "scheme_id": "SCHEME_EDU_004_AICTE_SWANATH",
+          "similarity_score": 0.8205,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_004_SWANATH_REVISED_GUIDELINES_2025",
+          "page_number": 7,
+          "citation_reference": "[AICTE - Swanath Scholarship Scheme for Students (May 2025 Revised Guidelines), Page 7] (All India Council for Technical Education (AICTE), AY 2025-26 and AY 2026-27) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_3038_G.pdf",
+          "text_excerpt": "financial assistance from any other sources, the scholarship shall be discontinued and the entire amount of scholarship will have to be refunded to  AICTE by D/Draft drawn in favour of \"Member Secretary, AICTE\" payable a..."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26_p038_c01",
+          "scheme_id": "SCHEME_EDU_005_TOP_CLASS_SC",
+          "similarity_score": 0.8202,
+          "category": "Institution list",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26",
+          "page_number": 38,
+          "citation_reference": "[Scheme Guidelines of Top Class Scholarship for SC Students (Applicable from 2025-26), Page 38] (Department of Social Justice and Empowerment, Ministry of Social Justice and Empowerment, AY 2025-26 and AY 2026-27) Source: https://scholarships.gov.in/public/schemeGuidelines/Top_Class_Education_Scheme_2018.pdf",
+          "text_excerpt": "258 Pt. Deendayal Upadhyaya National Institute for Persons with Physical Disabilities (PDUNIPPD) 4, Vishnu Digambar Marg, New Delhi- 110002 Delhi Under Graduate 5 259 Ali Yavar Jung National Institute of Speech and Heari..."
+        }
+      ]
+    },
+    {
+      "query_id": "BENCH_HI_02",
+      "question": "एआईसीटीई प्रगति छात्रवृत्ति के लिए परिवार की वार्षिक आय सीमा कितनी है?",
+      "language": "Hindi",
+      "expected_scheme_id": "SCHEME_EDU_002_AICTE_PRAGATI",
+      "relevant_chunk_ids": [
+        "DOC_EDU_002_PRAGATI_DEGREE_GUIDELINES_2020_p002_c01",
+        "DOC_EDU_002_PRAGATI_DIPLOMA_GUIDELINES_2020_p002_c02",
+        "DOC_EDU_002_PRAGATI_FAQS_2020_p001_c01"
+      ],
+      "category": "Family income",
+      "is_explicit_scheme": true,
+      "expected_behavior": "Return Pragati chunk specifying family income not exceeding Rs. 8 lakh per annum.",
+      "evaluation": {
+        "top1_scheme_match": false,
+        "relevant_hit_at_5": false,
+        "first_relevant_rank": null,
+        "reciprocal_rank": 0.0,
+        "roster_contamination_at_5": 0.0,
+        "latency_seconds": 0.055,
+        "top1_similarity_score": 0.8331,
+        "top1_scheme_retrieved": "SCHEME_EDU_004_AICTE_SWANATH",
+        "top1_chunk_retrieved": "DOC_EDU_004_SWANATH_REVISED_GUIDELINES_2025_p002_c02"
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "chunk_id": "DOC_EDU_004_SWANATH_REVISED_GUIDELINES_2025_p002_c02",
+          "scheme_id": "SCHEME_EDU_004_AICTE_SWANATH",
+          "similarity_score": 0.8331,
+          "category": "Eligibility",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_004_SWANATH_REVISED_GUIDELINES_2025",
+          "page_number": 2,
+          "citation_reference": "[AICTE - Swanath Scholarship Scheme for Students (May 2025 Revised Guidelines), Page 2] (All India Council for Technical Education (AICTE), AY 2025-26 and AY 2026-27) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_3038_G.pdf",
+          "text_excerpt": "is suffering from critical life threatening disease (Like Cancer etc.)/ Died or severely disabled (above 80%) in accident (as per RPwD Act 2016) AND  2) Family income from all sources should not be more than Rs. 8 lakh p..."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "DOC_EDU_002_PRAGATI_DEGREE_GUIDELINES_2020_p004_c02",
+          "scheme_id": "SCHEME_EDU_002_AICTE_PRAGATI",
+          "similarity_score": 0.8295,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_002_PRAGATI_DEGREE_GUIDELINES_2020",
+          "page_number": 4,
+          "citation_reference": "[Guidelines for AICTE - Pragati Scholarship Scheme for Girl Students (Degree), Page 4] (All India Council for Technical Education (AICTE), Ministry of Education, AY 2020-21 onwards (operational through AY 2026-27)) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2010_G.pdf",
+          "text_excerpt": "is subject to the condition that the student does not receive any financial assistance in shape of scholarship/any emoluments, salary, stipend etc.  from any other source during her course of study in the Institute. In c..."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "DOC_EDU_002_PRAGATI_DIPLOMA_GUIDELINES_2020_p004_c02",
+          "scheme_id": "SCHEME_EDU_002_AICTE_PRAGATI",
+          "similarity_score": 0.8281,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_002_PRAGATI_DIPLOMA_GUIDELINES_2020",
+          "page_number": 4,
+          "citation_reference": "[Guidelines for AICTE - Pragati Scholarship Scheme for Girl Students (Diploma), Page 4] (All India Council for Technical Education (AICTE), Ministry of Education, AY 2020-21 onwards (operational through AY 2026-27)) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2011_G.pdf",
+          "text_excerpt": "is in reserved category and also qualified in general category merit list of scholarship, then she will be counted under the General Category.  4) Incomplete applications will be summarily rejected. Only verified online ..."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "DOC_EDU_003_SAKSHAM_FAQS_2020_p001_c02",
+          "scheme_id": "SCHEME_EDU_003_AICTE_SAKSHAM",
+          "similarity_score": 0.8269,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_003_SAKSHAM_FAQS_2020",
+          "page_number": 1,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - AICTE Saksham Scholarship Scheme, Page 1] (All India Council for Technical Education (AICTE), AY 2020-21 onwards) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2012_F.pdf",
+          "text_excerpt": "admitted in first year of their DiplomaCourseORSecondyearofDiplomaCoursethrou ghlateralentry(LE)inanyoftheAICTEapprovedInstitutio nof respectiveyear.  5.Rs 50,000 per annum for every year ofstudy i.e. maximum 4 years for..."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "DOC_EDU_004_SWANATH_REVISED_GUIDELINES_2025_p004_c02",
+          "scheme_id": "SCHEME_EDU_004_AICTE_SWANATH",
+          "similarity_score": 0.8266,
+          "category": "Eligibility",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_004_SWANATH_REVISED_GUIDELINES_2025",
+          "page_number": 4,
+          "citation_reference": "[AICTE - Swanath Scholarship Scheme for Students (May 2025 Revised Guidelines), Page 4] (All India Council for Technical Education (AICTE), AY 2025-26 and AY 2026-27) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_3038_G.pdf",
+          "text_excerpt": "income: If above methods do not break ties, and then the candidate with lower annual family income will be ranked higher. (iii) For Diploma Level:  The selection of candidate will be carried out solely on the basis of me..."
+        }
+      ]
+    },
+    {
+      "query_id": "BENCH_HI_03",
+      "question": "पीएम-यूएसपी छात्रवृत्ति योजना में कॉलेज के छात्र कैसे पात्र होते हैं?",
+      "language": "Hindi",
+      "expected_scheme_id": "SCHEME_EDU_001_PM_USP_CSSS",
+      "relevant_chunk_ids": [
+        "DOC_EDU_001_CSSS_GUIDELINES_2024_p001_c01",
+        "DOC_EDU_001_CSSS_GUIDELINES_2024_p002_c01",
+        "DOC_EDU_001_CSSS_FAQS_2024_p001_c02"
+      ],
+      "category": "Eligibility",
+      "is_explicit_scheme": true,
+      "expected_behavior": "Return CSSS eligibility: 80th percentile in Class 12, regular college admission.",
+      "evaluation": {
+        "top1_scheme_match": true,
+        "relevant_hit_at_5": true,
+        "first_relevant_rank": 3,
+        "reciprocal_rank": 0.3333,
+        "roster_contamination_at_5": 0.0,
+        "latency_seconds": 0.054,
+        "top1_similarity_score": 0.8457,
+        "top1_scheme_retrieved": "SCHEME_EDU_001_PM_USP_CSSS",
+        "top1_chunk_retrieved": "DOC_EDU_001_CSSS_FAQS_2024_p001_c01"
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "chunk_id": "DOC_EDU_001_CSSS_FAQS_2024_p001_c01",
+          "scheme_id": "SCHEME_EDU_001_PM_USP_CSSS",
+          "similarity_score": 0.8457,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_001_CSSS_FAQS_2024",
+          "page_number": 1,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - PM-USP Central Sector Scheme of Scholarship (CSSS), Page 1] (Department of Higher Education, Ministry of Education, Government of India, AY 2023-24 / AY 2024-25 / AY 2025-26) Source: https://scholarships.gov.in/public/schemeGuidelines/FAQ_DOHE_CSSS.pdf",
+          "text_excerpt": "Government of India Ministry of Education Department of Higher Education (Scholarship Division) PRADHAN MANTRI UCHCHATAR SHIKSHA PROTSAHAN (PM-USP) CENTRAL SECTOR SCHEME OF SCHOLARSHIP FOR COLLEGE AND UNIVERSITY STUDENTS..."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "DOC_EDU_001_CSSS_FAQS_2024_p003_c02",
+          "scheme_id": "SCHEME_EDU_001_PM_USP_CSSS",
+          "similarity_score": 0.8393,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_001_CSSS_FAQS_2024",
+          "page_number": 3,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - PM-USP Central Sector Scheme of Scholarship (CSSS), Page 3] (Department of Higher Education, Ministry of Education, Government of India, AY 2023-24 / AY 2024-25 / AY 2025-26) Source: https://scholarships.gov.in/public/schemeGuidelines/FAQ_DOHE_CSSS.pdf",
+          "text_excerpt": "regular graduation course are eligible to apply for fresh scholarship. This list is given by the respective state education boards. Those who are not  covered in this list will not be able to avail the benefits of PM -US..."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "DOC_EDU_001_CSSS_GUIDELINES_2024_p001_c01",
+          "scheme_id": "SCHEME_EDU_001_PM_USP_CSSS",
+          "similarity_score": 0.8364,
+          "category": "Policy",
+          "is_relevant_policy": true,
+          "document_id": "DOC_EDU_001_CSSS_GUIDELINES_2024",
+          "page_number": 1,
+          "citation_reference": "[Guidelines for the Central Sector Scheme of Scholarship for College and University Students (PM-USP CSSS), Page 1] (Department of Higher Education, Ministry of Education, Government of India, AY 2022-23 to AY 2026-27 (15th Finance Commission Cycle)) Source: https://scholarships.gov.in/public/schemeGuidelines/CSSS_GUIDLINES_07022024_updated.pdf",
+          "text_excerpt": "PRADHAN MANTRI UCHCHATAR SHIKSHA PROTSAHAN (PM-USP) YOJANA GUIDELINES FOR THE COMPONENT SCHEME -CENTRAL SECTOR SCHEME OF SCHOLARSHIP FOR COLLEGE AND UNIVERSITY STUDENTS (PM-USP CSSS) (Applicable for academic year 2022-23..."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "DOC_EDU_001_CSSS_GUIDELINES_2024_p004_c01",
+          "scheme_id": "SCHEME_EDU_001_PM_USP_CSSS",
+          "similarity_score": 0.8348,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_001_CSSS_GUIDELINES_2024",
+          "page_number": 4,
+          "citation_reference": "[Guidelines for the Central Sector Scheme of Scholarship for College and University Students (PM-USP CSSS), Page 4] (Department of Higher Education, Ministry of Education, Government of India, AY 2022-23 to AY 2026-27 (15th Finance Commission Cycle)) Source: https://scholarships.gov.in/public/schemeGuidelines/CSSS_GUIDLINES_07022024_updated.pdf",
+          "text_excerpt": "mode. The student can track their payment status from the template \"Know Your Payment\" in the Public Financial Management System (PFMS) portal [https://pfms.nic.in/Users/LoginDetails/Login.aspx] either by indicating Aadh..."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26_p001_c03",
+          "scheme_id": "SCHEME_EDU_005_TOP_CLASS_SC",
+          "similarity_score": 0.8299,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26",
+          "page_number": 1,
+          "citation_reference": "[Scheme Guidelines of Top Class Scholarship for SC Students (Applicable from 2025-26), Page 1] (Department of Social Justice and Empowerment, Ministry of Social Justice and Empowerment, AY 2025-26 and AY 2026-27) Source: https://scholarships.gov.in/public/schemeGuidelines/Top_Class_Education_Scheme_2018.pdf",
+          "text_excerpt": "preference should be given to the student with the lower family income. The remaining students from SC category admitted in the institution shall be  eligible for the Post-Matric Scholarship (PMS) administered by this Mi..."
+        }
+      ]
+    },
+    {
+      "query_id": "BENCH_HI_04",
+      "question": "सक्षम छात्रवृत्ति के लिए कौन सा दिव्यांगता प्रमाण पत्र मान्य है?",
+      "language": "Hindi",
+      "expected_scheme_id": "SCHEME_EDU_003_AICTE_SAKSHAM",
+      "relevant_chunk_ids": [
+        "DOC_EDU_003_SAKSHAM_FAQS_2020_p003_c01",
+        "DOC_EDU_003_SAKSHAM_FAQS_2020_p005_c01",
+        "DOC_EDU_003_SAKSHAM_DEGREE_GUIDELINES_2020_p005_c01"
+      ],
+      "category": "Required documents",
+      "is_explicit_scheme": true,
+      "expected_behavior": "Return Saksham chunks outlining valid disability certificate from competent authority.",
+      "evaluation": {
+        "top1_scheme_match": false,
+        "relevant_hit_at_5": false,
+        "first_relevant_rank": null,
+        "reciprocal_rank": 0.0,
+        "roster_contamination_at_5": 0.2,
+        "latency_seconds": 0.057,
+        "top1_similarity_score": 0.8314,
+        "top1_scheme_retrieved": "SCHEME_EDU_005_TOP_CLASS_SC",
+        "top1_chunk_retrieved": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26_p038_c01"
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "chunk_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26_p038_c01",
+          "scheme_id": "SCHEME_EDU_005_TOP_CLASS_SC",
+          "similarity_score": 0.8314,
+          "category": "Institution list",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26",
+          "page_number": 38,
+          "citation_reference": "[Scheme Guidelines of Top Class Scholarship for SC Students (Applicable from 2025-26), Page 38] (Department of Social Justice and Empowerment, Ministry of Social Justice and Empowerment, AY 2025-26 and AY 2026-27) Source: https://scholarships.gov.in/public/schemeGuidelines/Top_Class_Education_Scheme_2018.pdf",
+          "text_excerpt": "258 Pt. Deendayal Upadhyaya National Institute for Persons with Physical Disabilities (PDUNIPPD) 4, Vishnu Digambar Marg, New Delhi- 110002 Delhi Under Graduate 5 259 Ali Yavar Jung National Institute of Speech and Heari..."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "DOC_EDU_001_CSSS_FAQS_2024_p002_c02",
+          "scheme_id": "SCHEME_EDU_001_PM_USP_CSSS",
+          "similarity_score": 0.8169,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_001_CSSS_FAQS_2024",
+          "page_number": 2,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - PM-USP Central Sector Scheme of Scholarship (CSSS), Page 2] (Department of Higher Education, Ministry of Education, Government of India, AY 2023-24 / AY 2024-25 / AY 2025-26) Source: https://scholarships.gov.in/public/schemeGuidelines/FAQ_DOHE_CSSS.pdf",
+          "text_excerpt": "to fulfilment of certain eligibility conditions. The students have to apply again in the same portal as renewal applicant and provide necessary  marksheets, etc. for this. The applicant should not receive scholarship fro..."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "DOC_EDU_002_PRAGATI_DIPLOMA_GUIDELINES_2020_p004_c02",
+          "scheme_id": "SCHEME_EDU_002_AICTE_PRAGATI",
+          "similarity_score": 0.8136,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_002_PRAGATI_DIPLOMA_GUIDELINES_2020",
+          "page_number": 4,
+          "citation_reference": "[Guidelines for AICTE - Pragati Scholarship Scheme for Girl Students (Diploma), Page 4] (All India Council for Technical Education (AICTE), Ministry of Education, AY 2020-21 onwards (operational through AY 2026-27)) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2011_G.pdf",
+          "text_excerpt": "is in reserved category and also qualified in general category merit list of scholarship, then she will be counted under the General Category.  4) Incomplete applications will be summarily rejected. Only verified online ..."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "DOC_EDU_001_CSSS_FAQS_2024_p001_c02",
+          "scheme_id": "SCHEME_EDU_001_PM_USP_CSSS",
+          "similarity_score": 0.8108,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_001_CSSS_FAQS_2024",
+          "page_number": 1,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - PM-USP Central Sector Scheme of Scholarship (CSSS), Page 1] (Department of Higher Education, Ministry of Education, Government of India, AY 2023-24 / AY 2024-25 / AY 2025-26) Source: https://scholarships.gov.in/public/schemeGuidelines/FAQ_DOHE_CSSS.pdf",
+          "text_excerpt": "Scheme of Scholarship for College and Univers ity Students is a merit-cum-means scholarship scheme. Eligibility conditions for FRESH application:   Students who are above 80th percentile of successful candidates in the ..."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "DOC_EDU_002_PRAGATI_FAQS_2020_p002_c02",
+          "scheme_id": "SCHEME_EDU_002_AICTE_PRAGATI",
+          "similarity_score": 0.8101,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_002_PRAGATI_FAQS_2020",
+          "page_number": 2,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - AICTE Pragati Scholarship Scheme, Page 2] (All India Council for Technical Education (AICTE), AY 2020-21 onwards) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2010_F.pdf",
+          "text_excerpt": "renewal through National Scholarship Portal (NSP) by submitting Promotion Certificate duly certified by the Head of Institution in the online portal.  Q.9 Is there any reservation for SC/ST/OBC Students? What is percenta..."
+        }
+      ]
+    },
+    {
+      "query_id": "BENCH_HI_05",
+      "question": "अनुसूचित जाति के छात्रों के लिए टॉप क्लास स्कॉलरशिप में कितनी राशि मिलती है?",
+      "language": "Hindi",
+      "expected_scheme_id": "SCHEME_EDU_005_TOP_CLASS_SC",
+      "relevant_chunk_ids": [
+        "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26_p003_c01",
+        "DOC_EDU_005_TOP_CLASS_SC_FAQS_2022_p001_c02"
+      ],
+      "category": "Scheme benefits",
+      "is_explicit_scheme": true,
+      "expected_behavior": "Return Top Class SC funding details (tuition fee + academic allowance).",
+      "evaluation": {
+        "top1_scheme_match": true,
+        "relevant_hit_at_5": true,
+        "first_relevant_rank": 2,
+        "reciprocal_rank": 0.5,
+        "roster_contamination_at_5": 0.0,
+        "latency_seconds": 0.057,
+        "top1_similarity_score": 0.8473,
+        "top1_scheme_retrieved": "SCHEME_EDU_005_TOP_CLASS_SC",
+        "top1_chunk_retrieved": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26_p001_c01"
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "chunk_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26_p001_c01",
+          "scheme_id": "SCHEME_EDU_005_TOP_CLASS_SC",
+          "similarity_score": 0.8473,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26",
+          "page_number": 1,
+          "citation_reference": "[Scheme Guidelines of Top Class Scholarship for SC Students (Applicable from 2025-26), Page 1] (Department of Social Justice and Empowerment, Ministry of Social Justice and Empowerment, AY 2025-26 and AY 2026-27) Source: https://scholarships.gov.in/public/schemeGuidelines/Top_Class_Education_Scheme_2018.pdf",
+          "text_excerpt": "Scheme Guidelines of Scheme of Top Class Scholarship for SC Students Applicable from 2025-26 1 Objectives and Coverages a. The Scheme aims at recognizing and promoting quality education amongst students belonging to SCs,..."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26_p003_c01",
+          "scheme_id": "SCHEME_EDU_005_TOP_CLASS_SC",
+          "similarity_score": 0.8469,
+          "category": "Policy",
+          "is_relevant_policy": true,
+          "document_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26",
+          "page_number": 3,
+          "citation_reference": "[Scheme Guidelines of Top Class Scholarship for SC Students (Applicable from 2025-26), Page 3] (Department of Social Justice and Empowerment, Ministry of Social Justice and Empowerment, AY 2025-26 and AY 2026-27) Source: https://scholarships.gov.in/public/schemeGuidelines/Top_Class_Education_Scheme_2018.pdf",
+          "text_excerpt": "under the scheme and their slots shall be re-distributed among other deserving notified institutes under the scheme. 4 Funding Pattern & Mode of Payment a. The SC students, who secure admission in the notified institutio..."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "DOC_EDU_001_CSSS_FAQS_2024_p002_c01",
+          "scheme_id": "SCHEME_EDU_001_PM_USP_CSSS",
+          "similarity_score": 0.8385,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_001_CSSS_FAQS_2024",
+          "page_number": 2,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - PM-USP Central Sector Scheme of Scholarship (CSSS), Page 2] (Department of Higher Education, Ministry of Education, Government of India, AY 2023-24 / AY 2024-25 / AY 2025-26) Source: https://scholarships.gov.in/public/schemeGuidelines/FAQ_DOHE_CSSS.pdf",
+          "text_excerpt": "year 2022 -23, subject to the condition that guidelines of Ministry of Finance and NITI Aayog regarding SC/ST fund allocation of the schemes are adhered to. 3. What is the rate of scholarship under the Scheme? The rate o..."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "DOC_EDU_005_TOP_CLASS_SC_FAQS_2022_p001_c01",
+          "scheme_id": "SCHEME_EDU_005_TOP_CLASS_SC",
+          "similarity_score": 0.8352,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_005_TOP_CLASS_SC_FAQS_2022",
+          "page_number": 1,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - Top Class Education Scheme for SC Students, Page 1] (Department of Social Justice and Empowerment, Ministry of Social Justice and Empowerment, AY 2022-23 to AY 2026-27) Source: https://scholarships.gov.in/public/schemeGuidelines/Top_Class_Education_Scheme_2018_FAQ.pdf",
+          "text_excerpt": "Frequently Asked Questions (FAQs) Top Class Education Scheme for SC Students 1. What is the objective of the Scheme? Answer: The Scheme aims to promote quality education among Scheduled Caste (SC) students by providing f..."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "DOC_EDU_002_PRAGATI_FAQS_2020_p002_c02",
+          "scheme_id": "SCHEME_EDU_002_AICTE_PRAGATI",
+          "similarity_score": 0.8332,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_002_PRAGATI_FAQS_2020",
+          "page_number": 2,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - AICTE Pragati Scholarship Scheme, Page 2] (All India Council for Technical Education (AICTE), AY 2020-21 onwards) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2010_F.pdf",
+          "text_excerpt": "renewal through National Scholarship Portal (NSP) by submitting Promotion Certificate duly certified by the Head of Institution in the online portal.  Q.9 Is there any reservation for SC/ST/OBC Students? What is percenta..."
+        }
+      ]
+    },
+    {
+      "query_id": "BENCH_HI_06",
+      "question": "तकनीकी शिक्षा में पढ़ने वाली छात्राओं के लिए सरकारी छात्रवृत्ति कैसे मिलती है?",
+      "language": "Hindi",
+      "expected_scheme_id": "SCHEME_EDU_002_AICTE_PRAGATI",
+      "relevant_chunk_ids": [
+        "DOC_EDU_002_PRAGATI_DEGREE_GUIDELINES_2020_p002_c01",
+        "DOC_EDU_002_PRAGATI_DEGREE_GUIDELINES_2020_p003_c02",
+        "DOC_EDU_002_PRAGATI_FAQS_2020_p001_c01"
+      ],
+      "category": "Application procedures",
+      "is_explicit_scheme": false,
+      "expected_behavior": "Map girl student technical inquiry to Pragati scheme and NSP application steps.",
+      "evaluation": {
+        "top1_scheme_match": false,
+        "relevant_hit_at_5": false,
+        "first_relevant_rank": null,
+        "reciprocal_rank": 0.0,
+        "roster_contamination_at_5": 0.0,
+        "latency_seconds": 0.053,
+        "top1_similarity_score": 0.8255,
+        "top1_scheme_retrieved": "SCHEME_EDU_001_PM_USP_CSSS",
+        "top1_chunk_retrieved": "DOC_EDU_001_CSSS_FAQS_2024_p002_c01"
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "chunk_id": "DOC_EDU_001_CSSS_FAQS_2024_p002_c01",
+          "scheme_id": "SCHEME_EDU_001_PM_USP_CSSS",
+          "similarity_score": 0.8255,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_001_CSSS_FAQS_2024",
+          "page_number": 2,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - PM-USP Central Sector Scheme of Scholarship (CSSS), Page 2] (Department of Higher Education, Ministry of Education, Government of India, AY 2023-24 / AY 2024-25 / AY 2025-26) Source: https://scholarships.gov.in/public/schemeGuidelines/FAQ_DOHE_CSSS.pdf",
+          "text_excerpt": "year 2022 -23, subject to the condition that guidelines of Ministry of Finance and NITI Aayog regarding SC/ST fund allocation of the schemes are adhered to. 3. What is the rate of scholarship under the Scheme? The rate o..."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "DOC_EDU_002_PRAGATI_DIPLOMA_GUIDELINES_2020_p004_c02",
+          "scheme_id": "SCHEME_EDU_002_AICTE_PRAGATI",
+          "similarity_score": 0.8223,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_002_PRAGATI_DIPLOMA_GUIDELINES_2020",
+          "page_number": 4,
+          "citation_reference": "[Guidelines for AICTE - Pragati Scholarship Scheme for Girl Students (Diploma), Page 4] (All India Council for Technical Education (AICTE), Ministry of Education, AY 2020-21 onwards (operational through AY 2026-27)) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2011_G.pdf",
+          "text_excerpt": "is in reserved category and also qualified in general category merit list of scholarship, then she will be counted under the General Category.  4) Incomplete applications will be summarily rejected. Only verified online ..."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "DOC_EDU_002_PRAGATI_FAQS_2020_p001_c02",
+          "scheme_id": "SCHEME_EDU_002_AICTE_PRAGATI",
+          "similarity_score": 0.817,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_002_PRAGATI_FAQS_2020",
+          "page_number": 1,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - AICTE Pragati Scholarship Scheme, Page 1] (All India Council for Technical Education (AICTE), AY 2020-21 onwards) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2010_F.pdf",
+          "text_excerpt": "respectiveyear. 5.Rs 50,000 per annum for every year ofstudy i.e. maximum 4 years for Degree  forfirstyearadmittedstudentsandmaximum3yearsfo rDegreestudentsadmittedthroughlateralentryaslum psum amount towards payment of ..."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "DOC_EDU_003_SAKSHAM_DEGREE_GUIDELINES_2020_p003_c02",
+          "scheme_id": "SCHEME_EDU_003_AICTE_SAKSHAM",
+          "similarity_score": 0.8167,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_003_SAKSHAM_DEGREE_GUIDELINES_2020",
+          "page_number": 3,
+          "citation_reference": "[Guidelines for AICTE - Saksham Scholarship Scheme for Specially-Abled Students (Degree), Page 3] (All India Council for Technical Education (AICTE), AY 2020-21 onwards (operational through AY 2026-27)) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2012_G.pdf",
+          "text_excerpt": "gap period between the year of passing the qualifying examination and the session of admission in degree course should not be more than two years.  2) Applications will be invited once in a year through National e -Schol..."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "DOC_EDU_001_CSSS_GUIDELINES_2024_p001_c02",
+          "scheme_id": "SCHEME_EDU_001_PM_USP_CSSS",
+          "similarity_score": 0.8164,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_001_CSSS_GUIDELINES_2024",
+          "page_number": 1,
+          "citation_reference": "[Guidelines for the Central Sector Scheme of Scholarship for College and University Students (PM-USP CSSS), Page 1] (Department of Higher Education, Ministry of Education, Government of India, AY 2022-23 to AY 2026-27 (15th Finance Commission Cycle)) Source: https://scholarships.gov.in/public/schemeGuidelines/CSSS_GUIDLINES_07022024_updated.pdf",
+          "text_excerpt": "amongst the State Education Boards based on the State's population in the age group of 18-25 years, after segregating share of CBSE and ICSE on the  basis of number of students passing out from various Boards in the coun..."
+        }
+      ]
+    },
+    {
+      "query_id": "BENCH_HI_07",
+      "question": "अनाथ बच्चों के लिए इंजीनियरिंग कॉलेज की फीस में सहायता वाली योजना कौन सी है?",
+      "language": "Hindi",
+      "expected_scheme_id": "SCHEME_EDU_004_AICTE_SWANATH",
+      "relevant_chunk_ids": [
+        "DOC_EDU_004_SWANATH_REVISED_GUIDELINES_2025_p002_c01",
+        "DOC_EDU_004_SWANATH_DEGREE_DIPLOMA_GUIDELINES_2021_p002_c01",
+        "DOC_EDU_004_SWANATH_FAQS_2022_p001_c01"
+      ],
+      "category": "Eligibility",
+      "is_explicit_scheme": false,
+      "expected_behavior": "Retrieve Swanath scheme orphan provisions of Rs. 50,000/year assistance.",
+      "evaluation": {
+        "top1_scheme_match": false,
+        "relevant_hit_at_5": false,
+        "first_relevant_rank": null,
+        "reciprocal_rank": 0.0,
+        "roster_contamination_at_5": 0.4,
+        "latency_seconds": 0.054,
+        "top1_similarity_score": 0.8125,
+        "top1_scheme_retrieved": "SCHEME_EDU_002_AICTE_PRAGATI",
+        "top1_chunk_retrieved": "DOC_EDU_002_PRAGATI_DEGREE_GUIDELINES_2020_p002_c03"
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "chunk_id": "DOC_EDU_002_PRAGATI_DEGREE_GUIDELINES_2020_p002_c03",
+          "scheme_id": "SCHEME_EDU_002_AICTE_PRAGATI",
+          "similarity_score": 0.8125,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_002_PRAGATI_DEGREE_GUIDELINES_2020",
+          "page_number": 2,
+          "citation_reference": "[Guidelines for AICTE - Pragati Scholarship Scheme for Girl Students (Degree), Page 2] (All India Council for Technical Education (AICTE), Ministry of Education, AY 2020-21 onwards (operational through AY 2026-27)) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2010_G.pdf",
+          "text_excerpt": "i.e. Andaman and Nicobar Islands (UT), Jammu and Kashmir (UT), Ladakh (UT), Dadra and Nagar Haveli & Da man and Diu (UT) , Lakshadweep (UT),  Arunachal Pradesh, Assam, Manipur, Meghalaya, Mizoram, Nagaland, Sikkim & Trip..."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26_p017_c01",
+          "scheme_id": "SCHEME_EDU_005_TOP_CLASS_SC",
+          "similarity_score": 0.8094,
+          "category": "Institution list",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26",
+          "page_number": 17,
+          "citation_reference": "[Scheme Guidelines of Top Class Scholarship for SC Students (Applicable from 2025-26), Page 17] (Department of Social Justice and Empowerment, Ministry of Social Justice and Empowerment, AY 2025-26 and AY 2026-27) Source: https://scholarships.gov.in/public/schemeGuidelines/Top_Class_Education_Scheme_2018.pdf",
+          "text_excerpt": "89 Indian Institute of Science (IISc), Bangalore CV Raman Rd, Bengaluru, Karnataka 560012 Karnataka Under Graduate 3 Sub total 78 V -Other-Govt. Institutes of Engineering/ Information Technology [4] 90 Indian Institute o..."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26_p007_c01",
+          "scheme_id": "SCHEME_EDU_005_TOP_CLASS_SC",
+          "similarity_score": 0.8092,
+          "category": "Institution list",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26",
+          "page_number": 7,
+          "citation_reference": "[Scheme Guidelines of Top Class Scholarship for SC Students (Applicable from 2025-26), Page 7] (Department of Social Justice and Empowerment, Ministry of Social Justice and Empowerment, AY 2025-26 and AY 2026-27) Source: https://scholarships.gov.in/public/schemeGuidelines/Top_Class_Education_Scheme_2018.pdf",
+          "text_excerpt": "Annexure-2 (refer to para 3 (d)of guidelines) List of the notified institutions under the scheme of Top Class Education for SC Students for 2025-26: S.No. Name of the Institute Location State Course Number of Slots 1. EN..."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "DOC_EDU_002_PRAGATI_DIPLOMA_GUIDELINES_2020_p003_c01",
+          "scheme_id": "SCHEME_EDU_002_AICTE_PRAGATI",
+          "similarity_score": 0.8088,
+          "category": "Eligibility",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_002_PRAGATI_DIPLOMA_GUIDELINES_2020",
+          "page_number": 3,
+          "citation_reference": "[Guidelines for AICTE - Pragati Scholarship Scheme for Girl Students (Diploma), Page 3] (All India Council for Technical Education (AICTE), Ministry of Education, AY 2020-21 onwards (operational through AY 2026-27)) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2011_G.pdf",
+          "text_excerpt": "4.0 AMOUNT OF SCHOLARSHIP: 1) Rs. 50,000/- per annum for every year of study i.e. maximum 3 years for first year admitted students and maximum 2 years for second year admitted students through lateral entry as lump sum a..."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "DOC_EDU_003_SAKSHAM_DEGREE_GUIDELINES_2020_p002_c02",
+          "scheme_id": "SCHEME_EDU_003_AICTE_SAKSHAM",
+          "similarity_score": 0.8083,
+          "category": "Eligibility",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_003_SAKSHAM_DEGREE_GUIDELINES_2020",
+          "page_number": 2,
+          "citation_reference": "[Guidelines for AICTE - Saksham Scholarship Scheme for Specially-Abled Students (Degree), Page 2] (All India Council for Technical Education (AICTE), AY 2020-21 onwards (operational through AY 2026-27)) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2012_G.pdf",
+          "text_excerpt": "annum during the current financial year. A valid income certificate issued by State /UT Government need to be enclosed. 3.0 NUMBER OF SCHOLARSHIPS:  All eligible specially-abled student admitted to First year of Degree l..."
+        }
+      ]
+    },
+    {
+      "query_id": "BENCH_TE_01",
+      "question": "AICTE సక్షమ్ స్కాలర్‌షిప్ పొందడానికి కనీస వికలాంగ శాతం ఎంత ఉండాలి?",
+      "language": "Telugu",
+      "expected_scheme_id": "SCHEME_EDU_003_AICTE_SAKSHAM",
+      "relevant_chunk_ids": [
+        "DOC_EDU_003_SAKSHAM_DEGREE_GUIDELINES_2020_p002_c01",
+        "DOC_EDU_003_SAKSHAM_FAQS_2020_p001_c01"
+      ],
+      "category": "Disability criteria",
+      "is_explicit_scheme": true,
+      "expected_behavior": "Retrieve Saksham guidelines specifying benchmark disability of not less than 40%.",
+      "evaluation": {
+        "top1_scheme_match": false,
+        "relevant_hit_at_5": false,
+        "first_relevant_rank": null,
+        "reciprocal_rank": 0.0,
+        "roster_contamination_at_5": 0.0,
+        "latency_seconds": 0.058,
+        "top1_similarity_score": 0.8643,
+        "top1_scheme_retrieved": "SCHEME_EDU_004_AICTE_SWANATH",
+        "top1_chunk_retrieved": "DOC_EDU_004_SWANATH_REVISED_GUIDELINES_2025_p002_c02"
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "chunk_id": "DOC_EDU_004_SWANATH_REVISED_GUIDELINES_2025_p002_c02",
+          "scheme_id": "SCHEME_EDU_004_AICTE_SWANATH",
+          "similarity_score": 0.8643,
+          "category": "Eligibility",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_004_SWANATH_REVISED_GUIDELINES_2025",
+          "page_number": 2,
+          "citation_reference": "[AICTE - Swanath Scholarship Scheme for Students (May 2025 Revised Guidelines), Page 2] (All India Council for Technical Education (AICTE), AY 2025-26 and AY 2026-27) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_3038_G.pdf",
+          "text_excerpt": "is suffering from critical life threatening disease (Like Cancer etc.)/ Died or severely disabled (above 80%) in accident (as per RPwD Act 2016) AND  2) Family income from all sources should not be more than Rs. 8 lakh p..."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "DOC_EDU_002_PRAGATI_DEGREE_GUIDELINES_2020_p004_c02",
+          "scheme_id": "SCHEME_EDU_002_AICTE_PRAGATI",
+          "similarity_score": 0.8625,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_002_PRAGATI_DEGREE_GUIDELINES_2020",
+          "page_number": 4,
+          "citation_reference": "[Guidelines for AICTE - Pragati Scholarship Scheme for Girl Students (Degree), Page 4] (All India Council for Technical Education (AICTE), Ministry of Education, AY 2020-21 onwards (operational through AY 2026-27)) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2010_G.pdf",
+          "text_excerpt": "is subject to the condition that the student does not receive any financial assistance in shape of scholarship/any emoluments, salary, stipend etc.  from any other source during her course of study in the Institute. In c..."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "DOC_EDU_004_SWANATH_DEGREE_DIPLOMA_GUIDELINES_2021_p005_c02",
+          "scheme_id": "SCHEME_EDU_004_AICTE_SWANATH",
+          "similarity_score": 0.8612,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_004_SWANATH_DEGREE_DIPLOMA_GUIDELINES_2021",
+          "page_number": 5,
+          "citation_reference": "[Guidelines for AICTE - Swanath Scholarship Scheme for Students (Degree / Diploma - Initial Framework), Page 5] (All India Council for Technical Education (AICTE), AY 2021-22 to AY 2024-25) Source: https://www.aicte.gov.in/sites/default/files/stdc/AICTE-SWANATH-%20SCHEME-DEGREE-DIPLOMA.pdf",
+          "text_excerpt": "financial assistance from any other sources, the scholarship shall be discontinued and the entire amount of scholar ship will have to be refunded to  AICTE by D/Draft drawn in favour of \"Member Secretary, AICTE\" payable ..."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "DOC_EDU_003_SAKSHAM_DEGREE_GUIDELINES_2020_p003_c03",
+          "scheme_id": "SCHEME_EDU_003_AICTE_SAKSHAM",
+          "similarity_score": 0.8609,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_003_SAKSHAM_DEGREE_GUIDELINES_2020",
+          "page_number": 3,
+          "citation_reference": "[Guidelines for AICTE - Saksham Scholarship Scheme for Specially-Abled Students (Degree), Page 3] (All India Council for Technical Education (AICTE), AY 2020-21 onwards (operational through AY 2026-27)) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2012_G.pdf",
+          "text_excerpt": "to AICTE by D/Draft drawn in favour of \"Member Secretary, AICTE\" payable at New Delhi. 6) Scheme will be implemented and monitored by the AICTE.  7) For converting Cumulative Grade Point Average (CGPA) to percentage, mul..."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "DOC_EDU_004_SWANATH_REVISED_GUIDELINES_2025_p007_c02",
+          "scheme_id": "SCHEME_EDU_004_AICTE_SWANATH",
+          "similarity_score": 0.8598,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_004_SWANATH_REVISED_GUIDELINES_2025",
+          "page_number": 7,
+          "citation_reference": "[AICTE - Swanath Scholarship Scheme for Students (May 2025 Revised Guidelines), Page 7] (All India Council for Technical Education (AICTE), AY 2025-26 and AY 2026-27) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_3038_G.pdf",
+          "text_excerpt": "financial assistance from any other sources, the scholarship shall be discontinued and the entire amount of scholarship will have to be refunded to  AICTE by D/Draft drawn in favour of \"Member Secretary, AICTE\" payable a..."
+        }
+      ]
+    },
+    {
+      "query_id": "BENCH_TE_02",
+      "question": "స్వానాథ్ స్కాలర్‌షిప్ పథకానికి కుటుంబ వార్షిక ఆదాయ పరిమితి ఎంత?",
+      "language": "Telugu",
+      "expected_scheme_id": "SCHEME_EDU_004_AICTE_SWANATH",
+      "relevant_chunk_ids": [
+        "DOC_EDU_004_SWANATH_REVISED_GUIDELINES_2025_p002_c01",
+        "DOC_EDU_004_SWANATH_REVISED_GUIDELINES_2025_p002_c02",
+        "DOC_EDU_004_SWANATH_FAQS_2022_p001_c01"
+      ],
+      "category": "Family income",
+      "is_explicit_scheme": true,
+      "expected_behavior": "Retrieve Swanath chunk citing Rs. 8 lakh per annum income limit.",
+      "evaluation": {
+        "top1_scheme_match": false,
+        "relevant_hit_at_5": false,
+        "first_relevant_rank": null,
+        "reciprocal_rank": 0.0,
+        "roster_contamination_at_5": 0.0,
+        "latency_seconds": 0.056,
+        "top1_similarity_score": 0.813,
+        "top1_scheme_retrieved": "SCHEME_EDU_005_TOP_CLASS_SC",
+        "top1_chunk_retrieved": "DOC_EDU_005_TOP_CLASS_SC_FAQS_2022_p002_c02"
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "chunk_id": "DOC_EDU_005_TOP_CLASS_SC_FAQS_2022_p002_c02",
+          "scheme_id": "SCHEME_EDU_005_TOP_CLASS_SC",
+          "similarity_score": 0.813,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_005_TOP_CLASS_SC_FAQS_2022",
+          "page_number": 2,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - Top Class Education Scheme for SC Students, Page 2] (Department of Social Justice and Empowerment, Ministry of Social Justice and Empowerment, AY 2022-23 to AY 2026-27) Source: https://scholarships.gov.in/public/schemeGuidelines/Top_Class_Education_Scheme_2018_FAQ.pdf",
+          "text_excerpt": "charges (up to Rs.2 lakh per annum in private institutions), Academic Allowance of Rs.86,000 in first year and Rs.41,000 per year thereafter.  12. How is scholarship released? Answer: Scholarship is released through Dire..."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "DOC_EDU_004_SWANATH_FAQS_2022_p007_c01",
+          "scheme_id": "SCHEME_EDU_004_AICTE_SWANATH",
+          "similarity_score": 0.81,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_004_SWANATH_FAQS_2022",
+          "page_number": 7,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - AICTE Swanath Scholarship Scheme, Page 7] (All India Council for Technical Education (AICTE), AY 2022-23 to AY 2026-27) Source: https://www.aicte.gov.in/sites/default/files/stdc/FAQs-Swanath%20Scheme.pdf",
+          "text_excerpt": "Appendix-III SWANATH Scholarship Family Income Certificate (Please strike off whichever is not applicable) This is to certify that annual family income of Smt/Kumari (Student's name), D/o Shri/Smt. (Name of Parent) ........"
+        },
+        {
+          "rank": 3,
+          "chunk_id": "DOC_EDU_005_TOP_CLASS_SC_FAQS_2022_p002_c01",
+          "scheme_id": "SCHEME_EDU_005_TOP_CLASS_SC",
+          "similarity_score": 0.8055,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_005_TOP_CLASS_SC_FAQS_2022",
+          "page_number": 2,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - Top Class Education Scheme for SC Students, Page 2] (Department of Social Justice and Empowerment, Ministry of Social Justice and Empowerment, AY 2022-23 to AY 2026-27) Source: https://scholarships.gov.in/public/schemeGuidelines/Top_Class_Education_Scheme_2018_FAQ.pdf",
+          "text_excerpt": "family income. Remaining eligible students may apply under the Post - Matric Scholarship Scheme, if eligible. 8. Is there reservation for girl students? Answer: Yes. Thirty percent of allotted slots are reserved for elig..."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "DOC_EDU_001_CSSS_GUIDELINES_2024_p003_c02",
+          "scheme_id": "SCHEME_EDU_001_PM_USP_CSSS",
+          "similarity_score": 0.803,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_001_CSSS_GUIDELINES_2024",
+          "page_number": 3,
+          "citation_reference": "[Guidelines for the Central Sector Scheme of Scholarship for College and University Students (PM-USP CSSS), Page 3] (Department of Higher Education, Ministry of Education, Government of India, AY 2022-23 to AY 2026-27 (15th Finance Commission Cycle)) Source: https://scholarships.gov.in/public/schemeGuidelines/CSSS_GUIDLINES_07022024_updated.pdf",
+          "text_excerpt": "on Timelines will be made available on NSP. vii. Students will not be permanently debarred for scholarships due to delay to renew or verification.  However, students will have to submit renewal applications within a cut-..."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "DOC_EDU_002_PRAGATI_FAQS_2020_p001_c02",
+          "scheme_id": "SCHEME_EDU_002_AICTE_PRAGATI",
+          "similarity_score": 0.8022,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_002_PRAGATI_FAQS_2020",
+          "page_number": 1,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - AICTE Pragati Scholarship Scheme, Page 1] (All India Council for Technical Education (AICTE), AY 2020-21 onwards) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2010_F.pdf",
+          "text_excerpt": "respectiveyear. 5.Rs 50,000 per annum for every year ofstudy i.e. maximum 4 years for Degree  forfirstyearadmittedstudentsandmaximum3yearsfo rDegreestudentsadmittedthroughlateralentryaslum psum amount towards payment of ..."
+        }
+      ]
+    },
+    {
+      "query_id": "BENCH_TE_03",
+      "question": "ప్రగతి స్కాలర్‌షిప్ పథకం కింద ఎవరికి దరఖాస్తు చేసుకునే అర్హత ఉంది?",
+      "language": "Telugu",
+      "expected_scheme_id": "SCHEME_EDU_002_AICTE_PRAGATI",
+      "relevant_chunk_ids": [
+        "DOC_EDU_002_PRAGATI_DEGREE_GUIDELINES_2020_p002_c01",
+        "DOC_EDU_002_PRAGATI_DEGREE_GUIDELINES_2020_p002_c02",
+        "DOC_EDU_002_PRAGATI_FAQS_2020_p001_c01"
+      ],
+      "category": "Eligibility",
+      "is_explicit_scheme": true,
+      "expected_behavior": "Retrieve Pragati girl student eligibility criteria in engineering/diploma.",
+      "evaluation": {
+        "top1_scheme_match": true,
+        "relevant_hit_at_5": false,
+        "first_relevant_rank": null,
+        "reciprocal_rank": 0.0,
+        "roster_contamination_at_5": 0.0,
+        "latency_seconds": 0.057,
+        "top1_similarity_score": 0.8165,
+        "top1_scheme_retrieved": "SCHEME_EDU_002_AICTE_PRAGATI",
+        "top1_chunk_retrieved": "DOC_EDU_002_PRAGATI_FAQS_2020_p002_c01"
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "chunk_id": "DOC_EDU_002_PRAGATI_FAQS_2020_p002_c01",
+          "scheme_id": "SCHEME_EDU_002_AICTE_PRAGATI",
+          "similarity_score": 0.8165,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_002_PRAGATI_FAQS_2020",
+          "page_number": 2,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - AICTE Pragati Scholarship Scheme, Page 2] (All India Council for Technical Education (AICTE), AY 2020-21 onwards) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2010_F.pdf",
+          "text_excerpt": "Ans: No, Students who are already in receipt of any of the scholarships (Central Govt. / State Govt. / AICTE Sponsored), are not eligible to apply for PRAGATI Scholarship. Q.6 I am first year B.E student along with benef..."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "DOC_EDU_001_CSSS_FAQS_2024_p002_c01",
+          "scheme_id": "SCHEME_EDU_001_PM_USP_CSSS",
+          "similarity_score": 0.816,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_001_CSSS_FAQS_2024",
+          "page_number": 2,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - PM-USP Central Sector Scheme of Scholarship (CSSS), Page 2] (Department of Higher Education, Ministry of Education, Government of India, AY 2023-24 / AY 2024-25 / AY 2025-26) Source: https://scholarships.gov.in/public/schemeGuidelines/FAQ_DOHE_CSSS.pdf",
+          "text_excerpt": "year 2022 -23, subject to the condition that guidelines of Ministry of Finance and NITI Aayog regarding SC/ST fund allocation of the schemes are adhered to. 3. What is the rate of scholarship under the Scheme? The rate o..."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26_p001_c02",
+          "scheme_id": "SCHEME_EDU_005_TOP_CLASS_SC",
+          "similarity_score": 0.8134,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26",
+          "page_number": 1,
+          "citation_reference": "[Scheme Guidelines of Top Class Scholarship for SC Students (Applicable from 2025-26), Page 1] (Department of Social Justice and Empowerment, Ministry of Social Justice and Empowerment, AY 2025-26 and AY 2026-27) Source: https://scholarships.gov.in/public/schemeGuidelines/Top_Class_Education_Scheme_2018.pdf",
+          "text_excerpt": "according to the general selection criteria prescribed by the concerned institution, will be eligible for scholarship under the Scheme to the extent  of the number of scholarships (slots) allocated to the institution for..."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "DOC_EDU_002_PRAGATI_FAQS_2020_p002_c02",
+          "scheme_id": "SCHEME_EDU_002_AICTE_PRAGATI",
+          "similarity_score": 0.8122,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_002_PRAGATI_FAQS_2020",
+          "page_number": 2,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - AICTE Pragati Scholarship Scheme, Page 2] (All India Council for Technical Education (AICTE), AY 2020-21 onwards) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2010_F.pdf",
+          "text_excerpt": "renewal through National Scholarship Portal (NSP) by submitting Promotion Certificate duly certified by the Head of Institution in the online portal.  Q.9 Is there any reservation for SC/ST/OBC Students? What is percenta..."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "DOC_EDU_002_PRAGATI_DIPLOMA_GUIDELINES_2020_p004_c02",
+          "scheme_id": "SCHEME_EDU_002_AICTE_PRAGATI",
+          "similarity_score": 0.812,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_002_PRAGATI_DIPLOMA_GUIDELINES_2020",
+          "page_number": 4,
+          "citation_reference": "[Guidelines for AICTE - Pragati Scholarship Scheme for Girl Students (Diploma), Page 4] (All India Council for Technical Education (AICTE), Ministry of Education, AY 2020-21 onwards (operational through AY 2026-27)) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2011_G.pdf",
+          "text_excerpt": "is in reserved category and also qualified in general category merit list of scholarship, then she will be counted under the General Category.  4) Incomplete applications will be summarily rejected. Only verified online ..."
+        }
+      ]
+    },
+    {
+      "query_id": "BENCH_TE_04",
+      "question": "పీఎం-యూఎస్‌పీ సెంట్రల్ సెక్టార్ స్కాలర్‌షిప్ కోసం ఏ డాక్యుమెంట్లు సమర్పించాలి?",
+      "language": "Telugu",
+      "expected_scheme_id": "SCHEME_EDU_001_PM_USP_CSSS",
+      "relevant_chunk_ids": [
+        "DOC_EDU_001_CSSS_GUIDELINES_2024_p002_c02",
+        "DOC_EDU_001_CSSS_FAQS_2024_p002_c01",
+        "DOC_EDU_001_CSSS_FAQS_2024_p002_c02"
+      ],
+      "category": "Required documents",
+      "is_explicit_scheme": true,
+      "expected_behavior": "Retrieve PM-USP CSSS documentation verification criteria.",
+      "evaluation": {
+        "top1_scheme_match": false,
+        "relevant_hit_at_5": false,
+        "first_relevant_rank": null,
+        "reciprocal_rank": 0.0,
+        "roster_contamination_at_5": 0.0,
+        "latency_seconds": 0.067,
+        "top1_similarity_score": 0.8485,
+        "top1_scheme_retrieved": "SCHEME_EDU_005_TOP_CLASS_SC",
+        "top1_chunk_retrieved": "DOC_EDU_005_TOP_CLASS_SC_FAQS_2022_p002_c01"
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "chunk_id": "DOC_EDU_005_TOP_CLASS_SC_FAQS_2022_p002_c01",
+          "scheme_id": "SCHEME_EDU_005_TOP_CLASS_SC",
+          "similarity_score": 0.8485,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_005_TOP_CLASS_SC_FAQS_2022",
+          "page_number": 2,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - Top Class Education Scheme for SC Students, Page 2] (Department of Social Justice and Empowerment, Ministry of Social Justice and Empowerment, AY 2022-23 to AY 2026-27) Source: https://scholarships.gov.in/public/schemeGuidelines/Top_Class_Education_Scheme_2018_FAQ.pdf",
+          "text_excerpt": "family income. Remaining eligible students may apply under the Post - Matric Scholarship Scheme, if eligible. 8. Is there reservation for girl students? Answer: Yes. Thirty percent of allotted slots are reserved for elig..."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "DOC_EDU_001_CSSS_FAQS_2024_p001_c01",
+          "scheme_id": "SCHEME_EDU_001_PM_USP_CSSS",
+          "similarity_score": 0.845,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_001_CSSS_FAQS_2024",
+          "page_number": 1,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - PM-USP Central Sector Scheme of Scholarship (CSSS), Page 1] (Department of Higher Education, Ministry of Education, Government of India, AY 2023-24 / AY 2024-25 / AY 2025-26) Source: https://scholarships.gov.in/public/schemeGuidelines/FAQ_DOHE_CSSS.pdf",
+          "text_excerpt": "Government of India Ministry of Education Department of Higher Education (Scholarship Division) PRADHAN MANTRI UCHCHATAR SHIKSHA PROTSAHAN (PM-USP) CENTRAL SECTOR SCHEME OF SCHOLARSHIP FOR COLLEGE AND UNIVERSITY STUDENTS..."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "DOC_EDU_001_CSSS_GUIDELINES_2024_p002_c03",
+          "scheme_id": "SCHEME_EDU_001_PM_USP_CSSS",
+          "similarity_score": 0.8418,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_001_CSSS_GUIDELINES_2024",
+          "page_number": 2,
+          "citation_reference": "[Guidelines for the Central Sector Scheme of Scholarship for College and University Students (PM-USP CSSS), Page 2] (Department of Higher Education, Ministry of Education, Government of India, AY 2022-23 to AY 2026-27 (15th Finance Commission Cycle)) Source: https://scholarships.gov.in/public/schemeGuidelines/CSSS_GUIDLINES_07022024_updated.pdf",
+          "text_excerpt": "sections /minorities etc. are eligible to get benefit of reservation on the basis of merit, subject to Central Reservation Policy [i.e. 15% seats are  earmarked for SCs, 7.5% for STs and 27 % for OBCs and 5% horizontal r..."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26_p001_c03",
+          "scheme_id": "SCHEME_EDU_005_TOP_CLASS_SC",
+          "similarity_score": 0.8383,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26",
+          "page_number": 1,
+          "citation_reference": "[Scheme Guidelines of Top Class Scholarship for SC Students (Applicable from 2025-26), Page 1] (Department of Social Justice and Empowerment, Ministry of Social Justice and Empowerment, AY 2025-26 and AY 2026-27) Source: https://scholarships.gov.in/public/schemeGuidelines/Top_Class_Education_Scheme_2018.pdf",
+          "text_excerpt": "preference should be given to the student with the lower family income. The remaining students from SC category admitted in the institution shall be  eligible for the Post-Matric Scholarship (PMS) administered by this Mi..."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "DOC_EDU_003_SAKSHAM_DEGREE_GUIDELINES_2020_p001_c01",
+          "scheme_id": "SCHEME_EDU_003_AICTE_SAKSHAM",
+          "similarity_score": 0.8355,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_003_SAKSHAM_DEGREE_GUIDELINES_2020",
+          "page_number": 1,
+          "citation_reference": "[Guidelines for AICTE - Saksham Scholarship Scheme for Specially-Abled Students (Degree), Page 1] (All India Council for Technical Education (AICTE), AY 2020-21 onwards (operational through AY 2026-27)) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2012_G.pdf",
+          "text_excerpt": "July 2020       GUIDELINES FOR  AICTE - SAKSHAM SCHOLARSHIP  SCHEME FOR SPECIALLY-ABLED  STUDENT (DEGREE)      2020-21"
+        }
+      ]
+    },
+    {
+      "query_id": "BENCH_TE_05",
+      "question": "ఏఐసీటీఈ సక్షమ్ స్కాలర్‌షిప్ ద్వారా విద్యార్థులకు ఎంత మొత్తం అందుతుంది?",
+      "language": "Telugu",
+      "expected_scheme_id": "SCHEME_EDU_003_AICTE_SAKSHAM",
+      "relevant_chunk_ids": [
+        "DOC_EDU_003_SAKSHAM_DEGREE_GUIDELINES_2020_p003_c01",
+        "DOC_EDU_003_SAKSHAM_FAQS_2020_p001_c02"
+      ],
+      "category": "Scheme benefits",
+      "is_explicit_scheme": true,
+      "expected_behavior": "Retrieve Saksham financial support of Rs. 50,000 per annum.",
+      "evaluation": {
+        "top1_scheme_match": false,
+        "relevant_hit_at_5": false,
+        "first_relevant_rank": null,
+        "reciprocal_rank": 0.0,
+        "roster_contamination_at_5": 0.0,
+        "latency_seconds": 0.084,
+        "top1_similarity_score": 0.8484,
+        "top1_scheme_retrieved": "SCHEME_EDU_004_AICTE_SWANATH",
+        "top1_chunk_retrieved": "DOC_EDU_004_SWANATH_DEGREE_DIPLOMA_GUIDELINES_2021_p002_c02"
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "chunk_id": "DOC_EDU_004_SWANATH_DEGREE_DIPLOMA_GUIDELINES_2021_p002_c02",
+          "scheme_id": "SCHEME_EDU_004_AICTE_SWANATH",
+          "similarity_score": 0.8484,
+          "category": "Eligibility",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_004_SWANATH_DEGREE_DIPLOMA_GUIDELINES_2021",
+          "page_number": 2,
+          "citation_reference": "[Guidelines for AICTE - Swanath Scholarship Scheme for Students (Degree / Diploma - Initial Framework), Page 2] (All India Council for Technical Education (AICTE), AY 2021-22 to AY 2024-25) Source: https://www.aicte.gov.in/sites/default/files/stdc/AICTE-SWANATH-%20SCHEME-DEGREE-DIPLOMA.pdf",
+          "text_excerpt": "Rs. 8 lakh per annum during the financial year of the application. A valid income certificate issued by State/UT Government is to be enclosed. AND  3) The candidate should be currently studying in the AICTE Approved inst..."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "DOC_EDU_003_SAKSHAM_DEGREE_GUIDELINES_2020_p002_c02",
+          "scheme_id": "SCHEME_EDU_003_AICTE_SAKSHAM",
+          "similarity_score": 0.8476,
+          "category": "Eligibility",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_003_SAKSHAM_DEGREE_GUIDELINES_2020",
+          "page_number": 2,
+          "citation_reference": "[Guidelines for AICTE - Saksham Scholarship Scheme for Specially-Abled Students (Degree), Page 2] (All India Council for Technical Education (AICTE), AY 2020-21 onwards (operational through AY 2026-27)) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2012_G.pdf",
+          "text_excerpt": "annum during the current financial year. A valid income certificate issued by State /UT Government need to be enclosed. 3.0 NUMBER OF SCHOLARSHIPS:  All eligible specially-abled student admitted to First year of Degree l..."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "DOC_EDU_002_PRAGATI_FAQS_2020_p002_c02",
+          "scheme_id": "SCHEME_EDU_002_AICTE_PRAGATI",
+          "similarity_score": 0.8452,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_002_PRAGATI_FAQS_2020",
+          "page_number": 2,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - AICTE Pragati Scholarship Scheme, Page 2] (All India Council for Technical Education (AICTE), AY 2020-21 onwards) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2010_F.pdf",
+          "text_excerpt": "renewal through National Scholarship Portal (NSP) by submitting Promotion Certificate duly certified by the Head of Institution in the online portal.  Q.9 Is there any reservation for SC/ST/OBC Students? What is percenta..."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "DOC_EDU_004_SWANATH_REVISED_GUIDELINES_2025_p002_c02",
+          "scheme_id": "SCHEME_EDU_004_AICTE_SWANATH",
+          "similarity_score": 0.8446,
+          "category": "Eligibility",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_004_SWANATH_REVISED_GUIDELINES_2025",
+          "page_number": 2,
+          "citation_reference": "[AICTE - Swanath Scholarship Scheme for Students (May 2025 Revised Guidelines), Page 2] (All India Council for Technical Education (AICTE), AY 2025-26 and AY 2026-27) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_3038_G.pdf",
+          "text_excerpt": "is suffering from critical life threatening disease (Like Cancer etc.)/ Died or severely disabled (above 80%) in accident (as per RPwD Act 2016) AND  2) Family income from all sources should not be more than Rs. 8 lakh p..."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "DOC_EDU_002_PRAGATI_DIPLOMA_GUIDELINES_2020_p004_c02",
+          "scheme_id": "SCHEME_EDU_002_AICTE_PRAGATI",
+          "similarity_score": 0.8422,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_002_PRAGATI_DIPLOMA_GUIDELINES_2020",
+          "page_number": 4,
+          "citation_reference": "[Guidelines for AICTE - Pragati Scholarship Scheme for Girl Students (Diploma), Page 4] (All India Council for Technical Education (AICTE), Ministry of Education, AY 2020-21 onwards (operational through AY 2026-27)) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2011_G.pdf",
+          "text_excerpt": "is in reserved category and also qualified in general category merit list of scholarship, then she will be counted under the General Category.  4) Incomplete applications will be summarily rejected. Only verified online ..."
+        }
+      ]
+    },
+    {
+      "query_id": "BENCH_TE_06",
+      "question": "డిగ్రీ లేదా ఇంజనీరింగ్ చదువుతున్న వికలాంగ విద్యార్థులకు ఏ ప్రభుత్వ స్కాలర్‌షిప్ సహాయం ఉంది?",
+      "language": "Telugu",
+      "expected_scheme_id": "SCHEME_EDU_003_AICTE_SAKSHAM",
+      "relevant_chunk_ids": [
+        "DOC_EDU_003_SAKSHAM_DEGREE_GUIDELINES_2020_p002_c01",
+        "DOC_EDU_003_SAKSHAM_FAQS_2020_p001_c01",
+        "DOC_EDU_003_SAKSHAM_FAQS_2020_p001_c02"
+      ],
+      "category": "Eligibility",
+      "is_explicit_scheme": false,
+      "expected_behavior": "Match disabled student query with Saksham scholarship scheme.",
+      "evaluation": {
+        "top1_scheme_match": false,
+        "relevant_hit_at_5": true,
+        "first_relevant_rank": 5,
+        "reciprocal_rank": 0.2,
+        "roster_contamination_at_5": 0.2,
+        "latency_seconds": 0.066,
+        "top1_similarity_score": 0.838,
+        "top1_scheme_retrieved": "SCHEME_EDU_005_TOP_CLASS_SC",
+        "top1_chunk_retrieved": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26_p017_c01"
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "chunk_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26_p017_c01",
+          "scheme_id": "SCHEME_EDU_005_TOP_CLASS_SC",
+          "similarity_score": 0.838,
+          "category": "Institution list",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26",
+          "page_number": 17,
+          "citation_reference": "[Scheme Guidelines of Top Class Scholarship for SC Students (Applicable from 2025-26), Page 17] (Department of Social Justice and Empowerment, Ministry of Social Justice and Empowerment, AY 2025-26 and AY 2026-27) Source: https://scholarships.gov.in/public/schemeGuidelines/Top_Class_Education_Scheme_2018.pdf",
+          "text_excerpt": "89 Indian Institute of Science (IISc), Bangalore CV Raman Rd, Bengaluru, Karnataka 560012 Karnataka Under Graduate 3 Sub total 78 V -Other-Govt. Institutes of Engineering/ Information Technology [4] 90 Indian Institute o..."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "DOC_EDU_001_CSSS_GUIDELINES_2024_p002_c01",
+          "scheme_id": "SCHEME_EDU_001_PM_USP_CSSS",
+          "similarity_score": 0.8283,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_001_CSSS_GUIDELINES_2024",
+          "page_number": 2,
+          "citation_reference": "[Guidelines for the Central Sector Scheme of Scholarship for College and University Students (PM-USP CSSS), Page 2] (Department of Higher Education, Ministry of Education, Government of India, AY 2022-23 to AY 2026-27 (15th Finance Commission Cycle)) Source: https://scholarships.gov.in/public/schemeGuidelines/CSSS_GUIDLINES_07022024_updated.pdf",
+          "text_excerpt": "ii. Pursuing regular degree courses and not correspondence or distance mode or pursuing Diploma courses; iii. Pursuing courses at colleges/institutions recognized by All India Council for Technical Education and respecti..."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "DOC_EDU_004_SWANATH_DEGREE_DIPLOMA_GUIDELINES_2021_p002_c02",
+          "scheme_id": "SCHEME_EDU_004_AICTE_SWANATH",
+          "similarity_score": 0.8214,
+          "category": "Eligibility",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_004_SWANATH_DEGREE_DIPLOMA_GUIDELINES_2021",
+          "page_number": 2,
+          "citation_reference": "[Guidelines for AICTE - Swanath Scholarship Scheme for Students (Degree / Diploma - Initial Framework), Page 2] (All India Council for Technical Education (AICTE), AY 2021-22 to AY 2024-25) Source: https://www.aicte.gov.in/sites/default/files/stdc/AICTE-SWANATH-%20SCHEME-DEGREE-DIPLOMA.pdf",
+          "text_excerpt": "Rs. 8 lakh per annum during the financial year of the application. A valid income certificate issued by State/UT Government is to be enclosed. AND  3) The candidate should be currently studying in the AICTE Approved inst..."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "DOC_EDU_002_PRAGATI_FAQS_2020_p001_c02",
+          "scheme_id": "SCHEME_EDU_002_AICTE_PRAGATI",
+          "similarity_score": 0.8209,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_002_PRAGATI_FAQS_2020",
+          "page_number": 1,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - AICTE Pragati Scholarship Scheme, Page 1] (All India Council for Technical Education (AICTE), AY 2020-21 onwards) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2010_F.pdf",
+          "text_excerpt": "respectiveyear. 5.Rs 50,000 per annum for every year ofstudy i.e. maximum 4 years for Degree  forfirstyearadmittedstudentsandmaximum3yearsfo rDegreestudentsadmittedthroughlateralentryaslum psum amount towards payment of ..."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "DOC_EDU_003_SAKSHAM_FAQS_2020_p001_c02",
+          "scheme_id": "SCHEME_EDU_003_AICTE_SAKSHAM",
+          "similarity_score": 0.8207,
+          "category": "FAQ",
+          "is_relevant_policy": true,
+          "document_id": "DOC_EDU_003_SAKSHAM_FAQS_2020",
+          "page_number": 1,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - AICTE Saksham Scholarship Scheme, Page 1] (All India Council for Technical Education (AICTE), AY 2020-21 onwards) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2012_F.pdf",
+          "text_excerpt": "admitted in first year of their DiplomaCourseORSecondyearofDiplomaCoursethrou ghlateralentry(LE)inanyoftheAICTEapprovedInstitutio nof respectiveyear.  5.Rs 50,000 per annum for every year ofstudy i.e. maximum 4 years for..."
+        }
+      ]
+    },
+    {
+      "query_id": "BENCH_TE_07",
+      "question": "టాప్ కాలేజీల్లో సీటు వచ్చిన ఎస్సీ విద్యార్థులకు ఫీజు రీయింబర్స్‌మెంట్ ఎలా లభిస్తుంది?",
+      "language": "Telugu",
+      "expected_scheme_id": "SCHEME_EDU_005_TOP_CLASS_SC",
+      "relevant_chunk_ids": [
+        "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26_p001_c01",
+        "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26_p003_c01",
+        "DOC_EDU_005_TOP_CLASS_SC_FAQS_2022_p001_c01"
+      ],
+      "category": "Application procedures",
+      "is_explicit_scheme": false,
+      "expected_behavior": "Match SC top college query with Top Class SC education funding.",
+      "evaluation": {
+        "top1_scheme_match": true,
+        "relevant_hit_at_5": true,
+        "first_relevant_rank": 5,
+        "reciprocal_rank": 0.2,
+        "roster_contamination_at_5": 0.0,
+        "latency_seconds": 0.067,
+        "top1_similarity_score": 0.8561,
+        "top1_scheme_retrieved": "SCHEME_EDU_005_TOP_CLASS_SC",
+        "top1_chunk_retrieved": "DOC_EDU_005_TOP_CLASS_SC_FAQS_2022_p002_c01"
+      },
+      "retrieved_results": [
+        {
+          "rank": 1,
+          "chunk_id": "DOC_EDU_005_TOP_CLASS_SC_FAQS_2022_p002_c01",
+          "scheme_id": "SCHEME_EDU_005_TOP_CLASS_SC",
+          "similarity_score": 0.8561,
+          "category": "FAQ",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_005_TOP_CLASS_SC_FAQS_2022",
+          "page_number": 2,
+          "citation_reference": "[Frequently Asked Questions (FAQs) - Top Class Education Scheme for SC Students, Page 2] (Department of Social Justice and Empowerment, Ministry of Social Justice and Empowerment, AY 2022-23 to AY 2026-27) Source: https://scholarships.gov.in/public/schemeGuidelines/Top_Class_Education_Scheme_2018_FAQ.pdf",
+          "text_excerpt": "family income. Remaining eligible students may apply under the Post - Matric Scholarship Scheme, if eligible. 8. Is there reservation for girl students? Answer: Yes. Thirty percent of allotted slots are reserved for elig..."
+        },
+        {
+          "rank": 2,
+          "chunk_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26_p003_c02",
+          "scheme_id": "SCHEME_EDU_005_TOP_CLASS_SC",
+          "similarity_score": 0.854,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26",
+          "page_number": 3,
+          "citation_reference": "[Scheme Guidelines of Top Class Scholarship for SC Students (Applicable from 2025-26), Page 3] (Department of Social Justice and Empowerment, Ministry of Social Justice and Empowerment, AY 2025-26 and AY 2026-27) Source: https://scholarships.gov.in/public/schemeGuidelines/Top_Class_Education_Scheme_2018.pdf",
+          "text_excerpt": "after securing admission by the student and starting the classes. d. The payment of tuition fee, other non -refundable charges and academic allowance  will be made directly to the students by the Central Government throu..."
+        },
+        {
+          "rank": 3,
+          "chunk_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26_p004_c01",
+          "scheme_id": "SCHEME_EDU_005_TOP_CLASS_SC",
+          "similarity_score": 0.853,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26",
+          "page_number": 4,
+          "citation_reference": "[Scheme Guidelines of Top Class Scholarship for SC Students (Applicable from 2025-26), Page 4] (Department of Social Justice and Empowerment, Ministry of Social Justice and Empowerment, AY 2025-26 and AY 2026-27) Source: https://scholarships.gov.in/public/schemeGuidelines/Top_Class_Education_Scheme_2018.pdf",
+          "text_excerpt": "mean that the institution has promoted the student to the next class and the student has taken admission therein. e. A lump sum payment of Rs.86000 and Rs.41000 shall be paid to the students beneficiary of first year and..."
+        },
+        {
+          "rank": 4,
+          "chunk_id": "DOC_EDU_002_PRAGATI_DEGREE_GUIDELINES_2020_p003_c03",
+          "scheme_id": "SCHEME_EDU_002_AICTE_PRAGATI",
+          "similarity_score": 0.8492,
+          "category": "Policy",
+          "is_relevant_policy": false,
+          "document_id": "DOC_EDU_002_PRAGATI_DEGREE_GUIDELINES_2020",
+          "page_number": 3,
+          "citation_reference": "[Guidelines for AICTE - Pragati Scholarship Scheme for Girl Students (Degree), Page 3] (All India Council for Technical Education (AICTE), Ministry of Education, AY 2020-21 onwards (operational through AY 2026-27)) Source: https://scholarships.gov.in/public/schemeGuidelines/AICTE/AICTE_2010_G.pdf",
+          "text_excerpt": "percentile does not break ties, then the candidate of elder age will be ranked higher. 9.0 RESERVATION: 1) As per Government of India norms.  2) If there is any vacant seat in any of the reserved category (SC/ ST/ OBC), ..."
+        },
+        {
+          "rank": 5,
+          "chunk_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26_p003_c01",
+          "scheme_id": "SCHEME_EDU_005_TOP_CLASS_SC",
+          "similarity_score": 0.8471,
+          "category": "Policy",
+          "is_relevant_policy": true,
+          "document_id": "DOC_EDU_005_TOP_CLASS_SC_GUIDELINES_2025_26",
+          "page_number": 3,
+          "citation_reference": "[Scheme Guidelines of Top Class Scholarship for SC Students (Applicable from 2025-26), Page 3] (Department of Social Justice and Empowerment, Ministry of Social Justice and Empowerment, AY 2025-26 and AY 2026-27) Source: https://scholarships.gov.in/public/schemeGuidelines/Top_Class_Education_Scheme_2018.pdf",
+          "text_excerpt": "under the scheme and their slots shall be re-distributed among other deserving notified institutes under the scheme. 4 Funding Pattern & Mode of Payment a. The SC students, who secure admission in the notified institutio..."
+        }
+      ]
+    }
+  ]
+}

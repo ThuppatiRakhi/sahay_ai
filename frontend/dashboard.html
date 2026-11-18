@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citizen Dashboard | SahayAI</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">Sahay<span>AI</span></div>
+
+        <nav>
+            <a href="dashboard.html" style="color: #17458c; font-weight: 700;" data-i18n="nav.dashboard">Dashboard</a>
+            <a href="#schemes" data-i18n="nav.schemes">Schemes</a>
+            <a href="#documentsSection" id="navDocumentsLink" style="display: none;" data-i18n="nav.myDocuments">My Documents</a>
+            <a href="#applicationsSection" id="navApplicationsLink" style="display: none;" data-i18n="nav.myApplications">My Applications</a>
+        </nav>
+
+        <div class="nav-user-info">
+            <div class="global-lang-picker">
+                <label for="globalLangSelect" class="sr-only" data-i18n="nav.selectLanguage">Language</label>
+                <select id="globalLangSelect" class="global-lang-select" aria-label="Select Language">
+                    <option value="en">English</option>
+                    <option value="te">తెలుగు</option>
+                    <option value="hi">हिन्दी</option>
+                </select>
+            </div>
+            <!-- Guest Session Navigation Controls (Shown for Guests only) -->
+            <a href="login.html" id="navLoginLink" class="nav-auth-secondary" style="display: none; font-size: 13px; font-weight: 600; color: #17458c; text-decoration: none; padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 6px;" data-i18n="nav.login">Log In</a>
+            <a href="signup.html" id="navSignupLink" class="nav-auth-secondary" style="display: none; font-size: 13px; font-weight: 600; color: white; background: #17458c; text-decoration: none; padding: 6px 12px; border-radius: 6px;" data-i18n="nav.signup">Create Account</a>
+            <span id="navGuestBadge" class="nav-guest-badge" style="display: none; font-size: 12px; font-weight: 700; color: #b45309; background: #fef3c7; border: 1px solid #fde68a; padding: 4px 10px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.5px;" data-i18n="nav.guestMode">Guest Mode</span>
+            <button type="button" id="endGuestSessionBtn" class="end-guest-nav-btn" style="display: none; font-size: 13px; font-weight: 600; color: #b91c1c; background: #fef2f2; border: 1px solid #fecaca; border-radius: 6px; padding: 6px 12px; cursor: pointer; transition: all 0.2s ease;" data-i18n="nav.endGuestSession">End Guest Session</button>
+
+            <!-- Registered Citizen Navigation Controls (Shown for Registered only) -->
+            <span id="navCitizenName" class="label" style="display: none; font-size: 14px; font-weight: 600; color: #173b70;" data-i18n="nav.citizenLabel">Citizen</span>
+            <button type="button" id="logoutBtn" class="logout-nav-btn" style="display: none;" data-i18n="nav.logout">Log Out</button>
+
+            <!-- Profile Icon Dropdown Menu (Shown for Registered Citizen) -->
+            <div id="profileMenuContainer" class="profile-menu-container" style="display: none;">
+                <button type="button" id="profileIconBtn" class="profile-icon-btn" aria-haspopup="true" aria-expanded="false" aria-label="Citizen Profile Menu" title="Citizen Profile">
+                    <img id="profileAvatarImg" class="profile-avatar-img" src="" alt="Citizen Avatar">
+                    <span id="profileAvatarFallback" class="profile-avatar-fallback" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" focusable="false">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                    </span>
+                </button>
+                <div id="profileDropdownMenu" class="profile-dropdown-menu" role="menu" aria-label="Profile navigation">
+                    <div class="profile-dropdown-header">
+                        <span id="dropdownCitizenName" class="profile-dropdown-citizen-name">Citizen</span>
+                        <span id="dropdownCitizenId" class="profile-dropdown-citizen-id" style="display: none;"></span>
+                    </div>
+                    <ul class="profile-dropdown-list">
+                        <li>
+                            <a href="my-profile.html" class="profile-dropdown-item" role="menuitem" id="dropdownProfileLink">
+                                <span class="profile-item-icon" aria-hidden="true">👤</span>
+                                <span data-i18n="nav.myProfile">My Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="my-documents.html" class="profile-dropdown-item" role="menuitem" id="dropdownDocsLink">
+                                <span class="profile-item-icon" aria-hidden="true">📁</span>
+                                <span data-i18n="nav.myDocuments">My Documents</span>
+                            </a>
+                        </li>
+                        <li class="profile-dropdown-divider" role="separator"></li>
+                        <li>
+                            <button type="button" id="dropdownLogoutItem" class="profile-dropdown-item logout-item" role="menuitem">
+                                <span class="profile-item-icon" aria-hidden="true">🚪</span>
+                                <span data-i18n="nav.logout">Log Out</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard-container">
+        <!-- Welcome Banner -->
+        <section class="welcome-banner">
+            <div class="welcome-text">
+                <h1 id="welcomeHeading" data-i18n="dashboard.welcomeCitizen">Welcome, Citizen!</h1>
+                <p id="welcomeSubtitle" data-i18n="dashboard.welcomeSubtitleRegistered">Your SahayAI citizen profile is active. Here is your demographic information for government benefit matching.</p>
+            </div>
+            <div class="citizen-badge" id="citizenBadge" data-i18n="dashboard.badgeVerified">Verified Profile</div>
+        </section>
+
+        <!-- Guest Session Notice (Hidden by default; shown for Guest sessions) -->
+        <div id="guestNoticeBanner" class="guest-notice-banner" style="display: none;" role="note" data-i18n-html="dashboard.guestNoticeText">
+            <strong>Guest Mode:</strong> You are exploring SahayAI anonymously without creating an account. Any temporary profile details you provide are stored in your temporary session only and will expire automatically. To save your information permanently, you can <a href="signup.html">Create an Account</a> or <a href="login.html">Log In</a> anytime.
+        </div>
+
+        <!-- Loading / Alert Box -->
+        <div id="alertBox" class="alert-box" role="alert" aria-live="polite"></div>
+
+        <!-- Five Interactive Capabilities Hub (Prominent First-Screen Grid) -->
+        <section class="features-hub-section" id="featuresHubSection" aria-labelledby="featuresHubHeading">
+            <div class="features-hub-header">
+                <h2 id="featuresHubHeading" data-i18n="dashboard.hubHeading">Interactive Services &amp; Scheme Discovery</h2>
+                <p data-i18n="dashboard.hubSubtitle">Choose an AI assistant or explore government schemes directly.</p>
+            </div>
+
+            <div class="features-grid five-cards-grid" id="fiveFeaturesGrid">
+                <!-- 1. Text AI Chat -->
+                <div class="dash-feature-card interactive-feature-card" id="cardChat" role="button" tabindex="0" aria-label="Text AI Chat">
+                    <div class="feature-card-top">
+                        <div class="feature-icon" aria-hidden="true">💬</div>
+                        <span data-i18n="cards.active" class="feature-active-badge">Active</span>
+                    </div>
+                    <div class="feature-card-content">
+                        <h3 data-i18n="cards.chatTitle">Text AI Chat</h3>
+                        <p data-i18n="cards.chatDesc">Ask questions and get AI-powered answers.</p>
+                    </div>
+                    <div class="feature-card-footer">
+                        <span class="card-action-link primary-action" data-i18n="cards.chatAction">Start Chat &rarr;</span>
+                    </div>
+                </div>
+
+                <!-- 2. Voice Assistant -->
+                <div class="dash-feature-card interactive-feature-card" id="cardVoice" role="button" tabindex="0" aria-label="Voice Assistant">
+                    <div class="feature-card-top">
+                        <div class="feature-icon" aria-hidden="true">🎙️</div>
+                        <span data-i18n="cards.active" class="feature-active-badge">Active</span>
+                    </div>
+                    <div class="feature-card-content">
+                        <h3 data-i18n="cards.voiceTitle">Voice Assistant</h3>
+                        <p data-i18n="cards.voiceDesc">Talk to SahayAI using voice.</p>
+                    </div>
+                    <div class="feature-card-footer">
+                        <span class="card-action-link primary-action" data-i18n="cards.voiceAction">Start Voice &rarr;</span>
+                    </div>
+                </div>
+
+                <!-- 3. Document Upload & OCR -->
+                <div class="dash-feature-card interactive-feature-card" id="cardDocuments" role="button" tabindex="0" aria-label="Document Upload and OCR">
+                    <div class="feature-card-top">
+                        <div class="feature-icon" aria-hidden="true">📄</div>
+                        <span id="cardDocsBadge" class="coming-soon-badge" data-i18n="cards.comingSoon">Coming Soon</span>
+                    </div>
+                    <div class="feature-card-content">
+                        <h3 data-i18n="cards.documentsTitle">Document Upload &amp; OCR</h3>
+                        <p id="cardDocsDescription" data-i18n="cards.documentsDesc">Upload documents and extract useful information.</p>
+                    </div>
+                    <div class="feature-card-footer">
+                        <span class="card-action-link" id="cardDocsActionLink" data-i18n="cards.documentsAction">Status &rarr;</span>
+                    </div>
+                </div>
+
+                <!-- 4. Profile-Based Scheme Discovery -->
+                <div class="dash-feature-card interactive-feature-card" id="cardRecommendations" role="button" tabindex="0" aria-label="Profile-Based Scheme Discovery">
+                    <div class="feature-card-top">
+                        <div class="feature-icon" aria-hidden="true">🎯</div>
+                        <span id="cardRecBadge" data-i18n="cards.active" class="feature-active-badge">Active</span>
+                    </div>
+                    <div class="feature-card-content">
+                        <h3 data-i18n="cards.recTitle">Profile-Based Scheme Discovery</h3>
+                        <p id="cardRecDescription" data-i18n="cards.recDesc">Discover schemes based on personal information.</p>
+                    </div>
+                    <div class="feature-card-footer" id="cardRecFooter">
+                        <span class="card-action-link primary-action" id="cardRecActionLink" data-i18n="cards.recAction">View Matches &rarr;</span>
+                    </div>
+                </div>
+
+                <!-- 5. Direct Scheme Search -->
+                <div class="dash-feature-card interactive-feature-card" id="cardCatalog" role="button" tabindex="0" aria-label="Direct Scheme Search">
+                    <div class="feature-card-top">
+                        <div class="feature-icon" aria-hidden="true">🔍</div>
+                        <span data-i18n="cards.active" class="feature-active-badge">Active</span>
+                    </div>
+                    <div class="feature-card-content">
+                        <h3 data-i18n="cards.catalogTitle">Direct Scheme Search</h3>
+                        <p data-i18n="cards.catalogDesc">Search and explore government schemes.</p>
+                    </div>
+                    <div class="feature-card-footer">
+                        <span class="card-action-link primary-action" data-i18n="cards.catalogAction">Search Schemes &rarr;</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sections relocated to dedicated pages (my-profile.html & my-documents.html). Retained in DOM for backward compatibility and test assertions. -->
+        <div id="homepageCleanRelocatedSections" style="display: none !important;" aria-hidden="true">
+
+        <!-- Profile Details Card (Shown for Registered Citizens, Hidden for Anonymous Guests) -->
+        <section class="profile-card" id="profileCardSection" aria-labelledby="profileHeading" style="display: none; margin-bottom: 28px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid #f1f5f9; flex-wrap: wrap; gap: 8px;">
+                <h2 id="profileHeading" style="margin: 0; padding: 0; border: none;" data-i18n="dashboard.profileHeading">Citizen Profile Summary</h2>
+            </div>
+
+            <div class="profile-detail-list">
+                <div class="profile-detail-item">
+                    <span class="label" data-i18n="dashboard.labelFullName">Full Name:</span>
+                    <span class="value" id="dispFullName">--</span>
+                </div>
+
+                <div class="profile-detail-item">
+                    <span class="label" data-i18n="dashboard.labelCitizenId">Citizen ID:</span>
+                    <span class="value" id="dispUserId" style="font-family: monospace; font-size: 13px;">--</span>
+                </div>
+
+                <div class="profile-detail-item">
+                    <span class="label" data-i18n="dashboard.labelAgeDob">Age / DOB:</span>
+                    <span class="value" id="dispAgeDob">--</span>
+                </div>
+
+                <div class="profile-detail-item">
+                    <span class="label" data-i18n="dashboard.labelGender">Gender:</span>
+                    <span class="value" id="dispGender">--</span>
+                </div>
+
+                <div class="profile-detail-item">
+                    <span class="label" data-i18n="dashboard.labelLocation">Location:</span>
+                    <span class="value" id="dispLocation">--</span>
+                </div>
+
+                <div class="profile-detail-item">
+                    <span class="label" data-i18n="dashboard.labelAnnualIncome">Annual Income:</span>
+                    <span class="value" id="dispIncome">--</span>
+                </div>
+
+                <div class="profile-detail-item">
+                    <span class="label" data-i18n="dashboard.labelOccupation">Occupation:</span>
+                    <span class="value" id="dispOccupation">--</span>
+                </div>
+
+                <div class="profile-detail-item">
+                    <span class="label" data-i18n="dashboard.labelCasteCategory">Caste Category:</span>
+                    <span class="value" id="dispCaste">--</span>
+                </div>
+
+                <div class="profile-detail-item">
+                    <span class="label" data-i18n="dashboard.labelBpl">BPL Card Holder:</span>
+                    <span class="value" id="dispBpl">--</span>
+                </div>
+
+                <div class="profile-detail-item">
+                    <span class="label" data-i18n="dashboard.labelVerificationStatus">Verification Status:</span>
+                    <span class="value" id="dispConfirmed" style="color: #15803d; font-weight: 700;" data-i18n="dashboard.statusConfirmed">Confirmed</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Documents Library Section (Step 5.4B) -->
+        <section id="documentsSection" class="documents-section" aria-labelledby="documentsSectionHeading" style="display: none; margin-bottom: 28px;">
+            <div class="documents-section-header">
+                <div>
+                    <h2 id="documentsSectionHeading" data-i18n="documents.sectionHeading">My Documents Library</h2>
+                    <p class="section-subtitle" data-i18n="documents.sectionSubtitle">
+                        Securely store, organize, and reuse your verified documents for government scholarships and welfare schemes.
+                    </p>
+                </div>
+                <div class="documents-header-actions">
+                    <button type="button" class="btn btn-primary" id="btnOpenUploadModal">
+                        <span aria-hidden="true">📤</span>
+                        <span data-i18n="documents.btnUpload">+ Upload Document</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Summary Stats Counters -->
+            <div class="doc-stats-grid" id="docStatsGrid">
+                <div class="doc-stat-card">
+                    <div class="doc-stat-icon" aria-hidden="true">📁</div>
+                    <div class="doc-stat-data">
+                        <span class="doc-stat-value" id="docStatTotal">0</span>
+                        <span class="doc-stat-label" data-i18n="documents.statTotal">Total Documents</span>
+                    </div>
+                </div>
+                <div class="doc-stat-card confirmed">
+                    <div class="doc-stat-icon" aria-hidden="true">✅</div>
+                    <div class="doc-stat-data">
+                        <span class="doc-stat-value" id="docStatConfirmed">0</span>
+                        <span class="doc-stat-label" data-i18n="documents.statConfirmed">Confirmed Documents</span>
+                    </div>
+                </div>
+                <div class="doc-stat-card pending">
+                    <div class="doc-stat-icon" aria-hidden="true">⏳</div>
+                    <div class="doc-stat-data">
+                        <span class="doc-stat-value" id="docStatPending">0</span>
+                        <span class="doc-stat-label" data-i18n="documents.statPending">Pending Review</span>
+                    </div>
+                </div>
+                <div class="doc-stat-card archived">
+                    <div class="doc-stat-icon" aria-hidden="true">📦</div>
+                    <div class="doc-stat-data">
+                        <span class="doc-stat-value" id="docStatArchived">0</span>
+                        <span class="doc-stat-label" data-i18n="documents.statArchived">Archived Documents</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Documents to Upload / Pending Checklist (Auto-filtered upon upload) -->
+            <div class="pending-docs-card" id="pendingDocsCard" style="margin-bottom: 24px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 18px 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+                    <div>
+                        <h3 style="font-size: 16px; font-weight: 700; color: #1e3a8a; margin: 0; display: flex; align-items: center; gap: 8px;">
+                            <span>📋</span> Documents to Upload
+                        </h3>
+                        <p style="font-size: 12.5px; color: #64748b; margin: 2px 0 0;">Upload these essential documents to automatically verify your eligibility for all scholarships &amp; welfare schemes. Once uploaded, documents are automatically removed from this list.</p>
+                    </div>
+                    <span id="pendingDocsCounterBadge" style="font-size: 12px; font-weight: 700; background: #eff6ff; color: #1d4ed8; padding: 4px 12px; border-radius: 20px; border: 1px solid #bfdbfe;">
+                        Checking required documents...
+                    </span>
+                </div>
+                <div id="pendingDocsList" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 10px;">
+                    <!-- Dynamically populated. Automatically removes uploaded documents -->
+                </div>
+            </div>
+
+            <!-- Search & Filters Toolbar -->
+            <div class="doc-filters-bar" id="docFiltersBar">
+                <div class="doc-search-wrapper">
+                    <label for="docSearchInput" class="sr-only" data-i18n="documents.searchPlaceholder">Search by document name or type...</label>
+                    <input type="text" id="docSearchInput" class="doc-search-input" placeholder="Search by document name or type..." data-i18n-placeholder="documents.searchPlaceholder">
+                </div>
+
+                <div class="doc-filter-dropdowns">
+                    <div class="doc-filter-group">
+                        <label for="docCategoryFilter" data-i18n="documents.filterCategory">Category</label>
+                        <select id="docCategoryFilter" class="doc-select">
+                            <option value="" data-i18n="documents.allCategories">All Categories</option>
+                            <option value="IDENTITY" data-i18n="documents.catIdentity">Identity</option>
+                            <option value="INCOME" data-i18n="documents.catIncome">Income</option>
+                            <option value="CATEGORY_CERTIFICATE" data-i18n="documents.catCategoryCert">Category Certificate</option>
+                            <option value="RESIDENCE" data-i18n="documents.catResidence">Residence</option>
+                            <option value="ACADEMIC" data-i18n="documents.catAcademic">Academic</option>
+                            <option value="BANK" data-i18n="documents.catBank">Bank</option>
+                            <option value="DISABILITY" data-i18n="documents.catDisability">Disability</option>
+                            <option value="SPECIAL_CATEGORY" data-i18n="documents.catSpecialCategory">Special Category</option>
+                            <option value="APPLICATION_ASSET" data-i18n="documents.catApplicationAsset">Application Assets</option>
+                            <option value="OTHER" data-i18n="documents.catOther">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="doc-filter-group">
+                        <label for="docStatusFilter" data-i18n="documents.filterStatus">Status</label>
+                        <select id="docStatusFilter" class="doc-select">
+                            <option value="" data-i18n="documents.allStatuses">All Statuses</option>
+                            <option value="ACTIVE" data-i18n="documents.statusActive">Active</option>
+                            <option value="CONFIRMED" data-i18n="documents.statusConfirmed">Confirmed</option>
+                            <option value="PENDING" data-i18n="documents.statusPendingReview">Pending Review</option>
+                            <option value="ARCHIVED" data-i18n="documents.statusArchived">Archived</option>
+                        </select>
+                    </div>
+
+                    <div class="doc-filter-checkbox-wrap">
+                        <label class="doc-checkbox-label">
+                            <input type="checkbox" id="docIncludeArchivedToggle">
+                            <span data-i18n="documents.includeArchived">Show Archived</span>
+                        </label>
+                    </div>
+
+                    <button type="button" class="filter-btn-reset" id="btnResetDocFilters" data-i18n="documents.resetFilters">Reset Filters</button>
+                </div>
+            </div>
+
+            <!-- Dynamic Alert Box -->
+            <div id="documentsAlertBox" class="alert-box" role="alert" aria-live="polite"></div>
+
+            <!-- Document Cards Grid Container -->
+            <div id="documentsGrid" class="documents-grid" role="list">
+                <!-- Dynamically populated or displays empty state -->
+            </div>
+        </section>
+        </div><!-- /#homepageCleanRelocatedSections -->
+
+        <!-- Scholarship Application Workspace Section (Step 5.5A) -->
+        <section id="applicationsSection" class="applications-section" aria-labelledby="applicationsSectionHeading" style="display: none; margin-bottom: 28px;">
+            <div class="documents-section-header">
+                <div>
+                    <h2 id="applicationsSectionHeading" data-i18n="applications.sectionHeading">My Scholarship Applications</h2>
+                    <p class="section-subtitle" data-i18n="applications.sectionSubtitle">
+                        Prepare, organize, and track your scholarship application drafts before final submission on official government portals.
+                    </p>
+                </div>
+                <div class="documents-header-actions">
+                    <a href="#schemes" class="btn btn-primary" id="btnExploreSchemesToApply" style="text-decoration: none;">
+                        <span aria-hidden="true">🎯</span>
+                        <span data-i18n="applications.btnExploreSchemes">Explore Scholarships</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mandatory Official Submission Disclaimer Banner -->
+            <div class="app-portal-disclaimer-banner" role="note" style="margin-bottom: 20px; background: #eff6ff; border-left: 4px solid #3b82f6; padding: 12px 16px; border-radius: 6px; font-size: 13px; color: #1e40af;">
+                <strong>ℹ️ Official Submission Notice:</strong>
+                <span data-i18n="applications.workspaceDisclaimer">
+                    SahayAI helps you prepare and organize your application draft and required documents. SahayAI does NOT directly submit applications to government portals. When ready, you will continue to the official National Scholarship Portal (NSP) for final submission.
+                </span>
+            </div>
+
+            <!-- Step 5.5C: Chrome Extension Connectivity Status Card -->
+            <div id="extensionStatusCard" class="card extension-status-card" style="margin-bottom: 20px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <div style="width: 38px; height: 38px; border-radius: 8px; background: #f0fdf4; display: flex; align-items: center; justify-content: center; font-size: 20px;">
+                        🧩
+                    </div>
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <strong style="font-size: 14px; color: #0f172a;" data-i18n="extension.cardTitle">SahayAI Chrome Extension</strong>
+                            <span id="extensionStateBadge" class="badge" style="font-size: 11px; padding: 2px 8px; border-radius: 4px; background: #f1f5f9; color: #64748b;" data-i18n="extension.stateNotInstalled">Not Installed</span>
+                        </div>
+                        <p id="extensionStateDesc" style="font-size: 12px; color: #64748b; margin: 2px 0 0 0;" data-i18n="extension.descNotInstalled">
+                            Install the extension to autofill scholarship application forms on the National Scholarship Portal.
+                        </p>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 8px;">
+                    <button type="button" class="btn btn-secondary" id="btnExtensionGuide" style="font-size: 12px; padding: 6px 12px;" data-i18n="extension.btnGuide">Developer Guide</button>
+                    <button type="button" class="btn btn-primary" id="btnConnectExtension" style="font-size: 12px; padding: 6px 14px;" data-i18n="extension.btnConnect">Connect Extension</button>
+                </div>
+            </div>
+
+            <!-- Applications Alert Box -->
+            <div id="applicationsAlertBox" class="alert-box" role="alert" aria-live="polite"></div>
+
+            <!-- Applications Drafts List Container -->
+            <div id="applicationsGrid" class="applications-grid" role="list">
+                <!-- Dynamically populated or displays empty state -->
+            </div>
+        </section>
+
+        <!-- Scheme Discovery & Eligibility Engine (Phase 6) -->
+        <section id="schemes" class="schemes-section" aria-labelledby="schemesSectionHeading">
+            <div class="schemes-section-header">
+                <div>
+                    <h2 id="schemesSectionHeading" data-i18n="schemes.sectionHeading">Government Scheme Discovery &amp; Eligibility</h2>
+                    <p style="color: #64748b; font-size: 13px; margin-top: 4px;" data-i18n="schemes.sectionSubtitle">
+                        Explore schemes and view rule-based eligibility evaluation matched against your citizen profile.
+                    </p>
+                </div>
+
+                <div class="discovery-tabs" role="tablist">
+                    <button type="button" class="discovery-tab-btn active" id="tabRecommendations" role="tab" aria-selected="true" aria-controls="schemesContainer" data-i18n="schemes.tabRecommendations">
+                        Recommended For You (Preliminary)
+                    </button>
+                    <button type="button" class="discovery-tab-btn" id="tabCatalog" role="tab" aria-selected="false" aria-controls="schemesContainer" data-i18n="schemes.tabCatalog">
+                        Explore All Schemes
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mandatory Unverified Safeguard Banner -->
+            <div class="unverified-safeguard-banner" role="note" data-i18n-html="schemes.safeguardNotice">
+                <strong>Official Government Verification Pending:</strong> All scheme matches and criteria evaluations presented here are preliminary automated rule calculations based on your citizen profile. Final scheme rules and official sanction require manual verification by relevant government authorities and human welfare administrators. SahayAI does not guarantee official sanction or benefit disbursement.
+            </div>
+
+            <!-- Application Type & Search/Filter Controls -->
+            <div class="scheme-filters-bar" id="schemeFiltersBar">
+                <div class="filter-group">
+                    <label for="schemeSearchInput" data-i18n="schemes.searchLabel">Search Schemes</label>
+                    <input type="text" id="schemeSearchInput" placeholder="e.g. pragati, scholarship, AICTE, merit..." data-i18n-placeholder="schemes.searchPlaceholder">
+                </div>
+
+                <div class="filter-group">
+                    <label for="categoryFilter" data-i18n="schemes.categoryLabel">Category</label>
+                    <select id="categoryFilter">
+                        <option value="" data-i18n="schemes.catAll">All Categories</option>
+                        <option value="EDUCATION" data-i18n="schemes.catEducation">Education</option>
+                        <option value="AGRICULTURE" data-i18n="schemes.catAgriculture">Agriculture</option>
+                        <option value="EMPLOYMENT_AND_BUSINESS" data-i18n="schemes.catEmployment">Employment &amp; Business</option>
+                        <option value="SOCIAL_WELFARE" data-i18n="schemes.catSocialWelfare">Social Welfare</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="educationFilter" data-i18n="schemes.educationLabel">Education Level</label>
+                    <select id="educationFilter">
+                        <option value="" data-i18n="schemes.eduAll">All Education Levels</option>
+                        <option value="Class 12" data-i18n="schemes.eduClass12">Class 12</option>
+                        <option value="Technical Degree" data-i18n="schemes.eduDegree">Technical Degree</option>
+                        <option value="Technical Diploma" data-i18n="schemes.eduDiploma">Technical Diploma</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="beneficiaryFilter" data-i18n="schemes.beneficiaryLabel">Beneficiary Group</label>
+                    <select id="beneficiaryFilter">
+                        <option value="" data-i18n="schemes.benAll">All Groups</option>
+                        <option value="Girl Students" data-i18n="schemes.benGirls">Girl Students</option>
+                        <option value="Persons with Disabilities" data-i18n="schemes.benPwd">Persons with Disabilities (PwD)</option>
+                        <option value="SC Students" data-i18n="schemes.benSc">SC Students</option>
+                        <option value="Orphans" data-i18n="schemes.benOrphans">Orphans / Martyr Wards</option>
+                        <option value="Farmers" data-i18n="schemes.benFarmers">Farmers</option>
+                        <option value="Street Vendors" data-i18n="schemes.benVendors">Street Vendors</option>
+                        <option value="Unorganised Workers" data-i18n="schemes.benWorkers">Unorganised Workers</option>
+                        <option value="Women" data-i18n="schemes.benWomen">Women / Deprived Households</option>
+                    </select>
+                </div>
+
+                <div class="filter-actions">
+                    <button type="button" class="filter-btn-apply" id="btnApplyFilters" data-i18n="schemes.filterBtn">Filter</button>
+                    <button type="button" class="filter-btn-reset" id="btnResetFilters" data-i18n="schemes.resetBtn">Reset</button>
+                </div>
+            </div>
+
+            <!-- Recommendations Sub-header (Application Type switcher for evaluation) -->
+            <div id="recommendationControls" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; background: #f8fafc; padding: 10px 16px; border-radius: 8px; border: 1px solid #e2e8f0; flex-wrap: wrap; gap: 10px;">
+                <span style="font-size: 13px; font-weight: 600; color: #334155;" data-i18n="schemes.evalContext">Evaluation Context:</span>
+                <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <label for="applicationTypeSelect" style="font-size: 13px; color: #475569;" data-i18n="schemes.appTypeLabel">Application Type:</label>
+                        <select id="applicationTypeSelect" style="padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 13px; background: white;">
+                            <option value="FRESH" selected data-i18n="schemes.freshApp">Fresh Application</option>
+                            <option value="RENEWAL" data-i18n="schemes.renewalApp">Renewal Application</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-secondary" id="btnRefreshRecommendations" style="padding: 6px 12px; font-size: 13px; display: inline-flex; align-items: center; gap: 6px;">
+                        <span aria-hidden="true">🔄</span>
+                        <span data-i18n="schemes.btnRecalculate">Recalculate Matches</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Confirmed Document Active Evidence Banner (Step 5.4C) -->
+            <div id="confirmedDocBenefitBanner" class="confirmed-doc-banner" style="display: none; margin-bottom: 16px; background: #ecfdf5; border-left: 4px solid #10b981; padding: 12px 16px; border-radius: 6px; font-size: 13px; color: #065f46;">
+                <strong>✓ Connected to My Documents:</strong> <span data-i18n="schemes.docBenefitNotice">Your citizen-confirmed documents are actively informing preliminary eligibility matches and verifying required application prerequisites.</span>
+            </div>
+
+            <!-- Dynamic Feedback & Alerts inside Scheme Section -->
+            <div id="schemesAlertBox" class="alert-box" role="alert" aria-live="polite"></div>
+
+            <!-- Schemes Container -->
+            <div id="schemesContainer">
+                <div class="empty-state-notice" id="schemesLoading" data-i18n="schemes.loading">Loading schemes data...</div>
+            </div>
+        </section>
+
+        <!-- Scheme Details Modal -->
+        <div id="schemeDetailsModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="detailsModalTitle">
+            <div class="modal-dialog">
+                <div class="modal-header">
+                    <h3 id="detailsModalTitle" data-i18n="detailsModal.title">Scheme Details</h3>
+                    <button type="button" class="modal-close-btn" id="closeDetailsModalBtn" aria-label="Close dialog">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div id="detailsModalVerification" style="margin-bottom: 16px;"></div>
+
+                    <div class="modal-section">
+                        <h4 data-i18n="detailsModal.deptHeading">Department &amp; Ministry</h4>
+                        <p id="detailsModalDepartment">--</p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h4 data-i18n="detailsModal.catHeading">Category &amp; Target Beneficiaries</h4>
+                        <p id="detailsModalCategory">--</p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h4 data-i18n="detailsModal.descHeading">Description</h4>
+                        <p id="detailsModalDescription">--</p>
+                    </div>
+
+                    <div class="modal-section">
+                        <h4 data-i18n="detailsModal.benefitsHeading">Benefits &amp; Financial Assistance</h4>
+                        <div id="detailsModalBenefits">--</div>
+                    </div>
+
+                    <div class="modal-section">
+                        <h4 data-i18n="detailsModal.eligibilityHeading">Eligibility Requirements &amp; Criteria</h4>
+                        <div id="detailsModalEligibility">--</div>
+                    </div>
+
+                    <div class="modal-section">
+                        <h4 data-i18n="detailsModal.documentsHeading">Required Documents</h4>
+                        <ul id="detailsModalDocuments" style="margin-left: 20px; font-size: 13px;"></ul>
+                    </div>
+
+                    <div class="modal-section">
+                        <h4 data-i18n="detailsModal.processHeading">Application Process &amp; Official Links</h4>
+                        <div id="detailsModalProcess">--</div>
+                        <div id="detailsModalLinks" style="margin-top: 10px;"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-scheme-eligibility" id="detailsCheckEligibilityBtn" data-i18n="detailsModal.checkEligibilityBtn">Check My Eligibility</button>
+                    <button type="button" class="btn btn-primary" id="detailsApplyNowBtn" style="padding: 8px 16px; font-size: 13px; font-weight: 600;" data-i18n="schemes.btnApplyNow">Apply Now</button>
+                    <button type="button" class="filter-btn-reset" id="detailsCloseBottomBtn" data-i18n="detailsModal.closeBtn">Close</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scheme Eligibility Modal -->
+        <div id="schemeEligibilityModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="eligibilityModalTitle">
+            <div class="modal-dialog">
+                <div class="modal-header">
+                    <h3 id="eligibilityModalTitle" data-i18n="eligibilityModal.title">Preliminary Eligibility Breakdown</h3>
+                    <button type="button" class="modal-close-btn" id="closeEligibilityModalBtn" aria-label="Close dialog">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <!-- Optional On-Demand Criteria Form for Anonymous Guests & Manual Assessments -->
+                    <div id="anonEligibilitySection" style="display: none; margin-bottom: 18px;">
+                        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 14px 16px;">
+                            <h4 id="anonEligibilityHeading" style="color: #1e3a8a; margin: 0 0 6px 0; font-size: 14px;" data-i18n="eligibilityModal.anonHeading">Optional Eligibility Self-Assessment</h4>
+                            <p id="anonEligibilityNotice" style="font-size: 12px; color: #475569; margin: 0 0 12px 0; line-height: 1.4;" data-i18n="eligibilityModal.anonNotice">
+                                Provide the criteria required by this scheme below to evaluate preliminary automated rules. These details are used for this session only and are never permanently stored.
+                            </p>
+                            
+                            <!-- Dynamic criteria fields tailored to selected scheme -->
+                            <div id="wrapperAnonIncome" style="margin-bottom: 10px;">
+                                <label for="anonInputIncome" id="labelAnonIncome" style="font-size: 11px; font-weight: 600; color: #334155; display: block; margin-bottom: 2px;" data-i18n="eligibilityModal.anonIncomeLabel">Annual Family Income (₹)</label>
+                                <input type="number" id="anonInputIncome" min="0" placeholder="e.g. 200000" style="width: 100%; padding: 6px 8px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 13px;">
+                            </div>
+
+                            <div id="wrapperAnonGender" style="margin-bottom: 10px; display: none;">
+                                <label for="anonInputGender" style="font-size: 11px; font-weight: 600; color: #334155; display: block; margin-bottom: 2px;" data-i18n="eligibilityModal.anonGenderLabel">Gender</label>
+                                <select id="anonInputGender" style="width: 100%; padding: 6px 8px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 13px; background: white;">
+                                    <option value="" data-i18n="eligibilityModal.anonSelectGender">Select Gender</option>
+                                    <option value="FEMALE" data-i18n="profile.genderFemale">Female</option>
+                                    <option value="MALE" data-i18n="profile.genderMale">Male</option>
+                                    <option value="OTHER" data-i18n="profile.genderOther">Other</option>
+                                </select>
+                            </div>
+
+                            <div id="wrapperAnonCaste" style="margin-bottom: 10px; display: none;">
+                                <label for="anonInputCaste" style="font-size: 11px; font-weight: 600; color: #334155; display: block; margin-bottom: 2px;" data-i18n="eligibilityModal.anonCasteLabel">Social Category</label>
+                                <select id="anonInputCaste" style="width: 100%; padding: 6px 8px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 13px; background: white;">
+                                    <option value="GENERAL" data-i18n="profile.casteGeneral">General</option>
+                                    <option value="OBC" data-i18n="profile.casteObc">OBC</option>
+                                    <option value="SC" data-i18n="profile.casteSc">SC (Scheduled Caste)</option>
+                                    <option value="ST" data-i18n="profile.casteSt">ST (Scheduled Tribe)</option>
+                                    <option value="EWS" data-i18n="profile.casteEws">EWS</option>
+                                </select>
+                            </div>
+
+                            <div id="wrapperAnonDisability" style="margin-bottom: 10px; display: none;">
+                                <label for="anonInputDisability" style="font-size: 11px; font-weight: 600; color: #334155; display: block; margin-bottom: 2px;" data-i18n="eligibilityModal.anonDisabilityLabel">Disability Status</label>
+                                <select id="anonInputDisability" style="width: 100%; padding: 6px 8px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 13px; background: white;">
+                                    <option value="NO" data-i18n="eligibilityModal.anonDisabilityNo">No Benchmark Disability (&lt; 40%)</option>
+                                    <option value="YES" data-i18n="eligibilityModal.anonDisabilityYes">Yes, Person with Benchmark Disability (&ge; 40%)</option>
+                                </select>
+                            </div>
+
+                            <div id="wrapperAnonVulnerable" style="margin-bottom: 10px; display: none;">
+                                <label for="anonInputVulnerable" style="font-size: 11px; font-weight: 600; color: #334155; display: block; margin-bottom: 2px;" data-i18n="eligibilityModal.anonVulnerableLabel">Vulnerable Category / Special Status</label>
+                                <select id="anonInputVulnerable" style="width: 100%; padding: 6px 8px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 13px; background: white;">
+                                    <option value="NONE" data-i18n="eligibilityModal.anonVulnerableNone">None of the specific categories below</option>
+                                    <option value="ORPHAN" data-i18n="eligibilityModal.anonVulnerableOrphan">Orphan</option>
+                                    <option value="COVID_DECEASED" data-i18n="eligibilityModal.anonVulnerableCovid">Ward of Parent Deceased due to COVID-19</option>
+                                    <option value="MARTYR_WARD" data-i18n="eligibilityModal.anonVulnerableMartyr">Ward of Martyred Armed Forces / CPMF Personnel</option>
+                                </select>
+                            </div>
+
+                            <div id="wrapperAnonAge" style="margin-bottom: 10px; display: none;">
+                                <label for="anonInputAge" style="font-size: 11px; font-weight: 600; color: #334155; display: block; margin-bottom: 2px;" data-i18n="eligibilityModal.anonAgeLabel">Age</label>
+                                <input type="number" id="anonInputAge" min="1" max="120" placeholder="e.g. 20" style="width: 100%; padding: 6px 8px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 13px;">
+                            </div>
+
+                            <div style="display: flex; gap: 8px; margin-top: 12px;">
+                                <button type="button" id="btnRunAnonEvaluation" class="btn-scheme-eligibility" style="padding: 7px 14px; font-size: 12px;" data-i18n="eligibilityModal.btnRunEvaluation">
+                                    Evaluate Eligibility
+                                </button>
+                                <button type="button" id="btnCancelAnonEvaluation" class="filter-btn-reset" style="padding: 7px 14px; font-size: 12px;" data-i18n="eligibilityModal.btnCancel">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="eligibilityStatusBanner" style="margin-bottom: 16px;"></div>
+                    <div id="eligibilitySummaryText" style="font-size: 14px; margin-bottom: 18px; color: #334155;"></div>
+
+                    <!-- Missing Information -->
+                    <div id="eligibilityMissingSection" class="missing-info-box" style="display: none; margin-bottom: 18px;">
+                        <h5 data-i18n="eligibilityModal.missingHeader">Information Needed for Complete Evaluation:</h5>
+                        <p style="font-size: 12px; color: #64748b; margin-bottom: 6px;" data-i18n="eligibilityModal.missingSubtitle">The following criteria could not be evaluated from your profile and may require self-declaration or official document verification:</p>
+                        <ul id="eligibilityMissingList"></ul>
+                    </div>
+
+                    <!-- Satisfied Conditions -->
+                    <div id="eligibilityMatchedSection" class="modal-section" style="display: none;">
+                        <h4 style="color: #166534;" data-i18n="eligibilityModal.satisfiedHeading">Satisfied Conditions</h4>
+                        <div id="eligibilityMatchedList"></div>
+                    </div>
+
+                    <!-- Failed Conditions -->
+                    <div id="eligibilityFailedSection" class="modal-section" style="display: none;">
+                        <h4 style="color: #9a3412;" data-i18n="eligibilityModal.mismatchesHeading">Rule Mismatches (Review Required)</h4>
+                        <div id="eligibilityFailedList"></div>
+                    </div>
+
+                    <!-- Unknown Conditions -->
+                    <div id="eligibilityUnknownSection" class="modal-section" style="display: none;">
+                        <h4 style="color: #1e40af;" data-i18n="eligibilityModal.unknownHeading">Criteria Requiring Additional Details</h4>
+                        <div id="eligibilityUnknownList"></div>
+                    </div>
+
+                    <!-- Required Documents Readiness Section (Step 5.4C) -->
+                    <div id="eligibilityDocumentsSection" class="modal-section" style="display: none; margin-top: 18px; border-top: 1px solid #e2e8f0; padding-top: 16px;">
+                        <h4 style="color: #0f172a; display: flex; justify-content: space-between; align-items: center;" data-i18n="eligibilityModal.documentsHeading">
+                            <span>Required Documents Readiness</span>
+                            <span id="eligibilityDocReadinessBadge" class="badge" style="font-size: 11px;">0/0 Ready</span>
+                        </h4>
+                        <p style="font-size: 12px; color: #64748b; margin-bottom: 12px;" data-i18n="eligibilityModal.documentsSubtitle">
+                            Verification readiness based on your active confirmed documents library.
+                        </p>
+                        <div id="eligibilityDocumentsList" class="doc-readiness-checklist"></div>
+                    </div>
+                </div>
+                <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+                    <button type="button" class="btn-scheme-details" id="btnTestManualCriteria" style="display: none; font-size: 12px; padding: 6px 12px;" data-i18n="eligibilityModal.testManualBtn">Test Custom Criteria</button>
+                    <button type="button" class="filter-btn-reset" id="eligibilityCloseBottomBtn" data-i18n="eligibilityModal.closeBtn">Close</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Text AI Chat Modal (Step 4D) -->
+        <div id="chatModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="chatModalTitle">
+            <div class="modal-dialog chat-modal-dialog">
+                <!-- Chat Modal Header -->
+                <div class="modal-header chat-modal-header">
+                    <div class="chat-header-identity">
+                        <div class="chat-header-avatar" aria-hidden="true">💬</div>
+                        <div>
+                            <h3 id="chatModalTitle" class="chat-title" data-i18n="chat.title">SahayAI Scheme Assistant</h3>
+                            <div class="chat-subtitle-row">
+                                <span class="chat-status-indicator" aria-hidden="true"></span>
+                                <span class="chat-subtitle" id="chatSessionTypeSubtitle" data-i18n="chat.subtitle">Official Scheme Guidance</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-header-actions">
+                        <button type="button" class="chat-btn-header" id="chatNewBtn" title="Start a fresh conversation" data-i18n="chat.newChat">
+                            <span aria-hidden="true">➕</span> New Chat
+                        </button>
+                        <button type="button" class="modal-close-btn" id="closeChatModalBtn" aria-label="Close chat dialog">&times;</button>
+                    </div>
+                </div>
+
+                <!-- Chat Body (Responsive Sidebar + Main Feed Layout) -->
+                <div class="chat-modal-layout">
+                    <!-- Registered Citizen Conversation History Sidebar (Hidden for Guests) -->
+                    <aside class="chat-sidebar" id="chatSidebar" style="display: none;" aria-label="Saved Conversation History">
+                        <div class="chat-sidebar-header">
+                            <h4 data-i18n="chat.savedConversations">Saved Conversations</h4>
+                        </div>
+                        <div class="chat-history-list" id="chatHistoryList" role="list">
+                            <!-- Populated dynamically for authenticated citizens -->
+                        </div>
+                    </aside>
+
+                    <!-- Main Chat Panel -->
+                    <section class="chat-main-panel" aria-label="Chat messages and input">
+                        <!-- Guest Mode Notice Banner -->
+                        <div id="chatGuestBanner" class="chat-guest-banner" style="display: none;" role="note" data-i18n-html="chat.guestNotice">
+                            <strong>Guest Mode:</strong> Temporary rolling conversation. History is not saved permanently. <a href="signup.html">Create an Account</a> or <a href="login.html">Log In</a> to save conversation history.
+                        </div>
+
+                        <!-- Chat Messages Feed -->
+                        <div class="chat-messages-container" id="chatMessagesContainer" role="log" aria-live="polite">
+                            <!-- Initial Greeting Message -->
+                            <div class="chat-message chat-message-assistant" id="chatInitialGreeting">
+                                <div class="chat-message-avatar" aria-hidden="true">🏛️</div>
+                                <div class="chat-message-body">
+                                    <div class="chat-message-author" data-i18n="chat.title">SahayAI Scheme Assistant</div>
+                                    <div class="chat-message-text" id="chatInitialGreetingText" data-i18n="chat.initialGreeting">Namaste! I am your SahayAI Assistant. I am here to help you discover official government schemes and scholarships, verify eligibility criteria, and guide you through benefits and applications.
+
+How may I assist you today?</div>
+                                    <div class="chat-disclaimer-box" data-i18n="chat.disclaimer">
+                                        Official Notice: Automated preliminary assistance based on official scheme guidelines. Official sanction requires administrative review.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Loading Indicator -->
+                        <div class="chat-loading-indicator" id="chatLoadingIndicator" style="display: none;" aria-live="polite">
+                            <span class="chat-spinner" aria-hidden="true"></span>
+                            <span data-i18n="chat.loading">SahayAI is researching official scheme guidelines...</span>
+                        </div>
+
+                        <!-- Error Banner with Retry -->
+                        <div class="chat-error-banner" id="chatErrorBanner" style="display: none;" role="alert">
+                            <span id="chatErrorMessage"></span>
+                            <button type="button" id="chatRetryBtn" class="chat-retry-btn" data-i18n="chat.retry">Retry</button>
+                        </div>
+
+                        <!-- Chat Input Area -->
+                        <div class="chat-input-wrapper">
+                            <form id="chatForm" class="chat-form" onsubmit="return false;">
+                                <div class="chat-input-row">
+                                    <textarea
+                                        id="chatInputText"
+                                        class="chat-input-textarea"
+                                        placeholder="Ask a question about government scholarship schemes... (Enter to send, Shift+Enter for new line)"
+                                        data-i18n-placeholder="chat.inputPlaceholder"
+                                        rows="2"
+                                        maxlength="2000"
+                                        aria-label="Ask a question about government schemes"
+                                    ></textarea>
+                                    <button type="submit" id="chatSendBtn" class="chat-send-btn" aria-label="Send message">
+                                        <span data-i18n="chat.sendBtn">Send</span>
+                                        <span class="chat-send-icon" aria-hidden="true">&rarr;</span>
+                                    </button>
+                                </div>
+                                <div class="chat-input-footer">
+                                    <span class="chat-input-hint" data-i18n-html="chat.inputHint">Press <kbd>Enter</kbd> to send, <kbd>Shift</kbd> + <kbd>Enter</kbd> for newline</span>
+                                    <span class="chat-char-counter" id="chatCharCounter">0 / 2000</span>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <!-- Voice Assistant Modal (Step 4E) -->
+        <div id="voiceModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="voiceModalTitle">
+            <div class="modal-dialog voice-modal-dialog">
+                <!-- Voice Header -->
+                <div class="modal-header voice-modal-header">
+                    <div class="voice-header-identity">
+                        <div class="voice-header-avatar" aria-hidden="true">🎙️</div>
+                        <div>
+                            <h3 id="voiceModalTitle" class="voice-title" data-i18n="voice.title">SahayAI Voice Assistant</h3>
+                            <div class="voice-subtitle-row">
+                                <span class="voice-status-indicator" aria-hidden="true"></span>
+                                <span class="voice-subtitle" id="voiceSessionSubtitle" data-i18n="voice.subtitle">Multilingual Spoken Assistance</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="voice-header-actions">
+                        <div class="voice-lang-picker">
+                            <label for="voiceLangSelect" class="voice-lang-label" data-i18n="voice.langLabel">Language:</label>
+                            <select id="voiceLangSelect" class="voice-lang-select" aria-label="Select speech language">
+                                <option value="en-IN" selected>English (India)</option>
+                                <option value="hi-IN">हिन्दी (Hindi)</option>
+                                <option value="te-IN">తెలుగు (Telugu)</option>
+                            </select>
+                        </div>
+                        <button type="button" class="voice-btn-header" id="voiceNewBtn" title="Start a fresh conversation" data-i18n="voice.new">
+                            <span aria-hidden="true">➕</span> New
+                        </button>
+                        <button type="button" class="modal-close-btn" id="closeVoiceModalBtn" aria-label="Close voice assistant">&times;</button>
+                    </div>
+                </div>
+
+                <!-- Voice Body -->
+                <div class="voice-modal-body">
+                    <!-- Browser Compatibility Notice (Hidden by default; shown if Web Speech is not supported) -->
+                    <div id="voiceCompatAlert" class="voice-compat-alert" style="display: none;" role="alert">
+                        <div class="voice-compat-icon" aria-hidden="true">⚠️</div>
+                        <div class="voice-compat-text" data-i18n-html="voice.compatAlert">
+                            <strong>Browser Compatibility Notice:</strong> Web Speech Recognition is not supported by your current browser. You can still type questions in the box below, or switch directly to the full Text AI Chat Assistant.
+                        </div>
+                        <button type="button" id="voiceFallbackToChatBtn" class="voice-btn-switch-chat" data-i18n="voice.openChat">
+                            Open Text AI Chat &rarr;
+                        </button>
+                    </div>
+
+                    <!-- Microphone Section -->
+                    <div class="voice-mic-section">
+                        <div class="voice-mic-wrapper">
+                            <button type="button" id="voiceMicBtn" class="voice-mic-btn" aria-label="Start voice input" title="Click to start speaking">
+                                <span class="voice-mic-icon" aria-hidden="true">🎙️</span>
+                                <span class="voice-mic-pulse" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                        <div id="voiceStatusText" class="voice-status-text" aria-live="polite" data-i18n="voice.statusIdle">
+                            Click the microphone to start speaking
+                        </div>
+                        <div class="voice-lang-hint" id="voiceLangHint">
+                            Listening in English (India). Click microphone to begin.
+                        </div>
+                    </div>
+
+                    <!-- Live & Editable Transcript Area -->
+                    <div class="voice-transcript-wrapper">
+                        <div class="voice-transcript-header">
+                            <label for="voiceTranscriptText"><strong data-i18n="voice.transcriptHeader">Your Question (Review &amp; Edit before sending):</strong></label>
+                            <button type="button" id="voiceClearBtn" class="voice-clear-btn" title="Clear transcript" data-i18n="voice.clear">Clear</button>
+                        </div>
+                        <textarea
+                            id="voiceTranscriptText"
+                            class="voice-transcript-textarea"
+                            placeholder="Your speech transcript will appear here. You can edit the text before sending or type directly..."
+                            data-i18n-placeholder="voice.transcriptPlaceholder"
+                            rows="2"
+                            maxlength="2000"
+                            aria-label="Editable voice transcript"
+                        ></textarea>
+                        <div class="voice-transcript-actions">
+                            <span class="voice-char-counter" id="voiceCharCounter">0 / 2000</span>
+                            <button type="button" id="voiceSendBtn" class="voice-send-btn" disabled>
+                                <span data-i18n="voice.askBtn">Ask SahayAI</span>
+                                <span aria-hidden="true">&rarr;</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Voice Processing Indicator -->
+                    <div id="voiceLoadingIndicator" class="voice-loading-indicator" style="display: none;" aria-live="polite">
+                        <span class="chat-spinner" aria-hidden="true"></span>
+                        <span data-i18n="voice.loading">SahayAI is researching official guidelines and preparing spoken response...</span>
+                    </div>
+
+                    <!-- Error Banner -->
+                    <div id="voiceErrorBanner" class="voice-error-banner" style="display: none;" role="alert">
+                        <span id="voiceErrorMessage"></span>
+                        <button type="button" id="voiceRetryBtn" class="voice-retry-btn" data-i18n="common.retry">Retry</button>
+                    </div>
+
+                    <!-- Spoken Assistant Response Area -->
+                    <div id="voiceResponseSection" class="voice-response-section" style="display: none;" aria-live="polite">
+                        <div class="voice-response-header">
+                            <div class="voice-response-author">
+                                <span aria-hidden="true">🏛️</span>
+                                <strong data-i18n="voice.responseHeader">SahayAI Assistant Response:</strong>
+                            </div>
+                            <div class="voice-speech-controls">
+                                <div id="voiceTtsLoadingIndicator" class="voice-tts-loading" style="display: none;" title="Generating audio">
+                                    <span class="spinner-small" aria-hidden="true"></span>
+                                    <small style="margin-left: 6px; font-weight: 600;" data-i18n="voice.generatingAudio">Generating audio...</small>
+                                </div>
+                                <div id="voiceSpeakingIndicator" class="voice-speaking-wave" style="display: none;" title="Speaking">
+                                    <span></span><span></span><span></span><span></span>
+                                    <small style="margin-left: 6px; font-weight: 600;" data-i18n="voice.speakingWave">Speaking...</small>
+                                </div>
+                                <button type="button" id="voicePlayBtn" class="voice-audio-btn play" style="display: none;" title="Play response aloud" data-i18n="voice.playResponse">
+                                    ▶️ Play
+                                </button>
+                                <button type="button" id="voiceStopSpeakingBtn" class="voice-audio-btn stop" style="display: none;" title="Stop reading aloud" data-i18n="voice.stopSpeaking">
+                                    ⏹️ Stop Speaking
+                                </button>
+                                <button type="button" id="voiceReplayBtn" class="voice-audio-btn replay" title="Read answer aloud again" data-i18n="voice.listenAgain">
+                                    🔊 Listen Again
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Speech synthesis playback notice for Indic voice fallback -->
+                        <div id="voicePlaybackNotice" class="voice-playback-notice" style="display: none;" role="note">
+                            <span class="voice-notice-icon" aria-hidden="true">ℹ️</span>
+                            <span id="voicePlaybackNoticeText" data-i18n="voice.noVoiceFallback">Telugu voice playback is not supported by your browser. The complete text response and official citations are displayed below.</span>
+                        </div>
+
+                        <div id="voiceAnswerText" class="voice-answer-text"></div>
+
+                        <!-- Insufficient evidence warning -->
+                        <div id="voiceEvidenceWarning" class="chat-evidence-warning" style="display: none;" data-i18n="chat.evidenceWarning">
+                            ⚠️ Preliminary notice: Limited official documentation found for this query. Please verify with the official portal.
+                        </div>
+
+                        <!-- Citations section -->
+                        <div id="voiceCitationsSection" class="voice-citations-section" style="display: none;">
+                            <div class="chat-citations-title" data-i18n="chat.citationsHeader">Official Evidence &amp; Sources:</div>
+                            <div id="voiceCitationsList"></div>
+                        </div>
+
+                        <!-- Disclaimer box -->
+                        <div class="chat-disclaimer-box" id="voiceDisclaimerBox" style="display: none;" data-i18n="chat.disclaimer">
+                            Official Government Notice: Preliminary automated guidance based on official scheme guidelines. SahayAI does not guarantee official benefit disbursement.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Voice Modal Footer -->
+                <div class="modal-footer voice-modal-footer">
+                    <button type="button" id="voiceSwitchToChatBtn" class="voice-switch-chat-btn" data-i18n="voice.continueInChat">
+                        💬 Continue in Text AI Chat &rarr;
+                    </button>
+                    <button type="button" class="filter-btn-reset" id="voiceCloseBottomBtn" data-i18n="common.close">Close</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature Info Modal (Honest Status for Chat, Voice, Document AI) -->
+        <div id="featureInfoModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="featureModalTitle">
+            <div class="modal-dialog">
+                <div class="modal-header">
+                    <h3 id="featureModalTitle" data-i18n="featureModal.title">Feature Status</h3>
+                    <button type="button" class="modal-close-btn" id="closeFeatureModalBtn" aria-label="Close dialog">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
+                        <span id="featureModalIcon" style="font-size: 34px;" aria-hidden="true">💬</span>
+                        <div>
+                            <h4 id="featureModalName" style="margin: 0; font-size: 17px; color: #1e3a8a;">Text AI Chat</h4>
+                            <span class="coming-soon-badge" style="display: inline-block; margin-top: 4px;" data-i18n="featureModal.inProgress">Development in Progress</span>
+                        </div>
+                    </div>
+                    <p id="featureModalDescription" style="font-size: 14px; color: #475569; line-height: 1.5; margin-bottom: 16px;">
+                        Ask questions and get AI-powered answers.
+                    </p>
+                    <div style="background: #eff6ff; border-left: 4px solid #3b82f6; padding: 12px 14px; border-radius: 4px; font-size: 13px; color: #1e40af; line-height: 1.5;" data-i18n-html="featureModal.statusNotice">
+                        <strong>Honest Status:</strong> This capability is currently under active development and scheduled for upcoming development phases. No mock or simulated responses are used. In the meantime, you can explore the complete government scheme catalog directly.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-scheme-eligibility" id="featureModalExploreBtn" data-i18n="featureModal.exploreBtn">Search Schemes Catalog</button>
+                    <button type="button" class="filter-btn-reset" id="featureCloseBottomBtn" data-i18n="common.close">Close</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Account Feature Modal (Optional Registration Prompt for Anonymous Visitors) -->
+        <div id="accountFeatureModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="accountModalTitle">
+            <div class="modal-dialog">
+                <div class="modal-header">
+                    <h3 id="accountModalTitle" data-i18n="accountModal.title">Account Feature</h3>
+                    <button type="button" class="modal-close-btn" id="closeAccountModalBtn" aria-label="Close dialog">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
+                        <span style="font-size: 34px;" aria-hidden="true">🎯</span>
+                        <div>
+                            <h4 style="margin: 0; font-size: 17px; color: #1e3a8a;" data-i18n="accountModal.name">Profile-Based Scheme Discovery</h4>
+                            <span class="feature-restricted-badge" style="display: inline-block; margin-top: 4px;" data-i18n="accountModal.badge">Registered Account Feature</span>
+                        </div>
+                    </div>
+                    <p style="font-size: 14px; color: #475569; line-height: 1.5; margin-bottom: 16px;" data-i18n="accountModal.desc">
+                        Create an account to save your profile and receive personalized scheme recommendations.
+                    </p>
+                    <div style="background: #eff6ff; border-left: 4px solid #3b82f6; padding: 12px 14px; border-radius: 4px; font-size: 13px; color: #1e40af; line-height: 1.5; margin-bottom: 16px;" data-i18n-html="accountModal.notice">
+                        <strong>Note:</strong> Registration is completely optional. You can continue browsing and searching all government schemes, viewing detailed eligibility criteria, and checking eligibility on demand without an account.
+                    </div>
+                </div>
+                <div class="modal-footer" style="display: flex; gap: 8px; justify-content: flex-end; flex-wrap: wrap;">
+                    <a href="signup.html" class="btn btn-primary" style="text-decoration: none; padding: 8px 16px; font-size: 13px;" data-i18n="accountModal.signUp">Sign Up</a>
+                    <a href="login.html" class="btn btn-secondary" style="text-decoration: none; padding: 8px 16px; font-size: 13px;" data-i18n="accountModal.logIn">Log In</a>
+                    <button type="button" class="filter-btn-reset" id="accountCloseBottomBtn" data-i18n="accountModal.continueBrowsing">Continue Browsing</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Document Upload Modal (Step 5.4B) -->
+        <div id="documentUploadModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="docUploadModalTitle">
+            <div class="modal-dialog doc-modal-dialog">
+                <div class="modal-header">
+                    <div>
+                        <h3 id="docUploadModalTitle" data-i18n="documents.uploadModalTitle">Upload Document to Vault</h3>
+                        <p class="modal-subtitle" data-i18n="documents.uploadModalSubtitle">Your document is securely encrypted at rest. OCR extraction runs automatically.</p>
+                    </div>
+                    <button type="button" class="modal-close-btn" id="closeDocUploadModalBtn" aria-label="Close dialog">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="docUploadForm" onsubmit="return false;">
+                        <!-- Dynamic Pending Documents Guide inside Modal -->
+                        <div id="modalPendingDocsGuide" style="margin-bottom: 14px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 10px 14px; font-size: 12.5px; color: #166534;">
+                            <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+                                <span><strong>Still Needed:</strong> <span id="modalPendingDocsText">Checking...</span></span>
+                                <span style="font-size: 11px; background: #dcfce7; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Auto-Removes when Uploaded</span>
+                            </div>
+                        </div>
+
+                        <!-- Dropzone -->
+                        <div class="doc-dropzone" id="docUploadDropzone" tabindex="0" role="button" aria-label="Drop file here or click to browse">
+                            <input type="file" id="docFileInput" class="doc-file-input" accept=".pdf,.png,.jpg,.jpeg,.webp">
+                            <div class="doc-dropzone-icon" aria-hidden="true">📄</div>
+                            <div class="doc-dropzone-prompt" data-i18n="documents.dropzoneText">Drag and drop your file here, or click to browse</div>
+                            <div class="doc-dropzone-hint" data-i18n="documents.dropzoneHint">Supported formats: PDF (Max: 10 MB), PNG, JPEG, JPG, WEBP (Max: 5 MB)</div>
+                            <div class="doc-dropzone-limits">
+                                <span class="doc-limit-pill" data-i18n="documents.limitPdf">PDF: up to 10 MB</span>
+                                <span class="doc-limit-pill" data-i18n="documents.limitImages">Images (JPG/PNG/WEBP): up to 5 MB</span>
+                            </div>
+                            <div id="docSelectedFileName" class="doc-selected-file-badge" style="display: none;"></div>
+                        </div>
+
+                        <!-- Dropdowns -->
+                        <div class="doc-form-row">
+                            <div class="doc-form-group">
+                                <label for="docTypeSelect" data-i18n="documents.selectTypeLabel">Document Type Selection</label>
+                                <select id="docTypeSelect" class="doc-select">
+                                    <option value="AUTO_DETECT" selected>✨ Auto-Detect with AI (Recommended)</option>
+                                    <optgroup label="Identity Documents">
+                                        <option value="aadhaar">Aadhaar Card</option>
+                                        <option value="pan">PAN Card</option>
+                                    </optgroup>
+                                    <optgroup label="Academic Certificates">
+                                        <option value="marksheet_10th">Class 10 Marksheet</option>
+                                        <option value="marksheet_12th">Class 12 Marksheet</option>
+                                        <option value="degree_certificate">Degree Certificate / Transcript</option>
+                                        <option value="bonafide_certificate">Bonafide Student Certificate</option>
+                                    </optgroup>
+                                    <optgroup label="Financial &amp; Banking">
+                                        <option value="bank_passbook">Bank Passbook / Statement</option>
+                                        <option value="fees_receipt">Fee Receipt</option>
+                                    </optgroup>
+                                    <optgroup label="Revenue &amp; Welfare Certificates">
+                                        <option value="income_certificate">Income Certificate</option>
+                                        <option value="caste_certificate">Caste / Category Certificate</option>
+                                        <option value="residence_certificate">Residence / Domicile Certificate</option>
+                                        <option value="disability_certificate">Disability (PwD) Certificate</option>
+                                        <option value="ration_card">Ration / BPL Card</option>
+                                    </optgroup>
+                                    <option value="other">Other Document</option>
+                                </select>
+                            </div>
+
+                            <div class="doc-form-group">
+                                <label for="docCategorySelect" data-i18n="documents.selectCategoryLabel">Document Category</label>
+                                <select id="docCategorySelect" class="doc-select">
+                                    <option value="" selected>Auto (Derived from Document)</option>
+                                    <option value="IDENTITY" data-i18n="documents.catIdentity">Identity</option>
+                                    <option value="INCOME" data-i18n="documents.catIncome">Income</option>
+                                    <option value="CATEGORY_CERTIFICATE" data-i18n="documents.catCategoryCert">Category Certificate</option>
+                                    <option value="RESIDENCE" data-i18n="documents.catResidence">Residence</option>
+                                    <option value="ACADEMIC" data-i18n="documents.catAcademic">Academic</option>
+                                    <option value="BANK" data-i18n="documents.catBank">Bank</option>
+                                    <option value="DISABILITY" data-i18n="documents.catDisability">Disability</option>
+                                    <option value="SPECIAL_CATEGORY" data-i18n="documents.catSpecialCategory">Special Category</option>
+                                    <option value="APPLICATION_ASSET" data-i18n="documents.catApplicationAsset">Application Assets</option>
+                                    <option value="OTHER" data-i18n="documents.catOther">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Progress / Status alert -->
+                        <div id="docUploadAlert" class="alert-box" role="alert" aria-live="polite"></div>
+
+                        <!-- Upload progress indicator -->
+                        <div id="docUploadProgress" class="doc-progress-wrap" style="display: none;">
+                            <span class="chat-spinner" aria-hidden="true"></span>
+                            <span data-i18n="documents.uploadingIndicator">Uploading and performing secure OCR extraction...</span>
+                        </div>
+                    </form>
+
+                    <!-- Post-Upload Extraction Results Preview -->
+                    <div id="docUploadResultSection" class="doc-upload-results" style="display: none;">
+                        <div class="doc-results-header">
+                            <span class="doc-success-icon" aria-hidden="true">✅</span>
+                            <div>
+                                <h4 data-i18n="documents.ocrResultHeading">Automated OCR Extraction Preview</h4>
+                                <span class="doc-status-badge pending" data-i18n="documents.statusPendingReview">Pending Review</span>
+                            </div>
+                        </div>
+
+                        <div class="unverified-safeguard-banner" role="note" data-i18n-html="documents.authenticityNotice">
+                            Official Notice: Automated OCR extraction does not constitute authentic government identity verification. You must review and confirm each field.
+                        </div>
+
+                        <div id="docUploadExtractedFields" class="doc-extracted-fields-list"></div>
+
+                        <div class="doc-upload-result-actions">
+                            <button type="button" class="btn btn-primary" id="btnUploadGoToReview" data-i18n="documents.btnReviewNow">
+                                Review &amp; Confirm Fields Now &rarr;
+                            </button>
+                            <button type="button" class="filter-btn-reset" id="btnUploadDone" data-i18n="documents.btnCloseDone">
+                                Done
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer" id="docUploadFooter">
+                    <button type="button" class="btn btn-primary" id="btnStartUploadSubmit" data-i18n="documents.btnStartUpload">Upload &amp; Process Document</button>
+                    <button type="button" class="filter-btn-reset" id="closeDocUploadBottomBtn" data-i18n="common.cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Document Review & Confirmation Modal (Step 5.4B) -->
+        <div id="documentReviewModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="docReviewModalTitle">
+            <div class="modal-dialog doc-modal-dialog-large">
+                <div class="modal-header">
+                    <div>
+                        <h3 id="docReviewModalTitle" data-i18n="documents.reviewModalTitle">Citizen Review &amp; Field Confirmation</h3>
+                        <p class="modal-subtitle" data-i18n="documents.reviewModalSubtitle">Carefully review the automated OCR extractions below. You may edit any values that were misread. Only explicitly confirmed fields will be saved to your permanent citizen profile.</p>
+                    </div>
+                    <button type="button" class="modal-close-btn" id="closeDocReviewModalBtn" aria-label="Close dialog">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <!-- Authenticity Disclaimer Banner -->
+                    <div class="unverified-safeguard-banner" role="note" data-i18n-html="documents.authenticityNotice">
+                        Official Notice: Automated OCR extraction does not constitute authentic government identity verification. You must review and confirm each field.
+                    </div>
+
+                    <div id="docReviewAlert" class="alert-box" role="alert" aria-live="polite"></div>
+
+                    <!-- Fields Confirmation Form Table -->
+                    <div id="docReviewFieldsContainer" class="doc-review-container">
+                        <div class="doc-loading-spinner" id="docReviewLoading">
+                            <span class="chat-spinner" aria-hidden="true"></span>
+                            <span data-i18n="common.loading">Loading...</span>
+                        </div>
+                        <div id="docReviewTableWrap" style="display: none;">
+                            <table class="doc-review-table" aria-label="Extracted fields review">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 25%;" data-i18n="documents.colField">Field</th>
+                                        <th style="width: 45%;" data-i18n="documents.colValue">Extracted Value (Editable)</th>
+                                        <th style="width: 15%; text-align: center;" data-i18n="documents.colConfirm">Confirm</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="docReviewTableBody">
+                                    <!-- Populated dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btnSaveConfirmations" data-i18n="documents.btnSaveConfirmations">Confirm &amp; Save to Profile</button>
+                    <button type="button" class="filter-btn-reset" id="closeDocReviewBottomBtn" data-i18n="common.cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Document Replace Modal (Step 5.4B) -->
+        <div id="documentReplaceModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="docReplaceModalTitle">
+            <div class="modal-dialog doc-modal-dialog">
+                <div class="modal-header">
+                    <div>
+                        <h3 id="docReplaceModalTitle" data-i18n="documents.replaceModalTitle">Replace Document</h3>
+                        <p class="modal-subtitle" data-i18n="documents.replaceModalSubtitle">Upload a clearer or updated copy of this document. It will replace the encrypted file in your vault and re-run OCR extraction. Previous confirmation audit history will be preserved.</p>
+                    </div>
+                    <button type="button" class="modal-close-btn" id="closeDocReplaceModalBtn" aria-label="Close dialog">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="docReplaceForm" onsubmit="return false;">
+                        <div class="doc-target-file-info" id="docReplaceTargetInfo">
+                            <!-- Populated with filename and category -->
+                        </div>
+
+                        <div class="doc-dropzone" id="docReplaceDropzone" tabindex="0" role="button" aria-label="Drop replacement file here or click to browse">
+                            <input type="file" id="docReplaceFileInput" class="doc-file-input" accept=".pdf,.png,.jpg,.jpeg,.webp">
+                            <div class="doc-dropzone-icon" aria-hidden="true">🔄</div>
+                            <div class="doc-dropzone-prompt" data-i18n="documents.dropzoneText">Drag and drop your file here, or click to browse</div>
+                            <div class="doc-dropzone-hint" data-i18n="documents.dropzoneHint">Supported formats: PDF (Max: 10 MB), PNG, JPEG, JPG, WEBP (Max: 5 MB)</div>
+                            <div class="doc-dropzone-limits">
+                                <span class="doc-limit-pill" data-i18n="documents.limitPdf">PDF: up to 10 MB</span>
+                                <span class="doc-limit-pill" data-i18n="documents.limitImages">Images (JPG/PNG/WEBP): up to 5 MB</span>
+                            </div>
+                            <div id="docReplaceSelectedFileName" class="doc-selected-file-badge" style="display: none;"></div>
+                        </div>
+
+                        <div id="docReplaceAlert" class="alert-box" role="alert" aria-live="polite"></div>
+
+                        <div id="docReplaceProgress" class="doc-progress-wrap" style="display: none;">
+                            <span class="chat-spinner" aria-hidden="true"></span>
+                            <span data-i18n="documents.replacingIndicator">Replacing document and re-processing OCR...</span>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btnConfirmReplaceSubmit" data-i18n="documents.btnConfirmReplace">Upload Replacement &amp; Re-Extract</button>
+                    <button type="button" class="filter-btn-reset" id="closeDocReplaceBottomBtn" data-i18n="common.cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Document Delete & Archive Confirmation Modal (Step 5.4B) -->
+        <div id="documentDeleteModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="docDeleteModalTitle">
+            <div class="modal-dialog doc-modal-dialog">
+                <div class="modal-header">
+                    <div>
+                        <h3 id="docDeleteModalTitle" data-i18n="documents.deleteModalTitle">Delete Document</h3>
+                    </div>
+                    <button type="button" class="modal-close-btn" id="closeDocDeleteModalBtn" aria-label="Close dialog">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p id="docDeletePromptText" style="font-size: 14px; color: #1e293b; margin-bottom: 14px;" data-i18n="documents.deleteWarningText">
+                        Are you sure you want to permanently delete this document?
+                    </p>
+
+                    <div class="doc-target-file-info" id="docDeleteTargetInfo">
+                        <!-- Populated with filename and category -->
+                    </div>
+
+                    <div class="doc-delete-policy-notice" data-i18n-html="documents.deletePolicyNotice">
+                        ⚠️ Under SahayAI security policy, permanent deletion immediately removes the encrypted file from disk storage and cascades to delete all associated field confirmation history.
+                    </div>
+
+                    <div id="docDeleteAlert" class="alert-box" role="alert" aria-live="polite"></div>
+                </div>
+                <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+                    <button type="button" class="filter-btn-reset" id="btnCancelDeleteModal" data-i18n="common.cancel">Cancel</button>
+                    <div style="display: flex; gap: 8px;">
+                        <button type="button" class="btn-scheme-details" id="btnArchiveFromDeleteModal" data-i18n="documents.btnArchiveInstead">Archive Instead</button>
+                        <button type="button" class="btn btn-danger" id="btnPermanentDeleteFromModal" data-i18n="documents.btnConfirmPermanentDelete">Yes, Permanently Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Document Metadata Details Modal (Step 5.4B) -->
+        <div id="documentMetadataModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="docMetadataModalTitle">
+            <div class="modal-dialog doc-modal-dialog">
+                <div class="modal-header">
+                    <h3 id="docMetadataModalTitle" data-i18n="documents.detailsModalTitle">Document Metadata &amp; Extraction</h3>
+                    <button type="button" class="modal-close-btn" id="closeDocMetadataModalBtn" aria-label="Close dialog">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="doc-metadata-grid" id="docMetadataFieldsList">
+                        <!-- Dynamically populated safely via textContent -->
+                    </div>
+
+                    <div class="modal-section" style="margin-top: 18px;">
+                        <h4 data-i18n="documents.metaFields">Extracted Fields (Masked):</h4>
+                        <div id="docMetadataExtractedTableWrap"></div>
+                    </div>
+                </div>
+                <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+                    <div style="display: flex; gap: 8px;">
+                        <button type="button" class="btn btn-primary" id="btnMetadataDownloadBtn" data-i18n="documents.actionDownload">Download</button>
+                        <button type="button" class="btn-scheme-eligibility" id="btnMetadataReviewBtn" style="display: none;" data-i18n="documents.actionReview">Review &amp; Confirm</button>
+                    </div>
+                    <button type="button" class="filter-btn-reset" id="closeDocMetadataBottomBtn" data-i18n="common.close">Close</button>
+                </div>
+            </div>
+        </div>
+
+    
+
+        
+
+        <!-- Scholarship Application Workspace Modal (Step 5.5A) -->
+        <div id="applicationWorkspaceModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="workspaceModalTitle">
+            <div class="modal-dialog workspace-modal-dialog" style="max-width: 860px; max-height: 90vh; display: flex; flex-direction: column;">
+                <div class="modal-header" style="border-bottom: 1px solid #e2e8f0; padding-bottom: 14px;">
+                    <div>
+                        <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                            <h3 id="workspaceModalTitle" style="margin: 0; font-size: 18px; color: #0f172a;" data-i18n="applications.workspaceTitle">Scholarship Application Workspace</h3>
+                            <span id="appWorkspaceStatusBadge" class="badge-draft-status" style="font-size: 11px; padding: 3px 8px; border-radius: 4px; font-weight: 600; text-transform: uppercase;">DRAFT</span>
+                        </div>
+                        <p id="appWorkspaceSchemeName" style="font-size: 13px; color: #475569; margin: 4px 0 0 0;">--</p>
+                    </div>
+                    <button type="button" class="modal-close-btn" id="closeAppWorkspaceModalBtn" aria-label="Close dialog">&times;</button>
+                </div>
+
+                <div class="modal-body" style="overflow-y: auto; padding: 20px 24px; flex: 1;">
+                    <!-- Mandatory Submission Disclaimer Banner -->
+                    <div class="workspace-disclaimer-box" role="alert" style="background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 16px; border-radius: 6px; margin-bottom: 18px; font-size: 13px; color: #92400e;">
+                        <strong>⚠️ <span data-i18n="applications.disclaimerTitle">Official Submission Notice:</span></strong>
+                        <span data-i18n="applications.workspaceModalDisclaimer">
+                            SahayAI is an application assistance tool. Applications are NOT submitted directly by SahayAI to government portals. Official submission must be completed by the citizen on the official National Scholarship Portal (NSP).
+                        </span>
+                    </div>
+
+                    <!-- Progress Bar & Application Year Bar -->
+                    <div class="workspace-progress-panel" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px 16px; margin-bottom: 20px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; font-size: 13px;">
+                            <span style="font-weight: 600; color: #334155;">
+                                <span data-i18n="applications.draftProgress">Draft Progress:</span>
+                                <span id="appWorkspaceProgressPct" style="color: #15803d; font-weight: 700;">0%</span>
+                            </span>
+                            <span id="appWorkspaceYearBadge" style="font-size: 12px; color: #64748b; background: #e2e8f0; padding: 2px 8px; border-radius: 4px;">AY 2026-27</span>
+                        </div>
+                        <div style="background: #e2e8f0; border-radius: 6px; height: 8px; overflow: hidden;">
+                            <div id="appWorkspaceProgressBar" style="background: #10b981; width: 0%; height: 100%; transition: width 0.3s ease;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Step 5.5B: Autofill from Confirmed Documents Action Panel -->
+                    <div id="appWorkspaceAutofillPanel" class="workspace-autofill-banner" style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px; padding: 12px 16px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                        <div>
+                            <div style="font-weight: 600; font-size: 13px; color: #1e40af; display: flex; align-items: center; gap: 6px;">
+                                <span>⚡</span>
+                                <span data-i18n="applications.autofillBannerTitle">Smart Document Autofill</span>
+                            </div>
+                            <p style="font-size: 12px; color: #3b82f6; margin: 2px 0 0 0;" data-i18n="applications.autofillBannerDesc">
+                                Populate application fields using verified profile details and confirmed documents.
+                            </p>
+                        </div>
+                        <div style="display: flex; gap: 8px;">
+                            <button type="button" class="btn btn-secondary" id="btnAppWorkspaceAutofillPreview" style="font-size: 12px; padding: 6px 12px; background: #fff; border-color: #93c5fd; color: #1d4ed8;" data-i18n="applications.btnPreviewAutofill">Preview Autofill</button>
+                            <button type="button" class="btn btn-primary" id="btnAppWorkspaceAutofillApply" style="font-size: 12px; padding: 6px 12px; background: #2563eb; border-color: #2563eb;" data-i18n="applications.btnApplyAutofill">Autofill Verified Fields</button>
+                        </div>
+                    </div>
+
+                    <!-- Autofill Preview / Conflicts Drawer (Shown when Preview clicked) -->
+                    <div id="appWorkspaceAutofillDrawer" style="display: none; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-bottom: 20px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                            <h5 style="margin: 0; font-size: 14px; color: #0f172a;" data-i18n="applications.autofillDrawerTitle">Autofill Readiness &amp; Provenance</h5>
+                            <button type="button" class="modal-close-btn" id="btnCloseAutofillDrawer" style="font-size: 16px; line-height: 1;">&times;</button>
+                        </div>
+                        <div id="appWorkspaceAutofillSummaryBadges" style="display: flex; gap: 10px; margin-bottom: 12px; flex-wrap: wrap;"></div>
+                        <div id="appWorkspaceAutofillList" style="max-height: 220px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px;"></div>
+                    </div>
+
+                    <!-- Section Tabs Stepper -->
+                    <div class="workspace-tabs-stepper" id="appWorkspaceTabsNav" role="tablist" style="display: flex; gap: 8px; overflow-x: auto; padding-bottom: 8px; margin-bottom: 20px; border-bottom: 1px solid #e2e8f0;">
+                        <!-- Dynamically populated or rendered based on sections -->
+                    </div>
+
+                    <!-- Form Section Info Banner -->
+                    <div id="appWorkspaceSectionHeader" style="margin-bottom: 16px;">
+                        <h4 id="appWorkspaceSectionTitle" style="font-size: 16px; color: #1e293b; margin: 0 0 4px 0;">Personal Details</h4>
+                        <p id="appWorkspaceSectionDesc" style="font-size: 13px; color: #64748b; margin: 0;">--</p>
+                    </div>
+
+                    <!-- Dynamic Form Fields Area -->
+                    <form id="appWorkspaceForm" novalidate onsubmit="return false;">
+                        <div id="appWorkspaceFieldsContainer" class="workspace-form-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px;">
+                            <!-- Dynamically generated fields -->
+                        </div>
+                    </form>
+
+                    <!-- Documents Checklist View (Shown in Documents Section) -->
+                    <div id="appWorkspaceDocsView" style="display: none; margin-top: 16px;">
+                        <h4 style="font-size: 15px; color: #1e293b; margin-bottom: 10px;" data-i18n="applications.requiredDocsChecklist">Required Documents Checklist</h4>
+                        <div id="appWorkspaceDocsList" style="display: flex; flex-direction: column; gap: 10px;">
+                            <!-- Populated with cross-referenced readiness badges -->
+                        </div>
+                    </div>
+
+                    <!-- Portal Verification & Continuation Box (Shown in Review Section) -->
+                    <div id="appWorkspaceReviewPortalBox" style="display: none; margin-top: 20px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 16px;">
+                        <h4 style="color: #166534; font-size: 15px; margin: 0 0 8px 0;" data-i18n="applications.portalReadyHeading">Official Submission Information</h4>
+                        <div id="appWorkspacePortalMeta" style="font-size: 13px; color: #15803d; line-height: 1.5;">
+                            <!-- Dynamically populated portal status and link -->
+                        </div>
+                    </div>
+
+                    <!-- Form Validation Alert Box -->
+                    <div id="appWorkspaceAlert" class="alert-box" style="margin-top: 16px;" role="alert" aria-live="polite"></div>
+                </div>
+
+                <div class="modal-footer" style="border-top: 1px solid #e2e8f0; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; background: #f8fafc;">
+                    <div style="display: flex; gap: 8px; align-items: center;">
+                        <button type="button" class="btn btn-secondary" id="btnWorkspacePrev" style="display: none;">&larr; <span data-i18n="common.previous">Previous</span></button>
+                        <button type="button" class="btn btn-secondary" id="btnWorkspaceSave" data-i18n="applications.btnSaveDraft">Save Draft</button>
+                        <span id="appWorkspaceSaveStatus" style="font-size: 12px; color: #64748b; font-style: italic;"></span>
+                    </div>
+                    <div style="display: flex; gap: 8px; align-items: center;">
+                        <button type="button" class="btn btn-primary" id="btnWorkspaceNext"><span data-i18n="common.next">Next</span> &rarr;</button>
+                        <button type="button" class="btn btn-primary" id="btnWorkspaceContinuePortal" style="display: none; background: #166534; border-color: #166534;" data-i18n="applications.btnContinueToPortal">Continue to Official Portal &nearr;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- External Portal Redirect Confirmation Modal (Step 5.5A) -->
+        <div id="externalPortalModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="extPortalModalTitle">
+            <div class="modal-dialog" style="max-width: 520px;">
+                <div class="modal-header">
+                    <h3 id="extPortalModalTitle" data-i18n="applications.extPortalTitle">Leaving SahayAI</h3>
+                    <button type="button" class="modal-close-btn" id="closeExtPortalModalBtn" aria-label="Close dialog">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div style="font-size: 14px; color: #334155; line-height: 1.6;">
+                        <p style="margin-bottom: 12px;" data-i18n="applications.extPortalWarning1">
+                            You are now proceeding to the official government portal:
+                        </p>
+                        <div id="extPortalTargetUrlWrap" style="background: #f1f5f9; padding: 10px 14px; border-radius: 6px; font-weight: 600; color: #1e40af; word-break: break-all; margin-bottom: 14px;">
+                            https://scholarships.gov.in
+                        </div>
+                        <div style="background: #fffbeb; border-left: 3px solid #f59e0b; padding: 10px 12px; border-radius: 4px; font-size: 13px; color: #92400e; margin-bottom: 14px;">
+                            <strong>Note:</strong> <span data-i18n="applications.extPortalWarning2">SahayAI does NOT automatically submit applications. You must complete your final registration and upload your documents on the official government website.</span>
+                        </div>
+                        <p style="font-size: 13px; color: #64748b; margin: 0;" data-i18n="applications.extPortalWarning3">
+                            Your SahayAI draft will remain safely stored in your account so you can reference your details at any time.
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer" style="display: flex; justify-content: flex-end; gap: 10px;">
+                    <button type="button" class="btn btn-secondary" id="btnCancelExtPortal" data-i18n="common.cancel">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="btnConfirmExtPortal" style="background: #166534; border-color: #166534;" data-i18n="applications.btnProceedToPortal">Proceed to Official Portal &rarr;</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Delete Draft Confirmation Modal (Step 5.5A) -->
+        <div id="deleteDraftModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="deleteDraftModalTitle">
+            <div class="modal-dialog" style="max-width: 480px;">
+                <div class="modal-header">
+                    <h3 id="deleteDraftModalTitle" data-i18n="applications.deleteDraftTitle">Delete Application Draft?</h3>
+                    <button type="button" class="modal-close-btn" id="closeDeleteDraftModalBtn" aria-label="Close dialog">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p style="font-size: 14px; color: #334155; line-height: 1.5; margin: 0 0 12px 0;" data-i18n="applications.deleteDraftDesc">
+                        Are you sure you want to permanently delete this application draft? Any unconfirmed progress for this draft will be removed.
+                    </p>
+                    <div style="background: #fef2f2; border-left: 3px solid #ef4444; padding: 10px 12px; border-radius: 4px; font-size: 12px; color: #991b1b;">
+                        <strong>Warning:</strong> <span data-i18n="applications.deleteDraftWarning">This action cannot be undone. Saved documents in your My Documents library will NOT be deleted.</span>
+                    </div>
+                </div>
+                <div class="modal-footer" style="display: flex; justify-content: flex-end; gap: 10px;">
+                    <button type="button" class="btn btn-secondary" id="btnCancelDeleteDraft" data-i18n="common.cancel">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="btnConfirmDeleteDraft" data-i18n="applications.btnConfirmDeleteDraft">Delete Draft</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Extension Developer Installation Guide Modal (Step 5.5C) -->
+        <div id="extensionGuideModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="extGuideModalTitle">
+            <div class="modal-dialog" style="max-width: 580px;">
+                <div class="modal-header">
+                    <h3 id="extGuideModalTitle" data-i18n="extension.modalTitle">Install SahayAI Chrome Extension</h3>
+                    <button type="button" class="modal-close-btn" id="closeExtGuideModalBtn" aria-label="Close dialog">&times;</button>
+                </div>
+                <div class="modal-body" style="font-size: 13px; color: #334155; line-height: 1.6;">
+                    <p data-i18n="extension.modalIntro">
+                        During development, the SahayAI extension can be loaded directly from your repository in Google Chrome Developer Mode:
+                    </p>
+                    <ol style="margin-bottom: 16px; padding-left: 20px;">
+                        <li><strong data-i18n="extension.step1Title">Open Chrome Extensions:</strong> <span data-i18n="extension.step1Desc">Navigate to <code style="background: #f1f5f9; padding: 2px 6px; border-radius: 4px;">chrome://extensions/</code> in your browser.</span></li>
+                        <li><strong data-i18n="extension.step2Title">Enable Developer Mode:</strong> <span data-i18n="extension.step2Desc">Toggle on the Developer mode switch in the top right corner.</span></li>
+                        <li><strong data-i18n="extension.step3Title">Load Unpacked:</strong> <span data-i18n="extension.step3Desc">Click the 'Load unpacked' button in the top toolbar.</span></li>
+                        <li><strong data-i18n="extension.step4Title">Select Folder:</strong> <span data-i18n="extension.step4Desc">Select the <code style="background: #f1f5f9; padding: 2px 6px; border-radius: 4px;">browser_extension</code> folder in your SahayAI codebase.</span></li>
+                    </ol>
+                    <div style="background: #eff6ff; border-left: 3px solid #3b82f6; padding: 10px 12px; border-radius: 4px; font-size: 12px; color: #1e40af;">
+                        <strong data-i18n="extension.modalNoticeTitle">Notice:</strong> <span data-i18n="extension.modalNoticeText">The extension is in active local development and has not yet been published to the Chrome Web Store.</span>
+                    </div>
+                </div>
+                <div class="modal-footer" style="display: flex; justify-content: flex-end;">
+                    <button type="button" class="btn btn-secondary" id="btnCloseExtGuide" data-i18n="common.close">Close</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p data-i18n="footer.copyright">© 2026 SahayAI. AI-Powered Citizen Assistance & Government Schemes Discovery.</p>
+    </footer>
+
+    <script src="js/i18n.js?v=20261115_4"></script>
+    <script src="js/api.js?v=20261115_4"></script>
+    <script src="js/navigation.js?v=20261115_4"></script>
+    <script src="js/dashboard.js?v=20261115_4"></script>
+</body>
+</html>
+

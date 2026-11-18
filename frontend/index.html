@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SahayAI - Government Benefits Assistant</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">Sahay<span>AI</span></div>
+
+        <nav>
+            <a href="#home" data-i18n="nav.home">Home</a>
+            <a href="#about" data-i18n="nav.about">About</a>
+            <a href="#features" data-i18n="nav.features">Features</a>
+        </nav>
+
+        <div class="nav-buttons">
+            <div class="global-lang-picker">
+                <label for="globalLangSelect" class="sr-only" data-i18n="nav.selectLanguage">Language</label>
+                <select id="globalLangSelect" class="global-lang-select" aria-label="Select Language">
+                    <option value="en">English</option>
+                    <option value="te">తెలుగు</option>
+                    <option value="hi">हिन्दी</option>
+                </select>
+            </div>
+            <button type="button" id="navGuestBtn" class="login-btn" style="background: transparent; cursor: pointer;" data-i18n="nav.guestBtn">Continue as Guest</button>
+            <a href="login.html" class="login-btn" data-i18n="nav.login">Login</a>
+            <a href="signup.html" class="signup-btn" data-i18n="nav.signup">Sign Up</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <p class="tagline" data-i18n="index.tagline">YOUR PERSONAL GOVERNMENT BENEFITS ASSISTANT</p>
+
+                <h1 data-i18n="index.heroHeading">Discover Government Schemes That <span>Empower You</span></h1>
+
+                <p class="description" data-i18n="index.heroDescription">
+                    Find scholarships, financial assistance and government
+                    benefits that match your eligibility with the power of AI.
+                </p>
+
+                <div class="hero-buttons">
+                    <button type="button" id="heroGuestBtn" class="primary-btn" style="border: none; cursor: pointer; font-size: 15px;" data-i18n="index.heroGuestBtn">Continue as Guest &rarr;</button>
+                    <a href="signup.html" class="secondary-btn" data-i18n="index.createAccount">Create Account</a>
+                    <a href="login.html" class="secondary-btn" data-i18n="index.login">Login</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="features" id="features">
+            <h2 data-i18n="index.featuresHeading">How SahayAI Helps You</h2>
+
+            <div class="feature-container">
+                <div class="feature-card">
+                    <h3 data-i18n="index.featAssistantTitle">AI Assistant</h3>
+                    <p data-i18n="index.featAssistantDesc">Ask questions about government schemes in your language.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3 data-i18n="index.featEligibilityTitle">Smart Eligibility</h3>
+                    <p data-i18n="index.featEligibilityDesc">Discover schemes based on your personal profile.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3 data-i18n="index.featDocumentTitle">Document AI</h3>
+                    <p data-i18n="index.featDocumentDesc">Upload documents and extract important information.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h3 data-i18n="index.featDiscoveryTitle">Scheme Discovery</h3>
+                    <p data-i18n="index.featDiscoveryDesc">Explore relevant government benefits and scholarships.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p data-i18n="footer.copyright">© 2026 SahayAI. AI-Powered Citizen Assistance & Government Schemes Discovery.</p>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/api.js"></script>
+    <script>
+        async function startGuestSession(btn) {
+            if (btn) {
+                btn.disabled = true;
+                btn.textContent = "Starting Guest Session...";
+            }
+            try {
+                const res = await apiFetch("/auth/guest", { method: "POST" });
+                if (res.ok && res.data && res.data.success) {
+                    window.location.href = "dashboard.html";
+                } else {
+                    alert((res.error || "Failed to initialize guest session. Please try again."));
+                    if (btn) {
+                        btn.disabled = false;
+                        btn.textContent = "Continue as Guest";
+                    }
+                }
+            } catch (err) {
+                console.error("Guest session error:", err);
+                alert("Connection error. Please ensure the backend server is running.");
+                if (btn) {
+                    btn.disabled = false;
+                    btn.textContent = "Continue as Guest";
+                }
+            }
+        }
+
+        document.getElementById("navGuestBtn")?.addEventListener("click", function() {
+            startGuestSession(this);
+        });
+
+        document.getElementById("heroGuestBtn")?.addEventListener("click", function() {
+            startGuestSession(this);
+        });
+    </script>
+</body>
+</html>

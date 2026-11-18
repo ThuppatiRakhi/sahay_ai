@@ -1,0 +1,100 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment and sensitive configuration
+.env
+.env.local
+*.local
+
+# Database & runtime files
+*.sqlite
+*.sqlite3
+*.db
+*.log
+
+# Pytest / coverage
+.cache
+.pytest_cache/
+htmlcov/
+.coverage
+.coverage.*
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Uploaded documents and private attachments (never commit real citizen data)
+data/sample_documents/uploads/*
+data/sample_documents/private/*
+*.pdf
+!data/sample_documents/sample_synthetic_*.pdf
+!data/sample_documents/.gitkeep
+
+# Generated vector database
+data/vector_store/
+
+# Temporary document audit files
+data/sample_documents/audit_temp/
+
+# Include official government scheme source PDFs
+!data/official_documents/**/*.pdf
+
+# Temporary RAG diagnostic output
+reports/scratch_diagnostic_results.json
+
+# Temporary diagnostic script
+reports/scratch_rag_diagnostic.py
+
+# Browser testing profiles & temp data
+chrome_*/
+data/secure_vault/documents/*.vault
+data/temp_uploads/*
+scratch/
+*.docx
+SahayAI_Master_Technical_Report.*
+frontend/SahayAI_Master_Technical_Report.*
+
+data/sample_documents/*
+!data/sample_documents/.gitkeep

@@ -1,0 +1,1138 @@
+[
+  {
+    "scheme_id": "SCHEME_AGRI_001_PM_KISAN",
+    "scheme_name": "PM-KISAN Samman Nidhi",
+    "official_name": "Pradhan Mantri Kisan Samman Nidhi (PM-KISAN)",
+    "current_official_name": "Pradhan Mantri Kisan Samman Nidhi (PM-KISAN)",
+    "category": "AGRICULTURE",
+    "sector": "Agriculture & Farmers Welfare",
+    "ministry": "Ministry of Agriculture and Farmers Welfare",
+    "responsible_ministry": "Ministry of Agriculture and Farmers Welfare",
+    "department": "Department of Agriculture and Farmers Welfare",
+    "responsible_department": "Department of Agriculture and Farmers Welfare",
+    "implementing_agency": "Department of Agriculture and Farmers Welfare (DA&FW)",
+    "government_level": "Central",
+    "state_applicability": [
+      "ALL"
+    ],
+    "description": "Income support of Rs. 6,000 per year in three equal installments to all landholding farmer families across India.",
+    "scheme_description": "Pradhan Mantri Kisan Samman Nidhi (PM-KISAN) is a Central Sector scheme launched in February 2019 to provide financial assistance of Rs. 6,000 per annum to all landholding farmer families with cultivable land, subject to specified exclusion criteria, directly into their bank accounts via DBT.",
+    "target_beneficiaries": [
+      "Landholding farmer families with cultivable landholding in their names"
+    ],
+    "scheme_status": "ACTIVE",
+    "operational_status": "ACTIVE",
+    "scheme_operational_status": "ACTIVE",
+    "application_status": "YEAR_ROUND",
+    "application_availability_status": "YEAR_ROUND",
+    "eligibility_verification_status": "PENDING_REVIEW",
+    "current_application_cycle": "Continuous Year-Round Registration / Triannual DBT (April-July, August-November, December-March)",
+    "application_start_date": null,
+    "application_deadline": null,
+    "last_application_deadline": null,
+    "next_expected_cycle": "Continuous Year-Round Registration / 19th DBT Installment (December 2024 - March 2025)",
+    "application_status_last_checked": "2026-11-15",
+    "application_status_evidence": "Continuous 24x7 online New Farmer Registration is permanently open on pmkisan.gov.in and via CSCs with no annual cutoff deadline. Financial assistance of Rs. 6,000/year is disbursed in three equal 4-monthly installments (April-July, August-November, December-March). Installment release dates (such as the 18th installment disbursed on 5 October 2024 and 19th installment covering December 2024 - March 2025) represent payment disbursement events rather than application deadlines. Mandatory prerequisites for installment disbursement are Aadhaar e-KYC (OTP/biometric/face authentication), State Nodal Officer land record database validation (land seeding), and Aadhaar-seeded NPCI-mapped active bank accounts.",
+    "launch_year": 2019,
+    "source_portal": "https://pmkisan.gov.in",
+    "benefits": {
+      "type": "Direct Benefit Transfer",
+      "amount_annual": 6000.0,
+      "disbursement_frequency": "Three 4-monthly installments of Rs. 2,000 each",
+      "benefit_type": "Direct Financial Benefit",
+      "financial_assistance_amount": 6000.0,
+      "amount_unit": "INR",
+      "payment_frequency": "Every 4 months (3 installments per financial year)",
+      "duration": "Continuous benefit as long as eligibility criteria are maintained",
+      "maximum_benefit": 6000.0,
+      "number_of_installments": 3,
+      "non_financial_benefits": [
+        "Aadhaar-based digital beneficiary authentication",
+        "Direct access to Kisan Credit Card (KCC) linkage",
+        "PM-KISAN grievance redressal portal"
+      ]
+    },
+    "eligibility": {
+      "min_age": 18,
+      "max_age": null,
+      "gender": "ALL",
+      "gender_requirement": "ALL",
+      "max_annual_income": null,
+      "annual_family_income_limit": null,
+      "occupation": [
+        "Farmer",
+        "Cultivator"
+      ],
+      "occupation_requirement": [
+        "Farmer",
+        "Cultivator"
+      ],
+      "landholding": true,
+      "land_ownership_requirement": "Farmer family must hold cultivable land registered in official State/UT land revenue records.",
+      "states": [
+        "ALL"
+      ],
+      "state_residency_requirement": [
+        "ALL"
+      ],
+      "exclusions": [
+        "Institutional landholders",
+        "Farmer families holding or having held constitutional posts",
+        "Former and present Ministers, State Ministers, MPs, MLAs, MLCs, Mayors of Municipal Corporations, Chairpersons of District Panchayats",
+        "Serving or retired officers and employees of Central/State Government Ministries, Offices, Departments, PSUs, Autonomous Bodies, Local Bodies (excluding Multi-Tasking Staff / Class IV / Group D employees)",
+        "All superannuated/retired pensioners whose monthly pension is Rs. 10,000 or more (excluding MTS / Class IV / Group D employees)",
+        "All persons who paid Income Tax in the last assessment year",
+        "Professionals like Doctors, Engineers, Lawyers, Chartered Accountants, and Architects registered with professional bodies and carrying out practice"
+      ],
+      "structured_rules": [
+        {
+          "criterion": "land_ownership",
+          "operator": "==",
+          "required_value": true,
+          "unit": "boolean",
+          "explanation": "Applicant family must own cultivable land registered in official State land records.",
+          "source_reference": "PM-KISAN Operational Guidelines, Section 2.1",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "institutional_landholder",
+          "operator": "==",
+          "required_value": false,
+          "unit": "boolean",
+          "explanation": "Institutional landholders are strictly excluded from receiving scheme benefits.",
+          "source_reference": "PM-KISAN Operational Guidelines, Section 3.1(a)",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "income_tax_payee",
+          "operator": "==",
+          "required_value": false,
+          "unit": "boolean",
+          "explanation": "Persons who paid Income Tax in the last assessment year are strictly excluded.",
+          "source_reference": "PM-KISAN Operational Guidelines, Section 3.1(f)",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "constitutional_post_holder",
+          "operator": "==",
+          "required_value": false,
+          "unit": "boolean",
+          "explanation": "Former or present holders of constitutional posts are excluded.",
+          "source_reference": "PM-KISAN Operational Guidelines, Section 3.1(b)",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        }
+      ]
+    },
+    "required_documents": [
+      {
+        "document_name": "Aadhaar Card",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "Mandatory for identity verification, DBT Aadhaar-based disbursement, and OTP/biometric e-KYC",
+        "issuing_authority": "UIDAI",
+        "source_reference": "PM-KISAN Guidelines Section 5"
+      },
+      {
+        "document_name": "Cultivable Landholding Record (RoR / Khatauni / Jamabandi)",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "Must show clear cultivable land title registered in applicant's or family's name in official State land records",
+        "issuing_authority": "State Revenue / Land Records Department",
+        "source_reference": "PM-KISAN Guidelines Section 2"
+      },
+      {
+        "document_name": "Bank Account Passbook / Statement",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "Active Aadhaar-seeded, NPCI-mapped bank account for DBT installment credit",
+        "issuing_authority": "Commercial Bank / RRB / Cooperative Bank / Post Office",
+        "source_reference": "PM-KISAN Guidelines Section 5.2"
+      },
+      {
+        "document_name": "Self-Declaration of Non-Exclusion",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "Mandatory undertaking stating applicant does not fall under excluded income tax, constitutional, or pensioner categories",
+        "issuing_authority": "Applicant Self-Declaration via Portal or CSC",
+        "source_reference": "PM-KISAN Guidelines Annexure I"
+      }
+    ],
+    "application_method": "Both",
+    "official_application_url": "https://pmkisan.gov.in/RegistrationFormNew.aspx",
+    "official_guidelines_url": "https://pmkisan.gov.in/Documents/RevisedPM-KISANOperationalGuidelines%28English%29.pdf",
+    "official_information_url": "https://pmkisan.gov.in/",
+    "application_url": "https://pmkisan.gov.in/RegistrationFormNew.aspx",
+    "source_urls": [
+      "https://pmkisan.gov.in/",
+      "https://pmkisan.gov.in/Documents/RevisedPM-KISANOperationalGuidelines%28English%29.pdf",
+      "https://agriwelfare.gov.in/"
+    ],
+    "official_sources": [
+      {
+        "source_title": "PM-KISAN Official Operational Guidelines (Revised)",
+        "source_url": "https://pmkisan.gov.in/Documents/RevisedPM-KISANOperationalGuidelines%28English%29.pdf",
+        "source_type": "Operational Guidelines",
+        "issuing_authority": "Department of Agriculture and Farmers Welfare, Ministry of Agriculture and Farmers Welfare",
+        "publication_date": "2020-02-01",
+        "section_or_clause": "Sections 2, 3, 5",
+        "date_checked": "2026-11-15",
+        "claims_supported": [
+          "Rs. 6,000/yr financial benefit in 3 installments",
+          "Exclusion categories (income tax, constitutional posts, high pensions)",
+          "Landholding eligibility",
+          "DBT disbursement",
+          "Continuous beneficiary intake without fixed annual closing deadline"
+        ]
+      },
+      {
+        "source_title": "PM-KISAN Official Portal",
+        "source_url": "https://pmkisan.gov.in/",
+        "source_type": "Official Government Portal",
+        "issuing_authority": "Ministry of Agriculture and Farmers Welfare",
+        "date_checked": "2026-11-15",
+        "claims_supported": [
+          "Continuous 24x7 online New Farmer Registration without annual deadline",
+          "Self-registration and e-KYC facilities (OTP, biometric, and face authentication)",
+          "Triannual DBT disbursement schedule (April-July, August-November, December-March)",
+          "18th installment disbursement (5 October 2024) and 19th installment cycle",
+          "Scheme operational continuity and saturation drives"
+        ]
+      }
+    ],
+    "source_evidence_audit": [
+      {
+        "topic": "Benefit Structure and Exclusion Rules",
+        "primary_source": {
+          "source_title": "PM-KISAN Operational Guidelines",
+          "source_url": "https://pmkisan.gov.in/Documents/RevisedPM-KISANOperationalGuidelines%28English%29.pdf",
+          "clause": "Clause 2.1 & Clause 3.1",
+          "claim": "Financial assistance of Rs. 6000 per annum per landholding farmer family paid in three 4-monthly installments of Rs. 2000 each via DBT."
+        },
+        "is_conflict_resolved": true
+      },
+      {
+        "topic": "Continuous Registration, Deadline & Disbursement Policy",
+        "primary_source": {
+          "source_title": "PM-KISAN Official Portal & Operational Guidelines",
+          "source_url": "https://pmkisan.gov.in/",
+          "clause": "Farmer Corner - New Farmer Registration & Guidelines Section 5",
+          "claim": "New farmer registration is open continuously year-round with no closing deadline. Beneficiary payments follow three 4-monthly cycles (April-July, August-November, December-March). Installment transfers (e.g., 18th installment disbursed 5 October 2024) are DBT payment events rather than application cutoffs. Mandatory disbursement prerequisites are Aadhaar e-KYC, land-record validation, and NPCI bank seeding."
+        },
+        "is_conflict_resolved": true
+      }
+    ],
+    "last_checked_date": "2026-11-15",
+    "last_verified_at": "2026-11-15",
+    "verification_notes": "Verified against DA&FW official revised operational guidelines and pmkisan.gov.in portal. Application availability finalized as YEAR_ROUND as New Farmer Registration is continuously active online 24x7 and via CSCs with no annual application deadline. Three annual DBT installments of Rs. 2,000 each occur in April-July, August-November, and December-March. Installment disbursement events (e.g. 18th installment on 5 October 2024) are distinct from application intake. Mandatory prerequisites for receiving DBT transfers are State land-record database verification (land seeding), Aadhaar e-KYC authentication, and NPCI-mapped active bank accounts.",
+    "verification_status": "pending_review",
+    "is_verified": false
+  },
+  {
+    "scheme_id": "SCHEME_MSME_001_PMEGP",
+    "scheme_name": "Prime Minister's Employment Generation Programme (PMEGP)",
+    "official_name": "Prime Minister's Employment Generation Programme (PMEGP)",
+    "current_official_name": "Prime Minister's Employment Generation Programme (PMEGP)",
+    "category": "EMPLOYMENT_AND_BUSINESS",
+    "sector": "MSME & Micro Enterprises",
+    "ministry": "Ministry of Micro, Small and Medium Enterprises",
+    "responsible_ministry": "Ministry of Micro, Small and Medium Enterprises",
+    "department": "Ministry of Micro, Small and Medium Enterprises",
+    "responsible_department": "Ministry of Micro, Small and Medium Enterprises",
+    "implementing_agency": "Khadi and Village Industries Commission (KVIC) as National Nodal Agency; KVIB, DIC, and Coir Board at State level",
+    "government_level": "Central",
+    "state_applicability": [
+      "ALL"
+    ],
+    "description": "Credit-linked margin money subsidy scheme to generate self-employment by establishing micro-enterprises in non-farm sector.",
+    "scheme_description": "Prime Minister's Employment Generation Programme (PMEGP) is a credit-linked subsidy programme administered by the Ministry of MSME to establish micro-enterprises in manufacturing and service/business sectors. Subsidies range from 15% to 35% of project cost, with maximum project cost of Rs. 50 Lakh (Manufacturing) and Rs. 20 Lakh (Service).",
+    "target_beneficiaries": [
+      "Individual entrepreneurs (age 18+)",
+      "Self Help Groups (SHGs)",
+      "Production Co-operative Societies",
+      "Charitable Trusts setting up new micro-enterprises"
+    ],
+    "scheme_status": "ACTIVE",
+    "operational_status": "ACTIVE",
+    "scheme_operational_status": "ACTIVE",
+    "application_status": "NEEDS_LIVE_VERIFICATION",
+    "application_availability_status": "NEEDS_LIVE_VERIFICATION",
+    "eligibility_verification_status": "PENDING_REVIEW",
+    "current_application_cycle": "Continuous Online Intake / Annual District Target Allocation via PMEGP e-Portal",
+    "application_start_date": null,
+    "application_deadline": null,
+    "last_application_deadline": null,
+    "next_expected_cycle": "Continuous Online Intake / Implementing Agency Scorecard & Bank Credit Appraisal Cycles",
+    "application_status_last_checked": "2026-11-15",
+    "application_status_evidence": "The KVIC PMEGP e-portal (kviconline.gov.in/pmegpeportal) and JanSamarth portal accept online applications continuously round the year without a fixed calendar closing deadline. However, application acceptance and Margin Money subsidy release are strictly governed by annual district-level physical and financial targets, implementing agency digital scorecard screening (replacing routine DLTFC pre-vetting under revised guidelines), independent commercial bank credit appraisal, and mandatory EDP training. Portal accessibility does not guarantee active target availability in a specific district, requiring real-time live portal and agency verification before credit decisions.",
+    "launch_year": 2008,
+    "source_portal": "https://www.kviconline.gov.in/pmegpeportal/",
+    "benefits": {
+      "type": "Credit Linked Margin Money Subsidy",
+      "amount_annual": null,
+      "benefit_type": "Government Margin Money Subsidy",
+      "financial_assistance_amount": 1750000.0,
+      "amount_unit": "INR (up to 35% margin money subsidy on project cost)",
+      "payment_frequency": "One-time margin money subsidy kept in Term Deposit Receipt (TDR) for 3 years",
+      "duration": "Loan repayment tenure of 3 to 7 years with initial moratorium",
+      "maximum_benefit": 1750000.0,
+      "non_financial_benefits": [
+        "Mandatory Entrepreneurship Development Programme (EDP) training",
+        "Credit-linked bank financing through scheduled commercial and cooperative banks",
+        "Second loan option up to Rs. 1 Crore for upgradation of successful units"
+      ]
+    },
+    "eligibility": {
+      "min_age": 18,
+      "max_age": null,
+      "gender": "ALL",
+      "gender_requirement": "ALL",
+      "max_annual_income": null,
+      "annual_family_income_limit": null,
+      "occupation": [
+        "Entrepreneur",
+        "Unemployed",
+        "Artisan",
+        "Self-Employed"
+      ],
+      "occupation_requirement": [
+        "Entrepreneur",
+        "Unemployed",
+        "Artisan",
+        "Self-Employed"
+      ],
+      "education_requirement": "At least 8th standard pass for project costs above Rs. 10 Lakh in Manufacturing sector and above Rs. 5 Lakh in Service/Business sector; No minimum education requirement for projects below these limits.",
+      "states": [
+        "ALL"
+      ],
+      "state_residency_requirement": [
+        "ALL"
+      ],
+      "exclusions": [
+        "Existing manufacturing or service units (only brand-new projects are eligible under first loan)",
+        "Units already availing government subsidy under any other Central or State Government scheme for the same project",
+        "Negative list activities: meat/slaughterhouse, intoxicants/alcohol/tobacco products, tapping of toddy, polythene carry bags < 50 microns, crop cultivation/plantation (tea, coffee, rubber), rural transport beyond permissible vehicles"
+      ],
+      "structured_rules": [
+        {
+          "criterion": "minimum_age",
+          "operator": ">=",
+          "required_value": 18,
+          "unit": "years",
+          "explanation": "Applicant must be at least 18 years of age.",
+          "source_reference": "PMEGP Revised Guidelines 2022, Section 3.1",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "new_project_only",
+          "operator": "==",
+          "required_value": true,
+          "unit": "boolean",
+          "explanation": "Only brand new micro-enterprises are eligible for initial PMEGP assistance.",
+          "source_reference": "PMEGP Revised Guidelines 2022, Section 3.2",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "negative_list_activity",
+          "operator": "==",
+          "required_value": false,
+          "unit": "boolean",
+          "explanation": "Project must not involve activities on the MSME negative list (tobacco, alcohol, slaughter, thin plastics).",
+          "source_reference": "PMEGP Revised Guidelines 2022, Annexure Negative List",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        }
+      ]
+    },
+    "required_documents": [
+      {
+        "document_name": "Aadhaar Card",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "Primary identity and address verification",
+        "issuing_authority": "UIDAI",
+        "source_reference": "PMEGP Portal Checklist"
+      },
+      {
+        "document_name": "PAN Card",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "Required for financial assessment and commercial bank loan processing",
+        "issuing_authority": "Income Tax Department",
+        "source_reference": "PMEGP Portal Checklist"
+      },
+      {
+        "document_name": "Detailed Project Report (DPR)",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "Detailed financial and operational proposal of the new micro-enterprise",
+        "issuing_authority": "Prepared by applicant / Chartered Accountant / Technical Consultant",
+        "source_reference": "PMEGP Guidelines Section 4"
+      },
+      {
+        "document_name": "Class 8 Pass Certificate / Marksheet",
+        "requirement_type": "CONDITIONAL",
+        "mandatory_or_optional": "CONDITIONAL",
+        "applicable_condition": "Mandatory only if project cost exceeds Rs. 10 Lakh (Manufacturing) or Rs. 5 Lakh (Service)",
+        "issuing_authority": "Recognized School / Board",
+        "source_reference": "PMEGP Guidelines Section 3.1"
+      },
+      {
+        "document_name": "Special Category / Caste Certificate",
+        "requirement_type": "CONDITIONAL",
+        "mandatory_or_optional": "CONDITIONAL",
+        "applicable_condition": "Required to claim higher 25%/35% special category subsidy rate (SC, ST, OBC, Minority, Women, PwD, Ex-Servicemen)",
+        "issuing_authority": "Competent Revenue / Social Welfare Authority",
+        "source_reference": "PMEGP Guidelines Section 2"
+      },
+      {
+        "document_name": "Rural Area Certificate",
+        "requirement_type": "CONDITIONAL",
+        "mandatory_or_optional": "CONDITIONAL",
+        "applicable_condition": "Required to claim higher rural subsidy percentage (25% for general, 35% for special category)",
+        "issuing_authority": "Gram Panchayat / Sarpanch / Block Development Officer (BDO)",
+        "source_reference": "PMEGP Guidelines Section 2"
+      }
+    ],
+    "application_method": "Online",
+    "official_application_url": "https://www.kviconline.gov.in/pmegpeportal/jsp/pmegponline.jsp",
+    "official_guidelines_url": "https://msme.gov.in/sites/default/files/PMEGP-Guidelines-Revised-2022.pdf",
+    "official_information_url": "https://www.kviconline.gov.in/pmegpeportal/",
+    "application_url": "https://www.kviconline.gov.in/pmegpeportal/jsp/pmegponline.jsp",
+    "source_urls": [
+      "https://www.kviconline.gov.in/pmegpeportal/",
+      "https://msme.gov.in/",
+      "https://msme.gov.in/sites/default/files/PMEGP-Guidelines-Revised-2022.pdf"
+    ],
+    "official_sources": [
+      {
+        "source_title": "PMEGP Scheme Guidelines (Revised)",
+        "source_url": "https://msme.gov.in/sites/default/files/PMEGP-Guidelines-Revised-2022.pdf",
+        "source_type": "Official Guidelines",
+        "issuing_authority": "Ministry of Micro, Small and Medium Enterprises",
+        "publication_date": "2022-05-01",
+        "section_or_clause": "Sections 2, 3, 4",
+        "date_checked": "2026-11-15",
+        "claims_supported": [
+          "Subsidy slabs 15%-35%",
+          "Project limits Rs. 50L (Mfg) and Rs. 20L (Service)",
+          "Class 8 qualification requirement",
+          "Continuous online application submission round the year with no calendar deadline",
+          "Digital scorecard screening replacing routine DLTFC pre-vetting",
+          "Annual district target allocations and 15th Finance Commission continuation"
+        ]
+      },
+      {
+        "source_title": "KVIC PMEGP e-Portal",
+        "source_url": "https://www.kviconline.gov.in/pmegpeportal/",
+        "source_type": "Official Government Application Portal",
+        "issuing_authority": "Khadi and Village Industries Commission",
+        "date_checked": "2026-11-15",
+        "claims_supported": [
+          "Online application workflow via kviconline.gov.in and JanSamarth",
+          "Continuous 24x7 online submission for new units and 2nd loan upgradation",
+          "Checklist of documents and procedures",
+          "Agency digital scorecard screening, bank credit appraisal, and EDP linkage"
+        ]
+      }
+    ],
+    "source_evidence_audit": [
+      {
+        "topic": "Subsidy Structure and Project Ceilings",
+        "primary_source": {
+          "source_title": "PMEGP Guidelines Revised 2022",
+          "source_url": "https://msme.gov.in/sites/default/files/PMEGP-Guidelines-Revised-2022.pdf",
+          "clause": "Clause 2.1 & Clause 3.1",
+          "claim": "15-35% margin money subsidy on project cost up to Rs. 50 Lakh for manufacturing and Rs. 20 Lakh for service."
+        },
+        "is_conflict_resolved": true
+      },
+      {
+        "topic": "Application Intake, Target Allocation & Deadline Policy",
+        "primary_source": {
+          "source_title": "PMEGP Revised Guidelines & KVIC e-Portal",
+          "source_url": "https://www.kviconline.gov.in/pmegpeportal/",
+          "clause": "Guidelines Section 4 & Portal Application Advisory",
+          "claim": "Applications are accepted continuously online throughout the year without an annual cutoff date. Application processing and subsidy release are subject to annual physical/financial targets at the district level, digital agency scorecard verification, and independent bank credit appraisal."
+        },
+        "is_conflict_resolved": true
+      }
+    ],
+    "last_checked_date": "2026-11-15",
+    "last_verified_at": "2026-11-15",
+    "verification_notes": "Verified against Ministry of MSME Revised Guidelines (2022) and KVIC PMEGP e-portal (kviconline.gov.in). Application availability finalized as NEEDS_LIVE_VERIFICATION (is_currently_open: false). While online applicant registration is open continuously year-round with no fixed closing date (application_deadline: null), actual application intake and subsidy sanctions are contingent on annual district physical/financial target allocations, agency scorecard verification, independent bank credit appraisal, and mandatory EDP training. Portal accessibility does not confirm available district quota, maintaining separation between continuous intake and bank sanction timelines.",
+    "verification_status": "pending_review",
+    "is_verified": false
+  },
+  {
+    "scheme_id": "SCHEME_URBAN_001_PM_SVANIDHI",
+    "scheme_name": "PM SVANidhi",
+    "official_name": "Prime Minister Street Vendor's AtmaNirbhar Nidhi (PM SVANidhi)",
+    "current_official_name": "Prime Minister Street Vendor's AtmaNirbhar Nidhi (PM SVANidhi)",
+    "category": "EMPLOYMENT_AND_BUSINESS",
+    "sector": "Urban Livelihoods & Street Vending",
+    "ministry": "Ministry of Housing and Urban Affairs",
+    "responsible_ministry": "Ministry of Housing and Urban Affairs",
+    "department": "Ministry of Housing and Urban Affairs",
+    "responsible_department": "Ministry of Housing and Urban Affairs",
+    "implementing_agency": "Small Industries Development Bank of India (SIDBI) and Urban Local Bodies (ULBs)",
+    "government_level": "Central",
+    "state_applicability": [
+      "ALL"
+    ],
+    "description": "Collateral-free working capital micro-credit with 7% interest subsidy and digital cashback for urban street vendors.",
+    "scheme_description": "PM Street Vendor's AtmaNirbhar Nidhi (PM SVANidhi) was launched by the Ministry of Housing and Urban Affairs to facilitate collateral-free working capital loans to street vendors in urban, peri-urban, and surrounding areas. Offers progressive tranches of Rs. 15,000 (1st), Rs. 25,000 (2nd), and Rs. 50,000 (3rd), 7% interest subsidy, and digital cashback up to Rs. 1,600/year. Extended by Union Cabinet through March 2030.",
+    "target_beneficiaries": [
+      "Street vendors and hawkers vending in urban, peri-urban, and surrounding rural areas"
+    ],
+    "scheme_status": "ACTIVE",
+    "operational_status": "ACTIVE",
+    "scheme_operational_status": "ACTIVE",
+    "application_status": "YEAR_ROUND",
+    "application_availability_status": "YEAR_ROUND",
+    "eligibility_verification_status": "PENDING_REVIEW",
+    "current_application_cycle": "Continuous Lending Window Extended Through 31 March 2030",
+    "application_start_date": null,
+    "application_deadline": null,
+    "last_application_deadline": null,
+    "next_expected_cycle": "Continuous Onboarding",
+    "application_status_last_checked": "2026-11-15",
+    "application_status_evidence": "Union Cabinet approved restructuring and extension of PM SVANidhi lending period beyond 31-12-2024 through 31-03-2030 (with total outlay of Rs. 7,332 Cr targeting 1.15 Cr vendors including 50 lakh new beneficiaries). Applications for fresh loans and 2nd/3rd tranches are accepted continuously online round the year on pmsvanidhi.mohua.gov.in and via ULBs/CSCs without an individual submission deadline.",
+    "launch_year": 2020,
+    "source_portal": "https://pmsvanidhi.mohua.gov.in",
+    "benefits": {
+      "type": "Working Capital Micro-Credit and Interest Subsidy",
+      "amount_annual": null,
+      "benefit_type": "Collateral-Free Micro-Credit Loan",
+      "financial_assistance_amount": 50000.0,
+      "amount_unit": "INR (tranches of Rs. 15,000, Rs. 25,000, and Rs. 50,000)",
+      "payment_frequency": "Disbursed directly into vendor bank account upon loan sanction",
+      "duration": "12 months (1st tranche), 18 months (2nd tranche), 36 months (3rd tranche)",
+      "maximum_benefit": 50000.0,
+      "non_financial_benefits": [
+        "7% per annum interest subsidy credited quarterly into vendor account via DBT",
+        "Digital transaction cashback up to Rs. 100/month (up to Rs. 1,600/year)",
+        "Formal financial history and credit score enhancement under SVANidhi se Samriddhi"
+      ]
+    },
+    "eligibility": {
+      "min_age": 18,
+      "max_age": null,
+      "gender": "ALL",
+      "gender_requirement": "ALL",
+      "max_annual_income": null,
+      "annual_family_income_limit": null,
+      "occupation": [
+        "Street Vendor",
+        "Hawker",
+        "Mobile Vendor",
+        "Peddler"
+      ],
+      "occupation_requirement": [
+        "Street Vendor",
+        "Hawker",
+        "Mobile Vendor",
+        "Peddler"
+      ],
+      "states": [
+        "ALL"
+      ],
+      "state_residency_requirement": [
+        "ALL"
+      ],
+      "exclusions": [
+        "Persons not engaged in street vending or hawking goods/services",
+        "Vendors without Certificate of Vending (CoV), Vendor ID card, or ULB/TVC Letter of Recommendation (LoR)",
+        "Willful loan defaulters as defined under RBI guidelines"
+      ],
+      "structured_rules": [
+        {
+          "criterion": "occupation_street_vendor",
+          "operator": "==",
+          "required_value": true,
+          "unit": "boolean",
+          "explanation": "Applicant must be a street vendor or hawker vending in urban or peri-urban areas.",
+          "source_reference": "PM SVANidhi Guidelines Section 3.1",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "ulb_vendor_identification",
+          "operator": "==",
+          "required_value": true,
+          "unit": "boolean",
+          "explanation": "Vendor must possess CoV, Vendor Identity Card, or Letter of Recommendation (LoR) from Urban Local Body.",
+          "source_reference": "PM SVANidhi Guidelines Section 3.2",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        }
+      ]
+    },
+    "required_documents": [
+      {
+        "document_name": "Aadhaar Card",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "Identity verification and Aadhaar-seeded mobile OTP authentication",
+        "issuing_authority": "UIDAI",
+        "source_reference": "PM SVANidhi Portal Checklist"
+      },
+      {
+        "document_name": "Certificate of Vending (CoV) / Vendor Identity Card / Letter of Recommendation (LoR)",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "Evidence of vending status issued by Urban Local Body (ULB) or Town Vending Committee (TVC)",
+        "issuing_authority": "Urban Local Body (ULB) / Municipal Corporation / Municipality",
+        "source_reference": "PM SVANidhi Guidelines Section 3"
+      },
+      {
+        "document_name": "Bank Account Passbook / Statement",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "Active savings/current bank account for credit disbursement and DBT interest subsidy",
+        "issuing_authority": "Bank / Financial Institution",
+        "source_reference": "PM SVANidhi Guidelines Section 5"
+      }
+    ],
+    "application_method": "Online",
+    "official_application_url": "https://pmsvanidhi.mohua.gov.in/Home/PreApplication",
+    "official_guidelines_url": "https://pmsvanidhi.mohua.gov.in/Schemes/PmsvanidhiGuidelines.pdf",
+    "official_information_url": "https://pmsvanidhi.mohua.gov.in/",
+    "application_url": "https://pmsvanidhi.mohua.gov.in/Home/PreApplication",
+    "source_urls": [
+      "https://pmsvanidhi.mohua.gov.in/",
+      "https://mohua.gov.in/",
+      "https://www.pmindia.gov.in/en/news_updates/cabinet-approves-restructuring-extension-of-lending-period-beyond-31-12-2024-of-pm-street-vendors-atmanirbhar-nidhi-pm-svanidhi-scheme/"
+    ],
+    "official_sources": [
+      {
+        "source_title": "PM SVANidhi Scheme Guidelines",
+        "source_url": "https://pmsvanidhi.mohua.gov.in/Schemes/PmsvanidhiGuidelines.pdf",
+        "source_type": "Official Guidelines",
+        "issuing_authority": "Ministry of Housing and Urban Affairs",
+        "date_checked": "2026-11-15",
+        "claims_supported": [
+          "Working capital tranches Rs. 15,000, Rs. 25,000, Rs. 50,000",
+          "7% interest subsidy",
+          "Digital transaction cashback up to Rs. 1,600/year",
+          "Continuous onboarding for fresh vendors and progressive tranches"
+        ]
+      },
+      {
+        "source_title": "Union Cabinet Approval: Extension and Restructuring of PM SVANidhi",
+        "source_url": "https://pmsvanidhi.mohua.gov.in/",
+        "source_type": "Union Cabinet Decision & PIB Release",
+        "issuing_authority": "Ministry of Housing and Urban Affairs / PIB",
+        "publication_date": "2024-02-21",
+        "date_checked": "2026-11-15",
+        "claims_supported": [
+          "Approved lending period extended through 31 March 2030",
+          "Continuous year-round intake for fresh applicants (50 lakh new beneficiaries target)",
+          "Enhanced 1st tranche up to Rs. 15,000 and 2nd tranche up to Rs. 25,000",
+          "UPI-linked RuPay Credit Card facility up to Rs. 30,000 for 2nd tranche repayers",
+          "Continuation of 7% interest subsidy and digital cashback incentives"
+        ]
+      }
+    ],
+    "source_evidence_audit": [
+      {
+        "topic": "Loan Tranches and Cabinet Extension",
+        "primary_source": {
+          "source_title": "Cabinet Extension Press Release & MoHUA Guidelines",
+          "source_url": "https://pmsvanidhi.mohua.gov.in/Schemes/PmsvanidhiGuidelines.pdf",
+          "clause": "Cabinet Decision 2024 / MoHUA Scheme Terms",
+          "claim": "Working capital loan tranches up to Rs. 50,000 with 7% interest subsidy and lending period extended through 31 March 2030."
+        },
+        "is_conflict_resolved": true
+      },
+      {
+        "topic": "Continuous Intake Window and Deadline Policy",
+        "primary_source": {
+          "source_title": "MoHUA PM SVANidhi Portal & Cabinet Decision",
+          "source_url": "https://pmsvanidhi.mohua.gov.in/",
+          "clause": "Portal Onboarding & Scheme Operational Period Guidelines",
+          "claim": "The approved lending period runs through 31 March 2030, but individual applications are accepted on an ongoing, rolling basis year-round with no separate calendar cutoff deadline (application_deadline is null). Both fresh applicants and progressive tranche borrowers can apply anytime."
+        },
+        "is_conflict_resolved": true
+      }
+    ],
+    "last_checked_date": "2026-11-15",
+    "last_verified_at": "2026-11-15",
+    "verification_notes": "Verified against MoHUA official portal (pmsvanidhi.mohua.gov.in) and Union Cabinet restructuring & extension decision. Application availability finalized as YEAR_ROUND (is_currently_open: true). While the overarching scheme lending period is officially approved through 31 March 2030 with a total outlay of Rs. 7,332 Cr (targeting 1.15 Cr vendors including 50 lakh fresh beneficiaries), individual street vendors can apply continuously throughout the year with no calendar submission deadline (application_deadline: null). Both fresh loans (Tranche 1 up to Rs. 15,000) and subsequent loans (Tranche 2 up to Rs. 25,000 and Tranche 3 up to Rs. 50,000) follow continuous onboarding without separate intermediate cutoffs.",
+    "verification_status": "pending_review",
+    "is_verified": false
+  },
+  {
+    "scheme_id": "SCHEME_LABOUR_001_PM_SYM",
+    "scheme_name": "PM Shram Yogi Maandhan (PM-SYM)",
+    "official_name": "Pradhan Mantri Shram Yogi Maandhan (PM-SYM)",
+    "current_official_name": "Pradhan Mantri Shram Yogi Maandhan (PM-SYM)",
+    "category": "SOCIAL_WELFARE",
+    "sector": "Social Security & Unorganised Workers",
+    "ministry": "Ministry of Labour and Employment",
+    "responsible_ministry": "Ministry of Labour and Employment",
+    "department": "Ministry of Labour and Employment",
+    "responsible_department": "Ministry of Labour and Employment",
+    "implementing_agency": "Life Insurance Corporation of India (LIC) and CSC e-Governance Services India Ltd",
+    "government_level": "Central",
+    "state_applicability": [
+      "ALL"
+    ],
+    "description": "Voluntary and contributory pension scheme providing assured monthly pension of Rs. 3,000 after age 60 for unorganised workers.",
+    "scheme_description": "Pradhan Mantri Shram Yogi Maandhan (PM-SYM) is a Central Sector pension scheme for unorganised workers whose monthly income is Rs. 15,000 or less and who enter between the ages of 18 and 40. On reaching 60, beneficiaries receive an assured minimum monthly pension of Rs. 3,000 with 50% spouse family pension. Centrally matched 50:50 monthly contribution (Rs. 55 to Rs. 200).",
+    "target_beneficiaries": [
+      "Unorganised workers (home-based workers, street vendors, mid-day meal workers, head loaders, brick kiln workers, cobblers, domestic workers, rickshaw pullers, agricultural laborers, construction workers)"
+    ],
+    "scheme_status": "ACTIVE",
+    "operational_status": "ACTIVE",
+    "scheme_operational_status": "ACTIVE",
+    "application_status": "YEAR_ROUND",
+    "application_availability_status": "YEAR_ROUND",
+    "eligibility_verification_status": "PENDING_REVIEW",
+    "current_application_cycle": "Continuous National Year-Round Enrolment via maandhan.in and CSCs",
+    "application_start_date": null,
+    "application_deadline": null,
+    "last_application_deadline": null,
+    "next_expected_cycle": "Continuous Enrolment & Monthly Auto-Debit Contribution Cycles",
+    "application_status_last_checked": "2026-11-15",
+    "application_status_evidence": "The Maandhan national portal (maandhan.in) and nationwide CSC network (4+ lakh VLE centers) enroll unorganised workers continuously round the year with no calendar closing deadline. Eligible unorganised workers aged 18 to 40 with monthly income up to Rs. 15,000 make 50:50 matched monthly contributions (Rs. 55 to Rs. 200) until age 60, after which an assured monthly pension of Rs. 3,000 is disbursed for life. The 18-40 age window represents citizen entry eligibility rather than an application closing date.",
+    "launch_year": 2019,
+    "source_portal": "https://maandhan.in",
+    "benefits": {
+      "type": "Assured Monthly Pension",
+      "amount_annual": 36000.0,
+      "benefit_type": "Social Security Pension",
+      "financial_assistance_amount": 3000.0,
+      "amount_unit": "INR per month",
+      "payment_frequency": "Monthly upon reaching age 60",
+      "duration": "Lifetime of the subscriber; 50% family pension (Rs. 1,500/month) to surviving spouse",
+      "maximum_benefit": 36000.0,
+      "non_financial_benefits": [
+        "100% matched monthly contribution from Central Government into pension fund",
+        "Unique Pension Scheme Number and digital Shram Yogi Pension Card",
+        "Family pension protection for surviving spouse"
+      ]
+    },
+    "eligibility": {
+      "min_age": 18,
+      "max_age": 40,
+      "minimum_age": 18,
+      "maximum_age": 40,
+      "gender": "ALL",
+      "gender_requirement": "ALL",
+      "max_annual_income": 180000.0,
+      "annual_family_income_limit": 180000.0,
+      "income_definition": "Monthly income must not exceed Rs. 15,000.",
+      "occupation": [
+        "Unorganised Worker",
+        "Construction Worker",
+        "Domestic Worker",
+        "Driver",
+        "Artisan",
+        "Labourer"
+      ],
+      "occupation_requirement": [
+        "Unorganised Worker",
+        "Construction Worker",
+        "Domestic Worker",
+        "Driver",
+        "Artisan",
+        "Labourer"
+      ],
+      "states": [
+        "ALL"
+      ],
+      "state_residency_requirement": [
+        "ALL"
+      ],
+      "exclusions": [
+        "Workers covered under any statutory social security schemes like EPFO, ESIC, or NPS (administered by Central Government)",
+        "Income Tax payers",
+        "Persons under age 18 or above age 40 at the time of entry"
+      ],
+      "structured_rules": [
+        {
+          "criterion": "entry_age",
+          "operator": ">=",
+          "required_value": 18,
+          "unit": "years",
+          "explanation": "Subscriber entry age must be at least 18 years.",
+          "source_reference": "PM-SYM Scheme Details Section 2.1",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "entry_age",
+          "operator": "<=",
+          "required_value": 40,
+          "unit": "years",
+          "explanation": "Subscriber entry age must not exceed 40 years.",
+          "source_reference": "PM-SYM Scheme Details Section 2.1",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "monthly_income",
+          "operator": "<=",
+          "required_value": 15000,
+          "unit": "INR",
+          "explanation": "Monthly income of the unorganised worker must not exceed Rs. 15,000.",
+          "source_reference": "PM-SYM Scheme Details Section 2.1",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "covered_by_epfo_esic_nps",
+          "operator": "==",
+          "required_value": false,
+          "unit": "boolean",
+          "explanation": "Workers covered under EPFO, ESIC, or NPS are excluded.",
+          "source_reference": "PM-SYM Scheme Details Section 2.2",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "income_tax_payee",
+          "operator": "==",
+          "required_value": false,
+          "unit": "boolean",
+          "explanation": "Income Tax payees are excluded.",
+          "source_reference": "PM-SYM Scheme Details Section 2.2",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        }
+      ]
+    },
+    "required_documents": [
+      {
+        "document_name": "Aadhaar Card",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "Primary identity verification and demographic authentication",
+        "issuing_authority": "UIDAI",
+        "source_reference": "PM-SYM Portal Enrolment Requirements"
+      },
+      {
+        "document_name": "Savings Bank Account / Jan Dhan Account with IFSC",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "Mandatory for auto-debit of monthly subscriber contribution and eventual pension crediting",
+        "issuing_authority": "Scheduled Commercial Bank / RRB / Post Office / Cooperative Bank",
+        "source_reference": "PM-SYM Scheme Details Section 4"
+      },
+      {
+        "document_name": "Auto-Debit Mandate Form",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "Subscriber authorization for automated monthly deduction of age-specific contribution",
+        "issuing_authority": "CSC / Bank Mandate Authorization",
+        "source_reference": "PM-SYM Scheme Details Section 4"
+      }
+    ],
+    "application_method": "Both",
+    "official_application_url": "https://maandhan.in/shramyogi",
+    "official_guidelines_url": "https://labour.gov.in/sites/default/files/pm-sym_scheme_details_english.pdf",
+    "official_information_url": "https://maandhan.in/",
+    "application_url": "https://maandhan.in/shramyogi",
+    "source_urls": [
+      "https://maandhan.in/",
+      "https://labour.gov.in/",
+      "https://labour.gov.in/sites/default/files/pm-sym_scheme_details_english.pdf"
+    ],
+    "official_sources": [
+      {
+        "source_title": "PM-SYM Scheme Details & Guidelines",
+        "source_url": "https://labour.gov.in/sites/default/files/pm-sym_scheme_details_english.pdf",
+        "source_type": "Official Scheme Notification & Guidelines",
+        "issuing_authority": "Ministry of Labour and Employment",
+        "publication_date": "2019-02-15",
+        "section_or_clause": "Sections 2, 3, 4",
+        "date_checked": "2026-11-15",
+        "claims_supported": [
+          "Rs. 3,000 monthly assured pension on attaining age 60",
+          "50% family pension (Rs. 1,500/month) for surviving spouse",
+          "Entry age 18-40 entry criteria (subscriber age limit, not scheme deadline)",
+          "Monthly income ceiling Rs. 15,000 or less",
+          "50:50 central government matching contribution (Rs. 55 to Rs. 200/month)",
+          "Exclusions for EPFO, ESIC, NPS, and Income Tax payers"
+        ]
+      },
+      {
+        "source_title": "Maandhan Official National Enrolment Portal",
+        "source_url": "https://maandhan.in/",
+        "source_type": "Official Government Portal",
+        "issuing_authority": "Ministry of Labour and Employment / LIC",
+        "date_checked": "2026-11-15",
+        "claims_supported": [
+          "Continuous 24x7 online self-enrolment and nationwide CSC assisted enrolment",
+          "No calendar cutoff or annual application deadline",
+          "Age-specific monthly contribution chart (Rs. 55 - Rs. 200)",
+          "Bank auto-debit setup and digital Shram Yogi Pension Card issuance"
+        ]
+      }
+    ],
+    "source_evidence_audit": [
+      {
+        "topic": "Pension Benefits and Eligibility Ceilings",
+        "primary_source": {
+          "source_title": "PM-SYM Official Scheme Notification",
+          "source_url": "https://labour.gov.in/sites/default/files/pm-sym_scheme_details_english.pdf",
+          "clause": "Clause 2.1 & Clause 3.1",
+          "claim": "Assured pension of Rs. 3000/month on attaining age 60 with 50% central matching contribution; eligibility 18-40 years, monthly income <= Rs. 15,000."
+        },
+        "is_conflict_resolved": true
+      },
+      {
+        "topic": "Continuous Year-Round Enrolment and Deadline Policy",
+        "primary_source": {
+          "source_title": "Maandhan Official Portal & MoLE Guidelines",
+          "source_url": "https://maandhan.in/",
+          "clause": "Scheme Details Section 3 & Portal Enrolment Guidelines",
+          "claim": "Enrolment is open continuously year-round with no closing deadline. The 18-40 years requirement defines the eligible entry age window for unorganised workers to begin contributory savings, not a scheme cutoff date. Beneficiaries contribute until age 60 and receive an assured lifelong pension of Rs. 3,000/month."
+        },
+        "is_conflict_resolved": true
+      }
+    ],
+    "last_checked_date": "2026-11-15",
+    "last_verified_at": "2026-11-15",
+    "verification_notes": "Verified against Ministry of Labour and Employment official scheme notification and maandhan.in national portal. Application availability finalized as YEAR_ROUND (is_currently_open: true). Worker enrolment is active continuously 365 days a year through web self-enrolment and nationwide CSCs with no fixed closing date (application_deadline: null). Entry is open to unorganised workers aged 18 to 40 with monthly income up to Rs. 15,000 (not covered by EPFO/ESIC/NPS/Income Tax). Subscribers contribute Rs. 55–200 monthly with 50% central matching contribution until age 60, upon which an assured lifelong pension of Rs. 3,000/month commences. The age 18–40 criteria is an eligibility condition and not a scheme application deadline.",
+    "verification_status": "pending_review",
+    "is_verified": false
+  },
+  {
+    "scheme_id": "SCHEME_WOMEN_001_PMUY_2",
+    "scheme_name": "Pradhan Mantri Ujjwala Yojana (PMUY / Ujjwala 2.0)",
+    "official_name": "Pradhan Mantri Ujjwala Yojana (PMUY) - Ujjwala 2.0",
+    "current_official_name": "Pradhan Mantri Ujjwala Yojana (PMUY) - Ujjwala 2.0",
+    "category": "SOCIAL_WELFARE",
+    "sector": "Energy Access & Women Empowerment",
+    "ministry": "Ministry of Petroleum and Natural Gas",
+    "responsible_ministry": "Ministry of Petroleum and Natural Gas",
+    "department": "Ministry of Petroleum and Natural Gas",
+    "responsible_department": "Ministry of Petroleum and Natural Gas",
+    "implementing_agency": "Public Sector Oil Marketing Companies (IOCL, BPCL, HPCL) and local LPG Distributors",
+    "government_level": "Central",
+    "state_applicability": [
+      "ALL"
+    ],
+    "description": "Deposit-free LPG connection, free first refill, and free stove for eligible adult women from poor/deprived households.",
+    "scheme_description": "Pradhan Mantri Ujjwala Yojana (PMUY / Ujjwala 2.0) is a flagship scheme by the Ministry of Petroleum and Natural Gas to provide clean cooking fuel (LPG) to women in poor households. Benefits include a deposit-free LPG connection (Rs. 1,600 government financial support for 14.2 kg connection), free first refill cylinder, and free gas hotplate/stove, plus targeted DBT refill subsidy of Rs. 300 per cylinder (up to 12 refills/year) extended through FY 2025-26.",
+    "target_beneficiaries": [
+      "Adult women (age 18+) from poor/deprived households (SC, ST, PMAY-G, AAY, Forest Dwellers, MBC, Tea Garden tribes, Island dwellers, or households fulfilling 14-point declaration)"
+    ],
+    "scheme_status": "ACTIVE",
+    "operational_status": "ACTIVE",
+    "scheme_operational_status": "ACTIVE",
+    "application_status": "QUOTA_DEPENDENT",
+    "application_availability_status": "QUOTA_DEPENDENT",
+    "eligibility_verification_status": "PENDING_REVIEW",
+    "current_application_cycle": "Cabinet Target Expansion (75 Lakh Connections / 10.35 Cr Total) through FY 2025-26",
+    "application_start_date": null,
+    "application_deadline": null,
+    "last_application_deadline": null,
+    "next_expected_cycle": "Local OMC Distributor Quota-Based Release",
+    "application_status_last_checked": "2026-11-15",
+    "application_status_evidence": "The Union Cabinet approved the expansion of PMUY to release 75 lakh additional deposit-free LPG connections (taking total target to 10.35 crore connections) over FY 2023-24 to FY 2025-26 with a financial outlay of Rs. 1,650 crore, alongside targeted cylinder refill subsidies. Online and distributor applications remain open without a fixed calendar closing deadline (application_deadline is null); however, actual connection release is strictly quota-dependent, governed by remaining district-level and distributor-level OMC quotas.",
+    "launch_year": 2016,
+    "source_portal": "https://www.pmuy.gov.in",
+    "benefits": {
+      "type": "Deposit-Free LPG Connection, Free First Refill and Stove",
+      "amount_annual": 5200.0,
+      "benefit_type": "Clean Energy Access & Subsidy",
+      "financial_assistance_amount": 1600.0,
+      "amount_unit": "INR (Connection assistance Rs. 1,600 for 14.2 kg connection)",
+      "payment_frequency": "One-time connection financial grant plus ongoing refill DBT subsidy",
+      "duration": "One-time connection release plus targeted annual refill subsidy",
+      "maximum_benefit": 5200.0,
+      "non_financial_benefits": [
+        "Free first LPG refill cylinder provided by Oil Marketing Companies",
+        "Free hotplate / cooking stove provided at the time of connection release",
+        "Targeted DBT subsidy of Rs. 300 per cylinder for up to 12 refills per financial year (extended through FY 2025-26)",
+        "Simplified self-declaration route for migrant families without local address proof"
+      ]
+    },
+    "eligibility": {
+      "min_age": 18,
+      "max_age": null,
+      "minimum_age": 18,
+      "gender": "FEMALE",
+      "gender_requirement": "Applicant must be an adult woman (18 years or older)",
+      "max_annual_income": null,
+      "annual_family_income_limit": null,
+      "occupation": [
+        "ALL"
+      ],
+      "occupation_requirement": [
+        "ALL"
+      ],
+      "states": [
+        "ALL"
+      ],
+      "state_residency_requirement": [
+        "ALL"
+      ],
+      "exclusions": [
+        "Households that already possess an active domestic LPG connection from any OMC (IOCL, BPCL, HPCL)",
+        "Male applicants (connection can only be released in the name of an adult woman member of the household)",
+        "Households that do not satisfy any of the qualifying deprivation/social categories (SC/ST/AAY/PMAY-G/Forest Dwellers/MBC/Tea Garden/14-point declaration)"
+      ],
+      "structured_rules": [
+        {
+          "criterion": "gender",
+          "operator": "==",
+          "required_value": "FEMALE",
+          "unit": "string",
+          "explanation": "Applicant must be an adult female member of the household.",
+          "source_reference": "PMUY Guidelines Section 3.1",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "minimum_age",
+          "operator": ">=",
+          "required_value": 18,
+          "unit": "years",
+          "explanation": "Applicant must be at least 18 years of age.",
+          "source_reference": "PMUY Guidelines Section 3.1",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "existing_lpg_connection_in_household",
+          "operator": "==",
+          "required_value": false,
+          "unit": "boolean",
+          "explanation": "No person in the applicant's household should possess an existing LPG connection.",
+          "source_reference": "PMUY Guidelines Section 3.2",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "qualifying_deprivation_category",
+          "operator": "==",
+          "required_value": true,
+          "unit": "boolean",
+          "explanation": "Household must belong to SC/ST/AAY/PMAY-G/Forest Dweller/MBC/Tea Garden or satisfy 14-point poor household declaration.",
+          "source_reference": "PMUY Guidelines Section 3.3",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        }
+      ]
+    },
+    "required_documents": [
+      {
+        "document_name": "Aadhaar Card of Applicant",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "Primary identity and address proof of the woman applicant",
+        "issuing_authority": "UIDAI",
+        "source_reference": "PMUY Ujjwala 2.0 Document Checklist"
+      },
+      {
+        "document_name": "Aadhaar of Adult Household Members",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "Aadhaar numbers of all adult family members residing in the household as listed in ration card",
+        "issuing_authority": "UIDAI",
+        "source_reference": "PMUY Ujjwala 2.0 Guidelines"
+      },
+      {
+        "document_name": "Ration Card / Family Composition Proof (or Annexure I Self-Declaration for Migrants)",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "Valid State ration card reflecting family composition, or self-declaration for migrant families",
+        "issuing_authority": "State Food & Civil Supplies Department / Self-Declaration Annexure I",
+        "source_reference": "PMUY Ujjwala 2.0 Guidelines Section 4"
+      },
+      {
+        "document_name": "Bank Account Details (Passbook / Statement)",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "Active Aadhaar-linked bank account of the woman applicant for DBT subsidy",
+        "issuing_authority": "Scheduled Commercial Bank / RRB / IPPB",
+        "source_reference": "PMUY Ujjwala 2.0 Guidelines Section 4"
+      },
+      {
+        "document_name": "14-Point Poor Household Declaration / Deprivation Proof",
+        "requirement_type": "CONDITIONAL",
+        "mandatory_or_optional": "CONDITIONAL",
+        "applicable_condition": "Mandatory if applying under the poor household category rather than SECC/SC/ST/AAY",
+        "issuing_authority": "Applicant Self-Declaration / Local Authority endorsement",
+        "source_reference": "PMUY Guidelines Annexure B"
+      }
+    ],
+    "application_method": "Both",
+    "official_application_url": "https://www.pmuy.gov.in/ujjwala2.html",
+    "official_guidelines_url": "https://mopng.gov.in/files/guidelines/PMUY_Guidelines.pdf",
+    "official_information_url": "https://www.pmuy.gov.in/ujjwala2.html",
+    "application_url": "https://www.pmuy.gov.in/ujjwala2.html",
+    "source_urls": [
+      "https://www.pmuy.gov.in/",
+      "https://mopng.gov.in/",
+      "https://www.pmuy.gov.in/ujjwala2.html",
+      "https://pib.gov.in/PressReleasePage.aspx?PRID=2012469"
+    ],
+    "official_sources": [
+      {
+        "source_title": "PMUY Official Guidelines and Ujjwala 2.0 Framework",
+        "source_url": "https://mopng.gov.in/files/guidelines/PMUY_Guidelines.pdf",
+        "source_type": "Official Government Guidelines",
+        "issuing_authority": "Ministry of Petroleum and Natural Gas",
+        "date_checked": "2026-11-15",
+        "claims_supported": [
+          "Deposit-free LPG connection Rs. 1600 assistance",
+          "Free first refill cylinder and free gas stove",
+          "Adult woman applicant eligibility and no prior LPG connection rule",
+          "Online and distributor application channels with no calendar closing deadline",
+          "Special migration self-declaration facility for migrant workers (Annexure-I)"
+        ]
+      },
+      {
+        "source_title": "Cabinet Approval: 75 Lakh PMUY Connections Expansion & Targeted Refill Subsidy",
+        "source_url": "https://pib.gov.in/PressReleasePage.aspx?PRID=1956965",
+        "source_type": "Union Cabinet Press Release / PIB Delhi",
+        "issuing_authority": "Cabinet Committee on Economic Affairs (CCEA) / PIB Delhi",
+        "publication_date": "2023-09-13",
+        "date_checked": "2026-11-15",
+        "claims_supported": [
+          "Expansion of PMUY by 75 lakh connections over FY 2023-24 to FY 2025-26",
+          "Total PMUY beneficiary target reaching 10.35 crore households",
+          "Quota-dependent distribution via Oil Marketing Companies (IOCL, BPCL, HPCL)",
+          "Rs. 300 per cylinder targeted DBT refill subsidy for up to 12 refills/year"
+        ]
+      }
+    ],
+    "source_evidence_audit": [
+      {
+        "topic": "Connection Assistance and Targeted Subsidy",
+        "primary_source": {
+          "source_title": "PMUY Guidelines & CCEA Press Release",
+          "source_url": "https://pib.gov.in/PressReleasePage.aspx?PRID=2012469",
+          "clause": "CCEA Cabinet Decision / PMUY 2.0 Provisions",
+          "claim": "Deposit-free LPG connection with Rs. 1600 assistance, free first refill cylinder, free hotplate stove, and Rs. 300/cylinder targeted subsidy for up to 12 refills/year."
+        },
+        "is_conflict_resolved": true
+      },
+      {
+        "topic": "Quota-Based Allocation and Deadline Policy",
+        "primary_source": {
+          "source_title": "MoPNG PMUY Portal & Cabinet Expansion Decision",
+          "source_url": "https://www.pmuy.gov.in/ujjwala2.html",
+          "clause": "Ujjwala 2.0 Modalities & Cabinet Decision September 2023",
+          "claim": "No calendar application closing deadline is imposed on applicants (application_deadline is null). Connections are released progressively against the Cabinet-approved 75-lakh expansion target (10.35 crore total) through FY 2025-26, subject to local OMC distributor quota availability."
+        },
+        "is_conflict_resolved": true
+      }
+    ],
+    "last_checked_date": "2026-11-15",
+    "last_verified_at": "2026-11-15",
+    "verification_notes": "Verified against MoPNG Ujjwala 2.0 portal (pmuy.gov.in), PMUY guidelines, and Union Cabinet expansion decisions. Application availability finalized as QUOTA_DEPENDENT (is_currently_open: false). While application intake is open online and at local distributor points without a fixed calendar closing deadline (application_deadline: null), actual connection release is strictly tied to remaining distributor-level OMC quotas under the Cabinet-approved 75-lakh connection expansion (total target 10.35 crore) active through FY 2025-26. The financial-year operational period is not an applicant submission deadline, and portal accessibility does not imply open quotas without local verification.",
+    "verification_status": "pending_review",
+    "is_verified": false
+  }
+]

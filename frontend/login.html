@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citizen Sign In | SahayAI</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">Sahay<span>AI</span></div>
+        <div class="nav-buttons">
+            <div class="global-lang-picker">
+                <label for="globalLangSelect" class="sr-only" data-i18n="nav.selectLanguage">Language</label>
+                <select id="globalLangSelect" class="global-lang-select" aria-label="Select Language">
+                    <option value="en">English</option>
+                    <option value="te">తెలుగు</option>
+                    <option value="hi">हिन्दी</option>
+                </select>
+            </div>
+            <button type="button" id="navGuestBtn" class="login-btn" style="background: transparent; cursor: pointer;" data-i18n="nav.guestBtn">Continue as Guest</button>
+            <a href="index.html" class="login-btn" data-i18n="nav.home">Home</a>
+            <a href="signup.html" class="signup-btn" data-i18n="nav.signup">Sign Up</a>
+        </div>
+    </header>
+
+    <main class="auth-section">
+        <div class="auth-card">
+            <h1 data-i18n="login.title">Citizen Sign In</h1>
+            <p data-i18n="login.subtitle">Access your SahayAI benefits profile and scheme applications.</p>
+
+            <form id="loginForm" novalidate>
+                <div class="form-group">
+                    <label for="identifier" data-i18n="login.identifierLabel">Email or Phone Number</label>
+                    <input type="text" id="identifier" placeholder="Enter registered email or mobile number" data-i18n-placeholder="login.identifierPlaceholder" required autocomplete="username">
+                </div>
+
+                <div class="form-group">
+                    <label for="password" data-i18n="login.passwordLabel">Password</label>
+                    <div class="password-input-wrapper">
+                        <input type="password" id="password" placeholder="Enter your password" data-i18n-placeholder="login.passwordPlaceholder" required autocomplete="current-password">
+                        <button type="button" class="toggle-password-btn" data-target="password" aria-label="Toggle password visibility" data-i18n="login.showPassword">Show</button>
+                    </div>
+                </div>
+
+                <button type="submit" id="submitBtn" data-i18n="login.submitBtn">Sign In</button>
+            </form>
+
+            <div class="or-divider" style="display: flex; align-items: center; margin: 20px 0; color: #64748b; font-size: 13px; font-weight: 500;">
+                <span style="flex: 1; height: 1px; background: #e2e8f0;"></span>
+                <span style="padding: 0 12px;" data-i18n="login.or">OR</span>
+                <span style="flex: 1; height: 1px; background: #e2e8f0;"></span>
+            </div>
+
+            <button type="button" id="cardGuestBtn" class="secondary-btn guest-btn" style="width: 100%; padding: 12px; background: #f8fafc; color: #17458c; border: 1.5px solid #cbd5e1; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s ease;" data-i18n="login.guestBtn">Continue as Guest &rarr;</button>
+
+            <div id="alertBox" class="alert-box" role="alert" aria-live="polite"></div>
+
+            <p class="auth-link">
+                <span data-i18n="login.noAccountPrompt">Don't have a SahayAI account?</span>
+                <a href="signup.html" data-i18n="login.registerLink">Register as New Citizen</a>
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <p data-i18n="footer.copyright">© 2026 SahayAI. AI-Powered Citizen Assistance & Government Schemes Discovery.</p>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>
+

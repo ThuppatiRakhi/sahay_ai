@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | SahayAI</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo"><a href="dashboard.html" style="text-decoration: none; color: inherit;">Sahay<span>AI</span></a></div>
+
+        <nav>
+            <a href="dashboard.html" data-i18n="nav.dashboard">Dashboard</a>
+            <a href="dashboard.html#schemes" data-i18n="nav.schemes">Schemes</a>
+            <a href="my-documents.html" id="navDocumentsLink" data-i18n="nav.myDocuments">My Documents</a>
+            <a href="dashboard.html#applicationsSection" id="navApplicationsLink" data-i18n="nav.myApplications">My Applications</a>
+        </nav>
+
+        <div class="nav-user-info">
+            <div class="global-lang-picker">
+                <label for="globalLangSelect" class="sr-only" data-i18n="nav.selectLanguage">Language</label>
+                <select id="globalLangSelect" class="global-lang-select" aria-label="Select Language">
+                    <option value="en">English</option>
+                    <option value="te">తెలుగు</option>
+                    <option value="hi">हिन्दी</option>
+                </select>
+            </div>
+            <!-- Guest Session Navigation Controls (Shown for Guests only) -->
+            <a href="login.html" id="navLoginLink" class="nav-auth-secondary" style="display: none; font-size: 13px; font-weight: 600; color: #17458c; text-decoration: none; padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 6px;" data-i18n="nav.login">Log In</a>
+            <a href="signup.html" id="navSignupLink" class="nav-auth-secondary" style="display: none; font-size: 13px; font-weight: 600; color: white; background: #17458c; text-decoration: none; padding: 6px 12px; border-radius: 6px;" data-i18n="nav.signup">Create Account</a>
+            <span id="navGuestBadge" class="nav-guest-badge" style="display: none; font-size: 12px; font-weight: 700; color: #b45309; background: #fef3c7; border: 1px solid #fde68a; padding: 4px 10px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.5px;" data-i18n="nav.guestMode">Guest Mode</span>
+            <button type="button" id="endGuestSessionBtn" class="end-guest-nav-btn" style="display: none; font-size: 13px; font-weight: 600; color: #b91c1c; background: #fef2f2; border: 1px solid #fecaca; border-radius: 6px; padding: 6px 12px; cursor: pointer; transition: all 0.2s ease;" data-i18n="nav.endGuestSession">End Guest Session</button>
+
+            <!-- Registered Citizen Navigation Controls (Shown for Registered only) -->
+            <span id="navCitizenName" class="label" style="display: none; font-size: 14px; font-weight: 600; color: #173b70;" data-i18n="nav.citizenLabel">Citizen</span>
+            <button type="button" id="logoutBtn" class="logout-nav-btn" style="display: none;" data-i18n="nav.logout">Log Out</button>
+
+            <!-- Profile Icon Dropdown Menu -->
+            <div id="profileMenuContainer" class="profile-menu-container" style="display: none;">
+                <button type="button" id="profileIconBtn" class="profile-icon-btn" aria-haspopup="true" aria-expanded="false" aria-label="Citizen Profile Menu" title="Citizen Profile">
+                    <img id="profileAvatarImg" class="profile-avatar-img" src="" alt="Citizen Avatar">
+                    <span id="profileAvatarFallback" class="profile-avatar-fallback" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" focusable="false">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                    </span>
+                </button>
+                <div id="profileDropdownMenu" class="profile-dropdown-menu" role="menu" aria-label="Profile navigation">
+                    <div class="profile-dropdown-header">
+                        <span id="dropdownCitizenName" class="profile-dropdown-citizen-name">Citizen</span>
+                        <span id="dropdownCitizenId" class="profile-dropdown-citizen-id" style="display: none;"></span>
+                    </div>
+                    <ul class="profile-dropdown-list">
+                        <li>
+                            <a href="my-profile.html" class="profile-dropdown-item" role="menuitem" id="dropdownProfileLink" style="color: #0284c7; font-weight: 600; background-color: #f8fafc;">
+                                <span class="profile-item-icon" aria-hidden="true">👤</span>
+                                <span data-i18n="nav.myProfile">My Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="my-documents.html" class="profile-dropdown-item" role="menuitem" id="dropdownDocsLink">
+                                <span class="profile-item-icon" aria-hidden="true">📁</span>
+                                <span data-i18n="nav.myDocuments">My Documents</span>
+                            </a>
+                        </li>
+                        <li class="profile-dropdown-divider" role="separator"></li>
+                        <li>
+                            <button type="button" id="dropdownLogoutItem" class="profile-dropdown-item logout-item" role="menuitem">
+                                <span class="profile-item-icon" aria-hidden="true">🚪</span>
+                                <span data-i18n="nav.logout">Log Out</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard-container" style="max-width: 960px; margin: 30px auto; padding: 0 20px;">
+        <!-- Return Navigation Breadcrumb -->
+        <div style="margin-bottom: 24px;">
+            <a href="dashboard.html" style="display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: #17458c; text-decoration: none; padding: 6px 12px; background: #f1f5f9; border-radius: 6px; transition: background 0.2s ease;">
+                <span aria-hidden="true">&larr;</span>
+                <span data-i18n="nav.backToDashboard">Back to Dashboard</span>
+            </a>
+        </div>
+
+        <!-- Guest Session Warning (Hidden by default; shown if guest accesses page) -->
+        <div id="guestNoticeBanner" class="guest-notice-banner" style="display: none; margin-bottom: 24px;" role="note">
+            <strong>Guest Mode Notice:</strong> You are currently exploring SahayAI anonymously. Citizen profiles are exclusively maintained for registered accounts.
+            Please <a href="signup.html">Create an Account</a> or <a href="login.html">Log In</a> to save and manage your verified profile.
+        </div>
+
+        <!-- Alert Box -->
+        <div id="alertBox" class="alert-box" role="alert" aria-live="polite"></div>
+
+        <!-- Page Header Banner -->
+        <section class="welcome-banner" style="margin-bottom: 28px;">
+            <div class="welcome-text">
+                <h1 id="profilePageHeading" data-i18n="dashboard.profileHeading">Citizen Profile Summary</h1>
+                <p id="profilePageSubtitle">Your verified citizen demographic details for government benefits, scholarships, and welfare scheme matching.</p>
+            </div>
+            <div class="citizen-badge" id="citizenBadge" data-i18n="dashboard.badgeVerified">Verified Profile</div>
+        </section>
+
+        <!-- Citizen Profile Details Card -->
+        <section class="profile-card" id="profileCardSection" aria-labelledby="profileHeading" style="margin-bottom: 28px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid #f1f5f9; flex-wrap: wrap; gap: 8px;">
+                <h2 id="profileHeading" style="margin: 0; padding: 0; border: none; font-size: 18px; color: #173b70;" data-i18n="dashboard.profileHeading">Citizen Profile Summary</h2>
+                <div style="display: flex; gap: 10px;">
+                    <a href="my-documents.html" class="btn btn-secondary" style="font-size: 13px; text-decoration: none; padding: 6px 14px;">
+                        📁 <span data-i18n="nav.myDocuments">My Documents</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="profile-detail-list">
+                <div class="profile-detail-item">
+                    <span class="label" data-i18n="dashboard.labelFullName">Full Name:</span>
+                    <span class="value" id="dispFullName">--</span>
+                </div>
+
+                <div class="profile-detail-item">
+                    <span class="label" data-i18n="dashboard.labelCitizenId">Citizen ID:</span>
+                    <span class="value" id="dispUserId" style="font-family: monospace; font-size: 13px;">--</span>
+                </div>
+
+                <div class="profile-detail-item">
+                    <span class="label" data-i18n="dashboard.labelAgeDob">Age / DOB:</span>
+                    <span class="value" id="dispAgeDob">--</span>
+                </div>
+
+                <div class="profile-detail-item">
+                    <span class="label" data-i18n="dashboard.labelGender">Gender:</span>
+                    <span class="value" id="dispGender">--</span>
+                </div>
+
+                <div class="profile-detail-item">
+                    <span class="label" data-i18n="dashboard.labelLocation">Location:</span>
+                    <span class="value" id="dispLocation">--</span>
+                </div>
+
+                <div class="profile-detail-item">
+                    <span class="label" data-i18n="dashboard.labelAnnualIncome">Annual Income:</span>
+                    <span class="value" id="dispIncome">--</span>
+                </div>
+
+                <div class="profile-detail-item">
+                    <span class="label" data-i18n="dashboard.labelOccupation">Occupation:</span>
+                    <span class="value" id="dispOccupation">--</span>
+                </div>
+
+                <div class="profile-detail-item">
+                    <span class="label" data-i18n="dashboard.labelCasteCategory">Caste Category:</span>
+                    <span class="value" id="dispCaste">--</span>
+                </div>
+
+                <div class="profile-detail-item">
+                    <span class="label" data-i18n="dashboard.labelBpl">BPL Card Holder:</span>
+                    <span class="value" id="dispBpl">--</span>
+                </div>
+
+                <div class="profile-detail-item">
+                    <span class="label" data-i18n="dashboard.labelVerificationStatus">Verification Status:</span>
+                    <span class="value" id="dispConfirmed" style="color: #15803d; font-weight: 700;" data-i18n="dashboard.statusConfirmed">Confirmed</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Confirmed Document Fields Audit Section -->
+        <section class="card" id="confirmedFieldsSection" style="margin-bottom: 28px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid #f1f5f9; flex-wrap: wrap; gap: 8px;">
+                <div>
+                    <h2 style="font-size: 18px; color: #173b70; margin: 0 0 4px 0;">Verified Document Field Records</h2>
+                    <p style="font-size: 13px; color: #64748b; margin: 0;">Profile attributes extracted from your official documents and confirmed by you.</p>
+                </div>
+                <span id="confirmedFieldsCountBadge" class="badge" style="background: #ecfdf5; color: #047857; border: 1px solid #a7f3d0; padding: 4px 10px; border-radius: 9999px; font-size: 12px; font-weight: 600;">0 Fields Confirmed</span>
+            </div>
+
+            <!-- Mandatory Authenticity Disclaimer -->
+            <div style="background: #fffbeb; border-left: 4px solid #f59e0b; padding: 12px 14px; border-radius: 6px; margin-bottom: 18px; font-size: 12px; color: #92400e; line-height: 1.5;">
+                <strong>Authenticity Disclaimer:</strong> Extracted information is confirmed by the citizen and does not constitute official government authentication until verified against primary government databases.
+            </div>
+
+            <div id="confirmedFieldsContainer">
+                <div style="text-align: center; padding: 24px; color: #64748b; font-size: 13px;">
+                    <span class="chat-spinner" aria-hidden="true"></span>
+                    <p style="margin-top: 8px;">Loading confirmed document records...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Navigation Footer Actions -->
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; margin-top: 20px; padding: 18px; background: #f8fafc; border-radius: 10px; border: 1px solid #e2e8f0;">
+            <a href="dashboard.html" style="font-size: 13.5px; font-weight: 600; color: #17458c; text-decoration: none;">
+                &larr; <span data-i18n="nav.backToDashboard">Back to Dashboard</span>
+            </a>
+            <div style="display: flex; gap: 10px;">
+                <a href="my-documents.html" class="btn btn-primary" style="font-size: 13px; text-decoration: none; padding: 8px 16px;">
+                    📁 Manage Documents &rarr;
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p data-i18n="footer.copyright">© 2026 SahayAI. AI-Powered Citizen Assistance & Government Schemes Discovery.</p>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/my-profile.js"></script>
+</body>
+</html>
+

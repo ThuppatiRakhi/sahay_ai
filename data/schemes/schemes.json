@@ -1,0 +1,1911 @@
+[
+  {
+    "scheme_id": "SCHEME_EDU_001_PM_USP_CSSS",
+    "scheme_name": "PM-USP Central Sector Scholarship Scheme",
+    "current_official_name": "Central Sector Scheme of Scholarship for College and University Students (PM-USP CSSS)",
+    "category": "EDUCATION",
+    "government_level": "Central",
+    "state_applicability": [
+      "ALL"
+    ],
+    "responsible_ministry": "Ministry of Education",
+    "responsible_department": "Department of Higher Education",
+    "department": "Department of Higher Education, Ministry of Education",
+    "scheme_description": "Central Sector scholarship scheme under the Pradhan Mantri Uchchatar Shiksha Protsahan (PM-USP) umbrella providing financial support to meritorious students from economically weaker families to meet day-to-day expenses while pursuing regular full-time higher education in recognized colleges and universities.",
+    "description": "Financial assistance to meritorious students from low-income families pursuing regular graduate and post-graduate college/university courses.",
+    "target_beneficiaries": [
+      "Meritorious Class 12 pass-out students pursuing regular undergraduate or postgraduate degree courses in recognized institutions"
+    ],
+    "scheme_status": "ACTIVE",
+    "operational_status": "ACTIVE",
+    "application_status": "CLOSED",
+    "current_application_cycle": "AY 2026-27",
+    "application_start_date": "2026-06-01",
+    "application_deadline": "2026-10-31",
+    "last_application_deadline": "2026-10-31",
+    "student_submission_deadline": "2026-10-31",
+    "institute_verification_deadline": "2026-11-15",
+    "nodal_verification_deadline": "2026-11-30",
+    "next_expected_cycle": null,
+    "application_status_last_checked": "2026-11-02",
+    "application_status_evidence": "National Scholarship Portal (NSP) official schedule for AY 2026-27: Fresh & Renewal student registration closed on 31 October 2026; Institute (Level 1) verification active until 15 November 2026; DNO/SNO (Level 2) verification active until 30 November 2026.",
+    "current_guideline_version": {
+      "version_title": "PM-USP Central Sector Scheme of Scholarship for College and University Students Guidelines",
+      "publication_date": "2022-04-01",
+      "effective_academic_year": "2022-23 through 2025-26 (extended for 15th Finance Commission cycle)",
+      "issuing_authority": "Department of Higher Education, Ministry of Education",
+      "official_url": "https://www.education.gov.in/scholarships-education-loan-4"
+    },
+    "historical_guideline_info": [
+      {
+        "version_title": "Pre-2022 Central Sector Scheme Guidelines",
+        "effective_period": "2015-2021",
+        "key_differences": "Graduation scholarship rate was Rs. 10,000 per annum for the first three years; enhanced to Rs. 12,000 per annum under the revised PM-USP umbrella from 1 April 2022."
+      }
+    ],
+    "launch_year": 2008,
+    "source_portal": "https://scholarships.gov.in",
+    "eligibility": {
+      "min_age": null,
+      "max_age": null,
+      "gender": "ALL",
+      "max_annual_income": 450000.0,
+      "occupation": [
+        "Student"
+      ],
+      "landholding": null,
+      "states": [
+        "ALL"
+      ],
+      "minimum_age": null,
+      "maximum_age": null,
+      "gender_requirement": "ALL (50% of slots earmarked for female students)",
+      "state_residency_requirement": [
+        "ALL"
+      ],
+      "category_requirement": [
+        "General",
+        "SC",
+        "ST",
+        "OBC",
+        "EWS"
+      ],
+      "annual_family_income_limit": 450000.0,
+      "income_definition": "Gross annual family income from all sources during the financial year",
+      "education_requirement": "Passed Class 12 (or equivalent) in current examination year",
+      "minimum_marks_requirement": "> 80th percentile of successful candidates in the respective stream (Science, Commerce, Humanities) from the respective State Examination Board / CBSE / CISCE",
+      "course_requirement": "Regular full-time undergraduate or postgraduate degree courses. Distance education, diploma courses, and correspondence courses are strictly ineligible.",
+      "institution_requirement": "Colleges and universities recognized by UGC, AICTE, MCI/NMC, or respective statutory regulatory bodies",
+      "disability_requirement": "5% horizontal reservation earmarked for Persons with Benchmark Disabilities (>= 40% disability)",
+      "occupation_requirement": [
+        "Student"
+      ],
+      "land_ownership_requirement": null,
+      "family_status_requirement": null,
+      "other_eligibility_conditions": [
+        "Must not have taken a gap year after Class 12 examination",
+        "Must have an active bank account seeded with Aadhaar for DBT transfer",
+        "Must not be in receipt of any other Central or State Government scholarship or fee reimbursement"
+      ],
+      "exclusions": [
+        "Students pursuing diploma courses",
+        "Students studying through correspondence, distance, or open university modes",
+        "Students taking a gap year after passing Class 12",
+        "Students receiving any other Government scholarship or fee reimbursement"
+      ],
+      "renewal_conditions": "Must obtain minimum 50% marks in annual or semester exams, maintain at least 75% attendance, and maintain good conduct without disciplinary action.",
+      "structured_rules": [
+        {
+          "criterion": "annual_family_income",
+          "operator": "<=",
+          "required_value": 450000,
+          "unit": "INR",
+          "explanation": "Gross annual family income from all sources must not exceed Rs. 4,50,000 per annum.",
+          "source_reference": "PM-USP CSSS Guidelines Section 3(b)",
+          "effective_date": "2022-04-01",
+          "effective_academic_year": "AY 2022-23 to AY 2026-27",
+          "verification_status": "pending_review",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "class_12_merit_percentile",
+          "operator": ">",
+          "required_value": 80,
+          "unit": "percentile",
+          "explanation": "Student must score above the 80th percentile in the relevant stream of the respective Class 12 Board examination.",
+          "source_reference": "PM-USP CSSS Guidelines Section 3(a)",
+          "effective_date": "2022-04-01",
+          "effective_academic_year": "AY 2022-23 to AY 2026-27",
+          "verification_status": "pending_review",
+          "rule_type": "FRESH",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "course_mode",
+          "operator": "==",
+          "required_value": "REGULAR_FULL_TIME",
+          "unit": null,
+          "explanation": "Must be pursuing regular full-time degree courses; distance or correspondence courses are excluded.",
+          "source_reference": "PM-USP CSSS Guidelines Section 3(a)",
+          "effective_date": "2022-04-01",
+          "effective_academic_year": "AY 2022-23 to AY 2026-27",
+          "verification_status": "pending_review",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "concurrent_scholarship",
+          "operator": "==",
+          "required_value": false,
+          "unit": null,
+          "explanation": "Beneficiary must not receive any other scholarship or tuition reimbursement from Central or State Government.",
+          "source_reference": "PM-USP CSSS Guidelines Section 3(e)",
+          "effective_date": "2022-04-01",
+          "effective_academic_year": "AY 2022-23 to AY 2026-27",
+          "verification_status": "pending_review",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "gap_year",
+          "operator": "==",
+          "required_value": false,
+          "unit": null,
+          "explanation": "Fresh applicant must have passed Class 12 in the current academic year without a gap year.",
+          "source_reference": "PM-USP CSSS Guidelines Section 3(a)",
+          "effective_date": "2022-04-01",
+          "effective_academic_year": "AY 2022-23 to AY 2026-27",
+          "verification_status": "pending_review",
+          "rule_type": "FRESH",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "renewal_minimum_marks_percentage",
+          "operator": ">=",
+          "required_value": 50,
+          "unit": "percentage",
+          "explanation": "For renewal in subsequent years, student must score at least 50% marks in previous year examinations.",
+          "source_reference": "PM-USP CSSS Guidelines Section 6(b)",
+          "effective_date": "2022-04-01",
+          "effective_academic_year": "AY 2022-23 to AY 2026-27",
+          "verification_status": "pending_review",
+          "rule_type": "RENEWAL",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "renewal_minimum_attendance_percentage",
+          "operator": ">=",
+          "required_value": 75,
+          "unit": "percentage",
+          "explanation": "Student must maintain a minimum of 75% attendance during the academic year for renewal.",
+          "source_reference": "PM-USP CSSS Guidelines Section 6(b)",
+          "effective_date": "2022-04-01",
+          "effective_academic_year": "AY 2022-23 to AY 2026-27",
+          "verification_status": "pending_review",
+          "rule_type": "RENEWAL",
+          "logical_group": "ALL_OF"
+        }
+      ]
+    },
+    "benefits": {
+      "type": "Direct Benefit Transfer",
+      "amount_annual": 12000.0,
+      "disbursement_frequency": "Annual (DBT directly into student Aadhaar-seeded bank account)",
+      "benefit_type": "Direct Benefit Transfer Scholarship",
+      "financial_assistance_amount": 12000.0,
+      "amount_unit": "INR/year",
+      "payment_frequency": "Annual",
+      "duration": "Up to 5 years (3 years UG + 2 years PG, or 5 years integrated/professional courses)",
+      "maximum_benefit": "Rs. 12,000 per annum for first 3 years of UG; Rs. 20,000 per annum for 4th and 5th year / PG courses",
+      "non_financial_benefits": null,
+      "number_of_installments": 1,
+      "beneficiary_contribution": 0
+    },
+    "required_documents": [
+      {
+        "document_name": "Aadhaar Card",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "All applicants",
+        "issuing_authority": "UIDAI",
+        "source_reference": "PM-USP CSSS Guidelines Section 5"
+      },
+      {
+        "document_name": "Class 12 Marksheet",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "Fresh applicants (proving > 80th percentile merit)",
+        "issuing_authority": "State Examination Board / CBSE / CISCE",
+        "source_reference": "PM-USP CSSS Guidelines Section 5"
+      },
+      {
+        "document_name": "Annual Family Income Certificate",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "All applicants (stating income <= Rs. 4,50,000)",
+        "issuing_authority": "Competent Revenue Authority (Tahsildar/SDM)",
+        "source_reference": "PM-USP CSSS Guidelines Section 5"
+      },
+      {
+        "document_name": "College Admission Proof / Bonafide Certificate",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "All applicants",
+        "issuing_authority": "Head of College/University Institution",
+        "source_reference": "PM-USP CSSS Guidelines Section 5"
+      },
+      {
+        "document_name": "Bank Passbook / Statement (Aadhaar-seeded)",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "All applicants (must be individual savings account)",
+        "issuing_authority": "Scheduled Commercial Bank",
+        "source_reference": "PM-USP CSSS Guidelines Section 5"
+      },
+      {
+        "document_name": "Previous Year Marksheet (Min 50% Marks)",
+        "requirement_type": "CONDITIONAL",
+        "mandatory_or_optional": "CONDITIONAL",
+        "applicable_condition": "Renewal applicants only",
+        "issuing_authority": "Enrolled University / College",
+        "source_reference": "PM-USP CSSS Guidelines Section 6(b)"
+      },
+      {
+        "document_name": "Caste / Category Certificate",
+        "requirement_type": "CONDITIONAL",
+        "mandatory_or_optional": "CONDITIONAL",
+        "applicable_condition": "For SC/ST/OBC/EWS quota applicants",
+        "issuing_authority": "Competent State Revenue Authority",
+        "source_reference": "PM-USP CSSS Guidelines Section 5"
+      },
+      {
+        "document_name": "Disability Certificate",
+        "requirement_type": "CONDITIONAL",
+        "mandatory_or_optional": "CONDITIONAL",
+        "applicable_condition": "For PwD quota candidates (>= 40% benchmark disability)",
+        "issuing_authority": "Competent Medical Authority / UDID Portal",
+        "source_reference": "PM-USP CSSS Guidelines Section 5"
+      }
+    ],
+    "application_method": "Online",
+    "official_application_url": "https://scholarships.gov.in/ApplicationForm/#/login",
+    "official_information_url": "https://www.education.gov.in/scholarships-education-loan-4",
+    "application_url": "https://scholarships.gov.in/ApplicationForm/#/login",
+    "application_steps": [
+      "Step 1: Complete Aadhaar-based One-Time Registration (OTR) on the National Scholarship Portal (NSP).",
+      "Step 2: Log in using OTR credentials and select Department of Higher Education -> Central Sector Scheme of Scholarship for College and University Students.",
+      "Step 3: Enter Class 12 Board examination details (roll number, board name, year of passing) and current degree admission details.",
+      "Step 4: Upload required documents including Income Certificate, Class 12 Marksheet, and College Bonafide Certificate.",
+      "Step 5: Submit application for online Level 1 verification by the Institute Nodal Officer (INO).",
+      "Step 6: Followed by State Nodal Officer verification and DBT disbursement into Aadhaar-seeded bank account."
+    ],
+    "renewal_deadline": "Concurrent with fresh application timelines on NSP (student submission closed 2026-10-31)",
+    "application_fee": "Free (Zero fee)",
+    "selection_process": "Inter-se merit based on state board percentile quota (82,000 total scholarships allocated across boards based on 18-25 population in 3:1:3 ratio for Science:Commerce:Humanities, with 50% reservation for female students and 5% for PwD).",
+    "grievance_contact": "NSP Helpdesk: helpdesk@nsp.gov.in / National Scholarship Portal Grievance Portal",
+    "helpline_number": "0120-6619540",
+    "application_tracking_information": "Supported online via NSP OTR portal login and Public Financial Management System (PFMS) DBT tracking",
+    "source_evidence_audit": [
+      {
+        "topic": "application_status_and_deadlines",
+        "primary_source": {
+          "title": "National Scholarship Portal AY 2026-27 Schedule",
+          "url": "https://scholarships.gov.in",
+          "date": "2026-06-01",
+          "clause": "Higher Education Scheme Notice",
+          "claim": "Student Application Closing Date was 31-10-2026. Institute verification is scheduled until 15-11-2026. Level 2 (DNO/SNO) verification is scheduled until 30-11-2026."
+        },
+        "conflicting_or_historical_source": {
+          "title": "Previous Draft Record",
+          "url": "Internal SahayAI Record",
+          "date": "2026-11-02",
+          "clause": "N/A",
+          "claim": "Application Status: OPEN, Deadline: 30 November 2026"
+        },
+        "resolution_notes": "Audited and corrected: The 30 November date is the Level 2 nodal verification deadline, not the student submission cutoff. Student submissions closed on 31 October 2026. Application status is set to CLOSED for student submissions.",
+        "is_conflict_resolved": true
+      },
+      {
+        "topic": "applicant_age_limits",
+        "primary_source": {
+          "title": "PM-USP CSSS Official Scheme Guidelines",
+          "url": "https://www.education.gov.in/scholarships-education-loan-4",
+          "date": "2022-04-01",
+          "clause": "Section 2(b)",
+          "claim": "The 18-25 age group is the population demographic basis used to allocate quotas among State Boards, not an applicant age limit."
+        },
+        "conflicting_or_historical_source": null,
+        "resolution_notes": "Applicant age requirement is null. Fresh applicants qualify by passing Class 12 in the current year without a gap year.",
+        "is_conflict_resolved": true
+      }
+    ],
+    "official_sources": [
+      {
+        "source_title": "Ministry of Education - PM-USP Central Sector Scheme Guidelines",
+        "source_url": "https://www.education.gov.in/scholarships-education-loan-4",
+        "source_type": "Guidelines",
+        "issuing_authority": "Department of Higher Education, Ministry of Education",
+        "publication_date": "2022-04-01",
+        "applicable_academic_year": "AY 2022-23 to AY 2026-27",
+        "section_or_clause": "Section 2, 3, 5, 6",
+        "date_checked": "2026-11-02",
+        "claims_supported": [
+          "82,000 fresh slots",
+          "Rs. 4.5 Lakh family income ceiling",
+          "> 80th board percentile cutoff",
+          "Science:Commerce:Humanities ratio 3:1:3",
+          "Rs. 12,000/yr UG and Rs. 20,000/yr PG benefit",
+          "50% marks and 75% attendance for renewal"
+        ]
+      },
+      {
+        "source_title": "National Scholarship Portal - Scheme Information",
+        "source_url": "https://scholarships.gov.in",
+        "source_type": "Portal",
+        "issuing_authority": "National Informatics Centre (NIC) / Ministry of Education",
+        "publication_date": "2026-06-01",
+        "applicable_academic_year": "AY 2026-27",
+        "section_or_clause": "Central Schemes - Department of Higher Education",
+        "date_checked": "2026-11-02",
+        "claims_supported": [
+          "Student registration closed on 31 October 2026",
+          "Institute verification deadline 15 November 2026",
+          "Level 2 verification deadline 30 November 2026"
+        ]
+      }
+    ],
+    "last_checked_date": "2026-11-02",
+    "verification_status": "pending_review",
+    "verification_notes": "Audited in 3rd review: Student submission application status corrected to CLOSED based on official 31-10-2026 closing notice on NSP; INO and DNO deadlines tracked separately. All guidelines and criteria verified. Ready for human review.",
+    "conflicting_information": null,
+    "human_review_required": true,
+    "is_verified": false,
+    "application_last_date": "2026-10-31",
+    "application_cycle": "AY 2026-27",
+    "deadline_source": "National Scholarship Portal (NSP) official schedule for AY 2026-27: Fresh & Renewal student registration closed on 31 October 2026; Institute (Level 1) verification active until 15 November 2026; DNO/SNO (Level 2) verification active until 30 November 2026.",
+    "deadline_verified_at": "2026-11-02",
+    "next_cycle_status": "NOT_ANNOUNCED"
+  },
+  {
+    "scheme_id": "SCHEME_EDU_002_AICTE_PRAGATI",
+    "scheme_name": "AICTE Pragati Scholarship",
+    "current_official_name": "AICTE Pragati Scholarship Scheme for Girl Students (Technical Degree & Diploma)",
+    "category": "EDUCATION",
+    "government_level": "Central",
+    "state_applicability": [
+      "ALL"
+    ],
+    "responsible_ministry": "Ministry of Education",
+    "responsible_department": "All India Council for Technical Education (AICTE)",
+    "department": "All India Council for Technical Education (AICTE), Ministry of Education",
+    "scheme_description": "Empowerment scholarship implemented by AICTE providing Rs. 50,000 per annum to meritorious girl students admitted to first-year technical Degree/Diploma programs (or second-year lateral entry) in AICTE-approved institutions.",
+    "description": "Financial assistance of Rs. 50,000 per year for girl students pursuing technical degree or diploma courses in AICTE-approved institutions.",
+    "target_beneficiaries": [
+      "Girl students admitted to 1st year Degree/Diploma or 2nd year lateral entry in AICTE-approved technical institutions"
+    ],
+    "scheme_status": "ACTIVE",
+    "operational_status": "ACTIVE",
+    "application_status": "OPEN",
+    "current_application_cycle": "AY 2026-27",
+    "application_start_date": "2026-06-01",
+    "application_deadline": "2026-11-30",
+    "last_application_deadline": "2026-11-30",
+    "student_submission_deadline": "2026-11-30",
+    "institute_verification_deadline": "2026-12-15",
+    "nodal_verification_deadline": "2026-12-31",
+    "next_expected_cycle": null,
+    "application_status_last_checked": "2026-11-14",
+    "application_status_evidence": "National Scholarship Portal (NSP) official schedule (https://scholarships.gov.in/All-Scholarships) for AY 2026-27: AICTE Pragati Scholarship Scheme for Girl Students (Technical Degree) student application closing date extended to 30 November 2026; Institute verification window open through 15 December 2026; DNO/SNO verification window open through 31 December 2026.",
+    "current_guideline_version": {
+      "version_title": "AICTE Pragati Scholarship Scheme Guidelines (Revised)",
+      "publication_date": "2020-09-01",
+      "effective_academic_year": "AY 2020-21 onwards (operational through 2026)",
+      "issuing_authority": "All India Council for Technical Education (AICTE)",
+      "official_url": "https://www.aicte-india.org/schemes/students-development-schemes/Pragati"
+    },
+    "historical_guideline_info": [
+      {
+        "version_title": "Original AICTE Pragati Guidelines (2014)",
+        "effective_period": "2014-2019",
+        "key_differences": "Originally provided 4,000 scholarships annually. Expanded in AY 2020-21 to 10,000 scholarships (5,000 Degree + 5,000 Diploma) with lateral entry eligibility and regional open accommodation for 13 UTs and North Eastern States."
+      }
+    ],
+    "launch_year": 2014,
+    "source_portal": "https://scholarships.gov.in",
+    "eligibility": {
+      "min_age": null,
+      "max_age": null,
+      "gender": "FEMALE",
+      "max_annual_income": 800000.0,
+      "occupation": [
+        "Student"
+      ],
+      "landholding": null,
+      "states": [
+        "ALL"
+      ],
+      "minimum_age": null,
+      "maximum_age": null,
+      "gender_requirement": "FEMALE",
+      "state_residency_requirement": [
+        "ALL"
+      ],
+      "category_requirement": [
+        "General",
+        "SC",
+        "ST",
+        "OBC",
+        "EWS"
+      ],
+      "annual_family_income_limit": 800000.0,
+      "income_definition": "Total annual family income from all sources must not exceed Rs. 8 Lakh during the current financial year",
+      "education_requirement": "Admitted to 1st year of technical Degree/Diploma course OR 2nd year through lateral entry in an AICTE-approved institution through Centralized Admission Process of State/Central Government",
+      "minimum_marks_requirement": "Merit determined based on percentage of marks obtained in the qualifying examination (10+2 for Degree; 10th for Diploma)",
+      "course_requirement": "Technical Degree (e.g. B.Tech, B.E., B.Pharm, B.Arch) or Technical Diploma courses",
+      "institution_requirement": "AICTE-approved colleges, institutes, or polytechnics",
+      "disability_requirement": null,
+      "occupation_requirement": [
+        "Student"
+      ],
+      "land_ownership_requirement": null,
+      "family_status_requirement": "Maximum two girl children per family are eligible",
+      "other_eligibility_conditions": [
+        "Must have secured admission through Centralized Admission Process (CAP) of State/Central Government in AICTE-approved institution",
+        "Must possess an active individual savings bank account seeded with Aadhaar"
+      ],
+      "exclusions": [
+        "More than two girl children from the same family",
+        "Students pursuing technical courses in non-AICTE approved institutions",
+        "Students admitted through Management Quota or direct institutional quota without centralized counseling",
+        "Students availing any other Central/State/AICTE scholarship benefits"
+      ],
+      "renewal_conditions": "Renewal is contingent on passing the year/semester examinations and submitting renewal application along with passing marksheets and bonafide certificate via NSP.",
+      "structured_rules": [
+        {
+          "criterion": "gender",
+          "operator": "==",
+          "required_value": "FEMALE",
+          "unit": null,
+          "explanation": "Candidate must be female.",
+          "source_reference": "AICTE Pragati Guidelines Clause 2.0",
+          "effective_date": "2020-09-01",
+          "effective_academic_year": "AY 2020-21 onwards",
+          "verification_status": "pending_review",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "annual_family_income",
+          "operator": "<=",
+          "required_value": 800000,
+          "unit": "INR",
+          "explanation": "Total annual family income from all sources must not exceed Rs. 8,00,000 during the current financial year.",
+          "source_reference": "AICTE Pragati Guidelines Clause 2.0",
+          "effective_date": "2020-09-01",
+          "effective_academic_year": "AY 2020-21 onwards",
+          "verification_status": "pending_review",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "max_girls_per_family",
+          "operator": "<=",
+          "required_value": 2,
+          "unit": "count",
+          "explanation": "Maximum of two girl children per family can avail this scholarship.",
+          "source_reference": "AICTE Pragati Guidelines Clause 2.0",
+          "effective_date": "2020-09-01",
+          "effective_academic_year": "AY 2020-21 onwards",
+          "verification_status": "pending_review",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "institution_approval",
+          "operator": "==",
+          "required_value": "AICTE_APPROVED",
+          "unit": null,
+          "explanation": "The institution where the candidate is admitted must be AICTE-approved.",
+          "source_reference": "AICTE Pragati Guidelines Clause 2.0",
+          "effective_date": "2020-09-01",
+          "effective_academic_year": "AY 2020-21 onwards",
+          "verification_status": "pending_review",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "admission_quota_type",
+          "operator": "==",
+          "required_value": "CENTRALIZED_ADMISSION_PROCESS",
+          "unit": null,
+          "explanation": "Admission must be secured through the Centralized Admission Process (CAP) of State/Central Government; management quota is excluded.",
+          "source_reference": "AICTE Pragati Guidelines Clause 2.0",
+          "effective_date": "2020-09-01",
+          "effective_academic_year": "AY 2020-21 onwards",
+          "verification_status": "pending_review",
+          "rule_type": "FRESH",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "admission_year_level",
+          "operator": "IN",
+          "required_value": [
+            "1st_year_fresh",
+            "2nd_year_lateral_entry"
+          ],
+          "unit": null,
+          "explanation": "Candidate must be admitted to 1st year of Degree/Diploma or 2nd year through lateral entry.",
+          "source_reference": "AICTE Pragati Guidelines Clause 2.0",
+          "effective_date": "2020-09-01",
+          "effective_academic_year": "AY 2020-21 onwards",
+          "verification_status": "pending_review",
+          "rule_type": "FRESH",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "concurrent_scholarship",
+          "operator": "==",
+          "required_value": false,
+          "unit": null,
+          "explanation": "Candidate must not be recipient of any other Government or AICTE scholarship.",
+          "source_reference": "AICTE Pragati Guidelines Clause 6.0",
+          "effective_date": "2020-09-01",
+          "effective_academic_year": "AY 2020-21 onwards",
+          "verification_status": "pending_review",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        }
+      ]
+    },
+    "benefits": {
+      "type": "Direct Benefit Transfer",
+      "amount_annual": 50000.0,
+      "disbursement_frequency": "Annual lump-sum via DBT",
+      "benefit_type": "Direct Benefit Transfer Scholarship",
+      "financial_assistance_amount": 50000.0,
+      "amount_unit": "INR/year",
+      "payment_frequency": "Annual",
+      "duration": "Maximum 4 years for Degree (3 years for lateral entry); maximum 3 years for Diploma (2 years for lateral entry)",
+      "maximum_benefit": "Rs. 50,000 per annum lump-sum covering college tuition fees, computer/equipment, books, stationery, and software",
+      "non_financial_benefits": null,
+      "number_of_installments": 1,
+      "beneficiary_contribution": 0
+    },
+    "required_documents": [
+      {
+        "document_name": "Aadhaar Card",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "All applicants",
+        "issuing_authority": "UIDAI",
+        "source_reference": "AICTE Pragati Guidelines Clause 7.0"
+      },
+      {
+        "document_name": "Qualifying Examination Marksheet",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "Class 12 for Degree; Class 10 for Diploma",
+        "issuing_authority": "Recognized Education Board",
+        "source_reference": "AICTE Pragati Guidelines Clause 7.0"
+      },
+      {
+        "document_name": "Annual Family Income Certificate",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "All applicants (stating income <= Rs. 8 Lakh for current financial year)",
+        "issuing_authority": "Competent State Revenue Authority (Tahsildar/SDM)",
+        "source_reference": "AICTE Pragati Guidelines Clause 7.0"
+      },
+      {
+        "document_name": "Centralized Admission Allotment Letter / CAP Proof",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "Fresh applicants (proving admission via Central/State Government counseling)",
+        "issuing_authority": "Centralized Admission Authority / State CET Cell",
+        "source_reference": "AICTE Pragati Guidelines Clause 7.0"
+      },
+      {
+        "document_name": "Bonafide Certificate from Head of Institution",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "All applicants",
+        "issuing_authority": "AICTE-approved Institution Principal/Director",
+        "source_reference": "AICTE Pragati Guidelines Clause 7.0"
+      },
+      {
+        "document_name": "Parent / Guardian Declaration Proforma (Annexure-III)",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "Mandatory official declaration signed by parent certifying max two girl children limit",
+        "issuing_authority": "Parent/Guardian in official Annexure-III format",
+        "source_reference": "AICTE Pragati Guidelines Clause 7.0 (Annexure-III)"
+      },
+      {
+        "document_name": "Bank Passbook / Cancelled Cheque (Aadhaar-seeded)",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "All applicants",
+        "issuing_authority": "Scheduled Bank",
+        "source_reference": "AICTE Pragati Guidelines Clause 7.0"
+      },
+      {
+        "document_name": "Previous Year Marksheet (Promotion Proof)",
+        "requirement_type": "CONDITIONAL",
+        "mandatory_or_optional": "CONDITIONAL",
+        "applicable_condition": "Renewal applicants only",
+        "issuing_authority": "AICTE-approved Institution",
+        "source_reference": "AICTE Pragati Guidelines Clause 5.0"
+      },
+      {
+        "document_name": "Caste / Category Certificate",
+        "requirement_type": "CONDITIONAL",
+        "mandatory_or_optional": "CONDITIONAL",
+        "applicable_condition": "For SC/ST/OBC quota applicants",
+        "issuing_authority": "Competent Revenue Authority",
+        "source_reference": "AICTE Pragati Guidelines Clause 7.0"
+      }
+    ],
+    "application_method": "Online",
+    "official_application_url": "https://scholarships.gov.in/ApplicationForm/#/login",
+    "official_information_url": "https://www.aicte-india.org/schemes/students-development-schemes/Pragati",
+    "application_url": "https://scholarships.gov.in/ApplicationForm/#/login",
+    "application_steps": [
+      "Step 1: Register on the National Scholarship Portal (NSP) and generate One-Time Registration (OTR).",
+      "Step 2: Log in and select AICTE Pragati Scholarship Scheme (Degree or Diploma as applicable).",
+      "Step 3: Complete applicant profile, bank details, and institutional admission details.",
+      "Step 4: Upload required documents including family income certificate for current financial year, Annexure-III parent declaration, bonafide certificate, CAP allotment proof, and marksheet.",
+      "Step 5: Submit application for Level 1 institutional verification.",
+      "Step 6: Followed by AICTE / State Nodal Officer verification and DBT disbursement."
+    ],
+    "renewal_deadline": "Concurrent with fresh application timelines on NSP (student submission open through 2026-11-30)",
+    "application_fee": "Free (Zero fee)",
+    "selection_process": "Inter-se merit based on qualifying exam scores across 10,000 annual slots (5,000 Degree + 5,000 Diploma distributed across 23 States/UTs) with reservation for SC (15%), ST (7.5%), and OBC (27%). In addition, all eligible girl students from 13 specific UTs and North Eastern States submitting applications online are accommodated.",
+    "grievance_contact": "AICTE Grievance Cell: pragatisaksham@aicte-india.org / NSP Helpdesk",
+    "helpline_number": "011-29581000 / 0120-6619540",
+    "application_tracking_information": "Supported on NSP portal via OTR login",
+    "source_evidence_audit": [
+      {
+        "topic": "income_financial_year",
+        "primary_source": {
+          "title": "AICTE Pragati Guidelines Clause 2.0",
+          "url": "https://www.aicte-india.org/schemes/students-development-schemes/Pragati",
+          "date": "2020-09-01",
+          "clause": "Clause 2.0",
+          "claim": "Family income from all sources should not exceed Rs. 8 Lakh per annum during the current financial year of application."
+        },
+        "conflicting_or_historical_source": {
+          "title": "Previous Draft Record",
+          "url": "Internal SahayAI Record",
+          "date": "2026-11-02",
+          "clause": "N/A",
+          "claim": "preceding financial year"
+        },
+        "resolution_notes": "Audited and corrected: Guideline explicitly mandates current financial year.",
+        "is_conflict_resolved": true
+      },
+      {
+        "topic": "parent_declaration_requirement",
+        "primary_source": {
+          "title": "AICTE Pragati Guidelines Clause 7.0 & Annexure-III",
+          "url": "https://www.aicte-india.org/schemes/students-development-schemes/Pragati",
+          "date": "2020-09-01",
+          "clause": "Clause 7.0 & Annexure-III",
+          "claim": "Mandatory submission of Declaration by Parent/Guardian in the prescribed Annexure-III format certifying that not more than two girl children of the family are availing the scheme."
+        },
+        "conflicting_or_historical_source": null,
+        "resolution_notes": "Confirmed: Annexure-III proforma is officially prescribed by AICTE.",
+        "is_conflict_resolved": true
+      },
+      {
+        "topic": "ay_2026_27_application_deadline",
+        "primary_source": {
+          "title": "National Scholarship Portal - All Scholarships Listing",
+          "url": "https://scholarships.gov.in/All-Scholarships",
+          "date": "2026-11-14",
+          "clause": "AICTE Schemes Section",
+          "claim": "AICTE Pragati Scholarship Scheme for Girl Students (Technical Degree) student application closing date is 30 November 2026; Institute verification open through 15 December 2026; DNO/SNO verification open through 31 December 2026."
+        },
+        "conflicting_or_historical_source": {
+          "title": "Earlier NSP Closing Schedule",
+          "url": "https://scholarships.gov.in",
+          "date": "2026-10-31",
+          "clause": "AICTE Schemes Section",
+          "claim": "Student application submission closed on 31 October 2026."
+        },
+        "resolution_notes": "Audited and confirmed: NSP All-Scholarships official listing updated the student application closing date to 30 November 2026 for AY 2026-27.",
+        "is_conflict_resolved": true
+      }
+    ],
+    "official_sources": [
+      {
+        "source_title": "AICTE Pragati Scheme Official Notification and Guidelines",
+        "source_url": "https://www.aicte-india.org/schemes/students-development-schemes/Pragati",
+        "source_type": "Guidelines",
+        "issuing_authority": "All India Council for Technical Education (AICTE)",
+        "publication_date": "2020-09-01",
+        "applicable_academic_year": "AY 2020-21 onwards",
+        "section_or_clause": "Clause 2.0, 3.0, 6.0, 7.0",
+        "date_checked": "2026-11-02",
+        "claims_supported": [
+          "Female only",
+          "Income <= Rs. 8 Lakh in current financial year",
+          "Max 2 girl children per family",
+          "10,000 annual scholarships (5,000 Degree + 5,000 Diploma)",
+          "Centralized Admission Process mandatory",
+          "Annexure-III parent declaration mandatory"
+        ]
+      },
+      {
+        "source_title": "National Scholarship Portal - AICTE Pragati Scheme",
+        "source_url": "https://scholarships.gov.in/All-Scholarships",
+        "source_type": "Portal",
+        "issuing_authority": "NIC / AICTE",
+        "publication_date": "2026-06-01",
+        "applicable_academic_year": "AY 2026-27",
+        "section_or_clause": "AICTE Schemes Section",
+        "date_checked": "2026-11-14",
+        "claims_supported": [
+          "Student application closing date is 30 November 2026",
+          "Institute verification deadline 15 December 2026",
+          "Level 2 verification deadline 31 December 2026"
+        ]
+      }
+    ],
+    "last_checked_date": "2026-11-14",
+    "verification_status": "pending_review",
+    "verification_notes": "Audited in Scheme 2 verification review: Income criteria updated to 'current financial year'; Centralized Admission Process (CAP) and Annexure-III Parent Declaration verified against official text; student application closing date updated to 30-11-2026 based on official NSP schedule (https://scholarships.gov.in/All-Scholarships); Institute verification till 15-12-2026; DNO/SNO verification till 31-12-2026. Ready for human review.",
+    "conflicting_information": null,
+    "human_review_required": true,
+    "is_verified": false,
+    "application_last_date": "2026-11-30",
+    "application_cycle": "AY 2026-27",
+    "deadline_source": "National Scholarship Portal (NSP) official schedule (https://scholarships.gov.in/All-Scholarships) for AY 2026-27: AICTE Pragati Scholarship Scheme for Girl Students (Technical Degree) student application closing date is 30 November 2026; Institute verification deadline 15 December 2026; Level 2 (DNO/SNO) verification deadline 31 December 2026.",
+    "deadline_verified_at": "2026-11-14",
+    "next_cycle_status": "NOT_ANNOUNCED"
+  },
+  {
+    "scheme_id": "SCHEME_EDU_003_AICTE_SAKSHAM",
+    "scheme_name": "AICTE Saksham Scholarship",
+    "current_official_name": "AICTE Saksham Scholarship Scheme for Specially-Abled Children (Technical Degree & Diploma)",
+    "category": "EDUCATION",
+    "government_level": "Central",
+    "state_applicability": [
+      "ALL"
+    ],
+    "responsible_ministry": "Ministry of Education",
+    "responsible_department": "All India Council for Technical Education (AICTE)",
+    "department": "All India Council for Technical Education (AICTE), Ministry of Education",
+    "scheme_description": "Targeted scholarship implemented by AICTE providing Rs. 50,000 per annum to differently-abled students with benchmark disability not less than 40% admitted to first-year technical Degree/Diploma courses (or second-year lateral entry) in AICTE-approved institutions.",
+    "description": "Financial assistance of Rs. 50,000 per annum for differently-abled students (>= 40% disability) pursuing technical degree or diploma courses in AICTE-approved institutions.",
+    "target_beneficiaries": [
+      "Specially-abled students with >= 40% disability admitted to technical Degree/Diploma courses in AICTE-approved institutions"
+    ],
+    "scheme_status": "ACTIVE",
+    "operational_status": "ACTIVE",
+    "application_status": "OPEN",
+    "current_application_cycle": "AY 2026-27",
+    "application_start_date": "2026-06-01",
+    "application_deadline": "2026-11-30",
+    "last_application_deadline": "2026-11-30",
+    "student_submission_deadline": "2026-11-30",
+    "defective_verification_deadline": "2026-12-15",
+    "institute_verification_deadline": "2026-12-15",
+    "nodal_verification_deadline": "2026-12-31",
+    "next_expected_cycle": null,
+    "application_status_last_checked": "2026-11-15",
+    "application_status_evidence": "National Scholarship Portal (NSP) official schedule (https://scholarships.gov.in/All-Scholarships) for AY 2026-27: AICTE Saksham Scholarship Scheme for Specially-Abled Children (Technical Degree) student application closing date extended to 30 November 2026; Defective application verification window open through 15 December 2026; Institute verification window open through 15 December 2026; DNO/SNO/MNO verification window open through 31 December 2026.",
+    "current_guideline_version": {
+      "version_title": "AICTE Saksham Scholarship Scheme Guidelines (Revised)",
+      "publication_date": "2020-09-01",
+      "effective_academic_year": "AY 2020-21 onwards (operational through 2026)",
+      "issuing_authority": "All India Council for Technical Education (AICTE)",
+      "official_url": "https://www.aicte-india.org/schemes/students-development-schemes/Saksham"
+    },
+    "historical_guideline_info": [
+      {
+        "version_title": "Original AICTE Saksham Guidelines (2014)",
+        "effective_period": "2014-2019",
+        "key_differences": "Originally enforced a fixed quota cap of 1,000 scholarships per annum (500 Degree + 500 Diploma). In AY 2020-21, Clause 3.0 was revised to open intake for all eligible specially-abled students who meet admission and verification criteria."
+      }
+    ],
+    "launch_year": 2014,
+    "source_portal": "https://scholarships.gov.in",
+    "eligibility": {
+      "min_age": null,
+      "max_age": null,
+      "gender": "ALL",
+      "max_annual_income": 800000.0,
+      "occupation": [
+        "Student"
+      ],
+      "landholding": null,
+      "states": [
+        "ALL"
+      ],
+      "minimum_age": null,
+      "maximum_age": null,
+      "gender_requirement": "ALL",
+      "state_residency_requirement": [
+        "ALL"
+      ],
+      "category_requirement": [
+        "General",
+        "SC",
+        "ST",
+        "OBC",
+        "EWS"
+      ],
+      "annual_family_income_limit": 800000.0,
+      "income_definition": "Total annual family income from all sources during the current financial year",
+      "education_requirement": "Admitted to 1st year of technical Degree/Diploma course OR 2nd year through lateral entry in an AICTE-approved institution through Centralized Admission Process",
+      "minimum_marks_requirement": "Passing marks in qualifying examination required for admission",
+      "course_requirement": "Technical Degree or Diploma program in AICTE-approved institution",
+      "institution_requirement": "AICTE-approved colleges, institutes, or polytechnics",
+      "disability_requirement": "Disability level must not be less than 40% certified by a Competent Medical Authority (UDID Card preferred and integrated with NSP online verification, or Civil Surgeon / Medical Board certificate)",
+      "occupation_requirement": [
+        "Student"
+      ],
+      "land_ownership_requirement": null,
+      "family_status_requirement": null,
+      "other_eligibility_conditions": [
+        "Must have an active individual savings bank account seeded with Aadhaar",
+        "Must not receive any other concurrent scholarship or stipend from Central or State Government",
+        "Must provide consent for UDID online authentication on NSP where applicable"
+      ],
+      "exclusions": [
+        "Disability level below 40%",
+        "Courses in non-AICTE approved institutions",
+        "Annual family income exceeding Rs. 8 Lakh",
+        "Students availing concurrent Central or State Government scholarships"
+      ],
+      "renewal_conditions": "Promotion to the next academic year without backlogs/discontinuation, and submission of renewal form with passing marksheets on NSP.",
+      "structured_rules": [
+        {
+          "criterion": "disability_percentage",
+          "operator": ">=",
+          "required_value": 40,
+          "unit": "percentage",
+          "explanation": "Student must have a certified benchmark disability of at least 40% verified via UDID or State Medical Board certificate.",
+          "source_reference": "AICTE Saksham Guidelines Clause 2.0",
+          "effective_date": "2020-09-01",
+          "effective_academic_year": "AY 2020-21 onwards",
+          "verification_status": "pending_review",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "annual_family_income",
+          "operator": "<=",
+          "required_value": 800000,
+          "unit": "INR",
+          "explanation": "Total annual family income from all sources must not exceed Rs. 8,00,000 during the current financial year.",
+          "source_reference": "AICTE Saksham Guidelines Clause 2.0",
+          "effective_date": "2020-09-01",
+          "effective_academic_year": "AY 2020-21 onwards",
+          "verification_status": "pending_review",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "institution_approval",
+          "operator": "==",
+          "required_value": "AICTE_APPROVED",
+          "unit": null,
+          "explanation": "Institution must be recognized and approved by AICTE.",
+          "source_reference": "AICTE Saksham Guidelines Clause 2.0",
+          "effective_date": "2020-09-01",
+          "effective_academic_year": "AY 2020-21 onwards",
+          "verification_status": "pending_review",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "admission_year_level",
+          "operator": "IN",
+          "required_value": [
+            "1st_year_fresh",
+            "2nd_year_lateral_entry"
+          ],
+          "unit": null,
+          "explanation": "Must be admitted to 1st year of Degree/Diploma or 2nd year via lateral entry.",
+          "source_reference": "AICTE Saksham Guidelines Clause 2.0",
+          "effective_date": "2020-09-01",
+          "effective_academic_year": "AY 2020-21 onwards",
+          "verification_status": "pending_review",
+          "rule_type": "FRESH",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "concurrent_scholarship",
+          "operator": "==",
+          "required_value": false,
+          "unit": null,
+          "explanation": "Student must not be receiving any other government scholarship concurrently.",
+          "source_reference": "AICTE Saksham Guidelines Clause 6.0",
+          "effective_date": "2020-09-01",
+          "effective_academic_year": "AY 2020-21 onwards",
+          "verification_status": "pending_review",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        }
+      ]
+    },
+    "benefits": {
+      "type": "Direct Benefit Transfer",
+      "amount_annual": 50000.0,
+      "disbursement_frequency": "Annual lump-sum via DBT",
+      "benefit_type": "Direct Benefit Transfer Scholarship",
+      "financial_assistance_amount": 50000.0,
+      "amount_unit": "INR/year",
+      "payment_frequency": "Annual",
+      "duration": "Maximum 4 years for Degree (3 years for lateral entry); maximum 3 years for Diploma (2 years for lateral entry)",
+      "maximum_benefit": "Rs. 50,000 per annum lump-sum covering tuition fees, purchase of computers/laptops, assistive devices, software, books, and stationery",
+      "non_financial_benefits": null,
+      "number_of_installments": 1,
+      "beneficiary_contribution": 0
+    },
+    "required_documents": [
+      {
+        "document_name": "Aadhaar Card",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "All applicants",
+        "issuing_authority": "UIDAI",
+        "source_reference": "AICTE Saksham Guidelines Clause 7.0"
+      },
+      {
+        "document_name": "Unique Disability ID (UDID) Card / Disability Certificate (>= 40%)",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "Issued by Competent Medical Authority showing at least 40% benchmark disability",
+        "issuing_authority": "Department of Empowerment of Persons with Disabilities / Medical Board",
+        "source_reference": "AICTE Saksham Guidelines Clause 7.0"
+      },
+      {
+        "document_name": "Qualifying Examination Marksheet",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "All applicants",
+        "issuing_authority": "Recognized Education Board",
+        "source_reference": "AICTE Saksham Guidelines Clause 7.0"
+      },
+      {
+        "document_name": "Annual Family Income Certificate",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "All applicants (stating income <= Rs. 8 Lakh for current financial year)",
+        "issuing_authority": "Competent State Revenue Authority (Tahsildar/SDM)",
+        "source_reference": "AICTE Saksham Guidelines Clause 7.0"
+      },
+      {
+        "document_name": "Admission Confirmation Letter / Fee Receipt",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "All applicants",
+        "issuing_authority": "Institution / Admission Authority",
+        "source_reference": "AICTE Saksham Guidelines Clause 7.0"
+      },
+      {
+        "document_name": "Bonafide Certificate from Head of Institution",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "All applicants",
+        "issuing_authority": "Principal/Director of AICTE Institution",
+        "source_reference": "AICTE Saksham Guidelines Clause 7.0"
+      },
+      {
+        "document_name": "Bank Passbook (Aadhaar-seeded)",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "All applicants",
+        "issuing_authority": "Scheduled Bank",
+        "source_reference": "AICTE Saksham Guidelines Clause 7.0"
+      },
+      {
+        "document_name": "Previous Year Marksheet (Promotion Proof)",
+        "requirement_type": "CONDITIONAL",
+        "mandatory_or_optional": "CONDITIONAL",
+        "applicable_condition": "Renewal applicants only",
+        "issuing_authority": "AICTE-approved Institution",
+        "source_reference": "AICTE Saksham Guidelines Clause 5.0"
+      },
+      {
+        "document_name": "Caste / Category Certificate",
+        "requirement_type": "CONDITIONAL",
+        "mandatory_or_optional": "CONDITIONAL",
+        "applicable_condition": "For SC/ST/OBC applicants",
+        "issuing_authority": "Competent Revenue Authority",
+        "source_reference": "AICTE Saksham Guidelines Clause 7.0"
+      }
+    ],
+    "application_method": "Online",
+    "official_application_url": "https://scholarships.gov.in/ApplicationForm/#/login",
+    "official_information_url": "https://www.aicte-india.org/schemes/students-development-schemes/Saksham",
+    "application_url": "https://scholarships.gov.in/ApplicationForm/#/login",
+    "application_steps": [
+      "Step 1: Register on the National Scholarship Portal (NSP) with Aadhaar and obtain OTR credentials.",
+      "Step 2: Select AICTE Saksham Scholarship Scheme (Degree or Diploma).",
+      "Step 3: Fill personal details, enter UDID number, and provide electronic verification consent for Department of Empowerment of Persons with Disabilities database cross-check.",
+      "Step 4: Upload valid disability certificate / UDID card, current financial year income certificate, bonafide certificate, and marksheet.",
+      "Step 5: Submit application for online institutional (Level 1) verification followed by AICTE nodal (Level 2) approval.",
+      "Step 6: Payment disbursed directly via DBT into student's Aadhaar-seeded bank account upon successful verification."
+    ],
+    "renewal_deadline": "Concurrent with fresh application timelines on NSP (student submission open through 2026-11-30)",
+    "application_fee": "Free (Zero fee)",
+    "selection_process": "Clause 3.0 provides that all eligible specially-abled students who meet admission, income, and disability criteria receive the scholarship upon successful verification (historical cap of 1,000 was removed in 2020 revision). However, eligibility does not equate to automatic payment without institutional and nodal validation on NSP.",
+    "grievance_contact": "AICTE Grievance: pragatisaksham@aicte-india.org / NSP Helpdesk",
+    "helpline_number": "011-29581000 / 0120-6619540",
+    "application_tracking_information": "Supported on NSP portal via OTR login",
+    "source_evidence_audit": [
+      {
+        "topic": "open_intake_clause_and_verification",
+        "primary_source": {
+          "title": "AICTE Saksham Scheme Official Guidelines Clause 3.0",
+          "url": "https://www.aicte-india.org/schemes/students-development-schemes/Saksham",
+          "date": "2020-09-01",
+          "clause": "Clause 3.0",
+          "claim": "All eligible specially abled student will be given scholarship who get admission to First year of Degree/Diploma level course OR Second year through lateral entry in any AICTE approved Institution."
+        },
+        "conflicting_or_historical_source": {
+          "title": "AICTE Pre-2020 Guidelines",
+          "url": "AICTE Archive",
+          "date": "2014-11-11",
+          "clause": "Clause 3.0 (Old)",
+          "claim": "1,000 scholarships per annum (500 Degree + 500 Diploma)"
+        },
+        "resolution_notes": "Audited: While the 1,000 slot quota cap was removed in 2020, eligibility does not mean unconditional disbursement. Strict institutional verification and electronic UDID matching are required.",
+        "is_conflict_resolved": true
+      },
+      {
+        "topic": "ay_2026_27_application_deadline",
+        "primary_source": {
+          "title": "National Scholarship Portal - All Scholarships Listing",
+          "url": "https://scholarships.gov.in/All-Scholarships",
+          "date": "2026-11-15",
+          "clause": "AICTE Schemes Section",
+          "claim": "AICTE Saksham Scholarship Scheme for Specially-Abled Children (Technical Degree) student application closing date is 30 November 2026; Defective application verification is open till 15 December 2026; Institute verification is open till 15 December 2026; DNO/SNO/MNO verification is open till 31 December 2026."
+        },
+        "conflicting_or_historical_source": {
+          "title": "Earlier NSP Closing Schedule",
+          "url": "https://scholarships.gov.in",
+          "date": "2026-10-31",
+          "clause": "AICTE Schemes Section",
+          "claim": "Student application submission closed on 31 October 2026."
+        },
+        "resolution_notes": "Audited and confirmed: NSP All-Scholarships official listing updated the student application closing date to 30 November 2026, defective verification to 15 December 2026, institute verification to 15 December 2026, and DNO/SNO/MNO verification to 31 December 2026 for AY 2026-27.",
+        "is_conflict_resolved": true
+      }
+    ],
+    "official_sources": [
+      {
+        "source_title": "AICTE Saksham Scheme Official Guidelines",
+        "source_url": "https://www.aicte-india.org/schemes/students-development-schemes/Saksham",
+        "source_type": "Guidelines",
+        "issuing_authority": "All India Council for Technical Education (AICTE)",
+        "publication_date": "2020-09-01",
+        "applicable_academic_year": "AY 2020-21 onwards",
+        "section_or_clause": "Clause 2.0, 3.0, 6.0, 7.0",
+        "date_checked": "2026-11-02",
+        "claims_supported": [
+          "Benchmark disability >= 40%",
+          "UDID or Competent Authority Medical Certificate",
+          "Income <= Rs. 8 Lakh in current financial year",
+          "Degree and Diploma tracks parallel",
+          "Rs. 50,000/yr benefit"
+        ]
+      },
+      {
+        "source_title": "National Scholarship Portal - AICTE Saksham Scheme",
+        "source_url": "https://scholarships.gov.in/All-Scholarships",
+        "source_type": "Portal",
+        "issuing_authority": "NIC / AICTE",
+        "publication_date": "2026-06-01",
+        "applicable_academic_year": "AY 2026-27",
+        "section_or_clause": "AICTE Schemes Section",
+        "date_checked": "2026-11-15",
+        "claims_supported": [
+          "Student application closing date is 30 November 2026",
+          "Defective application verification deadline 15 December 2026",
+          "Institute verification deadline 15 December 2026",
+          "Level 2 (DNO/SNO/MNO) verification deadline 31 December 2026"
+        ]
+      }
+    ],
+    "last_checked_date": "2026-11-15",
+    "verification_status": "pending_review",
+    "verification_notes": "Audited in Scheme 3 verification review: UDID electronic consent workflow documented; Clause 3.0 open intake maintained with verification qualification; student application closing date updated to 30-11-2026 based on official NSP schedule (https://scholarships.gov.in/All-Scholarships); Defective application verification till 15-12-2026; Institute verification till 15-12-2026; DNO/SNO/MNO verification till 31-12-2026. Ready for human review.",
+    "conflicting_information": null,
+    "human_review_required": true,
+    "is_verified": false,
+    "application_last_date": "2026-11-30",
+    "application_cycle": "AY 2026-27",
+    "deadline_source": "National Scholarship Portal (NSP) official schedule (https://scholarships.gov.in/All-Scholarships) for AY 2026-27: AICTE Saksham Scholarship Scheme for Specially-Abled Children (Technical Degree) student application closing date is 30 November 2026; Defective application verification deadline 15 December 2026; Institute verification deadline 15 December 2026; Level 2 (DNO/SNO/MNO) verification deadline 31 December 2026.",
+    "deadline_verified_at": "2026-11-15",
+    "next_cycle_status": "NOT_ANNOUNCED"
+  },
+  {
+    "scheme_id": "SCHEME_EDU_004_AICTE_SWANATH",
+    "scheme_name": "AICTE Swanath Scholarship",
+    "current_official_name": "AICTE Swanath Scholarship Scheme (Technical Degree & Diploma)",
+    "category": "EDUCATION",
+    "government_level": "Central",
+    "state_applicability": [
+      "ALL"
+    ],
+    "responsible_ministry": "Ministry of Education",
+    "responsible_department": "All India Council for Technical Education (AICTE)",
+    "department": "All India Council for Technical Education (AICTE), Ministry of Education",
+    "scheme_description": "Welfare scholarship implemented by AICTE providing Rs. 50,000 per annum to orphans, wards whose parent(s) died due to COVID-19, wards of Armed Forces/Central Paramilitary Forces martyred in action (Shaheed), and wards whose parent is suffering from a critical life-threatening disease or died / became severely disabled (> 80%) in an accident, pursuing technical degree or diploma courses in AICTE-approved institutions.",
+    "description": "Financial assistance of Rs. 50,000 per annum for orphans, COVID-19 deceased parents' wards, martyred armed forces' wards, and critical illness/accident-affected wards studying technical courses in AICTE-approved institutions.",
+    "target_beneficiaries": [
+      "Orphans, wards of parents deceased due to COVID-19, wards of martyred Armed Forces & CPMF personnel, and students whose parent suffers from a critical life-threatening disease or died / became severely disabled (> 80%) in an accident, studying in AICTE-approved institutions"
+    ],
+    "scheme_status": "ACTIVE",
+    "operational_status": "ACTIVE",
+    "application_status": "OPEN",
+    "current_application_cycle": "AY 2026-27",
+    "application_start_date": "2026-06-01",
+    "application_deadline": "2026-11-30",
+    "last_application_deadline": "2026-11-30",
+    "student_submission_deadline": "2026-11-30",
+    "defective_verification_deadline": "2026-12-15",
+    "institute_verification_deadline": "2026-12-15",
+    "nodal_verification_deadline": "2026-12-31",
+    "next_expected_cycle": null,
+    "application_status_last_checked": "2026-11-15",
+    "application_status_evidence": "National Scholarship Portal (NSP) official schedule (https://scholarships.gov.in/All-Scholarships) for AY 2026-27: AICTE Swanath Scholarship Scheme (Technical Degree) student application closing date extended to 30 November 2026; Defective application verification window open through 15 December 2026; Institute verification window open through 15 December 2026; DNO/SNO/MNO verification window open through 31 December 2026.",
+    "current_guideline_version": {
+      "version_title": "AICTE Swanath Scholarship Scheme Revised Guidelines",
+      "publication_date": "2025-05-01",
+      "effective_academic_year": "AY 2025-26 and AY 2026-27 onwards",
+      "issuing_authority": "All India Council for Technical Education (AICTE)",
+      "official_url": "https://www.aicte-india.org/schemes/students-development-schemes/Swanath"
+    },
+    "historical_guideline_info": [
+      {
+        "version_title": "Original AICTE Swanath Guidelines (August 2021)",
+        "effective_period": "2021-2024",
+        "key_differences": "Covered only 3 categories: (1) Orphans, (2) COVID-19 deceased parents, and (3) Martyred armed forces wards; initially restricted to 1st year and lateral entry. The May 2025 revision expanded coverage to 4 categories (adding critical illness and severe accident disability > 80%) and opened eligibility to students enrolled in any study year (1st to 4th year Degree, 1st to 3rd year Diploma)."
+      }
+    ],
+    "launch_year": 2021,
+    "source_portal": "https://scholarships.gov.in",
+    "eligibility": {
+      "min_age": null,
+      "max_age": null,
+      "gender": "ALL",
+      "max_annual_income": 800000.0,
+      "occupation": [
+        "Student"
+      ],
+      "landholding": null,
+      "states": [
+        "ALL"
+      ],
+      "minimum_age": null,
+      "maximum_age": null,
+      "gender_requirement": "ALL",
+      "state_residency_requirement": [
+        "ALL"
+      ],
+      "category_requirement": [
+        "General",
+        "SC",
+        "ST",
+        "OBC",
+        "EWS"
+      ],
+      "annual_family_income_limit": 800000.0,
+      "income_definition": "Total annual family income from all sources must not exceed Rs. 8 Lakh during the financial year of application",
+      "education_requirement": "Enrolled in regular-mode technical Degree (1st, 2nd, 3rd, or 4th year) or Diploma (1st, 2nd, or 3rd year) course in an AICTE-approved institution",
+      "minimum_marks_requirement": "Enrolled as a regular student in the approved program",
+      "course_requirement": "Technical Degree or Diploma program in AICTE-approved institution",
+      "institution_requirement": "AICTE-approved institutions and polytechnics",
+      "disability_requirement": null,
+      "occupation_requirement": [
+        "Student"
+      ],
+      "land_ownership_requirement": null,
+      "family_status_requirement": "Must belong to ANY ONE of the following four alternative categories: (1) Orphan child, OR (2) Parent(s) died due to COVID-19, OR (3) Ward of Armed Forces / CPMF martyred in action, OR (4) Parent suffering from critical life-threatening disease OR died / became severely disabled (> 80%) in an accident (as per RPwD Act 2016)",
+      "other_eligibility_conditions": [
+        "Must have an active individual savings bank account seeded with Aadhaar",
+        "Must not be recipient of any other Central or State Government scholarship"
+      ],
+      "exclusions": [
+        "Students enrolled in non-AICTE approved institutions",
+        "Family income exceeding Rs. 8 Lakh",
+        "Recipients of other concurrent scholarship or fee reimbursement schemes"
+      ],
+      "renewal_conditions": "Passing examinations in previous academic year and continuing regular full-time study in the same program.",
+      "structured_rules": [
+        {
+          "criterion": "beneficiary_category",
+          "operator": "ANY_OF",
+          "required_value": [
+            "ORPHAN",
+            "PARENT_DIED_COVID19",
+            "WARD_OF_MARTYRED_SOLDIER",
+            "PARENT_CRITICAL_ILLNESS_OR_ACCIDENT_DISABILITY"
+          ],
+          "unit": null,
+          "explanation": "Must satisfy at least ONE of four categories: (1) Orphan, (2) COVID-19 deceased parent, (3) Martyred armed forces personnel ward, or (4) Parent suffering from critical life-threatening disease or died / severely disabled (> 80%) in accident.",
+          "source_reference": "AICTE Swanath Guidelines May 2025 Revision Clause 2.0",
+          "effective_date": "2025-05-01",
+          "effective_academic_year": "AY 2025-26 and AY 2026-27",
+          "verification_status": "pending_review",
+          "rule_type": "GENERAL",
+          "logical_group": "ANY_OF"
+        },
+        {
+          "criterion": "annual_family_income",
+          "operator": "<=",
+          "required_value": 800000,
+          "unit": "INR",
+          "explanation": "Annual family income must not exceed Rs. 8,00,000 during the financial year of application.",
+          "source_reference": "AICTE Swanath Guidelines May 2025 Clause 2.0",
+          "effective_date": "2025-05-01",
+          "effective_academic_year": "AY 2025-26 and AY 2026-27",
+          "verification_status": "pending_review",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "study_year_level",
+          "operator": "IN",
+          "required_value": [
+            "1st_year",
+            "2nd_year",
+            "3rd_year",
+            "4th_year"
+          ],
+          "unit": null,
+          "explanation": "Eligible students can be enrolled in 1st, 2nd, 3rd, or 4th year of Degree course, or 1st, 2nd, or 3rd year of Diploma course in an AICTE-approved institution.",
+          "source_reference": "AICTE Swanath Guidelines May 2025 Clause 2.0",
+          "effective_date": "2025-05-01",
+          "effective_academic_year": "AY 2025-26 and AY 2026-27",
+          "verification_status": "pending_review",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "institution_approval",
+          "operator": "==",
+          "required_value": "AICTE_APPROVED",
+          "unit": null,
+          "explanation": "Institution must be recognized and approved by AICTE.",
+          "source_reference": "AICTE Swanath Guidelines May 2025 Clause 2.0",
+          "effective_date": "2025-05-01",
+          "effective_academic_year": "AY 2025-26 and AY 2026-27",
+          "verification_status": "pending_review",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "concurrent_scholarship",
+          "operator": "==",
+          "required_value": false,
+          "unit": null,
+          "explanation": "Candidate must not receive any other government scholarship concurrently.",
+          "source_reference": "AICTE Swanath Guidelines May 2025 Clause 5.0",
+          "effective_date": "2025-05-01",
+          "effective_academic_year": "AY 2025-26 and AY 2026-27",
+          "verification_status": "pending_review",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        }
+      ]
+    },
+    "benefits": {
+      "type": "Direct Benefit Transfer",
+      "amount_annual": 50000.0,
+      "disbursement_frequency": "Annual lump-sum via DBT",
+      "benefit_type": "Direct Benefit Transfer Scholarship",
+      "financial_assistance_amount": 50000.0,
+      "amount_unit": "INR/year",
+      "payment_frequency": "Annual",
+      "duration": "Remaining duration of the course (up to 4 years for Degree, up to 3 years for Diploma)",
+      "maximum_benefit": "Rs. 50,000 per annum lump-sum covering college tuition fees, books, computer, stationery, and software",
+      "non_financial_benefits": null,
+      "number_of_installments": 1,
+      "beneficiary_contribution": 0
+    },
+    "required_documents": [
+      {
+        "document_name": "Aadhaar Card",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "All applicants",
+        "issuing_authority": "UIDAI",
+        "source_reference": "AICTE Swanath Guidelines Clause 6.0"
+      },
+      {
+        "document_name": "Qualifying Examination Marksheet",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "All applicants (10th/12th or previous year marksheet for currently enrolled students)",
+        "issuing_authority": "Recognized Education Board / Enrolled Institution",
+        "source_reference": "AICTE Swanath Guidelines Clause 6.0"
+      },
+      {
+        "document_name": "Annual Family Income Certificate",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "All applicants (stating income <= Rs. 8 Lakh issued by competent State/UT authority)",
+        "issuing_authority": "Competent State Revenue Authority (Tahsildar/SDM)",
+        "source_reference": "AICTE Swanath Guidelines Clause 6.0"
+      },
+      {
+        "document_name": "Admission Confirmation Letter / Fee Receipt",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "All applicants",
+        "issuing_authority": "Institution / Admission Authority",
+        "source_reference": "AICTE Swanath Guidelines Clause 6.0"
+      },
+      {
+        "document_name": "Bonafide Certificate from Head of Institution",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "All applicants",
+        "issuing_authority": "Principal/Director of AICTE Institution",
+        "source_reference": "AICTE Swanath Guidelines Clause 6.0"
+      },
+      {
+        "document_name": "Bank Passbook (Aadhaar-seeded)",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "All applicants",
+        "issuing_authority": "Scheduled Bank",
+        "source_reference": "AICTE Swanath Guidelines Clause 6.0"
+      },
+      {
+        "document_name": "Death Certificates of Both Parents OR Orphan Certificate from CWC/SDM",
+        "requirement_type": "CONDITIONAL",
+        "mandatory_or_optional": "CONDITIONAL",
+        "applicable_condition": "Mandatory for Category 1 (Orphan students) only",
+        "issuing_authority": "Municipal Registrar / Tahsildar / SDM / Child Welfare Committee",
+        "source_reference": "AICTE Swanath Guidelines May 2025 Clause 6.0"
+      },
+      {
+        "document_name": "COVID-19 Death Certificate of Parent(s)",
+        "requirement_type": "CONDITIONAL",
+        "mandatory_or_optional": "CONDITIONAL",
+        "applicable_condition": "Mandatory for Category 2 (COVID-19 deceased parent) only",
+        "issuing_authority": "Competent Municipal/Health Authority certifying COVID-19 death",
+        "source_reference": "AICTE Swanath Guidelines May 2025 Clause 6.0"
+      },
+      {
+        "document_name": "Shaheed / Martyr Certificate from Defense/CPMF Authority",
+        "requirement_type": "CONDITIONAL",
+        "mandatory_or_optional": "CONDITIONAL",
+        "applicable_condition": "Mandatory for Category 3 (Wards of martyred soldiers) only",
+        "issuing_authority": "Armed Forces / Central Paramilitary Forces Competent Authority",
+        "source_reference": "AICTE Swanath Guidelines May 2025 Clause 6.0"
+      },
+      {
+        "document_name": "Medical Certificate for Critical Life-Threatening Illness",
+        "requirement_type": "CONDITIONAL",
+        "mandatory_or_contrast": "CONDITIONAL",
+        "applicable_condition": "Mandatory for Category 4 (Critical illness of parent, e.g. Cancer) only",
+        "issuing_authority": "Competent Medical Authority / Government Civil Hospital / Medical Board",
+        "source_reference": "AICTE Swanath Guidelines May 2025 Clause 6.0"
+      },
+      {
+        "document_name": "Accident Death Certificate / FIR OR Severe Disability Certificate (> 80%)",
+        "requirement_type": "CONDITIONAL",
+        "mandatory_or_optional": "CONDITIONAL",
+        "applicable_condition": "Mandatory for Category 4 (Parent died or became severely disabled > 80% in accident) only",
+        "issuing_authority": "Competent Police/Revenue Authority / Medical Board under RPwD Act 2016",
+        "source_reference": "AICTE Swanath Guidelines May 2025 Clause 6.0"
+      }
+    ],
+    "application_method": "Online",
+    "official_application_url": "https://scholarships.gov.in/ApplicationForm/#/login",
+    "official_information_url": "https://www.aicte-india.org/schemes/students-development-schemes/Swanath",
+    "application_url": "https://scholarships.gov.in/ApplicationForm/#/login",
+    "application_steps": [
+      "Step 1: Register on the National Scholarship Portal (NSP) with Aadhaar and generate OTR credentials.",
+      "Step 2: Log in and select AICTE Swanath Scholarship Scheme (Degree or Diploma).",
+      "Step 3: Complete applicant profile, select specific beneficiary category: (1) Orphan, (2) COVID-19 deceased parent, (3) Martyred soldier ward, or (4) Parent critical illness / severe accident disability.",
+      "Step 4: Upload category-specific certificates (Orphan proof, COVID death proof, Martyr certificate, or Medical/Accident proof), institutional bonafide certificate, marksheet, and income certificate.",
+      "Step 5: Submit application for institutional verification and subsequent AICTE verification."
+    ],
+    "renewal_deadline": "Concurrent with fresh application timelines on NSP (student submission open through 2026-11-30)",
+    "application_fee": "Free (Zero fee)",
+    "selection_process": "A total of 2,000 scholarships are awarded annually (1,000 for Degree + 1,000 for Diploma) based on qualifying merit within eligible candidate groups across all 4 categories.",
+    "grievance_contact": "AICTE Grievance: swanath@aicte-india.org / NSP Helpdesk",
+    "helpline_number": "011-29581000 / 0120-6619540",
+    "application_tracking_information": "Supported on NSP portal via OTR login",
+    "source_evidence_audit": [
+      {
+        "topic": "may_2025_fourth_beneficiary_category",
+        "primary_source": {
+          "title": "AICTE Swanath Scholarship Scheme Guidelines (May 2025 Revision)",
+          "url": "https://www.aicte-india.org/schemes/students-development-schemes/Swanath",
+          "date": "2025-05-01",
+          "clause": "Clause 2.0 (Categories)",
+          "claim": "Expanded to include Category 4: Parent suffering from a critical life-threatening disease (such as cancer, etc.) OR died/severely disabled (> 80%) in an accident as per RPwD Act 2016."
+        },
+        "conflicting_or_historical_source": {
+          "title": "Original 2021 Swanath Guidelines",
+          "url": "AICTE Archive",
+          "date": "2021-08-01",
+          "clause": "Clause 2.0",
+          "claim": "Covered only 3 categories: Orphan, COVID-19, and Martyr."
+        },
+        "resolution_notes": "Audited and integrated: May 2025 revision officially added the 4th critical illness/accident category, verified from AICTE official circulars.",
+        "is_conflict_resolved": true
+      },
+      {
+        "topic": "study_year_eligibility",
+        "primary_source": {
+          "title": "AICTE Swanath Guidelines May 2025 Revision",
+          "url": "https://www.aicte-india.org/schemes/students-development-schemes/Swanath",
+          "date": "2025-05-01",
+          "clause": "Clause 2.0 (Study Level)",
+          "claim": "Students studying in 1st, 2nd, 3rd, or 4th year of Degree, or 1st, 2nd, or 3rd year of Diploma are eligible."
+        },
+        "conflicting_or_historical_source": {
+          "title": "Previous Draft Record",
+          "url": "Internal SahayAI Record",
+          "date": "2026-11-02",
+          "clause": "N/A",
+          "claim": "Restricted to 1st year and lateral entry only"
+        },
+        "resolution_notes": "Audited and corrected: Unlike Pragati, May 2025 Swanath guidelines open eligibility to students across all study years of the enrolled program.",
+        "is_conflict_resolved": true
+      },
+      {
+        "topic": "ay_2026_27_application_deadline",
+        "primary_source": {
+          "title": "National Scholarship Portal - All Scholarships Listing",
+          "url": "https://scholarships.gov.in/All-Scholarships",
+          "date": "2026-11-15",
+          "clause": "AICTE Schemes Section",
+          "claim": "AICTE Swanath Scholarship Scheme (Technical Degree) student application closing date is 30 November 2026; Defective application verification is open till 15 December 2026; Institute verification is open till 15 December 2026; DNO/SNO/MNO verification is open till 31 December 2026."
+        },
+        "conflicting_or_historical_source": {
+          "title": "Earlier NSP Closing Schedule",
+          "url": "https://scholarships.gov.in",
+          "date": "2026-10-31",
+          "clause": "AICTE Schemes Section",
+          "claim": "Student application submission closed on 31 October 2026."
+        },
+        "resolution_notes": "Audited and confirmed: NSP All-Scholarships official listing updated the student application closing date to 30 November 2026, defective verification to 15 December 2026, institute verification to 15 December 2026, and DNO/SNO/MNO verification to 31 December 2026 for AY 2026-27.",
+        "is_conflict_resolved": true
+      }
+    ],
+    "official_sources": [
+      {
+        "source_title": "AICTE Swanath Scholarship Scheme Revised Guidelines (May 2025)",
+        "source_url": "https://www.aicte-india.org/schemes/students-development-schemes/Swanath",
+        "source_type": "Guidelines",
+        "issuing_authority": "All India Council for Technical Education (AICTE)",
+        "publication_date": "2025-05-01",
+        "applicable_academic_year": "AY 2025-26 and AY 2026-27",
+        "section_or_clause": "Clause 2.0, 3.0, 5.0, 6.0",
+        "date_checked": "2026-11-02",
+        "claims_supported": [
+          "4 beneficiary categories including critical illness and > 80% accident disability",
+          "Enrolled in any study year (1st to 4th Degree, 1st to 3rd Diploma)",
+          "Income limit <= Rs. 8 Lakh",
+          "2,000 slots per annum (1,000 Degree + 1,000 Diploma)",
+          "Rs. 50,000/yr assistance"
+        ]
+      },
+      {
+        "source_title": "National Scholarship Portal - AICTE Swanath Scheme",
+        "source_url": "https://scholarships.gov.in/All-Scholarships",
+        "source_type": "Portal",
+        "issuing_authority": "NIC / AICTE",
+        "publication_date": "2026-06-01",
+        "applicable_academic_year": "AY 2026-27",
+        "section_or_clause": "AICTE Schemes Section",
+        "date_checked": "2026-11-15",
+        "claims_supported": [
+          "Student application closing date is 30 November 2026",
+          "Defective application verification deadline 15 December 2026",
+          "Institute verification deadline 15 December 2026",
+          "Level 2 (DNO/SNO/MNO) verification deadline 31 December 2026"
+        ]
+      }
+    ],
+    "last_checked_date": "2026-11-15",
+    "verification_status": "pending_review",
+    "verification_notes": "Audited in Scheme 4 verification review: High-priority May 2025 revision verified and applied; all 4 categories codified with disjunctive ANY_OF logic; study year eligibility expanded to all enrolled years; category-specific documents segregated; student application closing date updated to 30-11-2026 based on official NSP schedule (https://scholarships.gov.in/All-Scholarships); Defective application verification till 15-12-2026; Institute verification till 15-12-2026; DNO/SNO/MNO verification till 31-12-2026. Ready for human review.",
+    "conflicting_information": null,
+    "human_review_required": true,
+    "is_verified": false,
+    "application_last_date": "2026-11-30",
+    "application_cycle": "AY 2026-27",
+    "deadline_source": "National Scholarship Portal (NSP) official schedule (https://scholarships.gov.in/All-Scholarships) for AY 2026-27: AICTE Swanath Scholarship Scheme (Technical Degree) student application closing date is 30 November 2026; Defective application verification deadline 15 December 2026; Institute verification deadline 15 December 2026; Level 2 (DNO/SNO/MNO) verification deadline 31 December 2026.",
+    "deadline_verified_at": "2026-11-15",
+    "next_cycle_status": "NOT_ANNOUNCED"
+  },
+  {
+    "scheme_id": "SCHEME_EDU_005_TOP_CLASS_SC",
+    "scheme_name": "Top Class Education Scheme for SC Students",
+    "current_official_name": "Central Sector Scholarship of Top Class Education for SC Students",
+    "category": "EDUCATION",
+    "government_level": "Central",
+    "state_applicability": [
+      "ALL"
+    ],
+    "responsible_ministry": "Ministry of Social Justice and Empowerment",
+    "responsible_department": "Department of Social Justice and Empowerment",
+    "department": "Department of Social Justice and Empowerment, Ministry of Social Justice and Empowerment",
+    "scheme_description": "Prestigious Central Sector Scholarship scheme providing full financial support to Scheduled Caste (SC) students who have secured admission to notified premier institutions (IITs, NITs, IIMs, AIIMS, NLUs, etc.) covering full tuition fee, living expenses, book allowance, and computer grant.",
+    "description": "Full financial support (tuition fees, living expenses, book allowance, computer grant) for Scheduled Caste (SC) students studying in notified premier institutions.",
+    "target_beneficiaries": [
+      "Scheduled Caste (SC) students admitted to notified premier higher education institutions across India"
+    ],
+    "scheme_status": "ACTIVE",
+    "operational_status": "ACTIVE",
+    "application_status": "OPEN",
+    "current_application_cycle": "AY 2026-27",
+    "application_start_date": "2026-06-01",
+    "application_deadline": "2026-11-30",
+    "last_application_deadline": "2026-11-30",
+    "student_submission_deadline": "2026-11-30",
+    "defective_verification_deadline": "2026-12-15",
+    "institute_verification_deadline": "2026-12-15",
+    "nodal_verification_deadline": "2026-12-31",
+    "next_expected_cycle": null,
+    "application_status_last_checked": "2026-11-15",
+    "application_status_evidence": "National Scholarship Portal (NSP) official schedule (https://scholarships.gov.in/All-Scholarships) for AY 2026-27: Central Sector Scholarship of Top Class Education for SC Students student application closing date extended to 30 November 2026; Defective application verification window open through 15 December 2026; Institute verification window open through 15 December 2026; DNO/SNO/MNO verification window open through 31 December 2026.",
+    "current_guideline_version": {
+      "version_title": "Scheme Guidelines for Central Sector Scholarship of Top Class Education for SC Students (2026-27)",
+      "publication_date": "2026-05-01",
+      "effective_academic_year": "AY 2026-27",
+      "issuing_authority": "Department of Social Justice and Empowerment, Ministry of Social Justice and Empowerment",
+      "official_url": "https://socialjustice.gov.in/schemes/27"
+    },
+    "historical_guideline_info": [
+      {
+        "version_title": "15th Finance Commission Cycle Guidelines (2021-22 to 2025-26)",
+        "effective_period": "2021-2025",
+        "official_url": "https://socialjustice.gov.in/schemes/36",
+        "key_differences": "Scaled fresh slots from 1,500 (2021-22) to 1,900 (2025-26), totaling 8,500 fresh slots in the 5-year block. Preserved tuition fee caps (Rs. 2.00 lakh for private, Rs. 3.72 lakh for private flying clubs) and academic allowances (Rs. 86,000 Year 1, Rs. 41,000 subsequent years) which are continued in the 2026-27 guidelines."
+      },
+      {
+        "version_title": "Pre-2021 Top Class SC Guidelines",
+        "effective_period": "2016-2020",
+        "key_differences": "Academic support was itemized as Rs. 3,000/month living expenses + Rs. 5,000/year books + Rs. 45,000 one-time computer grant. Unified into annual Academic Allowance from 2021 onwards."
+      }
+    ],
+    "launch_year": 2007,
+    "source_portal": "https://scholarships.gov.in",
+    "eligibility": {
+      "min_age": null,
+      "max_age": null,
+      "gender": "ALL",
+      "max_annual_income": 800000.0,
+      "occupation": [
+        "Student"
+      ],
+      "landholding": null,
+      "states": [
+        "ALL"
+      ],
+      "minimum_age": null,
+      "maximum_age": null,
+      "gender_requirement": "ALL (At least 30% slots reserved for SC girl students within each institution)",
+      "state_residency_requirement": [
+        "ALL"
+      ],
+      "category_requirement": [
+        "SC"
+      ],
+      "annual_family_income_limit": 800000.0,
+      "income_definition": "Total annual family income from all sources for the preceding financial year",
+      "education_requirement": "Completed Class 12 with a minimum of 60% marks and secured admission in a notified premier institution",
+      "minimum_marks_requirement": "Minimum 60% marks in Class 12 examination and qualifying entrance rank for admission into notified institution",
+      "course_requirement": "Full-time degree or post-graduate courses in notified premier institutions",
+      "institution_requirement": "Empanelled/notified premier institutions listed under 2026-27 scheme notification (over 260+ premier institutions including IITs, IIMs, NITs, AIIMS, NLUs, NIFTs, central universities)",
+      "disability_requirement": null,
+      "occupation_requirement": [
+        "Student"
+      ],
+      "land_ownership_requirement": null,
+      "family_status_requirement": "Limited to a maximum of two siblings from the same family",
+      "other_eligibility_conditions": [
+        "Must belong to Scheduled Caste (SC) community",
+        "Must have secured admission through regular entrance test / counseling process into a notified institution",
+        "Must maintain an active bank account seeded with Aadhaar"
+      ],
+      "exclusions": [
+        "Non-SC students",
+        "Students scoring below 60% in Class 12",
+        "Students studying in institutions not empanelled under the 2026-27 notification",
+        "Annual family income exceeding Rs. 8 Lakh",
+        "More than two siblings from the same family",
+        "Students receiving other full government scholarships"
+      ],
+      "renewal_conditions": "Continuation in subsequent years depends on satisfactory academic performance and passing promotional annual/semester examinations without backlogs.",
+      "structured_rules": [
+        {
+          "criterion": "social_category",
+          "operator": "==",
+          "required_value": "SC",
+          "unit": null,
+          "explanation": "Student must belong to the Scheduled Caste (SC) community.",
+          "source_reference": "Top Class SC Scheme Guidelines 2026-27 Clause 3.1",
+          "effective_date": "2026-05-01",
+          "effective_academic_year": "AY 2026-27",
+          "verification_status": "pending_review",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "class_12_minimum_marks_percentage",
+          "operator": ">=",
+          "required_value": 60,
+          "unit": "percentage",
+          "explanation": "Student must have scored at least 60% marks in Class 12 examination.",
+          "source_reference": "Top Class SC Scheme Guidelines 2026-27 Clause 3.1",
+          "effective_date": "2026-05-01",
+          "effective_academic_year": "AY 2026-27",
+          "verification_status": "pending_review",
+          "rule_type": "FRESH",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "annual_family_income",
+          "operator": "<=",
+          "required_value": 800000,
+          "unit": "INR",
+          "explanation": "Total annual family income from all sources must not exceed Rs. 8,00,000 for the preceding financial year.",
+          "source_reference": "Top Class SC Scheme Guidelines 2026-27 Clause 3.2",
+          "effective_date": "2026-05-01",
+          "effective_academic_year": "AY 2026-27",
+          "verification_status": "pending_review",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "max_siblings_benefited",
+          "operator": "<=",
+          "required_value": 2,
+          "unit": "count",
+          "explanation": "Not more than two children from the same family can avail this scholarship.",
+          "source_reference": "Top Class SC Scheme Guidelines 2026-27 Clause 3.3",
+          "effective_date": "2026-05-01",
+          "effective_academic_year": "AY 2026-27",
+          "verification_status": "pending_review",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "institution_type",
+          "operator": "==",
+          "required_value": "NOTIFIED_PREMIER_INSTITUTION",
+          "unit": null,
+          "explanation": "Institution must be on the official empanelled list of notified premier institutions published under 2026-27 notification.",
+          "source_reference": "Top Class SC Scheme Guidelines 2026-27 Clause 2.0",
+          "effective_date": "2026-05-01",
+          "effective_academic_year": "AY 2026-27",
+          "verification_status": "pending_review",
+          "rule_type": "FRESH",
+          "logical_group": "ALL_OF"
+        },
+        {
+          "criterion": "concurrent_scholarship",
+          "operator": "==",
+          "required_value": false,
+          "unit": null,
+          "explanation": "Student cannot hold any other concurrent government scholarship.",
+          "source_reference": "Top Class SC Scheme Guidelines 2026-27 Clause 7.0",
+          "effective_date": "2026-05-01",
+          "effective_academic_year": "AY 2026-27",
+          "verification_status": "pending_review",
+          "rule_type": "GENERAL",
+          "logical_group": "ALL_OF"
+        }
+      ]
+    },
+    "benefits": {
+      "type": "Full Scholarship & Direct Benefit Transfer",
+      "amount_annual": 86000.0,
+      "disbursement_frequency": "Annual (Fees paid directly or reimbursed; allowances via DBT)",
+      "benefit_type": "Full Tuition Waiver and Academic Maintenance Allowance",
+      "financial_assistance_amount": 86000.0,
+      "amount_unit": "INR/year",
+      "payment_frequency": "Annual / Semester",
+      "duration": "Full duration of the degree course (typically 3 to 5 years)",
+      "maximum_benefit": "Full tuition fee and non-refundable charges (capped at Rs. 2,00,000/yr for private institutions, and Rs. 3.72 lakh/yr for private flying clubs) + Academic allowance of Rs. 86,000 in Year 1 (living expenses, books, and computer/laptop grant) + Rs. 41,000/yr in subsequent years",
+      "non_financial_benefits": [
+        "One-time computer/laptop with accessories grant (printer, UPS) incorporated within 1st year academic allowance"
+      ],
+      "number_of_installments": 1,
+      "beneficiary_contribution": 0
+    },
+    "required_documents": [
+      {
+        "document_name": "Aadhaar Card",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "All applicants",
+        "issuing_authority": "UIDAI",
+        "source_reference": "Top Class SC Guidelines 2026-27 Clause 8.0"
+      },
+      {
+        "document_name": "SC Caste Certificate",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "All applicants",
+        "issuing_authority": "Competent Revenue Authority (Tahsildar/SDM/Collector)",
+        "source_reference": "Top Class SC Guidelines 2026-27 Clause 8.0"
+      },
+      {
+        "document_name": "Annual Family Income Certificate",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "All applicants (stating income <= Rs. 8 Lakh for preceding financial year)",
+        "issuing_authority": "Competent Revenue Authority (Tahsildar/SDM)",
+        "source_reference": "Top Class SC Guidelines 2026-27 Clause 8.0"
+      },
+      {
+        "document_name": "Admission Letter and Fee Receipt from Notified Premier Institution",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "All applicants",
+        "issuing_authority": "Empanelled Premier Institution",
+        "source_reference": "Top Class SC Guidelines 2026-27 Clause 8.0"
+      },
+      {
+        "document_name": "Class 12 Marksheet (Min 60% Marks)",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "All applicants",
+        "issuing_authority": "Recognized Education Board",
+        "source_reference": "Top Class SC Guidelines 2026-27 Clause 8.0"
+      },
+      {
+        "document_name": "Entrance Examination Scorecard / Rank Letter",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "Fresh applicants (e.g. JEE Advanced, CAT, NEET, CLAT)",
+        "issuing_authority": "National / State Testing Agency",
+        "source_reference": "Top Class SC Guidelines 2026-27 Clause 8.0"
+      },
+      {
+        "document_name": "Class 10 Marksheet",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "All applicants",
+        "issuing_authority": "Recognized Education Board",
+        "source_reference": "Top Class SC Guidelines 2026-27 Clause 8.0"
+      },
+      {
+        "document_name": "Bank Passbook (Aadhaar-seeded)",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "All applicants",
+        "issuing_authority": "Scheduled Commercial Bank",
+        "source_reference": "Top Class SC Guidelines 2026-27 Clause 8.0"
+      },
+      {
+        "document_name": "Bonafide Certificate from Institution Head / Dean",
+        "requirement_type": "MANDATORY",
+        "mandatory_or_optional": "MANDATORY",
+        "applicable_condition": "All applicants",
+        "issuing_authority": "Dean of Academic Affairs / Registrar of Premier Institution",
+        "source_reference": "Top Class SC Guidelines 2026-27 Clause 8.0"
+      },
+      {
+        "document_name": "Previous Year Marksheet (Promotion Proof)",
+        "requirement_type": "CONDITIONAL",
+        "mandatory_or_optional": "CONDITIONAL",
+        "applicable_condition": "Renewal applicants only",
+        "issuing_authority": "Notified Premier Institution",
+        "source_reference": "Top Class SC Guidelines 2026-27 Clause 6.0"
+      }
+    ],
+    "application_method": "Online",
+    "official_application_url": "https://scholarships.gov.in/ApplicationForm/#/login",
+    "official_information_url": "https://socialjustice.gov.in/schemes/27",
+    "application_url": "https://scholarships.gov.in/ApplicationForm/#/login",
+    "application_steps": [
+      "Step 1: Obtain admission to a notified premier institution and secure admission fee receipt / bonafide.",
+      "Step 2: Register on National Scholarship Portal (NSP) using Aadhaar OTR.",
+      "Step 3: Select Ministry of Social Justice and Empowerment -> Top Class Education Scheme for SC Students.",
+      "Step 4: Upload SC caste certificate, family income certificate, admission proof, fee structure, Class 12 marksheet (>= 60%), and entrance rank proof.",
+      "Step 5: Submit application for Institute Nodal Officer (INO) verification.",
+      "Step 6: Approved by Ministry Project Monitoring Unit with DBT disbursement of maintenance and fee release."
+    ],
+    "renewal_deadline": "Concurrent with fresh application timelines on NSP (student submission open through 2026-11-30)",
+    "application_fee": "Free (Zero fee)",
+    "selection_process": "Merit within allotted institution slots (published under 2026-27 notification at socialjustice.gov.in/schemes/27) based on entrance exam ranks. 30% slots earmarked for SC female students.",
+    "grievance_contact": "MSJE Scholarship Division: dbtcell-msje@nic.in / NSP Helpdesk",
+    "helpline_number": "011-23384284 / 0120-6619540",
+    "application_tracking_information": "Supported on NSP portal via OTR login",
+    "source_evidence_audit": [
+      {
+        "topic": "guideline_source_and_cycle_update",
+        "primary_source": {
+          "title": "Central Sector Scholarship of Top Class Education for SC Students Guidelines (2026-27)",
+          "url": "https://socialjustice.gov.in/schemes/27",
+          "date": "2026-05-01",
+          "clause": "Full Document",
+          "claim": "Official guidelines published at schemes/27 for 2026-27. Reconfirms Class 12 minimum 60% marks cutoff, Rs. 2.00 lakh private tuition fee ceiling (Rs. 3.72 lakh for private flying clubs), Rs. 86,000 Year 1 academic allowance and Rs. 41,000 subsequent years allowance."
+        },
+        "conflicting_or_historical_source": {
+          "title": "15th Finance Commission Guidelines (2021-22 to 2025-26)",
+          "url": "https://socialjustice.gov.in/schemes/36",
+          "date": "2021-04-01",
+          "clause": "Full Document",
+          "claim": "Earlier 5-year block guidelines"
+        },
+        "resolution_notes": "Audited and updated: Replaced previous schemes/36 reference with the active 2026-27 notification URL at schemes/27. Confirmed financial parameters are maintained into the 2026-27 cycle, and added the mandatory 60% Class 12 marks requirement.",
+        "is_conflict_resolved": true
+      },
+      {
+        "topic": "ay_2026_27_application_deadline",
+        "primary_source": {
+          "title": "National Scholarship Portal - All Scholarships Listing",
+          "url": "https://scholarships.gov.in/All-Scholarships",
+          "date": "2026-11-15",
+          "clause": "Ministry of Social Justice and Empowerment Schemes Section",
+          "claim": "Central Sector Scholarship of Top Class Education for SC Students student application closing date is 30 November 2026; Defective application verification is open till 15 December 2026; Institute verification is open till 15 December 2026; DNO/SNO/MNO verification is open till 31 December 2026."
+        },
+        "conflicting_or_historical_source": {
+          "title": "Earlier NSP Closing Schedule",
+          "url": "https://scholarships.gov.in",
+          "date": "2026-10-31",
+          "clause": "Ministry of Social Justice and Empowerment Schemes Section",
+          "claim": "Student application submission closed on 31 October 2026."
+        },
+        "resolution_notes": "Audited and confirmed: NSP All-Scholarships official listing updated the student application closing date to 30 November 2026, defective verification to 15 December 2026, institute verification to 15 December 2026, and DNO/SNO/MNO verification to 31 December 2026 for AY 2026-27.",
+        "is_conflict_resolved": true
+      }
+    ],
+    "official_sources": [
+      {
+        "source_title": "Department of Social Justice and Empowerment - Top Class SC Education Guidelines (2026-27)",
+        "source_url": "https://socialjustice.gov.in/schemes/27",
+        "source_type": "Guidelines",
+        "issuing_authority": "Department of Social Justice and Empowerment, Ministry of Social Justice and Empowerment",
+        "publication_date": "2026-05-01",
+        "applicable_academic_year": "AY 2026-27",
+        "section_or_clause": "Clause 2.0, 3.1, 3.2, 4.0, 5.1, 5.2, 8.0",
+        "date_checked": "2026-11-02",
+        "claims_supported": [
+          "SC only",
+          "Class 12 marks >= 60%",
+          "Family income <= Rs. 8 Lakh",
+          "Full fee in govt institutions; Rs. 2.00L cap in private institutions (Rs. 3.72L flying club)",
+          "Academic allowance Rs. 86,000 yr 1 and Rs. 41,000 subsequent years",
+          "30% slots earmarked for SC girl students"
+        ]
+      },
+      {
+        "source_title": "National Scholarship Portal - Top Class Education Scheme for SC Students",
+        "source_url": "https://scholarships.gov.in/All-Scholarships",
+        "source_type": "Portal",
+        "issuing_authority": "NIC / MSJE",
+        "publication_date": "2026-06-01",
+        "applicable_academic_year": "AY 2026-27",
+        "section_or_clause": "Ministry of Social Justice and Empowerment Schemes Section",
+        "date_checked": "2026-11-15",
+        "claims_supported": [
+          "Student application closing date is 30 November 2026",
+          "Defective application verification deadline 15 December 2026",
+          "Institute verification deadline 15 December 2026",
+          "Level 2 (DNO/SNO/MNO) verification deadline 31 December 2026"
+        ]
+      }
+    ],
+    "last_checked_date": "2026-11-15",
+    "verification_status": "pending_review",
+    "verification_notes": "Audited in Scheme 5 verification review: Updated to active 2026-27 guidelines from socialjustice.gov.in/schemes/27; mandatory Class 12 >= 60% rule confirmed; tuition fee caps and academic allowances maintained; student application closing date updated to 30-11-2026 based on official NSP schedule (https://scholarships.gov.in/All-Scholarships); Defective application verification till 15-12-2026; Institute verification till 15-12-2026; DNO/SNO/MNO verification till 31-12-2026. Ready for human review.",
+    "conflicting_information": null,
+    "human_review_required": true,
+    "is_verified": false,
+    "application_last_date": "2026-11-30",
+    "application_cycle": "AY 2026-27",
+    "deadline_source": "National Scholarship Portal (NSP) official schedule (https://scholarships.gov.in/All-Scholarships) for AY 2026-27: Central Sector Scholarship of Top Class Education for SC Students student application closing date is 30 November 2026; Defective application verification deadline 15 December 2026; Institute verification deadline 15 December 2026; Level 2 (DNO/SNO/MNO) verification deadline 31 December 2026.",
+    "deadline_verified_at": "2026-11-15",
+    "next_cycle_status": "NOT_ANNOUNCED"
+  }
+]

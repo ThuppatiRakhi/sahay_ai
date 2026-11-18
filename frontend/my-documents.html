@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Documents | SahayAI</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo"><a href="dashboard.html" style="text-decoration: none; color: inherit;">Sahay<span>AI</span></a></div>
+
+        <nav>
+            <a href="dashboard.html" data-i18n="nav.dashboard">Dashboard</a>
+            <a href="dashboard.html#schemes" data-i18n="nav.schemes">Schemes</a>
+            <a href="my-documents.html" id="navDocumentsLink" style="color: #17458c; font-weight: 700;" data-i18n="nav.myDocuments">My Documents</a>
+            <a href="dashboard.html#applicationsSection" id="navApplicationsLink" data-i18n="nav.myApplications">My Applications</a>
+        </nav>
+
+        <div class="nav-user-info">
+            <div class="global-lang-picker">
+                <label for="globalLangSelect" class="sr-only" data-i18n="nav.selectLanguage">Language</label>
+                <select id="globalLangSelect" class="global-lang-select" aria-label="Select Language">
+                    <option value="en">English</option>
+                    <option value="te">తెలుగు</option>
+                    <option value="hi">हिन्दी</option>
+                </select>
+            </div>
+            <!-- Guest Session Navigation Controls (Shown for Guests only) -->
+            <a href="login.html" id="navLoginLink" class="nav-auth-secondary" style="display: none; font-size: 13px; font-weight: 600; color: #17458c; text-decoration: none; padding: 6px 12px; border: 1px solid #cbd5e1; border-radius: 6px;" data-i18n="nav.login">Log In</a>
+            <a href="signup.html" id="navSignupLink" class="nav-auth-secondary" style="display: none; font-size: 13px; font-weight: 600; color: white; background: #17458c; text-decoration: none; padding: 6px 12px; border-radius: 6px;" data-i18n="nav.signup">Create Account</a>
+            <span id="navGuestBadge" class="nav-guest-badge" style="display: none; font-size: 12px; font-weight: 700; color: #b45309; background: #fef3c7; border: 1px solid #fde68a; padding: 4px 10px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.5px;" data-i18n="nav.guestMode">Guest Mode</span>
+            <button type="button" id="endGuestSessionBtn" class="end-guest-nav-btn" style="display: none; font-size: 13px; font-weight: 600; color: #b91c1c; background: #fef2f2; border: 1px solid #fecaca; border-radius: 6px; padding: 6px 12px; cursor: pointer; transition: all 0.2s ease;" data-i18n="nav.endGuestSession">End Guest Session</button>
+
+            <!-- Registered Citizen Navigation Controls (Shown for Registered only) -->
+            <span id="navCitizenName" class="label" style="display: none; font-size: 14px; font-weight: 600; color: #173b70;" data-i18n="nav.citizenLabel">Citizen</span>
+            <button type="button" id="logoutBtn" class="logout-nav-btn" style="display: none;" data-i18n="nav.logout">Log Out</button>
+
+            <!-- Profile Icon Dropdown Menu -->
+            <div id="profileMenuContainer" class="profile-menu-container" style="display: none;">
+                <button type="button" id="profileIconBtn" class="profile-icon-btn" aria-haspopup="true" aria-expanded="false" aria-label="Citizen Profile Menu" title="Citizen Profile">
+                    <img id="profileAvatarImg" class="profile-avatar-img" src="" alt="Citizen Avatar">
+                    <span id="profileAvatarFallback" class="profile-avatar-fallback" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" focusable="false">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                    </span>
+                </button>
+                <div id="profileDropdownMenu" class="profile-dropdown-menu" role="menu" aria-label="Profile navigation">
+                    <div class="profile-dropdown-header">
+                        <span id="dropdownCitizenName" class="profile-dropdown-citizen-name">Citizen</span>
+                        <span id="dropdownCitizenId" class="profile-dropdown-citizen-id" style="display: none;"></span>
+                    </div>
+                    <ul class="profile-dropdown-list">
+                        <li>
+                            <a href="my-profile.html" class="profile-dropdown-item" role="menuitem" id="dropdownProfileLink">
+                                <span class="profile-item-icon" aria-hidden="true">👤</span>
+                                <span data-i18n="nav.myProfile">My Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="my-documents.html" class="profile-dropdown-item" role="menuitem" id="dropdownDocsLink" style="color: #0284c7; font-weight: 600; background-color: #f8fafc;">
+                                <span class="profile-item-icon" aria-hidden="true">📁</span>
+                                <span data-i18n="nav.myDocuments">My Documents</span>
+                            </a>
+                        </li>
+                        <li class="profile-dropdown-divider" role="separator"></li>
+                        <li>
+                            <button type="button" id="dropdownLogoutItem" class="profile-dropdown-item logout-item" role="menuitem">
+                                <span class="profile-item-icon" aria-hidden="true">🚪</span>
+                                <span data-i18n="nav.logout">Log Out</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard-container" style="max-width: 1140px; margin: 30px auto; padding: 0 20px;">
+        <!-- Return Navigation Breadcrumb -->
+        <div style="margin-bottom: 24px;">
+            <a href="dashboard.html" style="display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: #17458c; text-decoration: none; padding: 6px 12px; background: #f1f5f9; border-radius: 6px; transition: background 0.2s ease;">
+                <span aria-hidden="true">&larr;</span>
+                <span data-i18n="nav.backToDashboard">Back to Dashboard</span>
+            </a>
+        </div>
+
+        <!-- Guest Session Notice (Hidden by default; shown if guest accesses page) -->
+        <div id="guestNoticeBanner" class="guest-notice-banner" style="display: none; margin-bottom: 24px;" role="note">
+            <strong>Guest Mode Notice:</strong> You are currently exploring SahayAI anonymously. Persistent document storage and vault encryption require a registered citizen account.
+            Please <a href="signup.html">Create an Account</a> or <a href="login.html">Log In</a> to save and manage your documents.
+        </div>
+
+        <!-- Dynamic Alert Box -->
+        <div id="documentsAlertBox" class="alert-box" role="alert" aria-live="polite"></div>
+
+        <!-- My Documents Library Section -->
+        <section id="documentsSection" class="documents-section" aria-labelledby="documentsSectionHeading" style="margin-bottom: 28px;">
+            <div class="documents-section-header">
+                <div>
+                    <h1 id="documentsSectionHeading" style="font-size: 24px; color: #173b70; margin: 0 0 6px 0;" data-i18n="documents.sectionHeading">My Documents Library</h1>
+                    <p class="section-subtitle" style="font-size: 14px; color: #64748b; margin: 0;" data-i18n="documents.sectionSubtitle">
+                        Securely store, organize, and reuse your verified documents for government scholarships and welfare schemes.
+                    </p>
+                </div>
+                <div class="documents-header-actions">
+                    <button type="button" class="btn btn-primary" id="btnOpenUploadModal">
+                        <span aria-hidden="true">📤</span>
+                        <span data-i18n="documents.btnUpload">+ Upload Document</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Summary Stats Counters -->
+            <div class="doc-stats-grid" id="docStatsGrid" style="margin: 20px 0;">
+                <div class="doc-stat-card">
+                    <div class="doc-stat-icon" aria-hidden="true">📁</div>
+                    <div class="doc-stat-data">
+                        <span class="doc-stat-value" id="docStatTotal">0</span>
+                        <span class="doc-stat-label" data-i18n="documents.statTotal">Total Documents</span>
+                    </div>
+                </div>
+                <div class="doc-stat-card confirmed">
+                    <div class="doc-stat-icon" aria-hidden="true">✅</div>
+                    <div class="doc-stat-data">
+                        <span class="doc-stat-value" id="docStatConfirmed">0</span>
+                        <span class="doc-stat-label" data-i18n="documents.statConfirmed">Confirmed Documents</span>
+                    </div>
+                </div>
+                <div class="doc-stat-card pending">
+                    <div class="doc-stat-icon" aria-hidden="true">⏳</div>
+                    <div class="doc-stat-data">
+                        <span class="doc-stat-value" id="docStatPending">0</span>
+                        <span class="doc-stat-label" data-i18n="documents.statPending">Pending Review</span>
+                    </div>
+                </div>
+                <div class="doc-stat-card archived">
+                    <div class="doc-stat-icon" aria-hidden="true">📦</div>
+                    <div class="doc-stat-data">
+                        <span class="doc-stat-value" id="docStatArchived">0</span>
+                        <span class="doc-stat-label" data-i18n="documents.statArchived">Archived Documents</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Documents to Upload / Pending Checklist (Auto-filtered upon upload) -->
+            <div class="pending-docs-card" id="pendingDocsCard" style="margin-bottom: 24px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 18px 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+                    <div>
+                        <h3 style="font-size: 16px; font-weight: 700; color: #1e3a8a; margin: 0; display: flex; align-items: center; gap: 8px;">
+                            <span>📋</span> Documents to Upload
+                        </h3>
+                        <p style="font-size: 12.5px; color: #64748b; margin: 2px 0 0;">Upload these essential documents to automatically verify your eligibility for all scholarships &amp; welfare schemes. Once uploaded, documents are automatically removed from this list.</p>
+                    </div>
+                    <span id="pendingDocsCounterBadge" style="font-size: 12px; font-weight: 700; background: #eff6ff; color: #1d4ed8; padding: 4px 12px; border-radius: 20px; border: 1px solid #bfdbfe;">
+                        Checking required documents...
+                    </span>
+                </div>
+                <div id="pendingDocsList" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 10px;">
+                    <!-- Dynamically populated. Automatically removes uploaded documents -->
+                </div>
+            </div>
+
+            <!-- Search & Filters Toolbar -->
+            <div class="doc-filters-bar" id="docFiltersBar">
+                <div class="doc-search-wrapper">
+                    <label for="docSearchInput" class="sr-only" data-i18n="documents.searchPlaceholder">Search by document name or type...</label>
+                    <input type="text" id="docSearchInput" class="doc-search-input" placeholder="Search by document name or type..." data-i18n-placeholder="documents.searchPlaceholder">
+                </div>
+
+                <div class="doc-filter-dropdowns">
+                    <div class="doc-filter-group">
+                        <label for="docCategoryFilter" data-i18n="documents.filterCategory">Category</label>
+                        <select id="docCategoryFilter" class="doc-select">
+                            <option value="" data-i18n="documents.allCategories">All Categories</option>
+                            <option value="IDENTITY" data-i18n="documents.catIdentity">Identity</option>
+                            <option value="INCOME" data-i18n="documents.catIncome">Income</option>
+                            <option value="CATEGORY_CERTIFICATE" data-i18n="documents.catCategoryCert">Category Certificate</option>
+                            <option value="RESIDENCE" data-i18n="documents.catResidence">Residence</option>
+                            <option value="ACADEMIC" data-i18n="documents.catAcademic">Academic</option>
+                            <option value="BANK" data-i18n="documents.catBank">Bank</option>
+                            <option value="DISABILITY" data-i18n="documents.catDisability">Disability</option>
+                            <option value="SPECIAL_CATEGORY" data-i18n="documents.catSpecialCategory">Special Category</option>
+                            <option value="APPLICATION_ASSET" data-i18n="documents.catApplicationAsset">Application Assets</option>
+                            <option value="OTHER" data-i18n="documents.catOther">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="doc-filter-group">
+                        <label for="docStatusFilter" data-i18n="documents.filterStatus">Status</label>
+                        <select id="docStatusFilter" class="doc-select">
+                            <option value="" data-i18n="documents.allStatuses">All Statuses</option>
+                            <option value="ACTIVE" data-i18n="documents.statusActive">Active</option>
+                            <option value="CONFIRMED" data-i18n="documents.statusConfirmed">Confirmed</option>
+                            <option value="PENDING" data-i18n="documents.statusPendingReview">Pending Review</option>
+                            <option value="ARCHIVED" data-i18n="documents.statusArchived">Archived</option>
+                        </select>
+                    </div>
+
+                    <div class="doc-filter-checkbox-wrap">
+                        <label class="doc-checkbox-label">
+                            <input type="checkbox" id="docIncludeArchivedToggle">
+                            <span data-i18n="documents.includeArchived">Show Archived</span>
+                        </label>
+                    </div>
+
+                    <button type="button" class="filter-btn-reset" id="btnResetDocFilters" data-i18n="documents.resetFilters">Reset Filters</button>
+                </div>
+            </div>
+
+            <!-- Document Cards Grid Container -->
+            <div id="documentsGrid" class="documents-grid" role="list">
+                <!-- Dynamically populated or displays empty state -->
+            </div>
+        </section>
+
+        <!-- Quick Navigation Footer Actions -->
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; margin-top: 30px; padding: 18px; background: #f8fafc; border-radius: 10px; border: 1px solid #e2e8f0;">
+            <a href="dashboard.html" style="font-size: 13.5px; font-weight: 600; color: #17458c; text-decoration: none;">
+                &larr; <span data-i18n="nav.backToDashboard">Back to Dashboard</span>
+            </a>
+            <div style="display: flex; gap: 10px;">
+                <a href="my-profile.html" class="btn btn-secondary" style="font-size: 13px; text-decoration: none; padding: 8px 16px;">
+                    👤 View My Profile &rarr;
+                </a>
+            </div>
+        </div>
+
+        <!-- ========================================================================= -->
+        <!-- All 5 Document Modals                                                     -->
+        <!-- ========================================================================= -->
+
+        <!-- 1. Document Upload Modal -->
+        <div id="documentUploadModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="docUploadModalTitle">
+            <div class="modal-dialog doc-modal-dialog">
+                <div class="modal-header">
+                    <div>
+                        <h3 id="docUploadModalTitle" data-i18n="documents.uploadModalTitle">Upload Document to Vault</h3>
+                        <p class="modal-subtitle" data-i18n="documents.uploadModalSubtitle">Your document is securely encrypted at rest. OCR extraction runs automatically.</p>
+                    </div>
+                    <button type="button" class="modal-close-btn" id="closeDocUploadModalBtn" aria-label="Close dialog">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="docUploadForm" onsubmit="return false;">
+                        <!-- Dynamic Pending Documents Guide inside Modal -->
+                        <div id="modalPendingDocsGuide" style="margin-bottom: 14px; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 10px 14px; font-size: 12.5px; color: #166534;">
+                            <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+                                <span><strong>Still Needed:</strong> <span id="modalPendingDocsText">Checking...</span></span>
+                                <span style="font-size: 11px; background: #dcfce7; padding: 2px 8px; border-radius: 10px; font-weight: 600;">Auto-Removes when Uploaded</span>
+                            </div>
+                        </div>
+
+                        <!-- Dropzone -->
+                        <div class="doc-dropzone" id="docUploadDropzone" tabindex="0" role="button" aria-label="Drop file here or click to browse">
+                            <input type="file" id="docFileInput" class="doc-file-input" accept=".pdf,.png,.jpg,.jpeg,.webp">
+                            <div class="doc-dropzone-icon" aria-hidden="true">📄</div>
+                            <div class="doc-dropzone-prompt" data-i18n="documents.dropzoneText">Drag and drop your file here, or click to browse</div>
+                            <div class="doc-dropzone-hint" data-i18n="documents.dropzoneHint">Supported formats: PDF (Max: 10 MB), PNG, JPEG, JPG, WEBP (Max: 5 MB)</div>
+                            <div class="doc-dropzone-limits">
+                                <span class="doc-limit-pill" data-i18n="documents.limitPdf">PDF: up to 10 MB</span>
+                                <span class="doc-limit-pill" data-i18n="documents.limitImages">Images (JPG/PNG/WEBP): up to 5 MB</span>
+                            </div>
+                            <div id="docSelectedFileName" class="doc-selected-file-badge" style="display: none;"></div>
+                        </div>
+
+                        <!-- Dropdowns -->
+                        <div class="doc-form-row">
+                            <div class="doc-form-group">
+                                <label for="docTypeSelect" data-i18n="documents.selectTypeLabel">Document Type Selection</label>
+                                <select id="docTypeSelect" class="doc-select">
+                                    <option value="AUTO_DETECT" selected>✨ Auto-Detect with AI (Recommended)</option>
+                                    <optgroup label="Identity Documents">
+                                        <option value="aadhaar">Aadhaar Card</option>
+                                        <option value="pan">PAN Card</option>
+                                    </optgroup>
+                                    <optgroup label="Academic Certificates">
+                                        <option value="marksheet_10th">Class 10 Marksheet</option>
+                                        <option value="marksheet_12th">Class 12 Marksheet</option>
+                                        <option value="degree_certificate">Degree Certificate / Transcript</option>
+                                        <option value="bonafide_certificate">Bonafide Student Certificate</option>
+                                    </optgroup>
+                                    <optgroup label="Financial &amp; Banking">
+                                        <option value="bank_passbook">Bank Passbook / Statement</option>
+                                        <option value="fees_receipt">Fee Receipt</option>
+                                    </optgroup>
+                                    <optgroup label="Revenue &amp; Welfare Certificates">
+                                        <option value="income_certificate">Income Certificate</option>
+                                        <option value="caste_certificate">Caste / Category Certificate</option>
+                                        <option value="residence_certificate">Residence / Domicile Certificate</option>
+                                        <option value="disability_certificate">Disability (PwD) Certificate</option>
+                                        <option value="ration_card">Ration / BPL Card</option>
+                                    </optgroup>
+                                    <option value="other">Other Document</option>
+                                </select>
+                            </div>
+
+                            <div class="doc-form-group">
+                                <label for="docCategorySelect" data-i18n="documents.selectCategoryLabel">Document Category</label>
+                                <select id="docCategorySelect" class="doc-select">
+                                    <option value="" selected>Auto (Derived from Document)</option>
+                                    <option value="IDENTITY" data-i18n="documents.catIdentity">Identity</option>
+                                    <option value="INCOME" data-i18n="documents.catIncome">Income</option>
+                                    <option value="CATEGORY_CERTIFICATE" data-i18n="documents.catCategoryCert">Category Certificate</option>
+                                    <option value="RESIDENCE" data-i18n="documents.catResidence">Residence</option>
+                                    <option value="ACADEMIC" data-i18n="documents.catAcademic">Academic</option>
+                                    <option value="BANK" data-i18n="documents.catBank">Bank</option>
+                                    <option value="DISABILITY" data-i18n="documents.catDisability">Disability</option>
+                                    <option value="SPECIAL_CATEGORY" data-i18n="documents.catSpecialCategory">Special Category</option>
+                                    <option value="APPLICATION_ASSET" data-i18n="documents.catApplicationAsset">Application Assets</option>
+                                    <option value="OTHER" data-i18n="documents.catOther">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Progress / Status alert -->
+                        <div id="docUploadAlert" class="alert-box" role="alert" aria-live="polite"></div>
+
+                        <!-- Upload progress indicator -->
+                        <div id="docUploadProgress" class="doc-progress-wrap" style="display: none;">
+                            <span class="chat-spinner" aria-hidden="true"></span>
+                            <span data-i18n="documents.uploadingIndicator">Uploading and performing secure OCR extraction...</span>
+                        </div>
+                    </form>
+
+                    <!-- Post-Upload Extraction Results Preview -->
+                    <div id="docUploadResultSection" class="doc-upload-results" style="display: none;">
+                        <div class="doc-results-header">
+                            <span class="doc-success-icon" aria-hidden="true">✅</span>
+                            <div>
+                                <h4 data-i18n="documents.ocrResultHeading">Automated OCR Extraction Preview</h4>
+                                <span class="doc-status-badge pending" data-i18n="documents.statusPendingReview">Pending Review</span>
+                            </div>
+                        </div>
+
+                        <div class="unverified-safeguard-banner" role="note" data-i18n-html="documents.authenticityNotice">
+                            Official Notice: Automated OCR extraction does not constitute authentic government identity verification. You must review and confirm each field.
+                        </div>
+
+                        <div id="docUploadExtractedFields" class="doc-extracted-fields-list"></div>
+
+                        <div class="doc-upload-result-actions">
+                            <button type="button" class="btn btn-primary" id="btnUploadGoToReview" data-i18n="documents.btnReviewNow">
+                                Review &amp; Confirm Fields Now &rarr;
+                            </button>
+                            <button type="button" class="filter-btn-reset" id="btnUploadDone" data-i18n="documents.btnCloseDone">
+                                Done
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer" id="docUploadFooter">
+                    <button type="button" class="btn btn-primary" id="btnStartUploadSubmit" data-i18n="documents.btnStartUpload">Upload &amp; Process Document</button>
+                    <button type="button" class="filter-btn-reset" id="closeDocUploadBottomBtn" data-i18n="common.cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Document Review & Confirmation Modal -->
+        <div id="documentReviewModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="docReviewModalTitle">
+            <div class="modal-dialog doc-modal-dialog-large">
+                <div class="modal-header">
+                    <div>
+                        <h3 id="docReviewModalTitle" data-i18n="documents.reviewModalTitle">Citizen Review &amp; Field Confirmation</h3>
+                        <p class="modal-subtitle" data-i18n="documents.reviewModalSubtitle">Carefully review the automated OCR extractions below. You may edit any values that were misread. Only explicitly confirmed fields will be saved to your permanent citizen profile.</p>
+                    </div>
+                    <button type="button" class="modal-close-btn" id="closeDocReviewModalBtn" aria-label="Close dialog">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <!-- Authenticity Disclaimer Banner -->
+                    <div class="unverified-safeguard-banner" role="note" data-i18n-html="documents.authenticityNotice">
+                        Official Notice: Automated OCR extraction does not constitute authentic government identity verification. You must review and confirm each field.
+                    </div>
+
+                    <div id="docReviewAlert" class="alert-box" role="alert" aria-live="polite"></div>
+
+                    <!-- Fields Confirmation Form Table -->
+                    <div id="docReviewFieldsContainer" class="doc-review-container">
+                        <div class="doc-loading-spinner" id="docReviewLoading">
+                            <span class="chat-spinner" aria-hidden="true"></span>
+                            <span data-i18n="common.loading">Loading...</span>
+                        </div>
+                        <div id="docReviewTableWrap" style="display: none;">
+                            <table class="doc-review-table" aria-label="Extracted fields review">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 25%;" data-i18n="documents.colField">Field</th>
+                                        <th style="width: 45%;" data-i18n="documents.colValue">Extracted Value (Editable)</th>
+                                        <th style="width: 15%; text-align: center;" data-i18n="documents.colConfirm">Confirm</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="docReviewTableBody">
+                                    <!-- Populated dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btnSaveConfirmations" data-i18n="documents.btnSaveConfirmations">Confirm &amp; Save to Profile</button>
+                    <button type="button" class="filter-btn-reset" id="closeDocReviewBottomBtn" data-i18n="common.cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Document Replace Modal -->
+        <div id="documentReplaceModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="docReplaceModalTitle">
+            <div class="modal-dialog doc-modal-dialog">
+                <div class="modal-header">
+                    <div>
+                        <h3 id="docReplaceModalTitle" data-i18n="documents.replaceModalTitle">Replace Document</h3>
+                        <p class="modal-subtitle" data-i18n="documents.replaceModalSubtitle">Upload a clearer or updated copy of this document. It will replace the encrypted file in your vault and re-run OCR extraction. Previous confirmation audit history will be preserved.</p>
+                    </div>
+                    <button type="button" class="modal-close-btn" id="closeDocReplaceModalBtn" aria-label="Close dialog">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="docReplaceForm" onsubmit="return false;">
+                        <div class="doc-target-file-info" id="docReplaceTargetInfo">
+                            <!-- Populated with filename and category -->
+                        </div>
+
+                        <div class="doc-dropzone" id="docReplaceDropzone" tabindex="0" role="button" aria-label="Drop replacement file here or click to browse">
+                            <input type="file" id="docReplaceFileInput" class="doc-file-input" accept=".pdf,.png,.jpg,.jpeg,.webp">
+                            <div class="doc-dropzone-icon" aria-hidden="true">🔄</div>
+                            <div class="doc-dropzone-prompt" data-i18n="documents.dropzoneText">Drag and drop your file here, or click to browse</div>
+                            <div class="doc-dropzone-hint" data-i18n="documents.dropzoneHint">Supported formats: PDF (Max: 10 MB), PNG, JPEG, JPG, WEBP (Max: 5 MB)</div>
+                            <div class="doc-dropzone-limits">
+                                <span class="doc-limit-pill" data-i18n="documents.limitPdf">PDF: up to 10 MB</span>
+                                <span class="doc-limit-pill" data-i18n="documents.limitImages">Images (JPG/PNG/WEBP): up to 5 MB</span>
+                            </div>
+                            <div id="docReplaceSelectedFileName" class="doc-selected-file-badge" style="display: none;"></div>
+                        </div>
+
+                        <div id="docReplaceAlert" class="alert-box" role="alert" aria-live="polite"></div>
+
+                        <div id="docReplaceProgress" class="doc-progress-wrap" style="display: none;">
+                            <span class="chat-spinner" aria-hidden="true"></span>
+                            <span data-i18n="documents.replacingIndicator">Replacing document and re-processing OCR...</span>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="btnConfirmReplaceSubmit" data-i18n="documents.btnConfirmReplace">Upload Replacement &amp; Re-Extract</button>
+                    <button type="button" class="filter-btn-reset" id="closeDocReplaceBottomBtn" data-i18n="common.cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Document Delete & Archive Confirmation Modal -->
+        <div id="documentDeleteModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="docDeleteModalTitle">
+            <div class="modal-dialog doc-modal-dialog">
+                <div class="modal-header">
+                    <div>
+                        <h3 id="docDeleteModalTitle" data-i18n="documents.deleteModalTitle">Delete Document</h3>
+                    </div>
+                    <button type="button" class="modal-close-btn" id="closeDocDeleteModalBtn" aria-label="Close dialog">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p id="docDeletePromptText" style="font-size: 14px; color: #1e293b; margin-bottom: 14px;" data-i18n="documents.deleteWarningText">
+                        Are you sure you want to permanently delete this document?
+                    </p>
+
+                    <div class="doc-target-file-info" id="docDeleteTargetInfo">
+                        <!-- Populated with filename and category -->
+                    </div>
+
+                    <div class="doc-delete-policy-notice" data-i18n-html="documents.deletePolicyNotice">
+                        ⚠️ Under SahayAI security policy, permanent deletion immediately removes the encrypted file from disk storage and cascades to delete all associated field confirmation history.
+                    </div>
+
+                    <div id="docDeleteAlert" class="alert-box" role="alert" aria-live="polite"></div>
+                </div>
+                <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+                    <button type="button" class="filter-btn-reset" id="btnCancelDeleteModal" data-i18n="common.cancel">Cancel</button>
+                    <div style="display: flex; gap: 8px;">
+                        <button type="button" class="btn-scheme-details" id="btnArchiveFromDeleteModal" data-i18n="documents.btnArchiveInstead">Archive Instead</button>
+                        <button type="button" class="btn btn-danger" id="btnPermanentDeleteFromModal" data-i18n="documents.btnConfirmPermanentDelete">Yes, Permanently Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Document Metadata Details Modal -->
+        <div id="documentMetadataModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="docMetadataModalTitle">
+            <div class="modal-dialog doc-modal-dialog">
+                <div class="modal-header">
+                    <h3 id="docMetadataModalTitle" data-i18n="documents.detailsModalTitle">Document Metadata &amp; Extraction</h3>
+                    <button type="button" class="modal-close-btn" id="closeDocMetadataModalBtn" aria-label="Close dialog">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="doc-metadata-grid" id="docMetadataFieldsList">
+                        <!-- Dynamically populated safely via textContent -->
+                    </div>
+
+                    <div class="modal-section" style="margin-top: 18px;">
+                        <h4 data-i18n="documents.metaFields">Extracted Fields (Masked):</h4>
+                        <div id="docMetadataExtractedTableWrap"></div>
+                    </div>
+                </div>
+                <div class="modal-footer" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+                    <div style="display: flex; gap: 8px;">
+                        <button type="button" class="btn btn-primary" id="btnMetadataDownloadBtn" data-i18n="documents.actionDownload">Download</button>
+                        <button type="button" class="btn-scheme-eligibility" id="btnMetadataReviewBtn" style="display: none;" data-i18n="documents.actionReview">Review &amp; Confirm</button>
+                    </div>
+                    <button type="button" class="filter-btn-reset" id="closeDocMetadataBottomBtn" data-i18n="common.close">Close</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p data-i18n="footer.copyright">© 2026 SahayAI. AI-Powered Citizen Assistance & Government Schemes Discovery.</p>
+    </footer>
+
+    <script src="js/i18n.js?v=20261115_4"></script>
+    <script src="js/api.js?v=20261115_4"></script>
+    <script src="js/navigation.js?v=20261115_4"></script>
+    <script src="js/my-documents.js?v=20261115_4"></script>
+</body>
+</html>
+

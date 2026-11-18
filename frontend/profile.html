@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citizen Profile Setup | SahayAI</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">Sahay<span>AI</span></div>
+        <div class="nav-buttons">
+            <div class="global-lang-picker">
+                <label for="globalLangSelect" class="sr-only" data-i18n="nav.selectLanguage">Language</label>
+                <select id="globalLangSelect" class="global-lang-select" aria-label="Select Language">
+                    <option value="en">English</option>
+                    <option value="te">తెలుగు</option>
+                    <option value="hi">हिन्दी</option>
+                </select>
+            </div>
+            <button type="button" class="logout-nav-btn" onclick="logoutCitizen()" data-i18n="nav.logout">Log Out</button>
+        </div>
+    </header>
+
+    <main class="auth-section">
+        <div class="auth-card wide-card">
+            <h1 data-i18n="profile.title">Citizen Profile Setup</h1>
+            <p data-i18n="profile.subtitle">Please provide your accurate demographic details to discover eligible government benefits, scholarships, and social welfare programs.</p>
+
+            <form id="profileForm" novalidate>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fullName" data-i18n="profile.fullNameLabel">Full Legal Name *</label>
+                        <input type="text" id="fullName" placeholder="As written in official documents" data-i18n-placeholder="profile.fullNamePlaceholder" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dob" data-i18n="profile.dobLabel">Date of Birth *</label>
+                        <input type="date" id="dob" required>
+                        <span class="field-hint" data-i18n="profile.dobHint">Used to calculate age and eligibility</span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="gender" data-i18n="profile.genderLabel">Gender *</label>
+                        <select id="gender" required>
+                            <option value="" data-i18n="profile.genderSelect">-- Select Gender --</option>
+                            <option value="FEMALE" data-i18n="profile.genderFemale">Female</option>
+                            <option value="MALE" data-i18n="profile.genderMale">Male</option>
+                            <option value="TRANSGENDER" data-i18n="profile.genderTransgender">Transgender</option>
+                            <option value="OTHER" data-i18n="profile.genderOther">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="casteCategory" data-i18n="profile.casteLabel">Caste Category *</label>
+                        <select id="casteCategory" required>
+                            <option value="" data-i18n="profile.casteSelect">-- Select Category --</option>
+                            <option value="GENERAL" data-i18n="profile.casteGeneral">General</option>
+                            <option value="OBC" data-i18n="profile.casteObc">Other Backward Class (OBC)</option>
+                            <option value="SC" data-i18n="profile.casteSc">Scheduled Caste (SC)</option>
+                            <option value="ST" data-i18n="profile.casteSt">Scheduled Tribe (ST)</option>
+                            <option value="EWS" data-i18n="profile.casteEws">Economically Weaker Section (EWS)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="state" data-i18n="profile.stateLabel">State of Residence *</label>
+                        <input type="text" id="state" placeholder="e.g. Telangana, Maharashtra" data-i18n-placeholder="profile.statePlaceholder" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="district" data-i18n="profile.districtLabel">District *</label>
+                        <input type="text" id="district" placeholder="e.g. Hyderabad, Pune" data-i18n-placeholder="profile.districtPlaceholder" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="annualIncome" data-i18n="profile.incomeLabel">Annual Family Income (INR) *</label>
+                        <input type="number" id="annualIncome" placeholder="e.g. 180000" data-i18n-placeholder="profile.incomePlaceholder" min="0" step="1000" required>
+                        <span class="field-hint" data-i18n="profile.incomeHint">Combined annual income of family in ₹</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="occupation" data-i18n="profile.occupationLabel">Primary Occupation *</label>
+                        <input type="text" id="occupation" placeholder="e.g. Student, Farmer, Artisan" data-i18n-placeholder="profile.occupationPlaceholder" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="isBpl">
+                        <label for="isBpl" data-i18n="profile.bplCheckbox">My family holds an active Below Poverty Line (BPL) ration card</label>
+                    </div>
+                </div>
+
+                <button type="submit" id="submitBtn" data-i18n="profile.submitBtn">Save Profile & Continue to Dashboard</button>
+            </form>
+
+            <div id="alertBox" class="alert-box" role="alert" aria-live="polite"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p data-i18n="footer.copyright">© 2026 SahayAI. AI-Powered Citizen Assistance & Government Schemes Discovery.</p>
+    </footer>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>
+
