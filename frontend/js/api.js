@@ -10,14 +10,18 @@
  */
 
 const API_CONFIG = {
-    // Determine base URL dynamically (matches current hostname so localhost and 127.0.0.1 remain consistent)
-    baseUrl: (typeof window !== "undefined" && window.SAHAY_API_BASE)
-        ? window.SAHAY_API_BASE
-        : (typeof window !== "undefined" && window.location.port === "8000"
-            ? window.location.origin
-            : (typeof window !== "undefined" && window.location.hostname === "localhost"
-                ? "http://localhost:8000"
-                : "http://127.0.0.1:8000")),
+    
+    baseUrl: (
+        typeof window !== "undefined" && window.SAHAY_API_BASE
+    )
+        ? window.SAHAY_API_BASE.replace(/\/+$/, "")
+        : (
+            typeof window !== "undefined" &&
+            ["localhost", "127.0.0.1"].includes(window.location.hostname)
+        )
+            ? "http://127.0.0.1:8000"
+            : "https://sahay-ai-ste8.onrender.com",
+
 };
 
 // In-memory cache for CSRF token (isolated from local/sessionStorage)

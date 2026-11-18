@@ -32,6 +32,7 @@ DEFAULT_ALLOWED_ORIGINS = [
     "http://localhost:5501",
     "http://127.0.0.1:8000",
     "http://localhost:8000",
+    "https://sahay-ai-ste8.onrender.com",
 ]
 
 
